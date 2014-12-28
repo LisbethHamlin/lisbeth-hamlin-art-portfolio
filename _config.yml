@@ -1,9 +1,9 @@
 # Site wide configuration
 
-title:
+title: Lisbeth Hamlin
 description:
-logo: # 120x120 px default image used for Twitter summary card
-teaser: # 400x250 px default teaser image used in image archive grid
+logo: 
+teaser: 
 locale:
 url:
 
@@ -28,7 +28,7 @@ owner:
     ad-client: 
     ad-slot: 
   bio: 
-  avatar: bio-photo.jpg # 160x160 px image for author byline
+  avatar: 
 disqus-shortname:
 
 
