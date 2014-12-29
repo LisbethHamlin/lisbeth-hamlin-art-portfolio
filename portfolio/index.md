@@ -1,13 +1,20 @@
 ---
-layout: article
-title: ""
+layout: archive
+title: "Portfolio"
 date: 
 modified:
-excerpt:
+excerpt: "These are some of my works"
+share: false
 image:
   feature:
-  teaser:
+  teaser: 
   thumb:
 ads: false
 ---
+
+<div class="tiles">
+{% for post in site.categories.portfolio %}
+  {% include post-grid.html %}
+{% endfor %}
+</div><!-- /.tiles -->
 
