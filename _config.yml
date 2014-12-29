@@ -21,12 +21,13 @@ gems:
 
 # Site owner
 owner:
-  name:
+  name: Lisbeth Hamlin
   email:
   twitter:
   google:
     ad-client: 
-    ad-slot: 
+    ad-slot:
+    tracking-id:
   bio: 
   avatar: 
 disqus-shortname:
