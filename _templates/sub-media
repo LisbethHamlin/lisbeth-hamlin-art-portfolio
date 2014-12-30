@@ -1,0 +1,14 @@
+---
+layout: media
+title: {{ title }}
+modified:
+categories: {{ dir | replace: '/', '-' }}
+excerpt:
+tags: []
+image:
+  feature:
+  teaser:
+  credit: Lisbeth Hamlin
+ads: false 
+permalink: {{ dir }}/{{ title | replace: '"' : '' }}
+---

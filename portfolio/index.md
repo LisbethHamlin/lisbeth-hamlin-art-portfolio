@@ -12,9 +12,4 @@ image:
 ads: false
 ---
 
-<div class="tiles">
-{% for post in site.categories.portfolio %}
-  {% include post-grid.html %}
-{% endfor %}
-</div><!-- /.tiles -->
-
+{% include categorie-grid.html list=site.categories.portfolio %}
