@@ -19,13 +19,13 @@ layout: default
 		<div class="inner-wrap">
 			<nav class="toc"></nav><!-- /.toc -->
 			<div id="content" class="page-content" itemprop="articleBody">
-
-				{% if page.previous %}
-					{% include icon-button.html link=page.previous.url text="Previous" class="fa fa-arrow-left" style="margin-right: 1em;" %}
-				{% endif %}
 			
 				{% if page.next %}
-					{% include icon-button.html link=page.next.url text="Next" class="fa fa-arrow-right" %}
+					{% include icon-button.html link=page.next.url text="Previous" class="fa fa-arrow-left" %}
+				{% endif %}
+
+				{% if page.previous %}
+					{% include icon-button.html link=page.previous.url text="Next" class="fa fa-arrow-right" style="margin-right: 1em;" %}
 				{% endif %}
 			
 				{{ content }}
