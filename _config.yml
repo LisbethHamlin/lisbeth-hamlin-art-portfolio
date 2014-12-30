@@ -25,11 +25,11 @@ owner:
   email:
   twitter:
   google:
-    ad-client: 
+    ad-client:
     ad-slot:
-    tracking-id:
-  bio: 
-  avatar: 
+    tracking-id: UA-58096804-1
+  bio:
+  avatar:
 disqus-shortname:
 
 exclude: ["lib", "config.rb", ".sass-cache", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "*.sublime-project", "*.sublime-workspace", "Gemfile", "Gemfile.lock", "README.md", "LICENSE", "node_modules", "Gruntfile.js", "package.json"]
