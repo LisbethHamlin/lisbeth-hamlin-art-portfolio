@@ -278,7 +278,8 @@
 	@include fill-parent;
 	// expand image to cover full width of header
 	img {
-		width: 100%;
+		display: table-caption;
+		margin: 0 auto;
 	}
 }
 // make image flush with edges on small screens
