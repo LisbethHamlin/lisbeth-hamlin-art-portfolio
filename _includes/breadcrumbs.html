@@ -1,13 +1,15 @@
 {% if page.categories and page.categories != empty %}
   <nav class="breadcrumbs">
-    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-      <a href="{{ site.url }}" itemprop="url">
-        <span itemprop="title">Home</span>
-      </a> › 
-    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-      <a href="{{ site.url }}/{{ page.categories | first }}/" itemprop="url">
-        <span itemprop="title">{{ page.categories | first | replace: '-',' ' | capitalize }}</span>
-      </a>
-    </span>
+    {% assign categories = page.url | split: '/' %}
+    {% for categorie in categories %}
+      {% if forloop.first != true %}
+        {% assign current-path = current-path | append: categorie | append: '/' %}
+        <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+          <a href="{{ site.url }}/{{ current-path }}" itemprop="url">
+            <span itemprop="title">{{ categorie | replace: '-',' ' | capitalize }}</span>
+          </a> {% if forloop.last != true %} › {% endif %}
+        </span>
+      {% endif %}
+    {% endfor %}
   </nav><!-- /.breadcrumbs -->
 {% endif %}
