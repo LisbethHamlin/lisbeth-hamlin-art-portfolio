@@ -20,11 +20,11 @@ layout: default
 			<nav class="toc"></nav><!-- /.toc -->
 			<div id="content" class="page-content" itemprop="articleBody">
 
-				{% if page.next and page.next.categories == page.categories and page.next.portal != true %}
+				{% if page.next and page.next.categories == page.categories and page.next.folder != true %}
 					{% include icon-button.html link=page.next.url text="Previous" class="fa fa-arrow-left" style="margin-right: 1em;" %}
 				{% endif %}
 
-				{% if page.previous and page.previous.categories == page.categories and page.previous.portal != true %}
+				{% if page.previous and page.previous.categories == page.categories and page.previous.folder != true %}
 					{% include icon-button.html link=page.previous.url text="Next" class="fa fa-arrow-right" %}
 				{% endif %}
 			

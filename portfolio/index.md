@@ -3,7 +3,7 @@ layout: archive
 title: "Portfolio"
 date: 
 modified:
-excerpt: "These are some of my works"
+excerpt: ""
 share: false
 image:
   feature:
