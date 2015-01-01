@@ -5,6 +5,7 @@ description:
 logo: 
 teaser: 
 locale:
+front-page-posts: 8 # number of posts to show on the main page
 url: //www.lisbethhamlin.com
 
 # Jekyll configuration
