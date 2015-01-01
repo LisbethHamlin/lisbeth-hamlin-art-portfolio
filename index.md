@@ -2,7 +2,6 @@
 layout: archive
 permalink: /
 title: "Latest Additions"
-excerpt: "My art is dedicated to fostering an appreciation of cultural diversity."
 ---
 
 <div class="tiles">
