@@ -11,6 +11,7 @@ image:
 ads: false
 ---
 
+## Purpose
 
 My art is dedicated to fostering an appreciation of cultural diversity.
 
@@ -29,3 +30,7 @@ My adventuresome spirit took me away to the Chalbi desert in Kenya to sketch the
 My rich and colorful paintings act as an ethnologist's record of primitive and traditional life. I focus on populations that consciously resist westernization, that still live in harmony with their environment and value their traditional dress and customs.
 
 “I have found many Shangri-Las. I have tried to capture the unique beauty, the vivid color, the movement and moods that make the nobility of each individual culture stand out. The simple dignity of mankind stimulates me to share my impressions visually.”
+
+## Contact Info
+
+Please contact me at [{{site.owner.email}}](mailto:{{site.owner.email}})
