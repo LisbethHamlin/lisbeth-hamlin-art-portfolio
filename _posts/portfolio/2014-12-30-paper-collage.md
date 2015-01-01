@@ -6,7 +6,7 @@ categories: portfolio
 excerpt: A collection of collages
 tags: []
 image:
-  teaser: Table-tease.jpg
+  teaser: paper-collage/celebration-detail-tease.jpg
 ads: false
 date: 2014-12-30T23:07:55-06:00
 portal: true
