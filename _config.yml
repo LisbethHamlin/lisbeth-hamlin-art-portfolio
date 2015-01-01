@@ -4,7 +4,7 @@ title: Lisbeth Hamlin
 description: "My art is dedicated to fostering an appreciation of cultural diversity."
 logo: 
 teaser: 
-locale:
+locale: en_US
 front-page-posts: 8 # number of posts to show on the main page
 url: //www.lisbethhamlin.com
 
@@ -19,11 +19,10 @@ highlighter: pygments
 gems:
   - jekyll-sitemap
 
-
 # Site owner
 owner:
   name: Lisbeth Hamlin
-  email:
+  email: info@lisbethhamlin.com
   twitter:
   google:
     ad-client:
