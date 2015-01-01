@@ -7,8 +7,12 @@
 
 - title: Solo Exhibitions
   url: /solo-exhibitions
-  excerpt: "These are some of the events I've been in"
+  excerpt:
   image:
+
+- title: Awards and Competitions
+  url: /awards-and-competitions
+  exerpt:
 
 - title: About
   url: /about
