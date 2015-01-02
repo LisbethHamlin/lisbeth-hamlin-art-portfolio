@@ -19,13 +19,21 @@ layout: default
 		<div class="inner-wrap">
 			<nav class="toc"></nav><!-- /.toc -->
 			<div id="content" class="page-content" itemprop="articleBody">
+				{% for cat in site.categories %}
+					{% if cat[0] == page.categories[0] %}
+						{% assign cat-list=cat[1] %}
+						{% break %}
+					{% endif %}
+				{% endfor %}
 
-				{% if page.next and page.next.categories == page.categories and page.next.folder != true %}
-					{% include icon-button.html link=page.next.url text="Previous" class="fa fa-arrow-left" style="margin-right: 1em;" %}
+				{% include next-category-post.html list=cat-list %}
+
+				{% if next_post %}
+					{% include icon-button.html link=next_post text="Previous" class="fa fa-arrow-left" style="margin-right: 1em;" %}
 				{% endif %}
 
-				{% if page.previous and page.previous.categories == page.categories and page.previous.folder != true %}
-					{% include icon-button.html link=page.previous.url text="Next" class="fa fa-arrow-right" %}
+				{% if prev_post %}
+					{% include icon-button.html link=prev_post text="Next" class="fa fa-arrow-right" %}
 				{% endif %}
 			
 				{{ content }}
