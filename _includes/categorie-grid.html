@@ -1,5 +1,10 @@
 <div class="tiles">
-{% for post in {{include.list}} %}
+{% if include.length %}
+	{% assign length = include.length %}
+{% else %}
+	{% assign length = {{include.list}} | size %}
+{% endif %}
+{% for post in {{include.list}} limit: length %}
   {% include post-grid.html %}
 {% endfor %}
 </div><!-- /.tiles -->
