@@ -13,9 +13,7 @@ ads: false
 
 ## Purpose
 
-My art is dedicated to fostering an appreciation of cultural diversity.
-
-My quest to preserve the vanishing peoples of the earth in collages, etchings and watercolors has taken me ...
+My art is dedicated to fostering an appreciation of cultural diversity. My quest to preserve the vanishing peoples of the earth in collages, etchings and watercolors has taken me ...
 
 ... from Rajasthan, a former princely state of India, to Lamu, a Swahili island in the Indian Ocean ...
 
