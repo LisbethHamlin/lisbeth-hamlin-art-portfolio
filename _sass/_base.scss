@@ -58,6 +58,9 @@ a {
 	&:active {
 		outline: 0;
 	}
+	&.disabled {
+		pointer-events: none;
+	}
 }
 
 // Captions

@@ -20,14 +20,9 @@ layout: default
 			<nav class="toc"></nav><!-- /.toc -->
 			<div id="content" class="page-content" itemprop="articleBody">
 				{% include next-category-post.html %}
-
-				{% if next_post %}
-					{% include icon-button.html link=next_post text="Previous" class="fa fa-arrow-left" style="margin-right: 1em;" %}
-				{% endif %}
-
-				{% if prev_post %}
-					{% include icon-button.html link=prev_post text="Next" class="fa fa-arrow-right" %}
-				{% endif %}
+				{% include icon-button.html link=next_post text="Previous" class="fa fa-arrow-left" style="margin-right: 0.5em;" %}
+				{{ post_index1 }} / {{ cat-list | size}}
+				{% include icon-button.html link=prev_post text="Next" class="fa fa-arrow-right" style="margin-left: 0.5em;" %}
 			
 				{{ content }}
 				<hr />
