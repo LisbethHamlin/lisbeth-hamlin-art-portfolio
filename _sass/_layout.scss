@@ -427,6 +427,13 @@
 	@include font-size(16);
 }
 
+@include media($media-medium) {
+	.page-feature-image {
+		height: 60vh;
+		max-height: 800px;
+	}
+}
+
 
 // SCROLL ARROW CUE
 // --------------------------------------------------
