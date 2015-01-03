@@ -1,4 +1,12 @@
-<a href={{include.link}} class="btn" style="{{include.style}}">
+{% if include.link %}
+	{% assign button-class = "pure-button" %}
+	{% assign link = include.link %}
+{% else %}
+	{% assign button-class = "pure-button pure-button-disabled disabled" %}
+	{% assign link = "#" %}
+{% endif %}
+
+<a href={{link}} class="{{button-class}}" style="{{include.style}}">
 	<i class="{{include.class}}">
 		{{include.text}}
 	</i>
