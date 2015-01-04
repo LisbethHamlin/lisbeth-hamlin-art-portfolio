@@ -9,7 +9,10 @@ image:
   teaser:
   thumb:
 ads: false
+toc: true
 ---
+
+![Lisbeth Hamlin](/images/lisbeth-hamlin.jpg)
 
 ## Purpose
 
