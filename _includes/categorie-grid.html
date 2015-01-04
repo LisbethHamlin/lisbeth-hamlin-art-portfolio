@@ -1,10 +1,17 @@
 <div class="tiles">
 {% if include.length %}
-	{% assign length = include.length %}
+  {% assign length = include.length %}
 {% else %}
-	{% assign length = {{include.list}} | size %}
+  {% assign length = include.list | size %}
 {% endif %}
-{% for post in {{include.list}} limit: length %}
-  {% include post-grid.html %}
+{% assign counter = 0 %}
+{% for post in include.list %}
+  {% if post.folder == nil or include.root == nil %}
+    {% include post-grid.html %}
+    {% assign counter = counter | plus: 1 %}
+  {% endif %}
+  {% if counter >= length %}
+    {% break %}
+  {% endif %}
 {% endfor %}
 </div><!-- /.tiles -->
