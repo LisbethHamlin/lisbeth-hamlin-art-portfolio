@@ -6,8 +6,8 @@ categories: portfolio-paper-collage
 excerpt:
 tags: []
 image:
-  feature: paper-collage/jillo-harro.jpg
-  teaser: paper-collage/jillo-harro-tease.jpg
+  feature: portfolio/paper-collage/jillo-harro.jpg
+  teaser: portfolio/paper-collage/jillo-harro-tease.jpg
 ads: false 
 permalink: portfolio/paper-collage/jillo-harro
 date: 2014-12-31T03:11:39-06:00

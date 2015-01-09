@@ -6,8 +6,8 @@ categories: portfolio-watercolor
 excerpt:
 tags: []
 image:
-  feature: watercolor/desert-girl.jpg
-  teaser: watercolor/desert-girl-tease.jpg
+  feature: portfolio/watercolor/desert-girl.jpg
+  teaser: portfolio/watercolor/desert-girl-tease.jpg
 ads: false 
 permalink: portfolio/watercolor/desert-girl
 date: 2014-12-31T02:38:04-06:00
