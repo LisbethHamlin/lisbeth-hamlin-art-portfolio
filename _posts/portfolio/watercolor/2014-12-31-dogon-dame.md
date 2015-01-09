@@ -6,8 +6,8 @@ categories: portfolio-watercolor
 excerpt:
 tags: []
 image:
-  feature: watercolor/dogon-dame.jpg
-  teaser: watercolor/dogon-dame-tease.jpg
+  feature: portfolio/watercolor/dogon-dame.jpg
+  teaser: portfolio/watercolor/dogon-dame-tease.jpg
 ads: false 
 permalink: portfolio/watercolor/dogon-dame
 date: 2014-12-31T02:37:59-06:00

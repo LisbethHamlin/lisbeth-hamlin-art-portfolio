@@ -6,8 +6,8 @@ categories: portfolio-watercolor
 excerpt:
 tags: []
 image:
-  feature: watercolor/homeward-bound.jpg
-  teaser: watercolor/homeward-bound-tease.jpg
+  feature: portfolio/watercolor/homeward-bound.jpg
+  teaser: portfolio/watercolor/homeward-bound-tease.jpg
 ads: false 
 permalink: portfolio/watercolor/homeward-bound
 date: 2014-12-31T02:37:28-06:00

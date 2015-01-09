@@ -6,8 +6,8 @@ categories: portfolio-watercolor
 excerpt:
 tags: []
 image:
-  feature: watercolor/bushman-storyteller.jpg
-  teaser: watercolor/bushman-storyteller-tease.jpg
+  feature: portfolio/watercolor/bushman-storyteller.jpg
+  teaser: portfolio/watercolor/bushman-storyteller-tease.jpg
 ads: false 
 permalink: portfolio/watercolor/bushman-storyteller
 date: 2014-12-31T02:37:43-06:00

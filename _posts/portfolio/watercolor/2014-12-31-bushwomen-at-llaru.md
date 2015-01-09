@@ -6,8 +6,8 @@ categories: portfolio-watercolor
 excerpt:
 tags: []
 image:
-  feature: watercolor/bushwomen-at-llaru.jpg
-  teaser: watercolor/bushwomen-at-llaru-tease.jpg
+  feature: portfolio/watercolor/bushwomen-at-llaru.jpg
+  teaser: portfolio/watercolor/bushwomen-at-llaru-tease.jpg
 ads: false 
 permalink: portfolio/watercolor/bushwomen-at-llaru
 date: 2014-12-31T02:35:30-06:00
