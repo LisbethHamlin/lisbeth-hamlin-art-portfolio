@@ -12,4 +12,6 @@ image:
 ads: false
 ---
 
-{% include categorie-grid.html list=site.categories.portfolio %}
+<div class="tiles">
+{% include categorie-grid.html category="portfolio" %}
+</div>
