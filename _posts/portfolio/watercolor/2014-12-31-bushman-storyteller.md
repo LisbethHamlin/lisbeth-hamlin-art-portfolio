@@ -4,7 +4,7 @@ title: "Bushman Storyteller"
 modified:
 categories: portfolio-watercolor
 excerpt:
-tags: []
+tags: ["sold"]
 image:
   feature: portfolio/watercolor/bushman-storyteller.jpg
   teaser: portfolio/watercolor/bushman-storyteller-tease.jpg

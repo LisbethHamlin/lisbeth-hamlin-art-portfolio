@@ -365,6 +365,11 @@
 	}
 	.post-title {
 		@include font-size(18,no);
+		text-align: center;
+	}
+	.post-folder-title {
+		@extend .post-title;
+		text-align: left;
 	}
 	.post-excerpt {
 		@include font-size(16);
@@ -427,10 +432,16 @@
 	@include font-size(16);
 }
 
+.page-feature-image {
+	border: none;
+    box-shadow: 0 1px 7px rgba(0,0,0,0.6);
+}
+
 @include media($media-medium) {
 	.page-feature-image {
 		height: 60vh;
 		max-height: 800px;
+		
 	}
 }
 

@@ -4,7 +4,7 @@ title: "Zemba Girl"
 modified:
 categories: portfolio-watercolor
 excerpt:
-tags: []
+tags: ["lost"]
 image:
   feature: portfolio/watercolor/zemba-girl.jpg
   teaser: portfolio/watercolor/zemba-girl-tease.jpg

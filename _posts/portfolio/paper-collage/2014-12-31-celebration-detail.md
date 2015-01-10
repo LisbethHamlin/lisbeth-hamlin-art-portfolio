@@ -4,7 +4,7 @@ title: "Celebration Detail"
 modified:
 categories: portfolio-paper-collage
 excerpt:
-tags: []
+tags: ["sold"]
 image:
   feature: portfolio/paper-collage/celebration-detail.jpg
   teaser: portfolio/paper-collage/celebration-detail-tease.jpg
