@@ -1,11 +1,11 @@
-<div class="tiles">
+{% assign list = site.categories.[include.category] %}
 {% if include.length %}
   {% assign length = include.length %}
 {% else %}
-  {% assign length = include.list | size %}
+  {% assign length = list | size %}
 {% endif %}
 {% assign counter = 0 %}
-{% for post in include.list %}
+{% for post in list %}
   {% if post.folder == nil or include.root == nil %}
     {% include post-grid.html %}
     {% assign counter = counter | plus: 1 %}
@@ -14,4 +14,3 @@
     {% break %}
   {% endif %}
 {% endfor %}
-</div><!-- /.tiles -->

@@ -1,0 +1,16 @@
+---
+layout: archive
+permalink: /
+title: "Latest Additions"
+---
+
+{% assign cateogry-length = site.categories | size %}
+{% assign cateogry-length = cateogry-length | minus: 1 %}
+{% assign cateogry-length = site.front-page-posts | divided_by: cateogry-length %}
+
+<div class="tiles">
+{% for cat in site.categories %}
+	{% assign category-name = cat[0] %}
+	{% include categorie-grid.html category=category-name length=cateogry-length root=true %}
+{% endfor %}
+</div>

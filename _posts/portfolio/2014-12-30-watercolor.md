@@ -10,5 +10,7 @@ date: 2014-12-30T23:24:49-06:00
 folder: true
 ---
 
-{% include categorie-grid.html list=site.categories.portfolio-watercolor %}
+<div class="tiles">
+{% include categorie-grid.html category="portfolio-watercolor" %}
+</div>
 

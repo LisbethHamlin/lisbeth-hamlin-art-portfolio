@@ -10,4 +10,6 @@ date: 2014-12-30T23:07:55-06:00
 folder: true
 ---
 
-{% include categorie-grid.html list=site.categories.portfolio-paper-collage %}
+<div class="tiles">
+{% include categorie-grid.html category="portfolio-paper-collage" %}
+</div>
