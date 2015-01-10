@@ -32,6 +32,28 @@ My rich and colorful paintings act as an ethnologist's record of primitive and t
 
 “I have found many Shangri-Las. I have tried to capture the unique beauty, the vivid color, the movement and moods that make the nobility of each individual culture stand out. The simple dignity of mankind stimulates me to share my impressions visually.”
 
+## Solo Exhibitions
+
+| Year| Event |
+|------|------|
+| 1990 | Gallerie La Taj - Africa in Color <br/> Alexandria, VA |
+| 1987 | Art & Artifact - Savacou Gallery <br/> New York, NY |
+| 1984 | Expand Your Horizon - Phinney Ridge Gallery <br/> Seattle, WA |
+| 1984 | Impressions of India - Principia Museum <br/> St. Louis, MO |
+| 1983 | People of Africa - Gallerie La Taj <br/> Alexandria, VA |
+| 1980 | Black and White & Color - Gallery Watatu <br/> Nairobi, Kenya |
+| 1978 | Europe, Africa and Beyond - Harmon Gallery <br/> St. Louis, MO |
+
+## Awards and Competitions
+
+| Year | Event |
+|------|-------|
+| 1986 | Lilian Glazer Purchase Prize <br/> Louisiana Watercolor Socieity, New Orleans, LA |
+| 1986 | American Watercolor Society 119th Annual Competition <br/> New York, NY |
+| 1984 | Watercolor West XVI <br/> Riverside, CA |
+| 1978 | Carpenter Annual Watercolor Prize <br/> St. Louis Artists Guild, St. Louis, MO |
+| 1978 | Adelaide Carol Johnson Art Award <br/> Principia College, St. Louis, MO |
+
 ## Contact Info
 
 Please contact me at [{{site.owner.email}}](mailto:{{site.owner.email}})
