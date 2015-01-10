@@ -13,3 +13,4 @@ permalink: portfolio/mosaics/Ribbons-Tray
 date: 2015-01-05T02:27:23-06:00
 ---
 
+Size: 11.25 x 14.5

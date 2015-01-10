@@ -13,3 +13,4 @@ permalink: portfolio/mosaics/Flower-Frame
 date: 2015-01-05T02:27:15-06:00
 ---
 
+Size: 8 x 8
