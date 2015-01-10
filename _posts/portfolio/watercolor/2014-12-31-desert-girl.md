@@ -4,7 +4,7 @@ title: "Desert Girl"
 modified:
 categories: portfolio-watercolor
 excerpt:
-tags: []
+tags: ["for-sale"]
 image:
   feature: portfolio/watercolor/desert-girl.jpg
   teaser: portfolio/watercolor/desert-girl-tease.jpg

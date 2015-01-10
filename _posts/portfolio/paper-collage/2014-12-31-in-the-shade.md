@@ -4,7 +4,7 @@ title: "In the Shade"
 modified:
 categories: portfolio-paper-collage
 excerpt:
-tags: []
+tags: ["lost"]
 image:
   feature: portfolio/paper-collage/in-the-shade.jpg
   teaser: portfolio/paper-collage/in-the-shade-tease.jpg

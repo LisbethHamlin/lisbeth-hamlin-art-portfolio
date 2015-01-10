@@ -4,7 +4,7 @@ title: "Kavango Clan"
 modified:
 categories: portfolio-watercolor
 excerpt:
-tags: []
+tags: ["lost"]
 image:
   feature: portfolio/watercolor/kavango-clan.jpg
   teaser: portfolio/watercolor/kavango-clan-tease.jpg

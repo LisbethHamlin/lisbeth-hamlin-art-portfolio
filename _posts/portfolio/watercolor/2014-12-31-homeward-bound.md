@@ -4,7 +4,7 @@ title: "Homeward Bound"
 modified:
 categories: portfolio-watercolor
 excerpt:
-tags: []
+tags: ["sold"]
 image:
   feature: portfolio/watercolor/homeward-bound.jpg
   teaser: portfolio/watercolor/homeward-bound-tease.jpg

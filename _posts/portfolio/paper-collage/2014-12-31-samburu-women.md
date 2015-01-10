@@ -4,7 +4,7 @@ title: "Samburu Women"
 modified:
 categories: portfolio-paper-collage
 excerpt:
-tags: []
+tags: ["sold"]
 image:
   feature: portfolio/paper-collage/samburu-women.jpg
   teaser: portfolio/paper-collage/samburu-women-tease.jpg

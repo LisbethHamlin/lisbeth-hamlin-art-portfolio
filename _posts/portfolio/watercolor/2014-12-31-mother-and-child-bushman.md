@@ -4,7 +4,7 @@ title: "Mother and Child Bushman"
 modified:
 categories: portfolio-watercolor
 excerpt:
-tags: []
+tags: ["sold"]
 image:
   feature: portfolio/watercolor/mother-and-child-bushman.jpg
   teaser: portfolio/watercolor/mother-and-child-bushman-tease.jpg

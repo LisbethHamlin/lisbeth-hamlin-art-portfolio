@@ -4,7 +4,7 @@ title: "Reflection"
 modified:
 categories: portfolio-watercolor
 excerpt:
-tags: []
+tags: ["sold"]
 image:
   feature: portfolio/watercolor/reflection.jpg
   teaser: portfolio/watercolor/reflection-tease.jpg
@@ -13,5 +13,5 @@ permalink: portfolio/watercolor/reflection
 date: 2014-12-31T02:38:15-06:00
 ---
 
-Size: 15x22
+Size: 15 x 22
 

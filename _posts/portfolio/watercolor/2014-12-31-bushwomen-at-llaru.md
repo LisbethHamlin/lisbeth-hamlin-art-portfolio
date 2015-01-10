@@ -4,7 +4,7 @@ title: "Bushwomen at Llaru"
 modified:
 categories: portfolio-watercolor
 excerpt:
-tags: []
+tags: ["sold"]
 image:
   feature: portfolio/watercolor/bushwomen-at-llaru.jpg
   teaser: portfolio/watercolor/bushwomen-at-llaru-tease.jpg

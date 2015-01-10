@@ -4,7 +4,7 @@ title: "Bushman at Llaru"
 modified:
 categories: portfolio-watercolor
 excerpt:
-tags: []
+tags: ["sold"]
 image:
   feature: portfolio/watercolor/bushman-at-llaru.jpg
   teaser: portfolio/watercolor/bushman-at-llaru-tease.jpg
