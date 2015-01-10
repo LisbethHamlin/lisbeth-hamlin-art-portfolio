@@ -13,3 +13,4 @@ permalink: portfolio/mosaics/african-bushman
 date: 2015-01-03T22:03:04-06:00
 ---
 
+Size: 16 x 20
