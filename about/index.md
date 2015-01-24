@@ -30,13 +30,15 @@ My adventuresome spirit took me away to the Chalbi desert in Kenya to sketch the
 
 My rich and colorful paintings act as an ethnologist's record of primitive and traditional life. I focus on populations that consciously resist westernization, that still live in harmony with their environment and value their traditional dress and customs.
 
-“I have found many Shangri-Las. I have tried to capture the unique beauty, the vivid color, the movement and moods that make the nobility of each individual culture stand out. The simple dignity of mankind stimulates me to share my impressions visually.”
+I have found many Shangri-Las. I have tried to capture the unique beauty, the vivid color, the movement and moods that make the nobility of each individual culture stand out. The simple dignity of mankind stimulates me to share my impressions visually.
 
 ## Solo Exhibitions
 
 | Year| Event |
 |------|------|
-| 1990 | Gallerie La Taj - Africa in Color <br/> Alexandria, VA |
+| 2002 | Africa Kaleidoscopes - Gallerie of South Orange <br/> South Orange, NJ |
+| 1997 | Africa Adorned - Robins Hutchins Gallery <br/> Maplewood, NJ |
+| 1996 <br/> 1990 | Africa in Color - Gallerie La Taj <br/> Alexandria, VA |
 | 1987 | Art & Artifact - Savacou Gallery <br/> New York, NY |
 | 1984 | Expand Your Horizon - Phinney Ridge Gallery <br/> Seattle, WA |
 | 1984 | Impressions of India - Principia Museum <br/> St. Louis, MO |
@@ -53,6 +55,13 @@ My rich and colorful paintings act as an ethnologist's record of primitive and t
 | 1984 | Watercolor West XVI <br/> Riverside, CA |
 | 1978 | Carpenter Annual Watercolor Prize <br/> St. Louis Artists Guild, St. Louis, MO |
 | 1978 | Adelaide Carol Johnson Art Award <br/> Principia College, St. Louis, MO |
+
+## Education
+
+| Year | Degree | School |
+|------|--------|--------|
+| 1987 | MA Gallatin (Printmaking and Anthropology) | New York University |
+| 1977 | BA in Art | Principia College |
 
 ## Contact Info
 
