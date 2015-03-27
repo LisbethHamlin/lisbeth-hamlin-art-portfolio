@@ -1,0 +1,11 @@
+---
+layout: folder
+title: {{ title }}
+modified:
+categories: portfolio
+excerpt:
+tags: []
+ads: false
+date: {{ date }}
+folder: true
+---
