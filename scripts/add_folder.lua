@@ -13,7 +13,17 @@ function removeExtension(f)
     return string.gsub(f, '-', ' ')
 end
 
-function scandir(root, path)
+function validFile(fileName)
+	local pos = string.find(fileName, "-tease")
+	if pos then
+		return false
+	end
+	return true
+end
+
+function scandir(root, userSpecifiedPath, path)
+	local sortedCommandQueue = {}
+
     path = path or ""
     for file in fs.dir( root .. path ) do
         if file ~= "." and file ~= ".." and file ~= "scripts" then
@@ -21,20 +31,26 @@ function scandir(root, path)
             local attr = lfs.attributes( root .. f )
 
             if attr.mode == "directory" then
-                scandir( root, f )
-            else
-                local strippedFileName = removeExtension(file)
-                local cmd = "octopress new post \"" .. strippedFileName .. "\" --dir " .. "portfolio" .. path .. " --template sub-media"
-                print(cmd)
-                os.execute(cmd)
+                scandir( root, userSpecifiedPath, f )
+            elseif validFile(file) then
+            	local strippedFileName = removeExtension(file);
+            	table.insert(sortedCommandQueue, strippedFileName);
             end
         end
+    end
+    
+    table.sort(sortedCommandQueue)
+    
+    for i, v in ipairs(sortedCommandQueue) do
+		local cmd = "octopress new post \"" .. v .. "\" --dir " .. (userSpecifiedPath or path) .. " --template sub-media"
+		print(cmd)
+		os.execute(cmd)
     end
 end
 
 args = {...}
 if args[1] then
-    scandir(args[1])
+    scandir(args[1], args[2])
 else
     print("Please select a folder")
 end
