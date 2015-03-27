@@ -1,5 +1,5 @@
 ---
-layout: folder
+layout: archive
 title: {{ title }}
 modified:
 categories: portfolio
