@@ -14,15 +14,15 @@ function removeExtension(f)
 end
 
 function validFile(fileName)
-	local pos = string.find(fileName, "-tease")
-	if pos then
-		return false
-	end
-	return true
+    local pos = string.find(fileName, "-tease")
+    if pos then
+        return false
+    end
+    return true
 end
 
 function scandir(root, userSpecifiedPath, path)
-	local sortedCommandQueue = {}
+    local sortedCommandQueue = {}
 
     path = path or ""
     for file in fs.dir( root .. path ) do
@@ -32,19 +32,19 @@ function scandir(root, userSpecifiedPath, path)
 
             if attr.mode == "directory" then
                 scandir( root, userSpecifiedPath, f )
-            elseif validFile(file) then
-            	local strippedFileName = removeExtension(file);
-            	table.insert(sortedCommandQueue, strippedFileName);
-            end
-        end
-    end
-    
-    table.sort(sortedCommandQueue)
-    
-    for i, v in ipairs(sortedCommandQueue) do
-		local cmd = "octopress new post \"" .. v .. "\" --dir " .. (userSpecifiedPath or path) .. " --template sub-media"
-		print(cmd)
-		os.execute(cmd)
+                elseif validFile(file) then
+                 local strippedFileName = removeExtension(file);
+                 table.insert(sortedCommandQueue, strippedFileName);
+             end
+         end
+     end
+
+     table.sort(sortedCommandQueue)
+
+     for i, v in ipairs(sortedCommandQueue) do
+        local cmd = "octopress new post \"" .. v .. "\" --dir " .. (userSpecifiedPath or path) .. " --template sub-media"
+        print(cmd)
+        os.execute(cmd)
     end
 end
 
