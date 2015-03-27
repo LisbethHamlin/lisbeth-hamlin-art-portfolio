@@ -16,6 +16,6 @@
   {% else %}
     {% assign title-class = "post-title" %}
   {% endif %}
-  <h2 class="{{ title-class }}" itemprop="name"><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h2>
+  {% if page.hide-teaser-descriptions == nil or page.hide-teaser-descriptions == false %}<h2 class="{{ title-class }}" itemprop="name"><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h2>{% endif %}
   <p class="post-excerpt" itemprop="description">{{ post.excerpt | strip_html | truncate: 160 }}</p>
 </article><!-- /.tile -->
