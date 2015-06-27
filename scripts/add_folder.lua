@@ -32,16 +32,16 @@ function scandir(root, userSpecifiedPath, path)
 
             if attr.mode == "directory" then
                 scandir( root, userSpecifiedPath, f )
-                elseif validFile(file) then
+            elseif validFile(file) then
                  local strippedFileName = removeExtension(file);
                  table.insert(sortedCommandQueue, strippedFileName);
-             end
-         end
-     end
+            end
+        end
+    end
 
-     table.sort(sortedCommandQueue)
+    table.sort(sortedCommandQueue)
 
-     for i, v in ipairs(sortedCommandQueue) do
+    for i, v in ipairs(sortedCommandQueue) do
         local cmd = "octopress new post \"" .. v .. "\" --dir " .. (userSpecifiedPath or path) .. " --template sub-media"
         print(cmd)
         os.execute(cmd)
