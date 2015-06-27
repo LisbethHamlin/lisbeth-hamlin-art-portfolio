@@ -5,7 +5,9 @@ description: "My art is dedicated to fostering an appreciation of cultural diver
 logo: 
 teaser: 
 locale: en_US
-front-page-posts: 8 # number of posts to show on the main page
+front-page:
+  posts: 8 # number of posts to show on the main page
+  posts-per-categorie: 2
 url: //www.lisbethhamlin.com
 
 # Jekyll configuration

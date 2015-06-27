@@ -10,13 +10,21 @@ Ethnic humanity is my subject matter and a source of my inspiration. My figurati
 
 <h1>Latest Additions</h1>
 
-{% assign cateogry-length = site.categories | size %}
-{% assign cateogry-length = cateogry-length | minus: 1 %}
-{% assign cateogry-length = site.front-page-posts | divided_by: cateogry-length %}
-
 <div class="tiles">
+{% assign index = 0 %}
 {% for cat in site.categories %}
-	{% assign category-name = cat[0] %}
-	{% include categorie-grid.html category=category-name length=cateogry-length root=true %}
+	{% assign category-name = cat[0] %} {% assign catSize = cat[1] | size %}
+	{% if category-name == "portfolio" or catSize < site.front-page.posts-per-categorie %}
+		{% continue %}
+	{% endif %}
+	{% assign length = site.front-page.posts-per-categorie %} {% assign futureLength = index | plus: site.front-page.posts-per-categorie %}
+	{% if futureLength > site.front-page.posts %}
+		{% assign length = site.front-page.posts | minus: index %}
+	{% endif %}
+	{% include categorie-grid.html category=category-name length=length root=true %}
+	{% assign index = index | plus: site.front-page.posts-per-categorie %}
+	{% if index >= site.front-page.posts %}
+		{% break %}
+	{% endif %}
 {% endfor %}
 </div>
