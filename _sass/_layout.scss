@@ -193,6 +193,9 @@
 			.pagination {
 				@include fill-parent;
 			}
+			.pagination-index {
+				margin: 0 0.5em 0 0.5em;
+			}
 			.page-meta {
 				p{
 					@include font-size(14,no);

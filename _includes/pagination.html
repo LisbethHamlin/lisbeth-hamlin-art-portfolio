@@ -1,15 +1,22 @@
 <nav class="pagination">
   {% capture category_name %}{{ page.categories | first }}{% endcapture %}
-  {% for post in site.categories.[category_name] %}
-    {% if post.url == page.url %}
-      {% assign post_index0 = forloop.index0 %}
-      {% assign post_index1 = forloop.index %}
-    {% endif %}
+  {% assign cat-list = site.categories.[category_name] %}
+
+  {% for post in cat-list %}
+      {% if post.url == page.url %}
+          {% assign post_index0 = forloop.index0 %}
+          {% assign post_index1 = forloop.index %}
+      {% endif %}
   {% endfor %}
-  {% for post in site.categories.[category_name] %}
-    {% if post_index0 == forloop.index %}{% assign next_post = post %}{% endif %}
-    {% if post_index1 == forloop.index0 %}{% assign prev_post = post %}{% endif %}
+  {% for post in cat-list %}
+      {% if post_index0 == forloop.index and post.folder == nil %}
+          {% assign next_post = post.url %}
+      {% endif %}
+      {% if post_index1 == forloop.index0 and post.folder == nil %}
+          {% assign prev_post = post.url %}
+      {% endif %}
   {% endfor %}
-  {% if prev_post %}<a class="prev" href="{{ site.url }}{{ prev_post.url }}">{{ prev_post.title }}</a>{% endif %}
-  {% if next_post %}<a class="next" href="{{ site.url }}{{ next_post.url }}">{{ next_post.title }}</a>{% endif %}
+  {% include icon-button.html link=next_post text="Previous" class="fa fa-arrow-left" %}
+  <span class="pagination-index">{{ post_index1 }} / {{ cat-list | size}}</span>
+  {% include icon-button.html link=prev_post text="Next" class="fa fa-arrow-right" %}
 </nav>
