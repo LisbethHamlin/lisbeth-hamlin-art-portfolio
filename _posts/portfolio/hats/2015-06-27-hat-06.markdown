@@ -1,0 +1,15 @@
+---
+layout: media
+title: Hat 06
+modified:
+categories: portfolio-hats
+excerpt:
+tags: []
+image:
+  feature: portfolio/hats/hat-06.jpg
+  teaser:  portfolio/hats/hat-06-teaser.jpg
+ads: false
+permalink: portfolio/hats/hat-06
+date: 2015-06-27T21:38:46-05:00
+---
+

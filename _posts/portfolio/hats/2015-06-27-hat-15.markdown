@@ -1,0 +1,15 @@
+---
+layout: media
+title: Hat 15
+modified:
+categories: portfolio-hats
+excerpt:
+tags: []
+image:
+  feature: portfolio/hats/hat-15.jpg
+  teaser:  portfolio/hats/hat-15-teaser.jpg
+ads: false
+permalink: portfolio/hats/hat-15
+date: 2015-06-27T21:38:34-05:00
+---
+
