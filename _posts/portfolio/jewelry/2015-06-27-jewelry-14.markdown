@@ -1,0 +1,16 @@
+---
+layout: media
+title: Jewelry 14
+modified:
+categories: portfolio-jewelry
+excerpt:
+tags: []
+image:
+  feature: portfolio/jewelry/jewelry-14.jpg
+  teaser:  portfolio/jewelry/jewelry-14-teaser.jpg
+ads: false
+permalink: portfolio/jewelry/jewelry-14
+date: 2015-06-27T22:19:43-05:00
+---
+
+These earrings are constructed with natural colored eggshells on metal bases coverted with resin.

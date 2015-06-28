@@ -1,5 +1,7 @@
 fs = require "lfs"
 
+NUMBER_PATTERN = "%d+"
+
 if not fs then
     print("Could not find Lua Filesystem.")
     return
@@ -21,6 +23,19 @@ function validFile(fileName)
     return true
 end
 
+function commandQueueSorter(a, b)
+    local numA = string.match(a, NUMBER_PATTERN)
+    local numB = string.match(b, NUMBER_PATTERN)
+    
+    if numA and numB then
+        numA = tonumber(numA)
+        numB = tonumber(numB)
+        return numA > numB
+    end
+
+    return a > b
+end
+
 function scandir(root, userSpecifiedPath, path)
     local sortedCommandQueue = {}
 
@@ -39,7 +54,9 @@ function scandir(root, userSpecifiedPath, path)
         end
     end
 
-    table.sort(sortedCommandQueue, function(a, b) return a > b end)
+    table.sort(sortedCommandQueue, commandQueueSorter)
+        
+    end)
 
     for i, v in ipairs(sortedCommandQueue) do
         local cmd = "octopress new post \"" .. v .. "\" --dir " .. (userSpecifiedPath or path) .. " --template sub-media"

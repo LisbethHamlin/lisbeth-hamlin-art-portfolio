@@ -10,6 +10,6 @@ image:
   teaser:  portfolio/jewelry/jewelry-7-teaser.jpg
 ads: false
 permalink: portfolio/jewelry/jewelry-7
-date: 2015-06-27T21:19:11-05:00
+date: 2015-06-27T22:19:52-05:00
 ---
 
