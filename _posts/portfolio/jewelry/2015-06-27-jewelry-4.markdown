@@ -1,0 +1,15 @@
+---
+layout: media
+title: Jewelry 4
+modified:
+categories: portfolio-jewelry
+excerpt:
+tags: []
+image:
+  feature: portfolio/jewelry/jewelry-4.jpg
+  teaser:  portfolio/jewelry/jewelry-4-teaser.jpg
+ads: false
+permalink: portfolio/jewelry/jewelry-4
+date: 2015-06-27T21:19:14-05:00
+---
+

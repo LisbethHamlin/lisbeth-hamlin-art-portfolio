@@ -1,0 +1,15 @@
+---
+layout: media
+title: Jewelry 8
+modified:
+categories: portfolio-jewelry
+excerpt:
+tags: []
+image:
+  feature: portfolio/jewelry/jewelry-8.jpg
+  teaser:  portfolio/jewelry/jewelry-8-teaser.jpg
+ads: false
+permalink: portfolio/jewelry/jewelry-8
+date: 2015-06-27T21:19:10-05:00
+---
+

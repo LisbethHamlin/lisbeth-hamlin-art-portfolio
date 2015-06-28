@@ -1,0 +1,16 @@
+---
+layout: media
+title: Jewelry 1
+modified:
+categories: portfolio-jewelry
+excerpt:
+tags: []
+image:
+  feature: portfolio/jewelry/jewelry-1.jpg
+  teaser:  portfolio/jewelry/jewelry-1-teaser.jpg
+ads: false
+permalink: portfolio/jewelry/jewelry-1
+date: 2015-06-27T21:19:18-05:00
+---
+
+These earings are painted on leather and are light as a feather.

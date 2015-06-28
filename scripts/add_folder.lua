@@ -39,12 +39,13 @@ function scandir(root, userSpecifiedPath, path)
         end
     end
 
-    table.sort(sortedCommandQueue)
+    table.sort(sortedCommandQueue, function(a, b) return a > b end)
 
     for i, v in ipairs(sortedCommandQueue) do
         local cmd = "octopress new post \"" .. v .. "\" --dir " .. (userSpecifiedPath or path) .. " --template sub-media"
         print(cmd)
         os.execute(cmd)
+        os.execute("sleep 1") -- TODO: figure out how to get rid of this. Maybe we could use touch
     end
 end
 

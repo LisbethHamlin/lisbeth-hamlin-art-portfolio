@@ -1,0 +1,15 @@
+---
+layout: media
+title: Jewelry 6
+modified:
+categories: portfolio-jewelry
+excerpt:
+tags: []
+image:
+  feature: portfolio/jewelry/jewelry-6.jpg
+  teaser:  portfolio/jewelry/jewelry-6-teaser.jpg
+ads: false
+permalink: portfolio/jewelry/jewelry-6
+date: 2015-06-27T21:19:12-05:00
+---
+
