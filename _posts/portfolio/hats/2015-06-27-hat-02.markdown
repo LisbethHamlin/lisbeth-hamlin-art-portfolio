@@ -1,0 +1,15 @@
+---
+layout: media
+title: Hat 02
+modified:
+categories: portfolio-hats
+excerpt:
+tags: []
+image:
+  feature: portfolio/hats/hat-02.jpg
+  teaser:  portfolio/hats/hat-02-teaser.jpg
+ads: false
+permalink: portfolio/hats/hat-02
+date: 2015-06-27T21:38:51-05:00
+---
+
