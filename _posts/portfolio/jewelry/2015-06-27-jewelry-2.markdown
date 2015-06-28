@@ -1,0 +1,15 @@
+---
+layout: media
+title: Jewelry 2
+modified:
+categories: portfolio-jewelry
+excerpt:
+tags: []
+image:
+  feature: portfolio/jewelry/jewelry-2.jpg
+  teaser:  portfolio/jewelry/jewelry-2-teaser.jpg
+ads: false
+permalink: portfolio/jewelry/jewelry-2
+date: 2015-06-27T21:19:17-05:00
+---
+
