@@ -16,7 +16,7 @@ function removeExtension(f)
 end
 
 function validFile(fileName)
-    local pos = string.find(fileName, "-tease")
+    local pos = string.find(fileName, "-teaser")
     if pos then
         return false
     end
