@@ -1,6 +1,7 @@
 fs = require "lfs"
 
 NUMBER_PATTERN = "%d+"
+TEASER_IMAGE_PATTERN = ".+-teaser"
 
 if not fs then
     print("Could not find Lua Filesystem.")
@@ -16,11 +17,7 @@ function removeExtension(f)
 end
 
 function validFile(fileName)
-    local pos = string.find(fileName, "-teaser")
-    if pos then
-        return false
-    end
-    return true
+    return string.match(fileName, TEASER_IMAGE_PATTERN) == nil
 end
 
 function commandQueueSorter(a, b)
@@ -28,9 +25,8 @@ function commandQueueSorter(a, b)
     local numB = string.match(b, NUMBER_PATTERN)
     
     if numA and numB then
-        numA = tonumber(numA)
-        numB = tonumber(numB)
-        return numA > numB
+        a = tonumber(numA)
+        b = tonumber(numB)
     end
 
     return a > b
@@ -48,15 +44,13 @@ function scandir(root, userSpecifiedPath, path)
             if attr.mode == "directory" then
                 scandir( root, userSpecifiedPath, f )
             elseif validFile(file) then
-                 local strippedFileName = removeExtension(file);
-                 table.insert(sortedCommandQueue, strippedFileName);
+                local strippedFileName = removeExtension(file)
+                table.insert(sortedCommandQueue, strippedFileName)
             end
         end
     end
 
     table.sort(sortedCommandQueue, commandQueueSorter)
-        
-    end)
 
     for i, v in ipairs(sortedCommandQueue) do
         local cmd = "octopress new post \"" .. v .. "\" --dir " .. (userSpecifiedPath or path) .. " --template sub-media"
