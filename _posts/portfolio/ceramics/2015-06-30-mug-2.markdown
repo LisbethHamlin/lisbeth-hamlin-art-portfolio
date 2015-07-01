@@ -1,0 +1,15 @@
+---
+layout: media
+title: Mug 2
+modified:
+categories: portfolio-ceramics
+excerpt:
+tags: []
+image:
+  feature: portfolio/ceramics/mug-2.jpg
+  teaser:  portfolio/ceramics/mug-2-teaser.jpg
+ads: false
+permalink: portfolio/ceramics/mug-2
+date: 2015-06-30T20:21:49-05:00
+---
+
