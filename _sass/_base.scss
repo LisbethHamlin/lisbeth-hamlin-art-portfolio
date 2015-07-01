@@ -349,6 +349,10 @@ nav {
 	a {
 		text-decoration: none;
 	}
+	&.breadcrumbs > span:last-child {
+		pointer-events: none;
+		cursor: default;
+	}
 }
 
 // GLOBAL TRANSITION
