@@ -10,6 +10,6 @@ image:
   teaser:  portfolio/hats/hat-11-teaser.jpg
 ads: false
 permalink: portfolio/hats/hat-11
-date: 2015-06-27T21:38:39-05:00
+date: 2015-07-21T23:57:09-05:00
 ---
 

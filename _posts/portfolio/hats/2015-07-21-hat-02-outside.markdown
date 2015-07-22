@@ -1,0 +1,16 @@
+---
+layout: media
+title: Hat 02 Outside
+modified:
+categories: portfolio-hats
+excerpt:
+tags: []
+image:
+  feature: portfolio/hats/hat-02-outside.jpg
+  teaser:  portfolio/hats/hat-02-outside-teaser.jpg
+ads: false
+permalink: portfolio/hats/hat-02-outside
+date: 2015-07-21T23:57:19-05:00
+---
+
+This hat is reversible
