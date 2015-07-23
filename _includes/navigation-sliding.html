@@ -1,4 +1,4 @@
-<nav role="navigation" class="js-menu sliding-menu-content">
+<nav class="js-menu sliding-menu-content">
 	<ul class="menu-item">
 		{% for link in site.data.navigation %}<li>
       {% unless link.url contains 'http' %}
@@ -10,7 +10,7 @@
 		</li>{% endfor %}
 	</ul>
 </nav>
-<button type="button" class="js-menu-trigger sliding-menu-button menulines-button x2" role="button" aria-label="Toggle Navigation">
+<button class="js-menu-trigger sliding-menu-button menulines-button x2" role="button" aria-label="Toggle Navigation">
 	<span class="menulines"></span>
 </button>
 
