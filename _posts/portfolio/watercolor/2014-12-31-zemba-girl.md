@@ -9,7 +9,7 @@ image:
   feature: portfolio/watercolor/zemba-girl.jpg
   teaser: portfolio/watercolor/zemba-girl-tease.jpg
 ads: false 
-permalink: portfolio/watercolor/zemba
+permalink: portfolio/watercolor/zemba-girl
 date: 2014-12-31T02:37:54-06:00
 ---
 
