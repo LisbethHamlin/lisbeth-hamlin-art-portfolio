@@ -309,14 +309,6 @@
   }, {
     "description": "",
     "image": {
-      "feature": "/images/portfolio/mosaics/Mirror-tease.jpg",
-      "size": "400x250",
-      "teaser": "/images/portfolio/mosaics/Mirror-tease-teaser.jpg"
-    },
-    "title": "Mirror-tease"
-  }, {
-    "description": "",
-    "image": {
       "feature": "/images/portfolio/mosaics/Trivet-1.jpg",
       "size": "1100x1089",
       "teaser": "/images/portfolio/mosaics/Trivet-1-teaser.jpg"
@@ -466,14 +458,6 @@
       "teaser": "/images/portfolio/mosaics/Flower-Frame-teaser.jpg"
     },
     "title": "Flower-Frame"
-  }, {
-    "description": "",
-    "image": {
-      "feature": "/images/portfolio/mosaics/african-bushman-tease.jpg",
-      "size": "400x250",
-      "teaser": "/images/portfolio/mosaics/african-bushman-tease-teaser.jpg"
-    },
-    "title": "african-bushman-tease"
   }, {
     "description": "",
     "image": {
