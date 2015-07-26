@@ -6,14 +6,13 @@ layout: default
 {{ content }} 
 
 <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-{% for imageIter in site.data.portfolio[page.group] %}
-    {% assign image = imageIter[1] %}
-        <figure class="tile" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-              <a href="{{image.image.feature}}" itemprop="contentUrl" data-size="{{image.image.size}}">
-                  <img src="{{image.image.teaser}}" itemprop="thumbnail" alt="Image description" />
-              </a>
-            <figcaption itemprop="caption description">Image caption {{forloop.index}}</figcaption>
-        </figure>
+{% for image in site.data.portfolio[page.group] %}
+    <figure class="tile" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+          <a href="{{image.image.feature}}" itemprop="contentUrl" data-size="{{image.image.size}}">
+              <img src="{{image.image.teaser}}" itemprop="thumbnail" alt="Image description" />
+          </a>
+        <figcaption itemprop="caption description">Image caption {{forloop.index}}</figcaption>
+    </figure>
 {% endfor %}
 </div>
 <!-- Root element of PhotoSwipe. Must have class pswp. -->
