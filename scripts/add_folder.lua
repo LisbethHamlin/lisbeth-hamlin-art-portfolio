@@ -1,23 +1,9 @@
 fs = require "lfs"
-
-NUMBER_PATTERN = "%d+"
-TEASER_IMAGE_PATTERN = ".+-teaser"
+require "common"
 
 if not fs then
     print("Could not find Lua Filesystem.")
     return
-end
-
-function removeExtension(f)
-    local dotPos = string.find(f, "%.")
-    if dotPos then
-        f = string.sub(f, 1, dotPos - 1)
-    end
-    return string.gsub(f, '-', ' ')
-end
-
-function validFile(fileName)
-    return string.match(fileName, TEASER_IMAGE_PATTERN) == nil
 end
 
 function commandQueueSorter(a, b)
@@ -44,7 +30,7 @@ function scandir(root, userSpecifiedPath, path)
             if attr.mode == "directory" then
                 scandir( root, userSpecifiedPath, f )
             elseif validFile(file) then
-                local strippedFileName = removeExtension(file)
+                local strippedFileName = dashToSpace(removeExtension(file))
                 table.insert(sortedCommandQueue, strippedFileName)
             end
         end
