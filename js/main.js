@@ -71,27 +71,8 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             return;
         }
 
-        // find index of clicked item by looping through all child nodes
-        // alternatively, you may define index via data-attribute
         var clickedGallery = clickedListItem.parentNode,
-            childNodes = clickedListItem.parentNode.childNodes,
-            numChildNodes = childNodes.length,
-            nodeIndex = 0,
-            index;
-
-        for (var i = 0; i < numChildNodes; i++) {
-            if(childNodes[i].nodeType !== 1) { 
-                continue; 
-            }
-
-            if(childNodes[i] === clickedListItem) {
-                index = nodeIndex;
-                break;
-            }
-            nodeIndex++;
-        }
-
-
+            index = eTarget.getAttribute('data-index');
 
         if(index >= 0) {
             // open PhotoSwipe if valid index found
@@ -140,15 +121,8 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
         options = {
             // define gallery index (for URL)
             galleryUID: galleryElement.getAttribute('data-pswp-uid'),
-            showHideOpacity: false,
-            getThumbBoundsFn: function(index) {
-                // See Options -> getThumbBoundsFn section of documentation for more info
-                var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
-                    pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
-                    rect = thumbnail.getBoundingClientRect(); 
-
-                return {x:(rect.left + rect.right) / 2, y:(rect.bottom), w:rect.width};
-            }
+            showHideOpacity: true,
+            getThumbBoundsFn: false
         };
 
         // PhotoSwipe opened from URL

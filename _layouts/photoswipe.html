@@ -9,9 +9,9 @@ layout: default
 {% for image in site.data.portfolio[page.group] %}
     <figure class="tile" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="{{image.image.feature}}" itemprop="contentUrl" data-size="{{image.image.size}}">
-              <img src="{{image.image.teaser}}" itemprop="thumbnail" alt="Image description" />
+              <img src="{{image.image.teaser}}" itemprop="thumbnail" alt="{{image.title}}" data-index="{{forloop.index0}}" />
           </a>
-        <figcaption itemprop="caption description">Image caption {{forloop.index}}</figcaption>
+        <figcaption itemprop="caption description">{{image.description}}</figcaption>
     </figure>
 {% endfor %}
 </div>
