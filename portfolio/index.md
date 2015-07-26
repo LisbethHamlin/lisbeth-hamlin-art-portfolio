@@ -1,15 +1,7 @@
 ---
 layout: archive
 title: "Portfolio"
-date: 
-modified:
-excerpt: ""
-share: false
-image:
-  feature:
-  teaser: 
-  thumb:
-ads: false
+group: portfolio
 ---
 
 {% for groupIter in site.data.portfolio %}

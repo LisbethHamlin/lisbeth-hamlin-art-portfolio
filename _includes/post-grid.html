@@ -5,6 +5,10 @@
     </div>
   </a>  
   {% assign title-class = "post-folder-title" %}
-  {% if page.hide-teaser-descriptions == nil or page.hide-teaser-descriptions == false %}<h2 class="{{ title-class }}" itemprop="name"><a href="{{ site.url }}/portfolio/{{ include.groupKey }}">{{ include.groupKey }}</a></h2>{% endif %}
+  {% if page.hide-teaser-descriptions == nil or page.hide-teaser-descriptions == false %}
+  	<h2 class="{{ title-class }}" itemprop="name">
+  		<a href="{{ site.url }}/portfolio/{{ include.groupKey }}">{{ include.groupKey | replace: '-',' ' | capitalize }}</a>
+  	</h2>
+  {% endif %}
   <p class="post-excerpt" itemprop="description">{{ post.excerpt | strip_html | truncate: 160 }}</p>
 </article><!-- /.tile -->
