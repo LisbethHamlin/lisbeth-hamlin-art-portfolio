@@ -29,13 +29,14 @@ function scandir(root, path, prevPath)
                 scandir(root, f, file)
             elseif validFile(file) then
                 portfolioTable[prevPath] = portfolioTable[prevPath] or {}
-                portfolioTable[prevPath][removeExtension(file)] = {
+                portfolioTable[prevPath][#portfolioTable[prevPath] + 1] = {
+                  title = removeExtension(file),
                   description = "",
                   image = {
                     feature = "/" .. absolutePath,
                     teaser = "/" .. createThumbnailFilename(absolutePath),
                     size = getImageSize(absolutePath)
-                  }                  
+                  }
                 }
             end
         end
