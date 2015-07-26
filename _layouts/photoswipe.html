@@ -1,17 +1,19 @@
 ---
-layout: default
+layout: archive
 ---
 
 <!-- TODO: wrap this in a div -->
 {{ content }} 
 
 <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+{% assign imageList = site.data.portfolio[page.group] | sort: "title" %}
 {% for image in site.data.portfolio[page.group] %}
     <figure class="tile" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="{{image.image.feature}}" itemprop="contentUrl" data-size="{{image.image.size}}">
               <img src="{{image.image.teaser}}" itemprop="thumbnail" alt="{{image.title}}" data-index="{{forloop.index0}}" />
           </a>
-        <figcaption itemprop="caption description">{{image.description}}</figcaption>
+        {% if page.hide-teaser-descriptions == nil or page.hide-teaser-descriptions == false %}<h2 class="{{ post-title }}" itemprop="name">{{image.title}}</h2>{% endif %}
+        <figcaption class="post-title" itemprop="caption description">Test</figcaption>
     </figure>
 {% endfor %}
 </div>
