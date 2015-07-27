@@ -18,6 +18,7 @@ function createThumbnailFilename(fileName)
 end
 
 function scandir(root, path, prevPath)
+    local sortedCommandQueue = {} 
     path = path or ""
     for file in fs.dir( root .. path ) do
         if file ~= "." and file ~= ".." and file ~= "scripts" then
@@ -28,8 +29,7 @@ function scandir(root, path, prevPath)
             if attr.mode == "directory" then
                 scandir(root, f, file)
             elseif validFile(file) then
-                portfolioTable[prevPath] = portfolioTable[prevPath] or {}
-                portfolioTable[prevPath][#portfolioTable[prevPath] + 1] = {
+                table.insert(sortedCommandQueue, {
                   title = removeExtension(file),
                   description = "",
                   image = {
@@ -37,8 +37,19 @@ function scandir(root, path, prevPath)
                     teaser = "/" .. createThumbnailFilename(absolutePath),
                     size = getImageSize(absolutePath)
                   }
-                }
+                });
             end
+        end
+    end
+
+    if prevPath then
+        table.sort(sortedCommandQueue, function(a, b)
+            return commandQueueSorter(a.title, b.title)
+        end)
+
+        portfolioTable[prevPath] = portfolioTable[prevPath] or {}
+        for i, v in ipairs(sortedCommandQueue) do
+            table.insert(portfolioTable[prevPath], v)
         end
     end
 end
