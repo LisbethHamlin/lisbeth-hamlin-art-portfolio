@@ -2,6 +2,9 @@
 
 var initPhotoSwipeFromDOM = function(gallerySelector) {
 
+    // loop through all gallery elements and bind events
+    var galleryElements = document.querySelectorAll( gallerySelector );
+
     // parse slide data (url, title, size ...) from DOM elements 
     // (children of gallerySelector)
     var parseThumbnailElements = function(el) {
@@ -71,8 +74,32 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             return;
         }
 
-        var clickedGallery = clickedListItem.parentNode,
+        var clickedGallery = clickedListItem.parentNode;
+        var index = 0;
+
+        if(galleryElements.length > 1) {
+            // find index of clicked item by looping through all child nodes
+            // alternatively, you may define index via data- attribute
+            var childNodes = clickedListItem.parentNode.childNodes,
+                numChildNodes = childNodes.length,
+                nodeIndex = 0,
+                index;
+
+            for (var i = 0; i < numChildNodes; i++) {
+                if(childNodes[i].nodeType !== 1) { 
+                    continue; 
+                }
+
+                if(childNodes[i] === clickedListItem) {
+                    index = nodeIndex;
+                    break;
+                }
+                nodeIndex++;
+            }
+        }
+        else {
             index = eTarget.getAttribute('data-index');
+        }
 
         if(index >= 0) {
             // open PhotoSwipe if valid index found
@@ -166,9 +193,6 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
         gallery.init();
         $togglable.hide();
     };
-
-    // loop through all gallery elements and bind events
-    var galleryElements = document.querySelectorAll( gallerySelector );
 
     for(var i = 0, l = galleryElements.length; i < l; i++) {
         galleryElements[i].setAttribute('data-pswp-uid', i+1);
