@@ -5,7 +5,9 @@ layout: archive
 <!-- TODO: wrap this in a div? -->
 {{ content }} 
 
-{% for image in page.filter %}
-	{% include gallery.html group=image.group %}
+{% for imageIter in page.filter %}
+	{% assign group = imageIter[0] %}
+	{% assign imageList = imageIter[1] %}
+	{% include gallery.html group=group filter=imageList %}
 {% endfor %}
 {% include photoswipe-root.html %}

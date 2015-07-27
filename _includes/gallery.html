@@ -1,9 +1,9 @@
 <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
 {% for image in site.data.portfolio[include.group] %}
     {% assign foundImage = false %}
-    {% if page.filter %}
-        {% for iter in page.filter %}
-            {% if iter.title == image.title and iter.group == include.group %}
+    {% if include.filter %}
+        {% for iter in include.filter %}
+            {% if iter.title == image.title %}
                 {% assign foundImage = true %}
                 {% break %}
             {% endif %}
