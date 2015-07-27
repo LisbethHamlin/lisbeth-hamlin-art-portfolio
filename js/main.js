@@ -122,7 +122,9 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             // define gallery index (for URL)
             galleryUID: galleryElement.getAttribute('data-pswp-uid'),
             showHideOpacity: true,
-            getThumbBoundsFn: false
+            getThumbBoundsFn: false,
+            clickToCloseNonZoomable: false,
+            closeOnScroll: false
         };
 
         // PhotoSwipe opened from URL
@@ -153,9 +155,16 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             options.showAnimationDuration = 0;
         }
 
+        
+        var $togglable = $('#masthead');
+
         // Pass data to PhotoSwipe and initialize it
         var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-		gallery.init();
+        gallery.listen('close', function() {
+             $togglable.show();
+        });
+        gallery.init();
+        $togglable.hide();
     };
 
     // loop through all gallery elements and bind events
