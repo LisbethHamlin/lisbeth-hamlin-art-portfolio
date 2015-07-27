@@ -1,7 +1,13 @@
 ---
-layout: archive
+layout: photoswipe-filter
 permalink: /
 title: "Artistic Statement"
+filter:
+  - title: Gecko-Table
+    group: mosaics
+
+  - title: celebration-detail
+    group: paper-collage
 ---
 
 <p id="artistic-statement">
@@ -9,22 +15,3 @@ Ethnic humanity is my subject matter and a source of my inspiration. My figurati
 </p>
 
 <h1>Latest Additions</h1>
-
-<div class="tiles">
-{% assign index = 0 %}
-{% for cat in site.categories %}
-	{% assign category-name = cat[0] %} {% assign catSize = cat[1] | size %}
-	{% if category-name == "portfolio" or catSize < site.front-page.posts-per-categorie %}
-		{% continue %}
-	{% endif %}
-	{% assign length = site.front-page.posts-per-categorie %} {% assign futureLength = index | plus: site.front-page.posts-per-categorie %}
-	{% if futureLength > site.front-page.posts %}
-		{% assign length = site.front-page.posts | minus: index %}
-	{% endif %}
-	{% include categorie-grid.html category=category-name length=length root=true %}
-	{% assign index = index | plus: site.front-page.posts-per-categorie %}
-	{% if index >= site.front-page.posts %}
-		{% break %}
-	{% endif %}
-{% endfor %}
-</div>

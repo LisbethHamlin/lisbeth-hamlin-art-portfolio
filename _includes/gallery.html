@@ -1,0 +1,23 @@
+<div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+{% for image in site.data.portfolio[include.group] %}
+    {% assign foundImage = false %}
+    {% if page.filter %}
+        {% for iter in page.filter %}
+            {% if iter.title == image.title and iter.group == include.group %}
+                {% assign foundImage = true %}
+                {% break %}
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        {% assign foundImage = true %}
+    {% endif %}
+    {% if foundImage %}
+    <figure class="tile" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+          <a href="{{image.image.feature}}" itemprop="contentUrl" data-size="{{image.image.size}}">
+              <img src="{{image.image.teaser}}" itemprop="thumbnail" alt="{{image.title}}" data-index="{{forloop.index0}}" />
+          </a>
+        <figcaption class="post-title" itemprop="caption description">{{image.title | replace: '-',' ' | capitalize }}</figcaption>
+    </figure>
+    {% endif %}
+{% endfor %}
+</div>

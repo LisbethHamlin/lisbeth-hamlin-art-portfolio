@@ -5,5 +5,7 @@ layout: archive
 <!-- TODO: wrap this in a div? -->
 {{ content }} 
 
-{% include gallery.html group=page.group %}
+{% for image in page.filter %}
+	{% include gallery.html group=image.group %}
+{% endfor %}
 {% include photoswipe-root.html %}
