@@ -16,7 +16,7 @@
           <a href="{{image.image.feature}}" itemprop="contentUrl" data-size="{{image.image.size}}">
               <img src="{{image.image.teaser}}" itemprop="thumbnail" alt="{{image.title}}" data-index="{{forloop.index0}}" />
           </a>
-        <figcaption class="post-title" itemprop="caption description">{{image.title | replace: '-',' ' | capitalize }}</figcaption>
+        {% if page.hide-figcaption == nil or page.hide-figcaption == false %}<figcaption class="post-title" itemprop="caption description">{{image.title | replace: '-',' ' | capitalize }}</figcaption>{% endif %}
     </figure>
     {% endif %}
 {% endfor %}
