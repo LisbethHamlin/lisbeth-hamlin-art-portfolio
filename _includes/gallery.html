@@ -12,11 +12,13 @@
         {% assign foundImage = true %}
     {% endif %}
     {% if foundImage %}
+    {% assign title = image.title | replace: '-',' ' | capitalize %}
+    {% assign image-info = site.data.portfolio-info[include.group][image.title] %}
     <figure class="tile" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-          <a href="{{image.image.feature}}" itemprop="contentUrl" data-size="{{image.image.size}}">
+          <a href="{{image.image.feature}}" itemprop="contentUrl" data-size="{{image.image.size}}" data-title="{{title}}" data-description="{{image-info.description}}">
               <img src="{{image.image.teaser}}" itemprop="thumbnail" alt="{{image.title}}" data-index="{{forloop.index0}}" />
           </a>
-        {% if page.hide-figcaption == nil or page.hide-figcaption == false %}<figcaption class="post-title" itemprop="caption description">{{image.title | replace: '-',' ' | capitalize }}</figcaption>{% endif %}
+        {% if page.hide-figcaption == nil or page.hide-figcaption == false %}<figcaption class="post-title" itemprop="caption description">{{ title }}</figcaption>{% endif %}
     </figure>
     {% endif %}
 {% endfor %}

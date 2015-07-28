@@ -32,19 +32,10 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             // create slide object
             item = {
                 src: linkEl.getAttribute('href'),
+                title: linkEl.getAttribute('data-title'),
                 w: parseInt(size[0], 10),
                 h: parseInt(size[1], 10)
             };
-
-            if(figureEl.children.length > 1) {
-                // <figcaption> content
-                item.title = figureEl.children[1].innerHTML; 
-            }
-
-            if(linkEl.children.length > 0) {
-                // <img> thumbnail element, retrieving thumbnail url
-                item.msrc = linkEl.children[0].getAttribute('src');
-            } 
 
             item.el = figureEl; // save link to element for getThumbBoundsFn
             items.push(item);
@@ -152,6 +143,14 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             getThumbBoundsFn: false,
             clickToCloseNonZoomable: false,
             closeOnScroll: false
+            /*addCaptionHTMLFn: function(item, captionEl, isFake) {
+                if(!item.title) {
+                    captionEl.children[0].innerText = '';
+                    return false;
+                }
+                captionEl.children[0].innerHTML = item.title + '<br/><small>Photo: ' + item.author + '</small>';
+                return true;
+            }*/
         };
 
         // PhotoSwipe opened from URL
