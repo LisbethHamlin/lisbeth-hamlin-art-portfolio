@@ -32,10 +32,19 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             // create slide object
             item = {
                 src: linkEl.getAttribute('href'),
-                title: linkEl.getAttribute('data-title'),
+                desc: linkEl.getAttribute('data-description'),
+                pid: linkEl.getAttribute('data-index'),
                 w: parseInt(size[0], 10),
                 h: parseInt(size[1], 10)
             };
+
+            if(figureEl.children.length > 1) {
+                // <figcaption> content
+                item.title = figureEl.children[1].innerHTML; 
+            }
+            else {
+                item.title = ' '; // TODO: look into this
+            }
 
             item.el = figureEl; // save link to element for getThumbBoundsFn
             items.push(item);
@@ -68,29 +77,26 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
         var clickedGallery = clickedListItem.parentNode;
         var index = 0;
 
-        if(galleryElements.length > 1) {
-            // find index of clicked item by looping through all child nodes
-            // alternatively, you may define index via data- attribute
-            var childNodes = clickedListItem.parentNode.childNodes,
-                numChildNodes = childNodes.length,
-                nodeIndex = 0,
-                index;
 
-            for (var i = 0; i < numChildNodes; i++) {
-                if(childNodes[i].nodeType !== 1) { 
-                    continue; 
-                }
+        // find index of clicked item by looping through all child nodes
+        // alternatively, you may define index via data- attribute
+        var childNodes = clickedListItem.parentNode.childNodes,
+            numChildNodes = childNodes.length,
+            nodeIndex = 0,
+            index;
 
-                if(childNodes[i] === clickedListItem) {
-                    index = nodeIndex;
-                    break;
-                }
-                nodeIndex++;
+        for (var i = 0; i < numChildNodes; i++) {
+            if(childNodes[i].nodeType !== 1) { 
+                continue; 
             }
+
+            if(childNodes[i] === clickedListItem) {
+                index = nodeIndex;
+                break;
+            }
+            nodeIndex++;
         }
-        else {
-            index = eTarget.getAttribute('data-index');
-        }
+        
 
         if(index >= 0) {
             // open PhotoSwipe if valid index found
@@ -142,15 +148,16 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             showHideOpacity: true,
             getThumbBoundsFn: false,
             clickToCloseNonZoomable: false,
-            closeOnScroll: false
-            /*addCaptionHTMLFn: function(item, captionEl, isFake) {
+            closeOnScroll: false,
+            galleryPIDs: true,
+            addCaptionHTMLFn: function(item, captionEl, isFake) {
                 if(!item.title) {
-                    captionEl.children[0].innerText = '';
+                    captionEl.children[0].innerHTML = '';
                     return false;
                 }
-                captionEl.children[0].innerHTML = item.title + '<br/><small>Photo: ' + item.author + '</small>';
+                captionEl.children[0].innerHTML = '<p>' + item.title + '<br>' + item.desc + '</p>' // TODO: remove this br
                 return true;
-            }*/
+            }
         };
 
         // PhotoSwipe opened from URL
@@ -181,16 +188,9 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             options.showAnimationDuration = 0;
         }
 
-        
-        var $togglable = $('#masthead');
-
         // Pass data to PhotoSwipe and initialize it
         var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
-        gallery.listen('close', function() {
-             $togglable.show();
-        });
         gallery.init();
-        $togglable.hide();
     };
 
     for(var i = 0, l = galleryElements.length; i < l; i++) {
