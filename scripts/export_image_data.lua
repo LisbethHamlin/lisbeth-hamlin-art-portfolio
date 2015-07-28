@@ -31,7 +31,6 @@ function scandir(root, path, prevPath)
             elseif validFile(file) then
                 table.insert(sortedCommandQueue, {
                   title = removeExtension(file),
-                  description = "",
                   image = {
                     feature = "/" .. absolutePath,
                     teaser = "/" .. createThumbnailFilename(absolutePath),
@@ -44,7 +43,7 @@ function scandir(root, path, prevPath)
 
     if prevPath then
         table.sort(sortedCommandQueue, function(a, b)
-            return commandQueueSorter(a.title, b.title)
+            return a.title < b.title
         end)
 
         portfolioTable[prevPath] = portfolioTable[prevPath] or {}
