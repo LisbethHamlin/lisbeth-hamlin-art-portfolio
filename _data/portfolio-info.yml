@@ -1,0 +1,80 @@
+watercolor:
+  bushman-at-llaru:
+    size: 15 x 22
+  bushman-storyteller:
+    size: 22 x 30
+  bushwomen-at-llaru:
+    size: 15 x 22
+  desert-girl:
+    size: 15 x 22
+  dogon-dame:
+    size: 22 x 30
+  homeward-bound:
+    size: 15 x 22
+  kavango-clan:
+    size: 22 x 30
+  mother-and-child-bushman:
+    size: 15 x 22
+  reflection:
+    size: 15 x 22
+  zemba-girl:
+    size: 15 x 22
+paper-collage:
+  in-the-shade:
+    size: 22 x 30
+  jillo-harro:
+    size: 11 x 15
+  market-price:
+    size: 9 x 11
+  mzee:
+    size: 22 x 30
+  samburu-women:
+    size: 15 x 22
+mosaics:
+  african-bushman:
+    size: 16 x 20
+  flower-frame:
+    size: 8 x 8
+  frame-1:
+    size: 6.5 x 8.5
+  frame-2:
+    size: 6.5 x 8.5
+  frame-3:
+    size: 6.5 x 8.5
+  mirror-1:
+    size: 10 x 10
+  mirror-2:
+    size: 10 x 10
+  mirror-3:
+    size: 10 x 10
+  ribbons-tray:
+    size: 11.25 x 14.5
+  tray-1:
+    size: 10.25 x 13.25
+  tray-2:
+    size: 10.25 x 13.25
+  trivet-1:
+    size: 9 x 9
+  trivet-2:
+    size: 9 x 9
+  trivet-3:
+    size: 9 x 9
+  trivet-4:
+    size: 9 x 9
+jewelry:
+  jewelry-1:
+    description: "These earings are painted on leather and are light as a feather."
+  jewelry-13:
+    description: "These earrings are constructed with painted egg shells on bold metal bases covered with resin."
+  jewelry-14:
+    description: "These earrings are constructed with natural colored eggshells on metal bases coverted with resin."
+hats:
+  hat-01-inside:
+    description: "This hat is reversible."
+  hat-01-outside:
+    description: "This hat is reversible."
+  hat-02-outside:
+    description: "This hat is reversible."
+ceramics:
+  mugs:
+    description: "Hand stamped, rolled, and glazed."
