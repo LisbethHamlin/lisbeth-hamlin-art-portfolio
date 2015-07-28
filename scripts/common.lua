@@ -21,15 +21,3 @@ function removeExtension(str)
     end
     return name, dotPos and string.sub(str, dotPos)
 end
-
-function commandQueueSorter(a, b)
-    local numA = string.match(a, NUMBER_PATTERN)
-    local numB = string.match(b, NUMBER_PATTERN)
-    
-    if numA and numB then
-        a = tonumber(numA)
-        b = tonumber(numB)
-    end
-
-    return a < b
-end
