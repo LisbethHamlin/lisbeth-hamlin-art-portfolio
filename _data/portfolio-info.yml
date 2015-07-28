@@ -70,11 +70,13 @@ jewelry:
     description: "These earrings are constructed with natural colored eggshells on metal bases coverted with resin."
 hats:
   hat-01-inside:
-    description: "This hat is reversible."
+    description: "The inside of the hat"
   hat-01-outside:
-    description: "This hat is reversible."
+    description: "The outside of the hat"
+  hat-02-inside:
+    description: "The inside of the hat"
   hat-02-outside:
-    description: "This hat is reversible."
+    description: "The outside of the hat"
 ceramics:
   mugs:
     description: "Hand stamped, rolled, and glazed."
