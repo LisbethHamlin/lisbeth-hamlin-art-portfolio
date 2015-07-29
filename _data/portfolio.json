@@ -415,6 +415,13 @@
       "teaser": "/images/portfolio/mosaics/african-bushman-teaser.jpg"
     },
     "title": "african-bushman"
+  }, {
+    "image": {
+      "feature": "/images/portfolio/mosaics/indian-women.jpg",
+      "size": "750x578",
+      "teaser": "/images/portfolio/mosaics/indian-women-teaser.jpg"
+    },
+    "title": "indian-women"
   } ],
   "paper-collage": [ {
     "image": {
@@ -458,6 +465,49 @@
       "teaser": "/images/portfolio/paper-collage/samburu-women-teaser.jpg"
     },
     "title": "samburu-women"
+  } ],
+  "printmaking": [ {
+    "image": {
+      "feature": "/images/portfolio/printmaking/equipoise.jpg",
+      "size": "355x800",
+      "teaser": "/images/portfolio/printmaking/equipoise-teaser.jpg"
+    },
+    "title": "equipoise"
+  }, {
+    "image": {
+      "feature": "/images/portfolio/printmaking/in-prayer.jpg",
+      "size": "531x775",
+      "teaser": "/images/portfolio/printmaking/in-prayer-teaser.jpg"
+    },
+    "title": "in-prayer"
+  }, {
+    "image": {
+      "feature": "/images/portfolio/printmaking/lake-dal.jpg",
+      "size": "765x512",
+      "teaser": "/images/portfolio/printmaking/lake-dal-teaser.jpg"
+    },
+    "title": "lake-dal"
+  }, {
+    "image": {
+      "feature": "/images/portfolio/printmaking/living-patterns.jpg",
+      "size": "600x650",
+      "teaser": "/images/portfolio/printmaking/living-patterns-teaser.jpg"
+    },
+    "title": "living-patterns"
+  }, {
+    "image": {
+      "feature": "/images/portfolio/printmaking/pounding-fou-fou.jpg",
+      "size": "504x764",
+      "teaser": "/images/portfolio/printmaking/pounding-fou-fou-teaser.jpg"
+    },
+    "title": "pounding-fou-fou"
+  }, {
+    "image": {
+      "feature": "/images/portfolio/printmaking/turkana-girl.jpg",
+      "size": "521x717",
+      "teaser": "/images/portfolio/printmaking/turkana-girl-teaser.jpg"
+    },
+    "title": "turkana-girl"
   } ],
   "watercolor": [ {
     "image": {
