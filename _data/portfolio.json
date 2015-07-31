@@ -2,671 +2,343 @@
   "ceramics": [
     {
       "title": "mug-1",
-      "image": {
-        "feature": "/images/portfolio/ceramics/mug-1.jpg",
-        "teaser": "/images/portfolio/ceramics/mug-1-teaser.jpg",
-        "size": "972x1296"
-      }
+      "size": "972x1296"
     },
     {
       "title": "mug-2",
-      "image": {
-        "feature": "/images/portfolio/ceramics/mug-2.jpg",
-        "teaser": "/images/portfolio/ceramics/mug-2-teaser.jpg",
-        "size": "972x1296"
-      }
+      "size": "972x1296"
     },
     {
       "title": "mug-3",
-      "image": {
-        "feature": "/images/portfolio/ceramics/mug-3.jpg",
-        "teaser": "/images/portfolio/ceramics/mug-3-teaser.jpg",
-        "size": "1296x972"
-      }
+      "size": "1296x972"
     },
     {
       "title": "mug-4",
-      "image": {
-        "feature": "/images/portfolio/ceramics/mug-4.jpg",
-        "teaser": "/images/portfolio/ceramics/mug-4-teaser.jpg",
-        "size": "972x1296"
-      }
+      "size": "972x1296"
     },
     {
       "title": "mugs",
-      "image": {
-        "feature": "/images/portfolio/ceramics/mugs.jpg",
-        "teaser": "/images/portfolio/ceramics/mugs-teaser.jpg",
-        "size": "1728x1152"
-      }
+      "size": "1728x1152"
     }
   ],
   "hats": [
     {
       "title": "hat-01-inside",
-      "image": {
-        "feature": "/images/portfolio/hats/hat-01-inside.jpg",
-        "teaser": "/images/portfolio/hats/hat-01-inside-teaser.jpg",
-        "size": "1080x810"
-      }
+      "size": "1080x810"
     },
     {
       "title": "hat-01-outside",
-      "image": {
-        "feature": "/images/portfolio/hats/hat-01-outside.jpg",
-        "teaser": "/images/portfolio/hats/hat-01-outside-teaser.jpg",
-        "size": "1080x810"
-      }
+      "size": "1080x810"
     },
     {
       "title": "hat-02-inside",
-      "image": {
-        "feature": "/images/portfolio/hats/hat-02-inside.jpg",
-        "teaser": "/images/portfolio/hats/hat-02-inside-teaser.jpg",
-        "size": "1080x810"
-      }
+      "size": "1080x810"
     },
     {
       "title": "hat-02-outside",
-      "image": {
-        "feature": "/images/portfolio/hats/hat-02-outside.jpg",
-        "teaser": "/images/portfolio/hats/hat-02-outside-teaser.jpg",
-        "size": "810x1080"
-      }
+      "size": "810x1080"
     },
     {
       "title": "hat-05",
-      "image": {
-        "feature": "/images/portfolio/hats/hat-05.jpg",
-        "teaser": "/images/portfolio/hats/hat-05-teaser.jpg",
-        "size": "810x1080"
-      }
+      "size": "810x1080"
     },
     {
       "title": "hat-06",
-      "image": {
-        "feature": "/images/portfolio/hats/hat-06.jpg",
-        "teaser": "/images/portfolio/hats/hat-06-teaser.jpg",
-        "size": "810x1080"
-      }
+      "size": "810x1080"
     },
     {
       "title": "hat-07",
-      "image": {
-        "feature": "/images/portfolio/hats/hat-07.jpg",
-        "teaser": "/images/portfolio/hats/hat-07-teaser.jpg",
-        "size": "810x1080"
-      }
+      "size": "810x1080"
     },
     {
       "title": "hat-08",
-      "image": {
-        "feature": "/images/portfolio/hats/hat-08.jpg",
-        "teaser": "/images/portfolio/hats/hat-08-teaser.jpg",
-        "size": "810x1080"
-      }
+      "size": "810x1080"
     },
     {
       "title": "hat-09",
-      "image": {
-        "feature": "/images/portfolio/hats/hat-09.jpg",
-        "teaser": "/images/portfolio/hats/hat-09-teaser.jpg",
-        "size": "810x1080"
-      }
+      "size": "810x1080"
     },
     {
       "title": "hat-10",
-      "image": {
-        "feature": "/images/portfolio/hats/hat-10.jpg",
-        "teaser": "/images/portfolio/hats/hat-10-teaser.jpg",
-        "size": "810x1080"
-      }
+      "size": "810x1080"
     },
     {
       "title": "hat-11",
-      "image": {
-        "feature": "/images/portfolio/hats/hat-11.jpg",
-        "teaser": "/images/portfolio/hats/hat-11-teaser.jpg",
-        "size": "810x1080"
-      }
+      "size": "810x1080"
     },
     {
       "title": "hat-12",
-      "image": {
-        "feature": "/images/portfolio/hats/hat-12.jpg",
-        "teaser": "/images/portfolio/hats/hat-12-teaser.jpg",
-        "size": "810x1080"
-      }
+      "size": "810x1080"
     },
     {
       "title": "hat-13",
-      "image": {
-        "feature": "/images/portfolio/hats/hat-13.jpg",
-        "teaser": "/images/portfolio/hats/hat-13-teaser.jpg",
-        "size": "810x1080"
-      }
+      "size": "810x1080"
     },
     {
       "title": "hat-14",
-      "image": {
-        "feature": "/images/portfolio/hats/hat-14.jpg",
-        "teaser": "/images/portfolio/hats/hat-14-teaser.jpg",
-        "size": "1080x810"
-      }
+      "size": "1080x810"
     },
     {
       "title": "hat-15",
-      "image": {
-        "feature": "/images/portfolio/hats/hat-15.jpg",
-        "teaser": "/images/portfolio/hats/hat-15-teaser.jpg",
-        "size": "810x1080"
-      }
+      "size": "810x1080"
     }
   ],
   "jewelry": [
     {
       "title": "jewelry-1",
-      "image": {
-        "feature": "/images/portfolio/jewelry/jewelry-1.jpg",
-        "teaser": "/images/portfolio/jewelry/jewelry-1-teaser.jpg",
-        "size": "1728x1152"
-      }
+      "size": "1728x1152"
     },
     {
       "title": "jewelry-10",
-      "image": {
-        "feature": "/images/portfolio/jewelry/jewelry-10.jpg",
-        "teaser": "/images/portfolio/jewelry/jewelry-10-teaser.jpg",
-        "size": "1728x1152"
-      }
+      "size": "1728x1152"
     },
     {
       "title": "jewelry-11",
-      "image": {
-        "feature": "/images/portfolio/jewelry/jewelry-11.jpg",
-        "teaser": "/images/portfolio/jewelry/jewelry-11-teaser.jpg",
-        "size": "1728x1152"
-      }
+      "size": "1728x1152"
     },
     {
       "title": "jewelry-12",
-      "image": {
-        "feature": "/images/portfolio/jewelry/jewelry-12.jpg",
-        "teaser": "/images/portfolio/jewelry/jewelry-12-teaser.jpg",
-        "size": "1728x1152"
-      }
+      "size": "1728x1152"
     },
     {
       "title": "jewelry-13",
-      "image": {
-        "feature": "/images/portfolio/jewelry/jewelry-13.jpg",
-        "teaser": "/images/portfolio/jewelry/jewelry-13-teaser.jpg",
-        "size": "1728x1152"
-      }
+      "size": "1728x1152"
     },
     {
       "title": "jewelry-14",
-      "image": {
-        "feature": "/images/portfolio/jewelry/jewelry-14.jpg",
-        "teaser": "/images/portfolio/jewelry/jewelry-14-teaser.jpg",
-        "size": "1728x1152"
-      }
+      "size": "1728x1152"
     },
     {
       "title": "jewelry-2",
-      "image": {
-        "feature": "/images/portfolio/jewelry/jewelry-2.jpg",
-        "teaser": "/images/portfolio/jewelry/jewelry-2-teaser.jpg",
-        "size": "1296x972"
-      }
+      "size": "1296x972"
     },
     {
       "title": "jewelry-3",
-      "image": {
-        "feature": "/images/portfolio/jewelry/jewelry-3.jpg",
-        "teaser": "/images/portfolio/jewelry/jewelry-3-teaser.jpg",
-        "size": "972x1296"
-      }
+      "size": "972x1296"
     },
     {
       "title": "jewelry-4",
-      "image": {
-        "feature": "/images/portfolio/jewelry/jewelry-4.jpg",
-        "teaser": "/images/portfolio/jewelry/jewelry-4-teaser.jpg",
-        "size": "1296x972"
-      }
+      "size": "1296x972"
     },
     {
       "title": "jewelry-5",
-      "image": {
-        "feature": "/images/portfolio/jewelry/jewelry-5.jpg",
-        "teaser": "/images/portfolio/jewelry/jewelry-5-teaser.jpg",
-        "size": "972x1296"
-      }
+      "size": "972x1296"
     },
     {
       "title": "jewelry-6",
-      "image": {
-        "feature": "/images/portfolio/jewelry/jewelry-6.jpg",
-        "teaser": "/images/portfolio/jewelry/jewelry-6-teaser.jpg",
-        "size": "859x1228"
-      }
+      "size": "859x1228"
     },
     {
       "title": "jewelry-7",
-      "image": {
-        "feature": "/images/portfolio/jewelry/jewelry-7.jpg",
-        "teaser": "/images/portfolio/jewelry/jewelry-7-teaser.jpg",
-        "size": "972x1296"
-      }
+      "size": "972x1296"
     },
     {
       "title": "jewelry-8",
-      "image": {
-        "feature": "/images/portfolio/jewelry/jewelry-8.jpg",
-        "teaser": "/images/portfolio/jewelry/jewelry-8-teaser.jpg",
-        "size": "1183x874"
-      }
+      "size": "1183x874"
     },
     {
       "title": "jewelry-9",
-      "image": {
-        "feature": "/images/portfolio/jewelry/jewelry-9.jpg",
-        "teaser": "/images/portfolio/jewelry/jewelry-9-teaser.jpg",
-        "size": "1728x1152"
-      }
+      "size": "1728x1152"
     }
   ],
   "mosaics": [
     {
+      "title": "african-bushman",
+      "size": "532x800"
+    },
+    {
       "title": "Belt",
-      "image": {
-        "feature": "/images/portfolio/mosaics/Belt.jpg",
-        "teaser": "/images/portfolio/mosaics/Belt-teaser.jpg",
-        "size": "1728x1152"
-      }
+      "size": "1728x1152"
     },
     {
       "title": "Flower-Frame",
-      "image": {
-        "feature": "/images/portfolio/mosaics/Flower-Frame.jpg",
-        "teaser": "/images/portfolio/mosaics/Flower-Frame-teaser.jpg",
-        "size": "1100x1040"
-      }
+      "size": "1100x1040"
     },
     {
       "title": "Frame-1",
-      "image": {
-        "feature": "/images/portfolio/mosaics/Frame-1.jpg",
-        "teaser": "/images/portfolio/mosaics/Frame-1-teaser.jpg",
-        "size": "685x800"
-      }
+      "size": "685x800"
     },
     {
       "title": "Frame-2",
-      "image": {
-        "feature": "/images/portfolio/mosaics/Frame-2.jpg",
-        "teaser": "/images/portfolio/mosaics/Frame-2-teaser.jpg",
-        "size": "1100x801"
-      }
+      "size": "1100x801"
     },
     {
       "title": "Frame-3",
-      "image": {
-        "feature": "/images/portfolio/mosaics/Frame-3.jpg",
-        "teaser": "/images/portfolio/mosaics/Frame-3-teaser.jpg",
-        "size": "1100x765"
-      }
+      "size": "1100x765"
     },
     {
       "title": "Gecko-Table-Side",
-      "image": {
-        "feature": "/images/portfolio/mosaics/Gecko-Table-Side.jpg",
-        "teaser": "/images/portfolio/mosaics/Gecko-Table-Side-teaser.jpg",
-        "size": "773x800"
-      }
+      "size": "773x800"
     },
     {
       "title": "Gecko-Table",
-      "image": {
-        "feature": "/images/portfolio/mosaics/Gecko-Table.jpg",
-        "teaser": "/images/portfolio/mosaics/Gecko-Table-teaser.jpg",
-        "size": "1100x977"
-      }
+      "size": "1100x977"
     },
     {
       "title": "House-Number-1276",
-      "image": {
-        "feature": "/images/portfolio/mosaics/House-Number-1276.jpg",
-        "teaser": "/images/portfolio/mosaics/House-Number-1276-teaser.jpg",
-        "size": "1100x703"
-      }
-    },
-    {
-      "title": "Jersey-Girl",
-      "image": {
-        "feature": "/images/portfolio/mosaics/Jersey-Girl.jpg",
-        "teaser": "/images/portfolio/mosaics/Jersey-Girl-teaser.jpg",
-        "size": "1100x588"
-      }
-    },
-    {
-      "title": "Mask-1",
-      "image": {
-        "feature": "/images/portfolio/mosaics/Mask-1.jpg",
-        "teaser": "/images/portfolio/mosaics/Mask-1-teaser.jpg",
-        "size": "667x800"
-      }
-    },
-    {
-      "title": "Mask-2",
-      "image": {
-        "feature": "/images/portfolio/mosaics/Mask-2.jpg",
-        "teaser": "/images/portfolio/mosaics/Mask-2-teaser.jpg",
-        "size": "511x800"
-      }
-    },
-    {
-      "title": "Mirror-1",
-      "image": {
-        "feature": "/images/portfolio/mosaics/Mirror-1.jpg",
-        "teaser": "/images/portfolio/mosaics/Mirror-1-teaser.jpg",
-        "size": "1106x1100"
-      }
-    },
-    {
-      "title": "Mirror-2",
-      "image": {
-        "feature": "/images/portfolio/mosaics/Mirror-2.jpg",
-        "teaser": "/images/portfolio/mosaics/Mirror-2-teaser.jpg",
-        "size": "1100x1056"
-      }
-    },
-    {
-      "title": "Mirror-3",
-      "image": {
-        "feature": "/images/portfolio/mosaics/Mirror-3.jpg",
-        "teaser": "/images/portfolio/mosaics/Mirror-3-teaser.jpg",
-        "size": "1100x1059"
-      }
-    },
-    {
-      "title": "Mirror",
-      "image": {
-        "feature": "/images/portfolio/mosaics/Mirror.jpg",
-        "teaser": "/images/portfolio/mosaics/Mirror-teaser.jpg",
-        "size": "1728x1152"
-      }
-    },
-    {
-      "title": "Ribbons-Tray",
-      "image": {
-        "feature": "/images/portfolio/mosaics/Ribbons-Tray.jpg",
-        "teaser": "/images/portfolio/mosaics/Ribbons-Tray-teaser.jpg",
-        "size": "1100x825"
-      }
-    },
-    {
-      "title": "Table",
-      "image": {
-        "feature": "/images/portfolio/mosaics/Table.jpg",
-        "teaser": "/images/portfolio/mosaics/Table-teaser.jpg",
-        "size": "1728x1152"
-      }
-    },
-    {
-      "title": "Tray-1",
-      "image": {
-        "feature": "/images/portfolio/mosaics/Tray-1.jpg",
-        "teaser": "/images/portfolio/mosaics/Tray-1-teaser.jpg",
-        "size": "1100x825"
-      }
-    },
-    {
-      "title": "Tray-2",
-      "image": {
-        "feature": "/images/portfolio/mosaics/Tray-2.jpg",
-        "teaser": "/images/portfolio/mosaics/Tray-2-teaser.jpg",
-        "size": "1100x758"
-      }
-    },
-    {
-      "title": "Tray-3",
-      "image": {
-        "feature": "/images/portfolio/mosaics/Tray-3.jpg",
-        "teaser": "/images/portfolio/mosaics/Tray-3-teaser.jpg",
-        "size": "1100x783"
-      }
-    },
-    {
-      "title": "Trivet-1",
-      "image": {
-        "feature": "/images/portfolio/mosaics/Trivet-1.jpg",
-        "teaser": "/images/portfolio/mosaics/Trivet-1-teaser.jpg",
-        "size": "1100x1089"
-      }
-    },
-    {
-      "title": "Trivet-2",
-      "image": {
-        "feature": "/images/portfolio/mosaics/Trivet-2.jpg",
-        "teaser": "/images/portfolio/mosaics/Trivet-2-teaser.jpg",
-        "size": "1100x1072"
-      }
-    },
-    {
-      "title": "Trivet-3",
-      "image": {
-        "feature": "/images/portfolio/mosaics/Trivet-3.jpg",
-        "teaser": "/images/portfolio/mosaics/Trivet-3-teaser.jpg",
-        "size": "1100x1081"
-      }
-    },
-    {
-      "title": "Trivet-4",
-      "image": {
-        "feature": "/images/portfolio/mosaics/Trivet-4.jpg",
-        "teaser": "/images/portfolio/mosaics/Trivet-4-teaser.jpg",
-        "size": "1100x1094"
-      }
-    },
-    {
-      "title": "african-bushman",
-      "image": {
-        "feature": "/images/portfolio/mosaics/african-bushman.jpg",
-        "teaser": "/images/portfolio/mosaics/african-bushman-teaser.jpg",
-        "size": "532x800"
-      }
+      "size": "1100x703"
     },
     {
       "title": "indian-women",
-      "image": {
-        "feature": "/images/portfolio/mosaics/indian-women.jpg",
-        "teaser": "/images/portfolio/mosaics/indian-women-teaser.jpg",
-        "size": "750x578"
-      }
+      "size": "750x578"
+    },
+    {
+      "title": "Jersey-Girl",
+      "size": "1100x588"
+    },
+    {
+      "title": "Mask-1",
+      "size": "667x800"
+    },
+    {
+      "title": "Mask-2",
+      "size": "511x800"
+    },
+    {
+      "title": "Mirror-1",
+      "size": "1106x1100"
+    },
+    {
+      "title": "Mirror-2",
+      "size": "1100x1056"
+    },
+    {
+      "title": "Mirror-3",
+      "size": "1100x1059"
+    },
+    {
+      "title": "Mirror",
+      "size": "1728x1152"
+    },
+    {
+      "title": "Ribbons-Tray",
+      "size": "1100x825"
+    },
+    {
+      "title": "Table",
+      "size": "1728x1152"
+    },
+    {
+      "title": "Tray-1",
+      "size": "1100x825"
+    },
+    {
+      "title": "Tray-2",
+      "size": "1100x758"
+    },
+    {
+      "title": "Tray-3",
+      "size": "1100x783"
+    },
+    {
+      "title": "Trivet-1",
+      "size": "1100x1089"
+    },
+    {
+      "title": "Trivet-2",
+      "size": "1100x1072"
+    },
+    {
+      "title": "Trivet-3",
+      "size": "1100x1081"
+    },
+    {
+      "title": "Trivet-4",
+      "size": "1100x1094"
     }
   ],
   "paper-collage": [
     {
       "title": "celebration-detail",
-      "image": {
-        "feature": "/images/portfolio/paper-collage/celebration-detail.jpg",
-        "teaser": "/images/portfolio/paper-collage/celebration-detail-teaser.jpg",
-        "size": "1050x831"
-      }
+      "size": "1050x831"
     },
     {
       "title": "in-the-shade",
-      "image": {
-        "feature": "/images/portfolio/paper-collage/in-the-shade.jpg",
-        "teaser": "/images/portfolio/paper-collage/in-the-shade-teaser.jpg",
-        "size": "587x800"
-      }
+      "size": "587x800"
     },
     {
       "title": "jillo-harro",
-      "image": {
-        "feature": "/images/portfolio/paper-collage/jillo-harro.jpg",
-        "teaser": "/images/portfolio/paper-collage/jillo-harro-teaser.jpg",
-        "size": "648x800"
-      }
+      "size": "648x800"
     },
     {
       "title": "market-price",
-      "image": {
-        "feature": "/images/portfolio/paper-collage/market-price.jpg",
-        "teaser": "/images/portfolio/paper-collage/market-price-teaser.jpg",
-        "size": "609x800"
-      }
+      "size": "609x800"
     },
     {
       "title": "mzee",
-      "image": {
-        "feature": "/images/portfolio/paper-collage/mzee.jpg",
-        "teaser": "/images/portfolio/paper-collage/mzee-teaser.jpg",
-        "size": "548x800"
-      }
+      "size": "548x800"
     },
     {
       "title": "samburu-women",
-      "image": {
-        "feature": "/images/portfolio/paper-collage/samburu-women.jpg",
-        "teaser": "/images/portfolio/paper-collage/samburu-women-teaser.jpg",
-        "size": "1100x777"
-      }
+      "size": "1100x777"
     }
   ],
   "printmaking": [
     {
       "title": "equipoise",
-      "image": {
-        "feature": "/images/portfolio/printmaking/equipoise.jpg",
-        "teaser": "/images/portfolio/printmaking/equipoise-teaser.jpg",
-        "size": "355x800"
-      }
+      "size": "355x800"
     },
     {
       "title": "in-prayer",
-      "image": {
-        "feature": "/images/portfolio/printmaking/in-prayer.jpg",
-        "teaser": "/images/portfolio/printmaking/in-prayer-teaser.jpg",
-        "size": "531x775"
-      }
+      "size": "531x775"
     },
     {
       "title": "lake-dal",
-      "image": {
-        "feature": "/images/portfolio/printmaking/lake-dal.jpg",
-        "teaser": "/images/portfolio/printmaking/lake-dal-teaser.jpg",
-        "size": "765x512"
-      }
+      "size": "765x512"
     },
     {
       "title": "living-patterns",
-      "image": {
-        "feature": "/images/portfolio/printmaking/living-patterns.jpg",
-        "teaser": "/images/portfolio/printmaking/living-patterns-teaser.jpg",
-        "size": "600x650"
-      }
+      "size": "600x650"
     },
     {
       "title": "pounding-fou-fou",
-      "image": {
-        "feature": "/images/portfolio/printmaking/pounding-fou-fou.jpg",
-        "teaser": "/images/portfolio/printmaking/pounding-fou-fou-teaser.jpg",
-        "size": "504x764"
-      }
+      "size": "504x764"
     },
     {
       "title": "turkana-girl",
-      "image": {
-        "feature": "/images/portfolio/printmaking/turkana-girl.jpg",
-        "teaser": "/images/portfolio/printmaking/turkana-girl-teaser.jpg",
-        "size": "521x717"
-      }
+      "size": "521x717"
     }
   ],
   "watercolor": [
     {
       "title": "bushman-at-llaru",
-      "image": {
-        "feature": "/images/portfolio/watercolor/bushman-at-llaru.jpg",
-        "teaser": "/images/portfolio/watercolor/bushman-at-llaru-teaser.jpg",
-        "size": "544x800"
-      }
+      "size": "544x800"
     },
     {
       "title": "bushman-storyteller",
-      "image": {
-        "feature": "/images/portfolio/watercolor/bushman-storyteller.jpg",
-        "teaser": "/images/portfolio/watercolor/bushman-storyteller-teaser.jpg",
-        "size": "597x800"
-      }
+      "size": "597x800"
     },
     {
       "title": "bushwomen-at-llaru",
-      "image": {
-        "feature": "/images/portfolio/watercolor/bushwomen-at-llaru.jpg",
-        "teaser": "/images/portfolio/watercolor/bushwomen-at-llaru-teaser.jpg",
-        "size": "1100x810"
-      }
+      "size": "1100x810"
     },
     {
       "title": "desert-girl",
-      "image": {
-        "feature": "/images/portfolio/watercolor/desert-girl.jpg",
-        "teaser": "/images/portfolio/watercolor/desert-girl-teaser.jpg",
-        "size": "537x800"
-      }
+      "size": "537x800"
     },
     {
       "title": "dogon-dame",
-      "image": {
-        "feature": "/images/portfolio/watercolor/dogon-dame.jpg",
-        "teaser": "/images/portfolio/watercolor/dogon-dame-teaser.jpg",
-        "size": "585x800"
-      }
+      "size": "585x800"
     },
     {
       "title": "homeward-bound",
-      "image": {
-        "feature": "/images/portfolio/watercolor/homeward-bound.jpg",
-        "teaser": "/images/portfolio/watercolor/homeward-bound-teaser.jpg",
-        "size": "564x800"
-      }
+      "size": "564x800"
     },
     {
       "title": "kavango-clan",
-      "image": {
-        "feature": "/images/portfolio/watercolor/kavango-clan.jpg",
-        "teaser": "/images/portfolio/watercolor/kavango-clan-teaser.jpg",
-        "size": "1100x798"
-      }
+      "size": "1100x798"
     },
     {
       "title": "mother-and-child-bushman",
-      "image": {
-        "feature": "/images/portfolio/watercolor/mother-and-child-bushman.jpg",
-        "teaser": "/images/portfolio/watercolor/mother-and-child-bushman-teaser.jpg",
-        "size": "535x800"
-      }
+      "size": "535x800"
     },
     {
       "title": "reflection",
-      "image": {
-        "feature": "/images/portfolio/watercolor/reflection.jpg",
-        "teaser": "/images/portfolio/watercolor/reflection-teaser.jpg",
-        "size": "510x800"
-      }
+      "size": "510x800"
     },
     {
       "title": "zemba-girl",
-      "image": {
-        "feature": "/images/portfolio/watercolor/zemba-girl.jpg",
-        "teaser": "/images/portfolio/watercolor/zemba-girl-teaser.jpg",
-        "size": "531x800"
-      }
+      "size": "531x800"
     }
   ]
 }

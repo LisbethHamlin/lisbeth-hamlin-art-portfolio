@@ -1,16 +1,12 @@
-var fs = require('fs');
-var sizeOf = require('image-size');
-var rootDirectory = null;
-var TEASER_IMAGE_PATTERN = '.+-teaser';
+var fs = require('fs'),
+		sizeOf = require('image-size'),
+		TEASER_IMAGE_PATTERN = '.+-teaser',
+		PORTFOLIO_OUT_FILE = '_data/portfolio.json',
+		rootDirectory = process.argv[2];
 
 function getImageSize(image) {
 	var imageSize = sizeOf(image);
 	return imageSize.width.toString() + 'x' + imageSize.height.toString();
-}
-
-function createThumbnailFilename(image) {
-	var dotPos = image.indexOf('.');
-	return image.substring(0, dotPos) + '-teaser' + image.substring(dotPos);
 }
 
 function removeExtension(image) {
@@ -24,7 +20,7 @@ var walk = function(dir, results, done) {
 		}
 
 		var i = 0;
-		(function next() 
+		(function next()
 		{	var file = list[i++];
 			if(!file) {
 				return done(null);
@@ -47,12 +43,10 @@ var walk = function(dir, results, done) {
 	});
 };
 
-if(process.argv.length < 3) {
+if(!rootDirectory) {
 	console.log('Specify a directory');
 	return;
 }
-
-rootDirectory = process.argv[2];
 
 var results = [];
 walk(rootDirectory, results, function(error) {
@@ -67,19 +61,19 @@ walk(rootDirectory, results, function(error) {
 	var portfolio = {};
 	results.forEach(function(value) {
 		var splitValues = value.split('/'),
-			group = splitValues[2];
+				group = splitValues[2];
 
 		portfolio[group] = portfolio[group] || [];
 		portfolio[group].push({
 			title: removeExtension(splitValues[3]),
-			image: {
-				feature: '/' + value,
-				teaser: '/' + createThumbnailFilename(value),
-				size: getImageSize(value)
-			}
+			size: getImageSize(value)
 		});
 	});
 
-	var json = JSON.stringify(portfolio, null, 2);
-	console.log(json);
+	fs.writeFile(PORTFOLIO_OUT_FILE, JSON.stringify(portfolio, null, 2), function(err) {
+		if(err) {
+			return console.log(err);
+		}
+		console.log(PORTFOLIO_OUT_FILE + ' successfully created.');
+	});
 });
