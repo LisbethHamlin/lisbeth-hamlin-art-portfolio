@@ -1,7 +1,7 @@
 ---
 layout: article
 title: "About"
-date: 
+date:
 modified:
 excerpt:
 image:
@@ -9,8 +9,9 @@ image:
   teaser:
   thumb:
 ads: false
-toc: true
 ---
+
+{% include toc.html %}
 
 ![Lisbeth Hamlin](/images/lisbeth-hamlin.jpg)
 
