@@ -19,14 +19,7 @@
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 	@include media($medium) {
-		@include transform(0);
-	}
-	@include transition(right 500ms cubic-bezier(.645,.045,.355,1.000));
-	&.slide {
-		@include media($medium) {
-			right: 90%;
-		}
-		@include transition(right 500ms ease-in-out);
+		display: none;
 	}
 }
 
@@ -135,13 +128,13 @@
 	width: $button-size;
 	height: $button-size/7;
 	background: $white;
-	border-radius: $button-size/14; 
+	border-radius: $button-size/14;
 	transition: $transition;
 }
 // common to all three-liners
 .menulines {
 	@include menuline;
-	position: relative; 
+	position: relative;
 	&:before, &:after {
 	 @include menuline;
 		position: absolute;
@@ -150,21 +143,21 @@
 		-webkit-transform-origin: $button-size/14 center;
 						transform-origin: $button-size/14 center;
 	}
-	&:before { 
-		top: $button-size/4; 
+	&:before {
+		top: $button-size/4;
 	}
-	&:after { 
-		top: -$button-size/4; 
+	&:after {
+		top: -$button-size/4;
 	}
 }
 // common to all three-liners
 .menulines-button:hover {
 	.menulines {
-		&:before { 
-			top: $button-size/3.5; 
+		&:before {
+			top: $button-size/3.5;
 		}
-		&:after { 
-			top: -$button-size/3.5; 
+		&:after {
+			top: -$button-size/3.5;
 		}
 	}
 }
@@ -176,13 +169,13 @@
 				top: 0;
 				width: $button-size/1.8;
 			}
-			&:before { 
-				-webkit-transform: rotate3d(0,0,1,40deg); 
-								transform: rotate3d(0,0,1,40deg); 
+			&:before {
+				-webkit-transform: rotate3d(0,0,1,40deg);
+								transform: rotate3d(0,0,1,40deg);
 			}
-			&:after { 
-				-webkit-transform: rotate3d(0,0,1,-40deg); 
-								transform: rotate3d(0,0,1,-40deg); 
+			&:after {
+				-webkit-transform: rotate3d(0,0,1,-40deg);
+								transform: rotate3d(0,0,1,-40deg);
 			}
 		}
 }
@@ -213,12 +206,12 @@
 			width: $button-size;
 		}
 		&:before{
-			-webkit-transform: rotate3d(0,0,1,45deg); 
-							transform: rotate3d(0,0,1,45deg); 
+			-webkit-transform: rotate3d(0,0,1,45deg);
+							transform: rotate3d(0,0,1,45deg);
 		}
 		&:after{
-			-webkit-transform: rotate3d(0,0,1,-45deg); 
-							transform: rotate3d(0,0,1,-45deg); 
+			-webkit-transform: rotate3d(0,0,1,-45deg);
+							transform: rotate3d(0,0,1,-45deg);
 		}
 	}
 }
@@ -240,18 +233,18 @@
 		transition: background .3s 0s ease;
 		background: transparent;
 		&:before, &:after{
-			transition: top .3s ease, -webkit-transform .3s .5s ease;//delay the formation of the x till the minus is formed  
-			transition: top .3s ease, transform .3s .5s ease;//delay the formation of the x till the minus is formed  
+			transition: top .3s ease, -webkit-transform .3s .5s ease;//delay the formation of the x till the minus is formed
+			transition: top .3s ease, transform .3s .5s ease;//delay the formation of the x till the minus is formed
 			top:0;
 			width: $button-size;
 		}
 		&:before{
-			-webkit-transform: rotate3d(0,0,1,45deg); 
-							transform: rotate3d(0,0,1,45deg); 
+			-webkit-transform: rotate3d(0,0,1,45deg);
+							transform: rotate3d(0,0,1,45deg);
 		}
 		&:after{
-			-webkit-transform: rotate3d(0,0,1,-45deg); 
-							transform: rotate3d(0,0,1,-45deg); 
+			-webkit-transform: rotate3d(0,0,1,-45deg);
+							transform: rotate3d(0,0,1,-45deg);
 		}
 	}
 }
