@@ -50,8 +50,10 @@
       color: $text-color;
     }
   }
-  &.right {
-      float: right;
+  @include media($medium) {
+      &.right {
+          float: right;
+      }
   }
 }
 
