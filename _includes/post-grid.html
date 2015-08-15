@@ -3,10 +3,9 @@
     <div style="margin-left: 1em;">
       <i class="fa fa-folder-open fa-5x"></i>
     </div>
-  </a>  
-  {% assign title-class = "post-folder-title" %}
+  </a>
   {% if page.hide-teaser-descriptions == nil or page.hide-teaser-descriptions == false %}
-  	<h2 class="{{ title-class }}" itemprop="name">
+  	<h2 class="post-title" itemprop="name">
   		<a href="{{ site.url }}/portfolio/{{ include.groupKey }}">{{ include.groupKey | replace: '-',' ' | capitalize }}</a>
   	</h2>
   {% endif %}

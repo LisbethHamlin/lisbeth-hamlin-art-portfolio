@@ -2,12 +2,9 @@
 
 title: Lisbeth Hamlin
 description: "My art is dedicated to fostering an appreciation of cultural diversity."
-logo: 
-teaser: 
+logo:
+teaser:
 locale: en_US
-front-page:
-  posts: 8 # number of posts to show on the main page
-  posts-per-categorie: 2
 url: //www.lisbethhamlin.com
 
 # Jekyll configuration
@@ -16,7 +13,8 @@ sass:
     sass_dir: _sass
     style: compressed
 permalink: /:categories/:title/
-markdown: kramdown
+kramdown:
+  toc_levels: 1..2
 highlighter: pygments
 gems:
   - jekyll-sitemap
