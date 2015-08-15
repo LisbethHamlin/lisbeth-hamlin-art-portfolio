@@ -13,7 +13,7 @@ ads: false
 
 {% include toc.html %}
 
-![Lisbeth Hamlin](/images/lisbeth-hamlin.jpg)
+![Lisbeth Hamlin]({{ site.url }}/images/lisbeth-hamlin.jpg)
 
 ## Purpose
 
