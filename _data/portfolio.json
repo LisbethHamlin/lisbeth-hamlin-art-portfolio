@@ -1,6 +1,10 @@
 {
   "ceramics": [
     {
+      "title": "ceramic-vessel",
+      "size": "474x781"
+    },
+    {
       "title": "mug-1",
       "size": "972x1296"
     },
@@ -167,6 +171,10 @@
       "size": "1100x765"
     },
     {
+      "title": "french-blues",
+      "size": "590x572"
+    },
+    {
       "title": "Gecko-Table-Side",
       "size": "773x800"
     },
@@ -215,6 +223,10 @@
       "size": "1100x825"
     },
     {
+      "title": "sea-foam-frame",
+      "size": "601x588"
+    },
+    {
       "title": "Table",
       "size": "1728x1152"
     },
@@ -229,6 +241,10 @@
     {
       "title": "Tray-3",
       "size": "1100x783"
+    },
+    {
+      "title": "triple-frame",
+      "size": "270x776"
     },
     {
       "title": "Trivet-1",
@@ -275,8 +291,16 @@
   ],
   "printmaking": [
     {
+      "title": "african-bullfight",
+      "size": "758x368"
+    },
+    {
       "title": "bati-ganya",
       "size": "543x727"
+    },
+    {
+      "title": "camel-caravan",
+      "size": "727x209"
     },
     {
       "title": "child-of-hope",
@@ -289,6 +313,14 @@
     {
       "title": "dancing-samburu-women",
       "size": "753x519"
+    },
+    {
+      "title": "desert-wayside-a",
+      "size": "333x727"
+    },
+    {
+      "title": "desert-wayside-b",
+      "size": "341x738"
     },
     {
       "title": "desert-wayside-triptych",
@@ -319,8 +351,16 @@
       "size": "536x724"
     },
     {
+      "title": "oasis",
+      "size": "734x218"
+    },
+    {
       "title": "pounding-fou-fou",
       "size": "504x764"
+    },
+    {
+      "title": "ships-of-the-desert",
+      "size": "774x233"
     },
     {
       "title": "turkana-girl",
