@@ -1,3 +1,3 @@
 # Betsy Hamlin's Art
 
-Personal portfolio website.
+Art portfolio website.
