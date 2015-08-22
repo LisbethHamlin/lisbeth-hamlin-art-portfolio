@@ -4,7 +4,7 @@ watercolor:
   bushman-storyteller:
     description: 22 x 30
   bushwomen-at-llaru:
-    description: 15 x 22
+    description: 22 x 15
   desert-girl:
     description: 15 x 22
   dogon-dame:
@@ -12,7 +12,7 @@ watercolor:
   homeward-bound:
     description: 15 x 22
   kavango-clan:
-    description: 22 x 30
+    description: 30 x 22
   mother-and-child-bushman:
     description: 15 x 22
   reflection:
@@ -29,7 +29,7 @@ paper-collage:
   mzee:
     description: 22 x 30
   samburu-women:
-    description: 15 x 22
+    description: 22 x 15
 mosaics:
   african-bushman:
     description: 16 x 20
@@ -48,11 +48,11 @@ mosaics:
   mirror-3:
     description: 10 x 10
   ribbons-tray:
-    description: 11.25 x 14.5
+    description: 14.5 x 11.25
   tray-1:
-    description: 10.25 x 13.25
+    description: 13.25 x 10.25
   tray-2:
-    description: 10.25 x 13.25
+    description: 13.25 x 10.25
   trivet-1:
     description: 9 x 9
   trivet-2:
@@ -82,11 +82,11 @@ ceramics:
     description: "Hand stamped, rolled, and glazed."
 printmaking:
   african-bullfight:
-    description: 5 x 12
+    description: 12 x 5
   bati-ganya:
-    description: 9 x 12
+    description: 12 x 9
   camel-caravan:
-    description: 6 x 24
+    description: 24 x 6
   child-of-hope:
     description: 12 x 17
   ciet-and-wa:
@@ -96,24 +96,24 @@ printmaking:
   desert-wayside-b:
     description: 6 x 13
   desert-wayside-triptych:
-    description: 14 x 24
+    description: 24 x 14
   equipoise:
     description: 4 x 8
   in-prayer:
     description: 10 x 14
   lake-dal:
-    description: 8 x 12
+    description: 12 x 8
   living-patterns:
     description: 11 x 12
   nkishu-cattleness:
-    description: 9 x 18
+    description: 18 x 9
   nomads-moving-on:
     description: 9 x 12
   oasis:
-    description: 6 x 24
+    description: 24 x 6
   pounding-fou-fou:
     description: 9 x 12
   ships-of-the-desert:
-    description: 6 x 22
+    description: 22 x 6
   turkana-girl:
     description: 6 x 8
