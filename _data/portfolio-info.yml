@@ -80,3 +80,40 @@ hats:
 ceramics:
   mugs:
     description: "Hand stamped, rolled, and glazed."
+printmaking:
+  african-bullfight:
+    description: 5 x 12
+  bati-ganya:
+    description: 9 x 12
+  camel-caravan:
+    description: 6 x 24
+  child-of-hope:
+    description: 12 x 17
+  ciet-and-wa:
+    description: 6 x 8
+  desert-wayside-a:
+    description: 6 x 13
+  desert-wayside-b:
+    description: 6 x 13
+  desert-wayside-triptych:
+    description: 14 x 24
+  equipoise:
+    description: 4 x 8
+  in-prayer:
+    description: 10 x 14
+  lake-dal:
+    description: 8 x 12
+  living-patterns:
+    description: 11 x 12
+  nkishu-cattleness:
+    description: 9 x 18
+  nomads-moving-on:
+    description: 9 x 12
+  oasis:
+    description: 6 x 24
+  pounding-fou-fou:
+    description: 9 x 12
+  ships-of-the-desert:
+    description: 6 x 22
+  turkana-girl:
+    description: 6 x 8
