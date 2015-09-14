@@ -36,7 +36,7 @@
 		height: $icon-bullet-size * 1.25;
 	}
 	.bullet-content {
-		margin-left: $icon-bullet-size * 1.4;
+		@extend .center;
 		margin-bottom: 2em;
 	}
 	h2 {

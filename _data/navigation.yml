@@ -2,10 +2,15 @@
 
 - title: Portfolio
   url: /portfolio
-  excerpt: "These are the things that I've made"
+  excerpt: My portfolio
+  image:
+
+- title: Upcoming Shows
+  url: /upcoming-shows
+  excerpt:
   image:
 
 - title: About
   url: /about
-  excerpt: "More information about myself"
+  excerpt: More information about myself
   image:
