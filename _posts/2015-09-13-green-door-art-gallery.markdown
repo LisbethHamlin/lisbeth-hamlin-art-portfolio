@@ -16,4 +16,4 @@ date: 2015-09-13T14:07:03-05:00
 
 **Date**: {{page.excerpt}}
 
-**Reception**: 9/18/2015 - 5-9pm
+<del>**Reception**: 9/18/2015 - 5-9pm</del>
