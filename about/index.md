@@ -66,4 +66,4 @@ I have found many Shangri-Las. I have tried to capture the unique beauty, the vi
 
 ## Contact Info
 
-Please contact me at [{{site.owner.email}}](mailto:{{site.owner.email}})
+Please contact me at [{{site.author.email}}](mailto:{{site.author.email}})
