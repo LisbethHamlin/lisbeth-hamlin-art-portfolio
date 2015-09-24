@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>{% if page.title %}{{ page.title }} • {% endif %}{{ site.title }}</title>
+    <title>{% if page.title %}{{ page.title }} • {% endif %}{{ site.name }}</title>
     {% if page.excerpt %}
       <meta name="description" content="{{ page.excerpt | strip_html }}">
     {% elsif site.description %}
@@ -10,13 +10,13 @@
     {% endif %}
     {% if page.tags %}<meta name="keywords" content="{{ page.tags | join: ', ' }}">{% endif %}
     {% if page.author %}
-      {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.owner %}
+      {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}
     {% endif %}
     {% include open-graph.html %}
 
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
 
-    <link href="{{ site.url }}/atom.xml" type="application/atom+xml" rel="alternate" title="{{ site.title }} Atom Feed">
+    {% feed_meta %}
     <link href="{{ site.url }}/sitemap.xml" type="application/xml" rel="sitemap" title="Sitemap">
 
     <meta name="HandheldFriendly" content="True">
