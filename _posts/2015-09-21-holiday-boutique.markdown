@@ -4,6 +4,7 @@ title: Holiday Boutique
 modified:
 categories: upcoming-shows
 excerpt: 11/14/2015 9am - 3pm
+end_date: 15 November 2015
 tags: []
 image:
   feature:

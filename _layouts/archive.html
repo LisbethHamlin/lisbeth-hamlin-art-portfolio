@@ -8,7 +8,7 @@ layout: default
 			<h1>
 				{% if page.group != null %}
 					{% include breadcrumbs.html %}
-				{% else %}
+				{% elsif page.hide_title == null %}
 					{{ page.title }}
 				{% endif %}
 			</h1>
