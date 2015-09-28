@@ -20,8 +20,11 @@
    Hide
    ========================================================================== */
 
-.hidden,
 .load {
+  visibility: hidden;
+}
+
+.hidden {
   display: none;
 }
 
