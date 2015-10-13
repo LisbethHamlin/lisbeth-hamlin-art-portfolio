@@ -2,7 +2,7 @@
 layout: article
 title: Mosaic group show “Jazz It Up” at Green Door Art Gallery
 modified:
-categories: upcoming-shows
+categories: art-shows
 excerpt: 9/2/2015 - 10/29/2015
 end_date: 30 October 2015
 tags: []

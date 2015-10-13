@@ -2,7 +2,7 @@
 layout: article
 title: Manchester Arts
 modified:
-categories: upcoming-shows
+categories: art-shows
 excerpt: 9/26/2015 12pm - 6pm
 end_date: 27 September 2015
 tags: []
