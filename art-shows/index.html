@@ -4,8 +4,8 @@ title: Art Shows
 hide_title: true
 ---
 
-<h1>Upcoming {{page.title}}</h1>
 <div id="show-root" class="load">
+	<h1 class="hidden">Upcoming {{page.title}}</h1>
 	<div id="current-shows" class="bullets">
 		{% for post in site.posts reversed %}
 			<div class="bullet three-col-bullet" data-time="{{post.end_date | date: '%s'}}">

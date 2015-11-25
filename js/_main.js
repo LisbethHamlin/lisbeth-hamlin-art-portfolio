@@ -241,6 +241,9 @@ var updateUpcomingShows = function($) {
   }
 
   $('#show-root').removeClass('load');
+  if($('#current-shows > div').length > 0) {
+    $('#show-root h1').removeClass('hidden');
+  }
 };
 
 initPhotoSwipeFromDOM('.my-gallery');
