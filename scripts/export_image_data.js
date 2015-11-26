@@ -48,6 +48,8 @@ if(!rootDirectory) {
 	return;
 }
 
+rootDirectory = rootDirectory.replace(/\\/g, '/');
+
 var results = [];
 walk(rootDirectory, results, function(error) {
 	if(error) {
