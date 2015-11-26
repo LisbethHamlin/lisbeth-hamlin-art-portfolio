@@ -13,7 +13,7 @@ image:
 date: 2015-11-25T23:51:45-06:00
 filter:
   mosaics:
-    - title: african-bushman
+    - title: african-bushwoman
     - title: indian-women
 ---
 
