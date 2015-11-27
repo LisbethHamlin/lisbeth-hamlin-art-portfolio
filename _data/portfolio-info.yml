@@ -28,6 +28,8 @@ paper-collage:
     description: 9 x 11
   mzee:
     description: 22 x 30
+  mzee-3:
+    description: 22 x 30
   samburu-women:
     description: 22 x 15
 mosaics:
