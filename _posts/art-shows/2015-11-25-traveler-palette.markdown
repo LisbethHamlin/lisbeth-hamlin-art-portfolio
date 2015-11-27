@@ -1,6 +1,6 @@
 ---
 layout: photoswipe-filter
-title: St. Peters Cultural Arts Centre
+title: Traveler's Palette
 modified:
 categories: art-shows
 excerpt: 11/6/2015 - 12/28/2015
