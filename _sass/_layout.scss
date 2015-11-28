@@ -32,6 +32,10 @@
 	@include font-size(20,no);
 	line-height: .5 * $masthead-height; // half the height to center vertically
 	text-transform: uppercase;
+	.title-icon {
+		float: left;
+		margin-right: 0.5em;
+	}
 }
 
 #artistic-statement {
