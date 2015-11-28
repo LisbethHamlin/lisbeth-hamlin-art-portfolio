@@ -355,3 +355,27 @@
 		}
 	}
 }
+
+/* Masonry Grid
+TODO: move this into another file
+*/
+
+.grid-item {
+	float: left;
+	figure {
+		margin: 0;
+		img {
+			margin: 0;
+		}
+	}
+}
+
+.grid-sizer, .grid-item {
+	width: 25.0%;
+}
+
+@include media($micro) {
+	.grid-sizer, .grid-item {
+		width: 100.0%;
+	}
+}

@@ -246,5 +246,18 @@ var updateUpcomingShows = function($) {
   }
 };
 
+var configureMasonry = function($) {
+  // init Masonry
+  // init Masonry after all images have loaded
+  var $grid = $('.my-gallery').imagesLoaded( function() {
+    $grid.masonry({
+      itemSelector: '.grid-item',
+      columnWidth: '.grid-sizer',
+      percentPosition: true,
+    });
+  });
+};
+
 initPhotoSwipeFromDOM('.my-gallery');
 updateUpcomingShows(window.jQuery);
+configureMasonry(window.jQuery);
