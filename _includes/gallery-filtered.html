@@ -1,0 +1,6 @@
+<div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+  <div class="grid-sizer"></div>
+  {% for image_filter in page.image_filter %}
+    {% include gallery-group.liquid title=image_filter.title group=image_filter.group %}
+  {% endfor %}
+</div>

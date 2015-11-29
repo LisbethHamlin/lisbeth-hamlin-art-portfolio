@@ -1,0 +1,10 @@
+{% for image in site.data.portfolio[include.group] %}
+    {% if include.title == nil or include.title == image.title %}
+      {% assign title = image.title | replace: '-',' ' | capitalize %}
+      {% assign image-info = site.data.portfolio-info[include.group][image.title] %}
+      {% include image-gallery-figure.html image=image group=include.group image-info=image-info title=title %}
+      {% if include.title %}
+        {% break %}
+      {% endif %}
+    {% endif %}
+{% endfor %}

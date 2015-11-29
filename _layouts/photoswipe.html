@@ -2,8 +2,11 @@
 layout: archive
 ---
 
-<!-- TODO: wrap this in a div? -->
-{{ content }} 
+{{ content }}
 
-{% include gallery.html group=page.group %}
+{% if page.image_filter %}
+  {% include gallery-filtered.html %}
+{% else %}
+  {% include gallery.html %}
+{% endif %}
 {% include photoswipe-root.html %}
