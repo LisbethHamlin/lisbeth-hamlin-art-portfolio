@@ -36,14 +36,14 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             item;
 
         for(var i = 0; i < numNodes; i++) {
-
-            figureEl = thumbElements[i]; // <figure> element
+            var parentFigureEl = thumbElements[i];
 
             // include only element nodes
-            if(figureEl.nodeType !== 1) {
+            if(parentFigureEl.nodeType !== 1 || parentFigureEl.children.length === 0) {
                 continue;
             }
 
+            figureEl = parentFigureEl.children[0];
             linkEl = figureEl.children[0]; // <a> element
 
             size = linkEl.getAttribute('data-size').split('x');
@@ -93,11 +93,11 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             return;
         }
 
-        var clickedGallery = clickedListItem.parentNode;
+        var clickedGallery = clickedListItem.parentNode.parentNode;
 
         // find index of clicked item by looping through all child nodes
         // alternatively, you may define index via data- attribute
-        var childNodes = clickedListItem.parentNode.childNodes,
+        var childNodes = clickedGallery.childNodes,
             numChildNodes = childNodes.length,
             nodeIndex = 0,
             index;
@@ -107,17 +107,16 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
                 continue;
             }
 
-            if(childNodes[i] === clickedListItem) {
+            if(childNodes[i].children[0] === clickedListItem) {
                 index = nodeIndex;
                 break;
             }
             nodeIndex++;
         }
 
-
         if(index >= 0) {
             // open PhotoSwipe if valid index found
-            openPhotoSwipe( index, clickedGallery );
+            openPhotoSwipe( index - 1, clickedGallery );
         }
         return false;
     };
