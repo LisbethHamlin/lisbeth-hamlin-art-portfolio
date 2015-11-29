@@ -2,7 +2,7 @@
 layout: photoswipe
 title: Traveler's Palette
 modified:
-categories: art-shows
+categories: [art-shows]
 excerpt: 11/6/2015 - 12/28/2015
 end_date: 29 December 2015
 tags: []
