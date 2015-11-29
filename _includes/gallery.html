@@ -1,25 +1,3 @@
 <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-{% for image in site.data.portfolio[include.group] %}
-    {% assign foundImage = false %}
-    {% if include.filter %}
-        {% for iter in include.filter %}
-            {% if iter.title == image.title %}
-                {% assign foundImage = true %}
-                {% break %}
-            {% endif %}
-        {% endfor %}
-    {% else %}
-        {% assign foundImage = true %}
-    {% endif %}
-    {% if foundImage %}
-    {% assign title = image.title | replace: '-',' ' | capitalize %}
-    {% assign image-info = site.data.portfolio-info[include.group][image.title] %}
-    <figure class="tile" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-          <a href="{{ site.url }}/images/portfolio/{{include.group}}/{{image.title}}.jpg" itemprop="contentUrl" data-size="{{image.size}}" data-index="{{image.title}}" data-description="{{image-info.description}}">
-              <img src="{{ site.url }}/images/portfolio/{{include.group}}/{{image.title}}-teaser.jpg" itemprop="thumbnail" alt="{{title}}" />
-          </a>
-        {% if page.hide-figcaption == nil or page.hide-figcaption == false %}<figcaption class="post-title center" itemprop="caption description">{{ title }}</figcaption>{% endif %}
-    </figure>
-    {% endif %}
-{% endfor %}
+{% include gallery-group.liquid group=page.group %}
 </div>

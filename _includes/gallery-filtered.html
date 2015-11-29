@@ -1,0 +1,5 @@
+<div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+{% for image_filter in page.image_filter %}
+  {% include gallery-group.liquid title=image_filter.title group=image_filter.group %}
+{% endfor %}
+</div>

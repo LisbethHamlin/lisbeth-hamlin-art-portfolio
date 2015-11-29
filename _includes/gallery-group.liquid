@@ -1,0 +1,18 @@
+{% for image in site.data.portfolio[include.group] %}
+    {% assign foundImage = false %}
+    {% if include.title %}
+        {% if include.title == image.title %}
+            {% assign foundImage = true %}
+        {% endif %}
+    {% else %}
+        {% assign foundImage = true %}
+    {% endif %}
+    {% if foundImage %}
+      {% assign title = image.title | replace: '-',' ' | capitalize %}
+      {% assign image-info = site.data.portfolio-info[include.group][image.title] %}
+      {% include image-gallery-figure.html image=image group=include.group image-info=image-info title=title %}
+      {% if include.title %}
+        {% break %}
+      {% endif %}
+    {% endif %}
+{% endfor %}
