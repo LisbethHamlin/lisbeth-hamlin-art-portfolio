@@ -32,25 +32,26 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             items = [],
             figureEl,
             linkEl,
+            thumbnailImgEl,
             size,
             item;
 
         for(var i = 0; i < numNodes; i++) {
-            var parentFigureEl = thumbElements[i];
-
+            figureEl = thumbElements[i]; // <figure> element
             // include only element nodes
-            if(parentFigureEl.nodeType !== 1 || parentFigureEl.children.length === 0) {
+            if(figureEl.nodeType !== 1) {
                 continue;
             }
 
-            figureEl = parentFigureEl.children[0];
             linkEl = figureEl.children[0]; // <a> element
+            thumbnailImgEl = linkEl.children[0];
 
             size = linkEl.getAttribute('data-size').split('x');
 
             // create slide object
             item = {
                 src: linkEl.getAttribute('href'),
+                msrc: thumbnailImgEl.getAttribute('src'),
                 desc: linkEl.getAttribute('data-description'),
                 pid: linkEl.getAttribute('data-index'),
                 w: parseInt(size[0], 10),
@@ -93,7 +94,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             return;
         }
 
-        var clickedGallery = clickedListItem.parentNode.parentNode;
+        var clickedGallery = clickedListItem.parentNode;
 
         // find index of clicked item by looping through all child nodes
         // alternatively, you may define index via data- attribute
@@ -107,7 +108,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
                 continue;
             }
 
-            if(childNodes[i].children[0] === clickedListItem) {
+            if(childNodes[i] === clickedListItem) {
                 index = nodeIndex;
                 break;
             }
@@ -116,7 +117,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 
         if(index >= 0) {
             // open PhotoSwipe if valid index found
-            openPhotoSwipe( index - 1, clickedGallery );
+            openPhotoSwipe( index, clickedGallery );
         }
         return false;
     };
@@ -165,11 +166,15 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
         options = {
             // define gallery index (for URL)
             galleryUID: galleryElement.getAttribute('data-pswp-uid'),
-            showHideOpacity: true,
-            getThumbBoundsFn: false,
-            clickToCloseNonZoomable: false,
-            closeOnScroll: false,
             galleryPIDs: true,
+            getThumbBoundsFn: function(index) {
+                // See Options -> getThumbBoundsFn section of documentation for more info
+                var thumbnail = items[index].el.getElementsByTagName('img')[0], // find thumbnail
+                    pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
+                    rect = thumbnail.getBoundingClientRect();
+
+                return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
+            },
             addCaptionHTMLFn: function(item, captionEl, isFake) {
                 if(!item.title) {
                     captionEl.children[0].innerText = '';
@@ -246,12 +251,11 @@ var updateUpcomingShows = function($) {
 };
 
 var configureMasonry = function($) {
-  // init Masonry
-  // init Masonry after all images have loaded
-  var $grid = $('.my-gallery').imagesLoaded( function() {
+  var $grid = $('.grid').imagesLoaded( function() {
     $grid.masonry({
       itemSelector: '.grid-item',
       columnWidth: '.grid-sizer',
+      gutter: '.gutter-sizer',
       percentPosition: true,
     });
   });

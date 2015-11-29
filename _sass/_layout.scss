@@ -359,19 +359,19 @@
 TODO: move this into another file
 */
 
-.grid-item {
+figure.grid-item {
 	float: left;
-	figure {
-		margin: 1em 1em 0 0;
-		img {
-			margin: 0;
-		}
+	margin: 1em 0 0 0;
+	img {
+		margin: 0;
 	}
 }
 
 .grid-sizer, .grid-item {
-	width: 25.0%;
+	width: 23.0%;
 }
+
+.gutter-sizer { width: 2%; }
 
 @include media($micro) {
 	.grid-sizer, .grid-item {

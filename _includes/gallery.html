@@ -1,4 +1,7 @@
-<div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+<div class="grid">
   <div class="grid-sizer"></div>
-  {% include gallery-group.liquid group=page.group %}
+  <div class="gutter-sizer"></div>
+  <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+    {% include gallery-group.liquid group=page.group %}
+  </div>
 </div>
