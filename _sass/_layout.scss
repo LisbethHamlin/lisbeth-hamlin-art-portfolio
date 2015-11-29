@@ -362,12 +362,9 @@ TODO: move this into another file
 .grid-item {
 	float: left;
 	figure {
-		margin: 1em;
+		margin: 1em 1em 0 0;
 		img {
 			margin: 0;
-		}
-		figcaption {
-			margin: 2px 0 0 0;
 		}
 	}
 }
