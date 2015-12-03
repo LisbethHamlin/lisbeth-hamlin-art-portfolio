@@ -40,9 +40,9 @@ mosaics:
   frame-1:
     description: 6.5 x 8.5
   frame-2:
-    description: 6.5 x 8.5
+    description: 8.5 x 6.5
   frame-3:
-    description: 6.5 x 8.5
+    description: 8.5 x 6.5
   mirror-1:
     description: 10 x 10
   mirror-2:
