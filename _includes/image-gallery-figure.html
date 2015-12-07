@@ -1,6 +1,0 @@
-<figure class="grid-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    <a href="{{ site.url }}/images/portfolio/{{include.group}}/{{image.title}}.jpg" itemprop="contentUrl" data-size="{{include.image.size}}" data-index="{{include.image.title}}" data-description="{{include.image-info.description}}">
-        <img src="{{ site.url }}/images/portfolio/{{include.group}}/{{image.title}}-teaser.jpg" itemprop="thumbnail" alt="{{include.title}}" />
-    </a>
-    {% if page.hide-figcaption == nil or page.hide-figcaption == false %}<figcaption class="hidden" itemprop="caption description">{{ include.title }}</figcaption>{% endif %}
-</figure>

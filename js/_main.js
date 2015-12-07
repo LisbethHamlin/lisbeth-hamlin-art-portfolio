@@ -30,20 +30,20 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
         var thumbElements = el.childNodes,
             numNodes = thumbElements.length,
             items = [],
-            figureEl,
+            divEl,
             linkEl,
             thumbnailImgEl,
             size,
             item;
 
         for(var i = 0; i < numNodes; i++) {
-            figureEl = thumbElements[i]; // <figure> element
+            divEl = thumbElements[i]; // <div> element
             // include only element nodes
-            if(figureEl.nodeType !== 1) {
+            if(divEl.nodeType !== 1) {
                 continue;
             }
 
-            linkEl = figureEl.children[0]; // <a> element
+            linkEl = divEl.children[0]; // <a> element
             thumbnailImgEl = linkEl.children[0];
 
             size = linkEl.getAttribute('data-size').split('x');
@@ -52,21 +52,14 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
             item = {
                 src: linkEl.getAttribute('href'),
                 msrc: thumbnailImgEl.getAttribute('src'),
-                desc: linkEl.getAttribute('data-description'),
                 pid: linkEl.getAttribute('data-index'),
+                title: linkEl.getAttribute('data-title') || ' ',
+                desc: linkEl.getAttribute('data-description'),
                 w: parseInt(size[0], 10),
-                h: parseInt(size[1], 10)
+                h: parseInt(size[1], 10),
             };
 
-            if(figureEl.children.length > 1) {
-                // <figcaption> content
-                item.title = figureEl.children[1].innerHTML;
-            }
-            else {
-                item.title = ' '; // TODO: look into this
-            }
-
-            item.el = figureEl; // save link to element for getThumbBoundsFn
+            item.el = divEl; // save link to element for getThumbBoundsFn
             items.push(item);
         }
 
@@ -87,7 +80,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 
         // find root element of slide
         var clickedListItem = closest(eTarget, function(el) {
-            return (el.tagName && el.tagName.toUpperCase() === 'FIGURE');
+            return (el.tagName && el.tagName.toUpperCase() === 'DIV');
         });
 
         if(!clickedListItem) {
