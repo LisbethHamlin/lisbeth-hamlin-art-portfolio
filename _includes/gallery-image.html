@@ -1,0 +1,9 @@
+{% if page.hide-figcaption == nil or page.hide-figcaption != true %}
+  {% assign data-title = include.title %}
+{% endif %}
+
+<div class="grid-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+    <a href="{{ site.url }}/images/portfolio/{{include.group}}/{{include.image.title}}.jpg" itemprop="contentUrl" data-size="{{include.image.size}}" data-index="{{include.image.title}}" data-title="{{ data-title }}" data-description="{{include.image-info.description}}">
+        <img src="{{ site.url }}/images/portfolio/{{include.group}}/{{include.image.title}}-teaser.jpg" alt="{{include.title}}" itemprop="thumbnail"  />
+    </a>
+</div>
