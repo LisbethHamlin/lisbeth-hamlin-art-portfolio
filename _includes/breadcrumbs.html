@@ -5,9 +5,10 @@
     {% for categorie in categories offset: 1 limit: length %}
       {% assign current-path = current-path | append: categorie | append: '/' %}
       <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-        <a href="{{ site.url }}/{{ current-path }}" itemprop="url">
-          <span itemprop="title">{{ categorie | replace: '-',' ' | capitalize }}</span>
-        </a> {% if forloop.last != true %} › {% endif %}
+        {% assign current-title = categorie | replace: '-',' ' | capitalize %}
+        {% if forloop.last != true %} <a href="{{ site.url }}/{{ current-path }}" itemprop="url"> {% endif %}
+        <span itemprop="title">{{ current-title }}</span>
+        {% if forloop.last != true %} </a> › {% endif %}
       </span>
     {% endfor %}
   </h1>
