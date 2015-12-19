@@ -238,14 +238,15 @@ var updateUpcomingShows = function($) {
     var showTime = +$currentShow.attr('data-time');
     if(currentTime > showTime) {
       $currentShow.detach();
-      $target.append($currentShow);
+      $target.prepend($currentShow);
     }
   }
 
-  $('#show-root').removeClass('load');
-  if($('#current-shows > div').length > 0) {
-    $('#show-root h1').removeClass('hidden');
+  if($('#current-shows > div').length === 0) {
+    $('#current-shows').remove();
+    $('#no-current-shows-message').removeClass('hidden');
   }
+  $('#show-root').removeClass('load');
 };
 
 var configureMasonry = function($) {
