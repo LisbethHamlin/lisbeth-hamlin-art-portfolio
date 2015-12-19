@@ -5,7 +5,7 @@ hide_title: true
 ---
 
 <div id="show-root" class="load">
-	<h1 class="hidden">Current {{page.title}}</h1>
+	<h1>Current {{page.title}}</h1>
 	<div id="current-shows" class="bullets">
 		{% for post in site.posts reversed %}
 			<div class="bullet three-col-bullet" data-time="{{post.end_date | date: '%s'}}">
@@ -17,10 +17,11 @@ hide_title: true
 				<div class="bullet-content">
 					<h2><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h2>
 					<p>{{ post.excerpt | remove: '<p>' | remove: '</p>'}}</p>
-				</div><!-- /.bullet-content -->
-			</div><!-- /.bullet -->
+				</div>
+			</div>
 		{% endfor %}
 	</div><!-- /.bullets -->
-	<h1>Previous {{page.title}}</h1>
+	<p id="no-current-shows-message" class="hidden">I currently do not have any art shows. Please check back later, or subscribe to the website's <a href="/feed.xml">atom feed</a>.</p>
+	<h2>Previous {{page.title}}</h2>
 	<div id="previous-shows" class="bullets"></div>
 </div>
