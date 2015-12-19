@@ -408,3 +408,14 @@ b, i, strong, em, blockquote, p, q, span, figure, img, h1, h2, header, input, a,
 iframe {
 	max-width: 100%;
 }
+
+// photoswipe
+
+.pswp__caption {
+	p:not(:last-child) {
+		margin-bottom: 0;
+	}
+	p:nth-child(n+2):last-child {
+		margin-top: 0;
+	}
+}

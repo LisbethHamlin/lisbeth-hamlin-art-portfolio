@@ -173,7 +173,12 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
                     captionEl.children[0].innerText = '';
                     return false;
                 }
-                captionEl.children[0].innerHTML = '<p>' + item.title + '<br>' + item.desc + '</p>'; // TODO: remove this br
+                captionEl.children[0].innerHTML = '<p>' + item.title + '</p>';
+
+                if(item.desc) {
+                  captionEl.children[0].innerHTML += '<p>' + item.desc + '</p>';
+                }
+
                 return true;
             }
         };
@@ -249,7 +254,7 @@ var configureMasonry = function($) {
       itemSelector: '.grid-item',
       columnWidth: '.grid-sizer',
       gutter: '.gutter-sizer',
-      percentPosition: true,
+      percentPosition: true
     });
   });
 };
