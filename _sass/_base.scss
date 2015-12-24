@@ -412,10 +412,12 @@ iframe {
 // photoswipe
 
 .pswp__caption {
-	p:not(:last-child) {
-		margin-bottom: 0;
-	}
-	p:nth-child(n+2):last-child {
-		margin-top: 0;
-	}
+  p {
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+    &:not(:first-child) {
+      margin-top: 0;
+    }
+  }
 }
