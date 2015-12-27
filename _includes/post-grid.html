@@ -9,5 +9,5 @@
   		<a href="{{ site.url }}/portfolio/{{ include.groupKey }}">{{ include.groupKey | replace: '-',' ' | capitalize }}</a>
   	</h2>
   {% endif %}
-  <p class="post-excerpt" itemprop="description">{{ post.excerpt | strip_html | truncate: 160 }}</p>
+  {% if excerpt %}<p class="post-excerpt" itemprop="description">{{ excerpt | strip_html | truncate: 160 }}</p>{% endif %}
 </article><!-- /.tile -->
