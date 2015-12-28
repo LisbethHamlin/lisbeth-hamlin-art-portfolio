@@ -1,37 +1,56 @@
-var gm = require('gm')
-  , common = require('./common')
-  , rootDirectory = process.argv[2];
+var gm = require('gm'),
+    fs = require('fs'),
+    common = require('./common'),
+    root = process.argv[2];
 
 var TEASER_IMAGE_PATTERN = '.+-teaser';
+var TEASER_FILE_NAME = '-teaser.jpg';
 
-if(!rootDirectory) {
-	console.log('Specify a directory');
+var createThumbnail = function(file) {
+  var outFile = file.slice(0, -4) + TEASER_FILE_NAME;
+  var image = gm(file)
+    .resize(400, 400)
+    .write(outFile, function(err) {
+      if(err) {
+        console.log(err);
+      }
+      else {
+        console.log('Creating: ' + outFile);
+      }
+  });
+}
+
+if(!root) {
+	console.log('Specify a file or directory');
 	return;
 }
 
-rootDirectory = rootDirectory.replace(/\\/g, '/');
+var isFile = null;
+var isDirectory = null;
 
-var results = [];
-common.walk(rootDirectory, results, function(error) {
-	if(error) {
-		throw error;
-	}
+try {
+  var stats = fs.statSync(root);
+  isFile = stats.isFile();
+  isDirectory = stats.isDirectory();
+}
+catch(e) {
+  console.log(e);
+}
 
-  results = results.filter(function(value) {
-		return value.search(TEASER_IMAGE_PATTERN) === -1;
-	});
+if(isDirectory) {
+  var results = [];
+  common.walk(root, results, function(error) {
+  	if(error) {
+  		throw error;
+  	}
 
-  results.forEach(function(value) {
-    var title = value.slice(0, -4) + '-teaser.jpg';
-    var image = gm(value)
-      .resize(400, 400)
-      .write(title, function(err) {
-        if(err) {
-          console.log(err);
-        }
-        else {
-          console.log('Creating: ' + title);
-        }
-      });
+    results = results.filter(function(value) {
+  		return value.search(TEASER_IMAGE_PATTERN) === -1;
+  	});
+
+    results.forEach(createThumbnail);
   });
-});
+}
+else if(isFile) {
+  createThumbnail(root);
+}
