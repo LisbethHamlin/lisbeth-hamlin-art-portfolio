@@ -3,7 +3,7 @@ layout: article
 title: Kaleidoscopes of Africa
 modified:
 categories: [art-shows]
-excerpt: Jan 8th - Feb. 29th
+excerpt: Jan 8th - Feb 29th
 end_date: 30 February 2016
 tags: []
 image:
