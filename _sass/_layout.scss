@@ -378,3 +378,9 @@ TODO: move this into another file
 		width: 100.0%;
 	}
 }
+
+#previous-shows {
+	a, p {
+		color: lighten($black, 40);
+	}
+}
