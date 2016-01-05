@@ -13,7 +13,7 @@ image:
 date: 2016-01-05T01:18:53+00:00
 ---
 
-* **Location**: [St Peters Community & Arts Center](https://goo.gl/maps/3Hx375oeHXG2)
+* **Location**: [St Peters Community & Arts Center](https://goo.gl/maps/jX6AevjXrQC2)
 * **Date**: {{page.excerpt}}
 * **Opening Reception**: Jan 8th 6-8 pm
 
