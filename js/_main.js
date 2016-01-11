@@ -229,6 +229,12 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 };
 
 var updateUpcomingShows = function($) {
+  var $showRoot = $('#show-root');
+
+  if(!$showRoot.length) {
+    return;
+  }
+
   var currentTime = Math.floor(Date.now() / 1000);
   var $shows = $('#current-shows > div');
   var $target = $('#previous-shows');
@@ -246,7 +252,7 @@ var updateUpcomingShows = function($) {
     $('#current-shows').remove();
     $('#no-current-shows-message').removeClass('hidden');
   }
-  $('#show-root').removeClass('load');
+  $showRoot.removeClass('load');
 };
 
 var configureMasonry = function($) {
