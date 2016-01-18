@@ -151,6 +151,9 @@
 	}
 	.page-title {
 		@include fill-parent;
+		a {
+			text-decoration: none;
+		}
 	}
 	@at-root {
 		.page-content {

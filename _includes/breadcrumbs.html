@@ -1,15 +1,20 @@
-<nav class="breadcrumbs">
-  <h1>
-    {% assign categories = page.url | split: '/' %}
-    {% assign length = categories | size | minus: 2 %}
-    {% for categorie in categories offset: 1 limit: length %}
-      {% assign current-path = current-path | append: categorie | append: '/' %}
-      <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-        {% assign current-title = categorie | replace: '-',' ' | capitalize %}
-        {% if forloop.last != true %} <a href="{{ site.url }}/{{ current-path }}" itemprop="url"> {% endif %}
+<span class="breadcrumbs">
+  {% assign categories = page.url | split: '/' %}
+  {% assign length = categories | size %}
+  {% if page.id == null %}
+    {% assign length = length | minus: 2 %}
+  {% endif %}
+  {% for categorie in categories offset: 1 limit: length %}
+    {% assign current-path = current-path | append: categorie | append: '/' %}
+    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+      {% assign current-title = categorie | replace: '-',' ' | capitalize %}
+      {% if forloop.last != true %} <a href="{{ site.url }}/{{ current-path }}" itemprop="url"> {% endif %}
+      {% if forloop.last != true %}
         <span itemprop="title">{{ current-title }}</span>
-        {% if forloop.last != true %} </a> › {% endif %}
-      </span>
-    {% endfor %}
-  </h1>
-</nav><!-- /.breadcrumbs -->
+      {% else %}
+        <span itemprop="title">{{ page.title }}</span>
+      {% endif %}
+      {% if forloop.last != true %} </a> › {% endif %}
+    </span>
+  {% endfor %}
+</span><!-- /.breadcrumbs -->

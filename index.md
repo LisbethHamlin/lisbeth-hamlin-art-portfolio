@@ -3,6 +3,7 @@ layout: photoswipe
 permalink: /
 categories: [art-shows]
 title: Artistic Statement
+share: false
 image_filter:
   - title: gecko-table
     group: mosaics
