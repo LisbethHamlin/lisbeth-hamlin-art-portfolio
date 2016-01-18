@@ -393,9 +393,6 @@ nav {
   a {
     text-decoration: none;
   }
-  &.breadcrumbs > span:last-child {
-	  cursor: default;
-  }
 }
 
 /*
@@ -421,4 +418,10 @@ iframe {
       margin-top: 0;
     }
   }
+}
+
+// breadcrumbs
+
+.breadcrumbs > span:last-child {
+	cursor: default;
 }
