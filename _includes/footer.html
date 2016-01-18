@@ -1,15 +1,18 @@
 <footer id="site-footer">
-	<nav class="menu bottom-menu">
-		<ul class="menu-item">
-		{% for link in site.data.footer %}
-      {% if link.url contains 'http' %}
-        {% assign domain = '' %}
-        {% else %}
-        {% assign domain = site.url %}
-      {% endif %}
-			<li><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>{{ link.title }}</a></li>
-		{% endfor %}
-		</ul>
-	</nav><!-- /.bottom-menu -->
+	{% assign footerLength = site.data.footer | size %}
+	{% if footerLength > 0 %}
+		<nav class="menu bottom-menu">
+			<ul class="menu-item">
+			{% for link in site.data.footer %}
+	      {% if link.url contains 'http' %}
+	        {% assign domain = '' %}
+	        {% else %}
+	        {% assign domain = site.url %}
+	      {% endif %}
+				<li><a href="{{ domain }}{{ link.url }}" {% if link.url contains 'http' %}target="_blank"{% endif %}>{{ link.title }}</a></li>
+			{% endfor %}
+			</ul>
+		</nav><!-- /.bottom-menu -->
+	{% endif %}
 	<p class="copyright">&#169; {{ site.time | date: '%Y' }} <a href="{{ site.url }}">{{ site.name }}</a>. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a></p>
 </footer>
