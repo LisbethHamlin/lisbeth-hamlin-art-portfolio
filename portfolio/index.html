@@ -1,0 +1,12 @@
+---
+layout: archive
+title: "Portfolio"
+group: portfolio
+---
+
+<div class="tiles">
+  {% for groupIter in site.data.portfolio %}
+    {% assign groupKey = groupIter[0] %}
+    {% include post-grid.html groupKey=groupKey %}
+  {% endfor %}
+</div>

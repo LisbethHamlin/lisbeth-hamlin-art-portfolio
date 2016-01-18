@@ -393,7 +393,7 @@ nav {
   a {
     text-decoration: none;
   }
-  &.breadcrumbs h1 > span:last-child {
+  &.breadcrumbs > span:last-child {
 	  cursor: default;
   }
 }
