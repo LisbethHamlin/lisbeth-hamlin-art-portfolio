@@ -66,51 +66,38 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
         return items;
     };
 
-    // find nearest parent element
-    var closest = function closest(el, fn) {
-        return el && ( fn(el) ? el : closest(el.parentNode, fn) );
-    };
-
     // triggers when user clicks on thumbnail
     var onThumbnailsClick = function(e) {
         e = e || window.event;
         e.preventDefault ? e.preventDefault() : e.returnValue = false;
 
-        var eTarget = e.target || e.srcElement;
+        var $eTarget = $(e.target || e.srcElement);
+        var $parent = $eTarget.parent();
+
+        if($parent.prop('tagName') !== 'A') {
+          return;
+        }
 
         // find root element of slide
-        var clickedListItem = closest(eTarget, function(el) {
-            return (el.tagName && el.tagName.toUpperCase() === 'DIV');
-        });
+        var $clickedListItem = $eTarget.closest('.grid-item');
 
-        if(!clickedListItem) {
+        if(!$clickedListItem.length) {
             return;
         }
 
-        var clickedGallery = clickedListItem.parentNode;
+        var $clickedGallery = $clickedListItem.parent();
+        var index;
 
-        // find index of clicked item by looping through all child nodes
-        // alternatively, you may define index via data- attribute
-        var childNodes = clickedGallery.childNodes,
-            numChildNodes = childNodes.length,
-            nodeIndex = 0,
-            index;
-
-        for (var i = 0; i < numChildNodes; i++) {
-            if(childNodes[i].nodeType !== 1) {
-                continue;
-            }
-
-            if(childNodes[i] === clickedListItem) {
-                index = nodeIndex;
-                break;
-            }
-            nodeIndex++;
-        }
+        $.each($clickedGallery.children(), function(i, e) {
+          if(e === $clickedListItem[0]) {
+            index = i;
+            return false;
+          }
+        });
 
         if(index >= 0) {
             // open PhotoSwipe if valid index found
-            openPhotoSwipe( index, clickedGallery );
+            openPhotoSwipe( index, $clickedGallery[0] );
         }
         return false;
     };
