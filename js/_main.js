@@ -50,33 +50,8 @@ var initPhotoSwipeFromDOM = function($, gallerySelector) {
     var onThumbnailsClick = function(e) {
         e.preventDefault();
 
-        var $eTarget = $(e.target || e.srcElement);
+        openPhotoSwipe( e.data.index, $(e.target).closest('.my-gallery') );
 
-        if($eTarget.parent().prop('tagName') !== 'A') {
-          return;
-        }
-
-        // find root element of slide
-        var $clickedListItem = $eTarget.closest('.grid-item');
-
-        if(!$clickedListItem.length) {
-            return;
-        }
-
-        var $clickedGallery = $clickedListItem.parent();
-        var index;
-
-        $clickedGallery.children().each(function(i, e) {
-          if(e === $clickedListItem[0]) {
-            index = i;
-            return false;
-          }
-        });
-
-        if(index >= 0) {
-            // open PhotoSwipe if valid index found
-            openPhotoSwipe( index, $clickedGallery );
-        }
         return false;
     };
 
@@ -181,10 +156,12 @@ var initPhotoSwipeFromDOM = function($, gallerySelector) {
         gallery.init();
     };
 
-    $.each($galleryElements, function(i, e) {
-      var $e = $(e);
-      $e.data('pswp-uid', i + 1);
-      $e.on('click', onThumbnailsClick);
+    $galleryElements.each(function(galleryIndex, gallery) {
+      var $gallery = $(gallery);
+      $gallery.data('pswp-uid', galleryIndex + 1);
+      $gallery.find('.grid-item a').each(function(imageLinkIndex, imageLink) {
+        $(imageLink).on('click', {index: imageLinkIndex}, onThumbnailsClick);
+      });
     });
 
     // Parse URL and open gallery if it contains #&pid=3&gid=1
