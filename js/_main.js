@@ -26,15 +26,15 @@ var initPhotoSwipeFromDOM = function($, gallerySelector) {
           var $e = $(e);
           var $linkEl = $e.find('a');
           var $thumbnailImgEl = $linkEl.find('img');
-          var size = $linkEl.attr('data-size').split('x');
+          var size = $linkEl.data('size').split('x');
 
           // create slide object
           var item = {
               src: $linkEl.attr('href'),
               msrc: $thumbnailImgEl.attr('src'),
-              pid: $linkEl.attr('data-index'),
-              title: $linkEl.attr('data-title') || ' ',
-              desc: $linkEl.attr('data-description'),
+              pid: $linkEl.data('index'),
+              title: $linkEl.data('title') || ' ',
+              desc: $linkEl.data('description'),
               w: parseInt(size[0], 10),
               h: parseInt(size[1], 10),
               el: e
@@ -123,7 +123,7 @@ var initPhotoSwipeFromDOM = function($, gallerySelector) {
         // define options (if needed)
         options = {
             // define gallery index (for URL)
-            galleryUID: $galleryElement.attr('data-pswp-uid'),
+            galleryUID: $galleryElement.data('pswp-uid'),
             galleryPIDs: true,
             getThumbBoundsFn: function(index) {
                 // See Options -> getThumbBoundsFn section of documentation for more info
@@ -183,7 +183,7 @@ var initPhotoSwipeFromDOM = function($, gallerySelector) {
 
     $.each($galleryElements, function(i, e) {
       var $e = $(e);
-      $e.attr('data-pswp-uid', i + 1);
+      $e.data('pswp-uid', i + 1);
       $e.on('click', onThumbnailsClick);
     });
 
