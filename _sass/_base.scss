@@ -425,3 +425,13 @@ iframe {
 .breadcrumbs > span:last-child {
 	cursor: default;
 }
+
+// imgs
+
+img {
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
