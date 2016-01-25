@@ -19,62 +19,46 @@ $(document).ready(function(){
 // Table of Contents title. Change text to localize
 $("#markdown-toc").prepend("<li><h6>Overview</h6></li>");
 
-var initPhotoSwipeFromDOM = function(gallerySelector) {
+var initPhotoSwipeFromDOM = function($, gallerySelector) {
 
     // loop through all gallery elements and bind events
-    var galleryElements = document.querySelectorAll( gallerySelector );
+    var $galleryElements = $( gallerySelector );
 
     // parse slide data (url, title, size ...) from DOM elements
     // (children of gallerySelector)
-    var parseThumbnailElements = function(el) {
-        var thumbElements = el.childNodes,
-            numNodes = thumbElements.length,
-            items = [],
-            divEl,
-            linkEl,
-            thumbnailImgEl,
-            size,
-            item;
+    var parseThumbnailElements = function($el) {
+        var items = [];
+        $el.children().each(function(i, e) {
+          var $e = $(e);
+          var $linkEl = $e.find('a');
+          var $thumbnailImgEl = $linkEl.find('img');
+          var size = $linkEl.attr('data-size').split('x');
 
-        for(var i = 0; i < numNodes; i++) {
-            divEl = thumbElements[i]; // <div> element
-            // include only element nodes
-            if(divEl.nodeType !== 1) {
-                continue;
-            }
+          // create slide object
+          var item = {
+              src: $linkEl.attr('href'),
+              msrc: $thumbnailImgEl.attr('src'),
+              pid: $linkEl.attr('data-index'),
+              title: $linkEl.attr('data-title') || ' ',
+              desc: $linkEl.attr('data-description'),
+              w: parseInt(size[0], 10),
+              h: parseInt(size[1], 10),
+              el: e
+          };
 
-            linkEl = divEl.children[0]; // <a> element
-            thumbnailImgEl = linkEl.children[0];
-
-            size = linkEl.getAttribute('data-size').split('x');
-
-            // create slide object
-            item = {
-                src: linkEl.getAttribute('href'),
-                msrc: thumbnailImgEl.getAttribute('src'),
-                pid: linkEl.getAttribute('data-index'),
-                title: linkEl.getAttribute('data-title') || ' ',
-                desc: linkEl.getAttribute('data-description'),
-                w: parseInt(size[0], 10),
-                h: parseInt(size[1], 10),
-            };
-
-            item.el = divEl; // save link to element for getThumbBoundsFn
-            items.push(item);
-        }
+          items.push(item);
+        });
 
         return items;
     };
 
     // triggers when user clicks on thumbnail
     var onThumbnailsClick = function(e) {
-        e = e || window.event;
-        e.preventDefault ? e.preventDefault() : e.returnValue = false;
+        e.preventDefault();
 
         var $eTarget = $(e.target || e.srcElement);
-        var $parent = $eTarget.parent();
 
-        if($parent.prop('tagName') !== 'A') {
+        if($eTarget.parent().prop('tagName') !== 'A') {
           return;
         }
 
@@ -88,7 +72,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
         var $clickedGallery = $clickedListItem.parent();
         var index;
 
-        $.each($clickedGallery.children(), function(i, e) {
+        $clickedGallery.children().each(function(i, e) {
           if(e === $clickedListItem[0]) {
             index = i;
             return false;
@@ -97,7 +81,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
 
         if(index >= 0) {
             // open PhotoSwipe if valid index found
-            openPhotoSwipe( index, $clickedGallery[0] );
+            openPhotoSwipe( index, $clickedGallery );
         }
         return false;
     };
@@ -130,22 +114,22 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
         return params;
     };
 
-    var openPhotoSwipe = function(index, galleryElement, disableAnimation, fromURL) {
-        if(!galleryElement) {
+    var openPhotoSwipe = function(index, $galleryElement, disableAnimation, fromURL) {
+        if(!$galleryElement.length) {
           return;
         }
 
-        var pswpElement = document.querySelectorAll('.pswp')[0],
+        var pswpElement = $('.pswp')[0],
             gallery,
             options,
             items;
 
-        items = parseThumbnailElements(galleryElement);
+        items = parseThumbnailElements($galleryElement);
 
         // define options (if needed)
         options = {
             // define gallery index (for URL)
-            galleryUID: galleryElement.getAttribute('data-pswp-uid'),
+            galleryUID: $galleryElement.attr('data-pswp-uid'),
             galleryPIDs: true,
             getThumbBoundsFn: function(index) {
                 // See Options -> getThumbBoundsFn section of documentation for more info
@@ -203,15 +187,16 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
         gallery.init();
     };
 
-    for(var i = 0, l = galleryElements.length; i < l; i++) {
-        galleryElements[i].setAttribute('data-pswp-uid', i+1);
-        galleryElements[i].onclick = onThumbnailsClick;
-    }
+    $.each($galleryElements, function(i, e) {
+      var $e = $(e);
+      $e.attr('data-pswp-uid', i + 1);
+      $e.on('click', onThumbnailsClick);
+    });
 
     // Parse URL and open gallery if it contains #&pid=3&gid=1
     var hashData = photoswipeParseHash();
     if(hashData.pid && hashData.gid) {
-        openPhotoSwipe( hashData.pid ,  galleryElements[ hashData.gid - 1 ], true, true );
+        openPhotoSwipe( hashData.pid ,  $($galleryElements[ hashData.gid - 1 ]), true, true );
     }
 };
 
@@ -253,6 +238,6 @@ var configureMasonry = function($) {
   });
 };
 
-initPhotoSwipeFromDOM('.my-gallery');
+initPhotoSwipeFromDOM(window.jQuery, '.my-gallery');
 updateUpcomingShows(window.jQuery);
 configureMasonry(window.jQuery);
