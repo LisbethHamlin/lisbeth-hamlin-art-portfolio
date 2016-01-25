@@ -50,7 +50,7 @@ var initPhotoSwipeFromDOM = function($, gallerySelector) {
     var onThumbnailsClick = function(e) {
         e.preventDefault();
 
-        openPhotoSwipe( e.data.index, $(e.target).closest('.my-gallery') );
+        openPhotoSwipe(e.data.$links.index(this), $(e.target).closest('.my-gallery'));
 
         return false;
     };
@@ -159,9 +159,7 @@ var initPhotoSwipeFromDOM = function($, gallerySelector) {
     $galleryElements.each(function(galleryIndex, gallery) {
       var $gallery = $(gallery);
       $gallery.data('pswp-uid', galleryIndex + 1);
-      $gallery.find('.grid-item a').each(function(imageLinkIndex, imageLink) {
-        $(imageLink).on('click', {index: imageLinkIndex}, onThumbnailsClick);
-      });
+      $gallery.on('click', '.grid-item a', {$links: $gallery.find('.grid-item a')}, onThumbnailsClick);
     });
 
     // Parse URL and open gallery if it contains #&pid=3&gid=1
