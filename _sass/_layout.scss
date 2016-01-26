@@ -365,8 +365,13 @@ TODO: move this into another file
 .grid-item {
 	float: left;
 	margin: 1em 0 0 0;
+
 	img {
 		margin: 0;
+	}
+
+	a {
+		-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 	}
 }
 
