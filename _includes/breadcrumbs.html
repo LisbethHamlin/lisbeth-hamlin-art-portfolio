@@ -1,10 +1,6 @@
 <span class="breadcrumbs">
-  {% assign categories = page.url | split: '/' %}
-  {% assign length = categories | size %}
-  {% if page.id == null %}
-    {% assign length = length | minus: 2 %}
-  {% endif %}
-  {% for categorie in categories offset: 1 limit: length %}
+  {% assign categories = page.url | remove_first: '/' | split: '/' %}
+  {% for categorie in categories %}
     {% assign current-path = current-path | append: categorie | append: '/' %}
     <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
       {% assign current-title = categorie | replace: '-',' ' | capitalize %}
