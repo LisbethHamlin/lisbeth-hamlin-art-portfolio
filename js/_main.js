@@ -23,13 +23,12 @@ var initPhotoSwipeFromDOM = function($, gallerySelector) {
     var parseThumbnailElements = function($el) {
         var items = [];
         $el.children().each(function(i, e) {
-          var $e = $(e);
-          var $linkEl = $e.find('a');
+          var $linkEl = $(e).find('a');
           var $thumbnailImgEl = $linkEl.find('img');
           var size = $linkEl.data('size').split('x');
 
           // create slide object
-          var item = {
+          items.push({
               src: $linkEl.attr('href'),
               msrc: $thumbnailImgEl.attr('src'),
               pid: $linkEl.data('index'),
@@ -38,9 +37,7 @@ var initPhotoSwipeFromDOM = function($, gallerySelector) {
               w: parseInt(size[0], 10),
               h: parseInt(size[1], 10),
               el: e
-          };
-
-          items.push(item);
+          });
         });
 
         return items;
@@ -182,7 +179,7 @@ var updateUpcomingShows = function($) {
 
   for(var i = 0; i < $shows.length; ++i) {
     var $currentShow = $($shows[i]);
-    var showTime = +$currentShow.attr('data-time');
+    var showTime = +$currentShow.data('time');
     if(currentTime > showTime) {
       $currentShow.detach();
       $target.prepend($currentShow);
