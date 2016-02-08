@@ -17,8 +17,8 @@ image_filter:
   - title: table
     group: mosaics
 
-  - title: dancing-samburu-women
-    group: printmaking
+  - title: celebration
+    group: paper-collage
 
   - title: in-prayer
     group: printmaking
