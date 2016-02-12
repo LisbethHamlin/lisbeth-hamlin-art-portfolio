@@ -362,28 +362,30 @@
 TODO: move this into another file
 */
 
-.grid-item {
-	float: left;
-	margin: 1em 0 0 0;
+.grid {
+	.grid-item {
+		display: inline-block;
+		margin: 1em 0 0 0;
 
-	img {
-		margin: 0;
+		img {
+			margin: 0;
+		}
+
+		a {
+			-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+		}
 	}
 
-	a {
-		-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-	}
-}
-
-.grid-sizer, .grid-item {
-	width: 23.0%;
-}
-
-.gutter-sizer { width: 2%; }
-
-@include media($micro) {
 	.grid-sizer, .grid-item {
-		width: 100.0%;
+		width: 23.0%;
+	}
+
+	.gutter-sizer { width: 2%; }
+
+	@include media($micro) {
+		.grid-sizer, .grid-item {
+			width: 100.0%;
+		}
 	}
 }
 
