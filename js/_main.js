@@ -193,15 +193,49 @@ var updateUpcomingShows = function($) {
   $showRoot.removeClass('load');
 };
 
-var configureMasonry = function($) {
-  var $grid = $('.grid').imagesLoaded( function() {
-    $grid.masonry({
-      itemSelector: '.grid-item',
-      columnWidth: '.grid-sizer',
-      gutter: '.gutter-sizer',
-      percentPosition: true
-    });
+// reveals items iteratively
+// after each item has loaded its images
+$.fn.masonryImagesReveal = function( $items ) {
+  var msnry = this.data('masonry');
+  var itemSelector = msnry.options.itemSelector;
+  // hide by default
+  $items.hide();
+  // append to container
+  this.append( $items );
+  $items.imagesLoaded().progress( function( imgLoad, image ) {
+    // get item
+    // image is imagesLoaded class, not <img>, <img> is image.img
+    var $item = $( image.img ).parents( itemSelector );
+    // un-hide item
+    $item.show();
+    // masonry does its thing
+    msnry.appended( $item );
   });
+
+  return this;
+};
+
+var configureMasonry = function($) {
+  var $grid = $('.grid').masonry({
+    itemSelector: '.grid-item',
+    columnWidth: '.grid-sizer',
+    gutter: '.gutter-sizer',
+    percentPosition: true
+  });
+
+  var items = '';
+
+  IMAGE_DATA.data.forEach(function(value, index) {
+    var description = IMAGE_DATA.info[value.title] ? IMAGE_DATA.info[value.title].description : '';
+    var group = value.group || IMAGE_DATA.group;
+    var el = '<div class="grid-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">' +
+        '<a href="' + IMAGE_DATA.siteUrl + '/images/portfolio/' + group + '/' + value.title +'.jpg" itemprop="contentUrl" data-size="' + value.size + '" data-index="' + value.title + '" data-title="' + value.title + '" data-description="' + description + '">' +
+            '<img src="' + IMAGE_DATA.siteUrl + '/images/portfolio/' + group + '/' + value.title + '-teaser.jpg" alt="' + value.title + '" itemprop="thumbnail"  /></a></div>';
+
+    items += el;
+  });
+
+  $grid.masonryImagesReveal($(items));
 };
 
 initPhotoSwipeFromDOM(window.jQuery, '.my-gallery');

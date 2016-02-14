@@ -1,9 +1,29 @@
-<div class="grid">
+{% assign data = '' %}
+{% for image_filter in page.image_filter %}
+  {% for image in site.data.portfolio[image_filter.group] %}
+      {% if image_filter.title == image.title %}
+        {% capture data %}
+          {{data}},
+          {
+            "title": "{{image.title}}",
+            "size": "{{image.size}}",
+            "group": "{{image_filter.group}}"
+          }
+        {% endcapture %}
+      {% endif %}
+  {% endfor %}
+{% endfor %}
+{% capture data %}[ {{data}} ]{% endcapture %}
+
+<div class="grid" itemscope itemtype="http://schema.org/ImageGallery">
   <div class="grid-sizer"></div>
   <div class="gutter-sizer"></div>
-  <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-    {% for image_filter in page.image_filter %}
-      {% include gallery-group.liquid title=image_filter.title group=image_filter.group %}
-    {% endfor %}
-  </div>
 </div>
+
+<script>
+  var IMAGE_DATA = {
+    siteUrl: '{{ site.url }}',
+    data: JSON.parse('{{ data | remove_first: "," }}'),
+    info: JSON.parse('{{site.data.portfolio-info | jsonify}}')
+  };
+</script>
