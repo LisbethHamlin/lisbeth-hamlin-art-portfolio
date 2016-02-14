@@ -17,5 +17,5 @@
   "undef": true,
   "multistr": true,
   "expr": true,
-  "predef": [ "PhotoSwipe", "PhotoSwipeUI_Default"]
+  "predef": [ "PhotoSwipe", "PhotoSwipeUI_Default", "IMAGE_DATA"]
 }

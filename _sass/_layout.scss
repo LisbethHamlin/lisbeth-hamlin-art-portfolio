@@ -33,7 +33,7 @@
 	line-height: .5 * $masthead-height; // half the height to center vertically
 	text-transform: uppercase;
 	.title-icon {
-		float: left;
+
 		margin-right: 0.5em;
 	}
 }
@@ -362,30 +362,25 @@
 TODO: move this into another file
 */
 
-.grid {
-	.grid-item {
-		display: inline-block;
-		margin: 1em 0 0 0;
+.grid-item {
+	margin: 1em 0 0 0;
 
-		img {
-			margin: 0;
-		}
-
-		a {
-			-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-		}
+	a {
+		-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 	}
+}
 
+.grid-sizer, .grid-item {
+	width: 23.0%;
+}
+
+.gutter-sizer {
+	width: 2%;
+}
+
+@include media($micro) {
 	.grid-sizer, .grid-item {
-		width: 23.0%;
-	}
-
-	.gutter-sizer { width: 2%; }
-
-	@include media($micro) {
-		.grid-sizer, .grid-item {
-			width: 100.0%;
-		}
+		width: 100.0%;
 	}
 }
 

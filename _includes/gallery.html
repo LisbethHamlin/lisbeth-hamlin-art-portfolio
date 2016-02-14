@@ -1,7 +1,13 @@
-<div class="grid">
+<div class="grid" itemscope itemtype="http://schema.org/ImageGallery">
   <div class="grid-sizer"></div>
   <div class="gutter-sizer"></div>
-  <div class="my-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-    {% include gallery-group.liquid group=page.group %}
-  </div>
 </div>
+
+<script>
+  var IMAGE_DATA = {
+    siteUrl: '{{ site.url }}',
+    group: '{{ page.group }}',
+    data: JSON.parse('{{site.data.portfolio[page.group] | jsonify}}'),
+    info: JSON.parse('{{site.data.portfolio-info[page.group] | jsonify}}')
+  };
+</script>
