@@ -232,19 +232,7 @@ var configureMasonry = function($, callback) {
   });
 
   if($grid.length) {
-    IMAGE_DATA.data.forEach(function(value, index) {
-      var group = value.group || IMAGE_DATA.group;
-      var metadata = value.metadata || {};
-      var description = metadata.description || '';
-
-      var el = '<div class="grid-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">' +
-          '<a href="' + IMAGE_DATA.siteUrl + '/images/portfolio/' + group + '/' + value.title +'.jpg" itemprop="contentUrl" data-size="' + value.size + '" data-index="' + value.title + '" data-title="' + value.displayTitle + '" data-description="' + description + '">' +
-              '<img src="' + IMAGE_DATA.siteUrl + '/images/portfolio/' + group + '/' + value.title + '-teaser.jpg" alt="' + value.displayTitle + '" itemprop="thumbnail"  /></a></div>';
-
-      items += el;
-    });
-
-    $grid.masonryImagesReveal($(items), callback);
+    $grid.masonryImagesReveal($(window.IMAGE_DATA), callback);
   }
 };
 

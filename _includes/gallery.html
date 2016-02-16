@@ -4,21 +4,16 @@
   {% for image in site.data.portfolio[image_filter.group] %}
       {% if image_filter.title == null or image_filter.title == image.title %}
         {% capture data %}
-          {{data}},
-          {
-            "title": "{{image.title}}",
-            "displayTitle": "{{image.title | replace: '-',' ' | capitalize}}",
-            "size": "{{image.size}}"
-            {% if filter_size > 1 %},"group": "{{image_filter.group}}" {% endif %}
-            {% if site.data.portfolio-info[image_filter.group][image.title] != null %},"metadata": {{site.data.portfolio-info[image_filter.group][image.title] | jsonify }} {% endif %}
-          }
+          {{data}}
+          <div class="grid-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+            <a href="{{ site.url }}/images/portfolio/{{image_filter.group}}/{{image.title}}.jpg" itemprop="contentUrl" data-size="{{image.size}}" data-index="{{image.title}}" data-title="{{image.title | replace: '-',' ' | capitalize}}" data-description="{{site.data.portfolio-info[image_filter.group][image.title].description}}">
+              <img src="{{ site.url }}/images/portfolio/{{image_filter.group}}/{{image.title}}-teaser.jpg" alt="{{include.title}}" itemprop="thumbnail"  />
+            </a>
+         </div>
         {% endcapture %}
       {% endif %}
   {% endfor %}
 {% endfor %}
-{% capture data %}[ {{data}} ]{% endcapture %}
-{% assign data = data | remove_first: "," %}
-{% assign firstImageFilter = page.image_filter | first %}
 
 <div class="grid" itemscope itemtype="http://schema.org/ImageGallery">
   <div class="grid-sizer"></div>
@@ -26,9 +21,5 @@
 </div>
 
 <script>
-  var IMAGE_DATA = {
-    siteUrl: '{{ site.url }}',
-    data: JSON.parse('{{ data }}')
-    {% if filter_size == 1 %},group:'{{firstImageFilter.group}}'{% endif %}
-  };
+  window.IMAGE_DATA = '{{data}}';
 </script>
