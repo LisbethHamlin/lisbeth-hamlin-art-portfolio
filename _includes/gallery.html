@@ -1,3 +1,25 @@
+{% assign data = '' %}
+{% assign filter_size = page.image_filter | size %}
+{% for image_filter in page.image_filter %}
+  {% for image in site.data.portfolio[image_filter.group] %}
+      {% if image_filter.title == null or image_filter.title == image.title %}
+        {% capture data %}
+          {{data}},
+          {
+            "title": "{{image.title}}",
+            "displayTitle": "{{image.title | replace: '-',' ' | capitalize}}",
+            "size": "{{image.size}}"
+            {% if filter_size > 1 %},"group": "{{image_filter.group}}" {% endif %}
+            {% if site.data.portfolio-info[image_filter.group][image.title] != null %},"metadata": {{site.data.portfolio-info[image_filter.group][image.title] | jsonify }} {% endif %}
+          }
+        {% endcapture %}
+      {% endif %}
+  {% endfor %}
+{% endfor %}
+{% capture data %}[ {{data}} ]{% endcapture %}
+{% assign data = data | remove_first: "," %}
+{% assign firstImageFilter = page.image_filter | first %}
+
 <div class="grid" itemscope itemtype="http://schema.org/ImageGallery">
   <div class="grid-sizer"></div>
   <div class="gutter-sizer"></div>
@@ -6,8 +28,7 @@
 <script>
   var IMAGE_DATA = {
     siteUrl: '{{ site.url }}',
-    group: '{{ page.group }}',
-    data: JSON.parse('{{site.data.portfolio[page.group] | jsonify}}'),
-    info: JSON.parse('{{site.data.portfolio-info[page.group] | jsonify}}')
+    data: JSON.parse('{{ data }}')
+    {% if filter_size == 1 %},group:'{{firstImageFilter.group}}'{% endif %}
   };
 </script>

@@ -2,5 +2,7 @@
 layout: photoswipe
 title: "Hats"
 group: hats
-hide-figcaption: true 
+image_filter:
+  - group: hats
+hide-figcaption: true
 ---
