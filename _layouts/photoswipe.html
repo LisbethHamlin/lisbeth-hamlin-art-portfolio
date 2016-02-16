@@ -4,9 +4,5 @@ layout: archive
 
 {{ content }}
 
-{% if page.image_filter %}
-  {% include gallery-filtered.html %}
-{% else %}
-  {% include gallery.html %}
-{% endif %}
+{% include gallery.html %}
 {% include photoswipe-root.html %}
