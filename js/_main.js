@@ -1,5 +1,5 @@
 // Off Canvas Sliding
-$(document).ready(function(){
+var buildOffCanvasSliding = function($) {
   // Menu button click
   $('#js-menu-trigger,#js-menu-screen').on('click touchstart', function(e){
     // $('#js-body').toggleClass('no-scroll');
@@ -8,10 +8,12 @@ $(document).ready(function(){
     // $('#masthead, #page-wrapper').toggleClass('slide');
     e.preventDefault();
   });
-});
+};
 
-// Table of Contents title. Change text to localize
-$("#markdown-toc").prepend("<li><h6>Overview</h6></li>");
+var buildToc = function($) {
+  // Table of Contents title. Change text to localize
+  $("#markdown-toc").prepend("<li><h6>Overview</h6></li>");
+};
 
 var initPhotoSwipeFromDOM = function($, gallerySelector) {
 
@@ -24,20 +26,22 @@ var initPhotoSwipeFromDOM = function($, gallerySelector) {
         var items = [];
         $el.children().each(function(i, e) {
           var $linkEl = $(e).find('a');
-          var $thumbnailImgEl = $linkEl.find('img');
-          var size = $linkEl.data('size').split('x');
+          if($linkEl.length) {
+            var $thumbnailImgEl = $linkEl.find('img');
+            var size = $linkEl.data('size').split('x');
 
-          // create slide object
-          items.push({
-              src: $linkEl.attr('href'),
-              msrc: $thumbnailImgEl.attr('src'),
-              pid: $linkEl.data('index'),
-              title: $linkEl.data('title') || ' ',
-              desc: $linkEl.data('description'),
-              w: parseInt(size[0], 10),
-              h: parseInt(size[1], 10),
-              el: e
-          });
+            // create slide object
+            items.push({
+                src: $linkEl.attr('href'),
+                msrc: $thumbnailImgEl.attr('src'),
+                pid: $linkEl.data('index'),
+                title: $linkEl.data('title') || ' ',
+                desc: $linkEl.data('description'),
+                w: parseInt(size[0], 10),
+                h: parseInt(size[1], 10),
+                el: e
+            });
+          }
         });
 
         return items;
@@ -47,7 +51,7 @@ var initPhotoSwipeFromDOM = function($, gallerySelector) {
     var onThumbnailsClick = function(e) {
         e.preventDefault();
 
-        openPhotoSwipe(e.data.$links.index(this), $(e.target).closest('.my-gallery'));
+        openPhotoSwipe(e.data.$links.index(this), $(e.target).closest(gallerySelector));
 
         return false;
     };
@@ -195,33 +199,36 @@ var updateUpcomingShows = function($) {
 
 // reveals items iteratively
 // after each item has loaded its images
-$.fn.masonryImagesReveal = function( $items ) {
+$.fn.masonryImagesReveal = function( $items, callback ) {
   var msnry = this.data('masonry');
   var itemSelector = msnry.options.itemSelector;
   // hide by default
   $items.hide();
   // append to container
   this.append( $items );
-  $items.imagesLoaded().progress( function( imgLoad, image ) {
-    // get item
-    // image is imagesLoaded class, not <img>, <img> is image.img
-    var $item = $( image.img ).parents( itemSelector );
-    // un-hide item
-    $item.show();
-    // masonry does its thing
-    msnry.appended( $item );
-  });
+  $items.imagesLoaded()
+    .progress( function( imgLoad, image ) {
+      // get item
+      // image is imagesLoaded class, not <img>, <img> is image.img
+      var $item = $( image.img ).parents( itemSelector );
+      // un-hide item
+      $item.show();
+      // masonry does its thing
+      msnry.appended( $item );
+    })
+    .done(callback);
 
   return this;
 };
 
-var configureMasonry = function($) {
+var configureMasonry = function($, callback) {
   var items = '';
   var $grid = $('.grid').masonry({
     itemSelector: '.grid-item',
     columnWidth: '.grid-sizer',
     gutter: '.gutter-sizer',
     percentPosition: true
+    //transitionDuration: '1s'
   });
 
   if($grid.length) {
@@ -237,10 +244,15 @@ var configureMasonry = function($) {
       items += el;
     });
 
-    $grid.masonryImagesReveal($(items));
+    $grid.masonryImagesReveal($(items), callback);
   }
 };
 
-initPhotoSwipeFromDOM(window.jQuery, '.my-gallery');
-updateUpcomingShows(window.jQuery);
-configureMasonry(window.jQuery);
+(function($) {
+  buildOffCanvasSliding($);
+  buildToc($);
+  updateUpcomingShows($);
+  configureMasonry($, function() {
+    initPhotoSwipeFromDOM($, '.grid');
+  });
+})(jQuery);
