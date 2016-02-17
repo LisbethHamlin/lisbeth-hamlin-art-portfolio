@@ -1,3 +1,12 @@
+var shuffle = function(o){
+  for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x) {}
+  return o;
+};
+
+var generateDaySeed = function() {
+  Math.seedrandom(Math.floor(Date.now() / 8.64e+7));
+};
+
 // Off Canvas Sliding
 var buildOffCanvasSliding = function($) {
   // Menu button click
@@ -228,11 +237,16 @@ var configureMasonry = function($, callback) {
     columnWidth: '.grid-sizer',
     gutter: '.gutter-sizer',
     percentPosition: true
-    //transitionDuration: '1s'
   });
 
-  if($grid.length) {
-    $grid.masonryImagesReveal($(window.IMAGE_DATA), callback);
+  if($grid.length && window.IMAGE_DATA) {
+    if(window.RANDOMIZE_SETTINGS) {
+      generateDaySeed();
+      shuffle(window.IMAGE_DATA);
+      window.IMAGE_DATA = window.IMAGE_DATA.slice(-window.RANDOMIZE_SETTINGS.limit);
+    }
+    $grid.masonryImagesReveal($(window.IMAGE_DATA.join('')), callback);
+    $('#jsonScript').remove();
   }
 };
 
