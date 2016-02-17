@@ -1,25 +1,29 @@
 {% assign data = '' %}
-{% assign filter_size = page.image_filter | size %}
+
 {% for image_filter in page.image_filter %}
   {% for image in site.data.portfolio[image_filter.group] %}
       {% if image_filter.title == null or image_filter.title == image.title %}
         {% capture data %}
-          {{data}}
-          <div class="grid-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+          {{data}},
+          '<div class="grid-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
             <a href="{{ site.url }}/images/portfolio/{{image_filter.group}}/{{image.title}}.jpg" itemprop="contentUrl" data-size="{{image.size}}" data-index="{{image.title}}" data-title="{{image.title | replace: '-',' ' | capitalize}}" data-description="{{site.data.portfolio-info[image_filter.group][image.title].description}}">
               <img src="{{ site.url }}/images/portfolio/{{image_filter.group}}/{{image.title}}-teaser.jpg" alt="{{include.title}}" itemprop="thumbnail"  />
             </a>
-         </div>
+         </div>'
         {% endcapture %}
       {% endif %}
   {% endfor %}
 {% endfor %}
+{% assign data = data | remove_first: ',' %}
 
 <div class="grid" itemscope itemtype="http://schema.org/ImageGallery">
   <div class="grid-sizer"></div>
   <div class="gutter-sizer"></div>
 </div>
 
-<script>
-  window.IMAGE_DATA = '{{data}}';
+<script id="jsonScript">
+  window.IMAGE_DATA = [{{ data }}];
+  {% if page.randomize_gallery %}
+    window.RANDOMIZE_SETTINGS = {{page.randomize_gallery | jsonify}};
+  {% endif %}
 </script>
