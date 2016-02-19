@@ -1,10 +1,8 @@
 {
-  "name": "skinny-bones-jekyll",
+  "name": "lisbeth-hamlin-art-portfolio",
   "version": "0.0.1",
-  "description": "A Jekyll starter site",
-  "author": "Michael Rose <michael@mademistakes.com>",
-  "homepage": "http://mademistakes.com/",
-  "license": "The MIT License (MIT)",
+  "description": "Lisbeth Hamin's art portfolio.",
+  "private": true,
   "devDependencies": {
     "gm": "^1.21.1",
     "grunt": "^0.4.5",
