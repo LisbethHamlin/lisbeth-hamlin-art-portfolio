@@ -27,7 +27,6 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         options: {
-          banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */',
           compress: true,
           beautify: false,
           mangle: true
