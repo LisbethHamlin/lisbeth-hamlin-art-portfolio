@@ -7,8 +7,34 @@ var generateDaySeed = function() {
   Math.seedrandom(Math.floor(Date.now() / 8.64e+7));
 };
 
+var buildPlugins = function($) {
+  // reveals items iteratively
+  // after each item has loaded its images
+  $.fn.masonryImagesReveal = function( $items, callback ) {
+    var msnry = this.data('masonry');
+    var itemSelector = msnry.options.itemSelector;
+    // hide by default
+    $items.hide();
+    // append to container
+    this.append( $items );
+    $items.imagesLoaded()
+      .progress( function( imgLoad, image ) {
+        // get item
+        // image is imagesLoaded class, not <img>, <img> is image.img
+        var $item = $( image.img ).parents( itemSelector );
+        // un-hide item
+        $item.show();
+        // masonry does its thing
+        msnry.appended( $item );
+      })
+      .done(callback);
+
+    return this;
+  };
+};
+
 // Off Canvas Sliding
-var buildOffCanvasSliding = function($) {
+var buildMenu = function($) {
   // Menu button click
   $('#js-menu-trigger,#js-menu-screen').on('click touchstart', function(e){
     // $('#js-body').toggleClass('no-scroll');
@@ -206,33 +232,10 @@ var updateUpcomingShows = function($) {
   $showRoot.removeClass('load');
 };
 
-// reveals items iteratively
-// after each item has loaded its images
-$.fn.masonryImagesReveal = function( $items, callback ) {
-  var msnry = this.data('masonry');
-  var itemSelector = msnry.options.itemSelector;
-  // hide by default
-  $items.hide();
-  // append to container
-  this.append( $items );
-  $items.imagesLoaded()
-    .progress( function( imgLoad, image ) {
-      // get item
-      // image is imagesLoaded class, not <img>, <img> is image.img
-      var $item = $( image.img ).parents( itemSelector );
-      // un-hide item
-      $item.show();
-      // masonry does its thing
-      msnry.appended( $item );
-    })
-    .done(callback);
-
-  return this;
-};
-
-var configureMasonry = function($, callback) {
+var configureMasonry = function($) {
   var items = '';
-  var $grid = $('.grid').masonry({
+  var gridSelector = '.grid';
+  var $grid = $(gridSelector).masonry({
     itemSelector: '.grid-item',
     columnWidth: '.grid-sizer',
     gutter: '.gutter-sizer',
@@ -245,16 +248,17 @@ var configureMasonry = function($, callback) {
       shuffle(window.IMAGE_DATA);
       window.IMAGE_DATA = window.IMAGE_DATA.slice(-window.RANDOMIZE_SETTINGS.limit);
     }
-    $grid.masonryImagesReveal($(window.IMAGE_DATA.join('')), callback);
+    $grid.masonryImagesReveal($(window.IMAGE_DATA.join('')), function() {
+      initPhotoSwipeFromDOM($, gridSelector);
+    });
     $('#jsonScript').remove();
   }
 };
 
 (function($) {
-  buildOffCanvasSliding($);
+  buildPlugins($);
+  buildMenu($);
   buildToc($);
   updateUpcomingShows($);
-  configureMasonry($, function() {
-    initPhotoSwipeFromDOM($, '.grid');
-  });
+  configureMasonry($);
 })(jQuery);
