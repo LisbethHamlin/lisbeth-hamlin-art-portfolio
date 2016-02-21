@@ -1,7 +1,9 @@
 var gm = require('gm'),
     fs = require('fs'),
     common = require('./common'),
-    root = process.argv[2];
+    root = process.argv[2],
+    width = process.argv[3] || 250,
+    height = process.argv[4] || 400
 
 var TEASER_IMAGE_PATTERN = '.+-teaser';
 var TEASER_FILE_NAME = '-teaser.jpg';
@@ -9,7 +11,7 @@ var TEASER_FILE_NAME = '-teaser.jpg';
 var createThumbnail = function(file) {
   var outFile = file.slice(0, -4) + TEASER_FILE_NAME;
   var image = gm(file)
-    .resize(400, 400)
+    .resize(width, height)
     .write(outFile, function(err) {
       if(err) {
         console.log(err);
