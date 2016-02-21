@@ -3,7 +3,7 @@ var gm = require('gm'),
     common = require('./common'),
     root = process.argv[2],
     width = process.argv[3] || 250,
-    height = process.argv[4] || 400
+    height = process.argv[4] || 400;
 
 var TEASER_IMAGE_PATTERN = '.+-teaser';
 var TEASER_FILE_NAME = '-teaser.jpg';
@@ -20,7 +20,7 @@ var createThumbnail = function(file) {
         console.log('Creating: ' + outFile);
       }
   });
-}
+};
 
 if(!root) {
 	console.log('Specify a file or directory');
