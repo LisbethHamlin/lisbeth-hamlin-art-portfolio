@@ -22,6 +22,7 @@
 </div>
 
 <script id="jsonScript">
+  'use strict';
   window.IMAGE_DATA = [{{ data }}];
   {% if page.randomize_gallery %}
     window.RANDOMIZE_SETTINGS = {{page.randomize_gallery | jsonify}};
