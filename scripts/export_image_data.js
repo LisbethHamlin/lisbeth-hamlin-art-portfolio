@@ -14,6 +14,10 @@ function removeExtension(image) {
 	return image.replace(/\.[^/.]+$/, "");
 }
 
+function splitPath(path) {
+	return path.split(/\/+/g);
+}
+
 if(!rootDirectory) {
 	console.log('Specify a directory');
 	return;
@@ -33,7 +37,7 @@ common.walk(rootDirectory, results, function(error) {
 
 	var portfolio = {};
 	results.forEach(function(value) {
-		var splitValues = value.split('/'),
+		var splitValues = splitPath(value),
 				group = splitValues[2];
 
 		portfolio[group] = portfolio[group] || [];
