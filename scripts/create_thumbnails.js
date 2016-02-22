@@ -1,16 +1,17 @@
-var gm = require('gm'),
+'use strict';
+
+const gm = require('gm'),
     fs = require('fs'),
     common = require('./common'),
     root = process.argv[2],
     width = process.argv[3] || 250,
-    height = process.argv[4] || 400;
+    height = process.argv[4] || 400,
+    TEASER_IMAGE_PATTERN = '.+-teaser',
+    TEASER_FILE_NAME = '-teaser.jpg';
 
-var TEASER_IMAGE_PATTERN = '.+-teaser';
-var TEASER_FILE_NAME = '-teaser.jpg';
-
-var createThumbnail = function(file) {
-  var outFile = file.slice(0, -4) + TEASER_FILE_NAME;
-  var image = gm(file)
+function createThumbnail(file) {
+  const outFile = file.slice(0, -4) + TEASER_FILE_NAME;
+  gm(file)
     .resize(width, height)
     .write(outFile, function(err) {
       if(err) {
@@ -20,18 +21,18 @@ var createThumbnail = function(file) {
         console.log('Creating: ' + outFile);
       }
   });
-};
+}
 
 if(!root) {
 	console.log('Specify a file or directory');
 	return;
 }
 
-var isFile = null;
-var isDirectory = null;
+let isFile = null;
+let isDirectory = null;
 
 try {
-  var stats = fs.statSync(root);
+  const stats = fs.statSync(root);
   isFile = stats.isFile();
   isDirectory = stats.isDirectory();
 }
@@ -40,7 +41,7 @@ catch(e) {
 }
 
 if(isDirectory) {
-  var results = [];
+  let results = [];
   common.walk(root, results, function(error) {
   	if(error) {
   		throw error;

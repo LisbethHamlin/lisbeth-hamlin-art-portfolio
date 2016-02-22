@@ -1,12 +1,15 @@
-var fs = require('fs'),
+'use strict';
+
+const fs = require('fs'),
 		sizeOf = require('image-size'),
 		common = require('./common'),
 		TEASER_IMAGE_PATTERN = '.+-teaser',
-		PORTFOLIO_OUT_FILE = '_data/portfolio.json',
-		rootDirectory = process.argv[2];
+		PORTFOLIO_OUT_FILE = '_data/portfolio.json';
+
+let rootDirectory = process.argv[2];
 
 function getImageSize(image) {
-	var imageSize = sizeOf(image);
+	const imageSize = sizeOf(image);
 	return imageSize.width.toString() + 'x' + imageSize.height.toString();
 }
 
@@ -25,7 +28,7 @@ if(!rootDirectory) {
 
 rootDirectory = rootDirectory.replace(/\\/g, '/');
 
-var results = [];
+let results = [];
 common.walk(rootDirectory, results, function(error) {
 	if(error) {
 		throw error;
@@ -35,10 +38,10 @@ common.walk(rootDirectory, results, function(error) {
 		return value.search(TEASER_IMAGE_PATTERN) === -1;
 	});
 
-	var portfolio = {};
+	const portfolio = {};
 	results.forEach(function(value) {
-		var splitValues = splitPath(value),
-				group = splitValues[2];
+		const splitValues = splitPath(value),
+					group = splitValues[2];
 
 		portfolio[group] = portfolio[group] || [];
 		portfolio[group].push({

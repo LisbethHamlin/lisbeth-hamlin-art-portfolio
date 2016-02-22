@@ -1,14 +1,16 @@
-var fs = require('fs');
+'use strict';
 
-var walk = function(dir, results, done) {
+const fs = require('fs');
+
+const walk = function(dir, results, done) {
 	fs.readdir(dir, function(error, list) {
 		if(error) {
 			return done(error);
 		}
 
-		var i = 0;
+		let i = 0;
 		(function next()
-		{	var file = list[i++];
+		{	let file = list[i++];
 			if(!file) {
 				return done(null);
 			}
