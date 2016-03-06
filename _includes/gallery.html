@@ -3,11 +3,12 @@
 {% for image_filter in page.image_filter %}
   {% for image in site.data.portfolio[image_filter.group] %}
       {% if image_filter.title == null or image_filter.title == image.title %}
+        {% assign prettyTitle = image.title | replace: '-',' ' | capitalize %}
         {% capture data %}
           {{data}},
           '<div class="grid-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-            <a href="{{ site.url }}/images/portfolio/{{image_filter.group}}/{{image.title}}.jpg" itemprop="contentUrl" data-size="{{image.size}}" data-index="{{image.title}}" data-title="{{image.title | replace: '-',' ' | capitalize}}" data-description="{{site.data.portfolio-info[image_filter.group][image.title].description}}">
-              <img src="{{ site.url }}/images/portfolio/{{image_filter.group}}/{{image.title}}-teaser.jpg" alt="{{include.title}}" itemprop="thumbnail"  />
+            <a href="{{ site.url }}/images/portfolio/{{image_filter.group}}/{{image.title}}.jpg" itemprop="contentUrl" data-size="{{image.size}}" data-index="{{image.title}}" data-title="{{prettyTitle}}" data-description="{{site.data.portfolio-info[image_filter.group][image.title].description}}">
+              <img src="{{ site.url }}/images/portfolio/{{image_filter.group}}/{{image.title}}-teaser.jpg" alt="{{prettyTitle}}" itemprop="thumbnail"  />
             </a>
          </div>'
         {% endcapture %}
