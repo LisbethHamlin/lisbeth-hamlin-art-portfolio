@@ -12,13 +12,14 @@ var generateDaySeed = function() {
 var buildPlugins = function($) {
   // reveals items iteratively
   // after each item has loaded its images
-  $.fn.masonryImagesReveal = function( $items, callback ) {
+  $.fn.masonryImagesReveal = function( $items, beforeImagesLoadedCallback ) {
     var msnry = this.data('masonry');
     var itemSelector = msnry.options.itemSelector;
     // hide by default
     $items.hide();
     // append to container
     this.append( $items );
+    beforeImagesLoadedCallback();
     $items.imagesLoaded()
       .progress( function( imgLoad, image ) {
         // get item
@@ -28,8 +29,7 @@ var buildPlugins = function($) {
         $item.show();
         // masonry does its thing
         msnry.appended( $item );
-      })
-      .done(callback);
+      });
 
     return this;
   };
@@ -146,7 +146,7 @@ var initPhotoSwipeFromDOM = function($, gallerySelector) {
 
                 return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
             },
-            addCaptionHTMLFn: function(item, captionEl, isFake) {
+            addCaptionHTMLFn: function(item, captionEl) {
                 if(!item.title) {
                     captionEl.children[0].innerText = '';
                     return false;
@@ -235,7 +235,6 @@ var updateUpcomingShows = function($) {
 };
 
 var configureMasonry = function($) {
-  var items = '';
   var gridSelector = '.grid';
   var $grid = $(gridSelector).masonry({
     itemSelector: '.grid-item',
@@ -250,6 +249,7 @@ var configureMasonry = function($) {
       shuffle(window.IMAGE_DATA);
       window.IMAGE_DATA = window.IMAGE_DATA.slice(-window.RANDOMIZE_SETTINGS.limit);
     }
+
     $grid.masonryImagesReveal($(window.IMAGE_DATA.join('')), function() {
       initPhotoSwipeFromDOM($, gridSelector);
     });
