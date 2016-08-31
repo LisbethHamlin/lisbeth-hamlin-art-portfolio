@@ -1,12 +1,12 @@
 <article class="tile" itemscope itemtype="http://schema.org/Article">
-  <a href="{{ site.url }}/portfolio/{{ include.groupKey }}" title="{{ post.title }}" class="post-teaser">
+  <a href="{{ site.url }}/portfolio/{{ include.groupKey }}/" title="{{ post.title }}" class="post-teaser">
     <div class="portfolio-icon">
       <i class="fa fa-folder-open fa-5x"></i>
     </div>
   </a>
   {% if page.hide-teaser-descriptions == nil or page.hide-teaser-descriptions == false %}
   	<h2 class="post-title" itemprop="name">
-  		<a href="{{ site.url }}/portfolio/{{ include.groupKey }}">{{ include.groupKey | replace: '-',' ' | capitalize }}</a>
+  		<a href="{{ site.url }}/portfolio/{{ include.groupKey }}/">{{ include.groupKey | replace: '-',' ' | capitalize }}</a>
   	</h2>
   {% endif %}
   {% if excerpt %}<p class="post-excerpt" itemprop="description">{{ excerpt | strip_html | truncate: 160 }}</p>{% endif %}
