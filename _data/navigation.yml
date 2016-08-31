@@ -1,16 +1,16 @@
 # Site navigation links
 
 - title: Portfolio
-  url: /portfolio
+  url: /portfolio/
   excerpt: My portfolio
   image:
 
 - title: Art Shows
-  url: /art-shows
+  url: /art-shows/
   excerpt: Upcoming art shows
   image:
 
 - title: About
-  url: /about
+  url: /about/
   excerpt: More information about myself
   image:
