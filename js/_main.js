@@ -87,10 +87,7 @@ var initPhotoSwipeFromDOM = function($, gallerySelector) {
     // triggers when user clicks on thumbnail
     var onThumbnailsClick = function(e) {
         e.preventDefault();
-
         openPhotoSwipe(e.data.$links.index(this), $(e.target).closest(gallerySelector));
-
-        return false;
     };
 
     // parse picture index and gallery index from URL (#&pid=1&gid=2)
