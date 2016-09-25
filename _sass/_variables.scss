@@ -6,11 +6,12 @@
    Typography variables
    ========================================================================== */
 
-$base-font                   	: Georgia,Times,"Times New Roman",serif;
-$heading-font                	: "Helvetica Neue","Segoe UI",Arial,sans-serif;
+$base-font                   	: Georgia,Times, "Times New Roman",serif;
+$artistic-font                : "Indie Flower", cursive;
+$heading-font                	: $artistic-font;
 $caption-font                	: $base-font;
 $code-font                   	: monospace;
-$alt-font                    	: $heading-font;
+$alt-font                    	: "Helvetica Neue","Segoe UI",Arial,sans-serif;
 
 $doc-font-size               	: 16;
 $doc-line-height             	: 24;

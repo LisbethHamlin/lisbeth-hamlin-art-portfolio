@@ -425,3 +425,17 @@ iframe {
 .breadcrumbs > span:last-child {
 	cursor: default;
 }
+
+// art show fonts
+.art-show {
+	font-family: $artistic-font;
+	.page-content > p:first-child {
+		@include font-size(24,yes,30);
+	}
+	p {
+		@include font-size(22,yes,30);
+	}
+	li {
+		@include font-size(20,12,24);
+	}
+}
