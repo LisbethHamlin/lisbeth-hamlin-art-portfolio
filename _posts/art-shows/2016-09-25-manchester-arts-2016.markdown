@@ -16,7 +16,7 @@ font_class: art-show
 
 The following pieces will be available:
 
-  * [Mossaics]({{site.url}}/portfolio/mossaics/): trivets, frames, trays, lamps, rocks, mirrors, candle holders, & wall hangings
+  * [Mosaics]({{site.url}}/portfolio/mosaics/): trivets, frames, trays, lamps, rocks, mirrors, candle holders, & wall hangings
   * [Jewelry]({{site.url}}/portfolio/jewelry/): made from painted leather, sculpey clay, copper clay, mosaic glass, millefiori, and clay
   * [Ceramics]({{site.url}}/portfolio/ceramics/): mugs, bowls and plates
 
