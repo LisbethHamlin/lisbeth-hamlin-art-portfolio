@@ -22,5 +22,5 @@ The following pieces will be available:
 
 Don't miss the hand made coasters, switch plate covers, and Christmas ornaments!
 
-* **Location**: [Schroeder Park](https://goo.gl/maps/7uuajmY1pUT2) - booth #21
+* **Location**: [Schroeder Park](https://goo.gl/maps/7uuajmY1pUT2) - booth #13
 * **Date**: {{page.excerpt}}
