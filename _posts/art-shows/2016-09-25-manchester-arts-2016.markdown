@@ -1,24 +1,21 @@
 ---
-layout: art-show
+layout: article
 title: Manchester Arts 2016
 modified:
 categories: [art-shows]
 excerpt: 10/08/2016 11 am - 5 pm
 end_date: 9 October 2016
+portfolio_list_groups:
+  - mosaics
+  - jewelry
+  - ceramics
 tags: []
-image:
-  feature:
-  teaser:
-  thumb:
 date: 2016-09-25T01:50:13+01:00
-font_class: art-show
 ---
 
 The following pieces will be available:
 
-  * [Mosaics]({{site.url}}/portfolio/mosaics/): trivets, frames, trays, lamps, rocks, mirrors, candle holders, & wall hangings
-  * [Jewelry]({{site.url}}/portfolio/jewelry/): made from painted leather, sculpey clay, copper clay, mosaic glass, millefiori, and clay
-  * [Ceramics]({{site.url}}/portfolio/ceramics/): mugs, bowls and plates
+{% include portfolio-list.html %}
 
 Don't miss the hand made coasters, switch plate covers, and Christmas ornaments!
 

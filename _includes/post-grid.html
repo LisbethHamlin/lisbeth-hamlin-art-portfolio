@@ -5,9 +5,9 @@
     </div>
   </a>
   {% if page.hide-teaser-descriptions == nil or page.hide-teaser-descriptions == false %}
-  	<h2 class="post-title" itemprop="name">
-  		<a href="{{ site.url }}/portfolio/{{ include.groupKey }}/">{{ include.groupKey | replace: '-',' ' | capitalize }}</a>
-  	</h2>
+    <h2 class="post-title" itemprop="name">
+      <a href="{{ site.url }}/portfolio/{{ include.groupKey }}/">{{ include.groupKey | replace: '-',' ' | capitalize }}</a>
+    </h2>
   {% endif %}
   {% if excerpt %}<p class="post-excerpt" itemprop="description">{{ excerpt | strip_html | truncate: 160 }}</p>{% endif %}
 </article><!-- /.tile -->

@@ -7,7 +7,7 @@
         {% capture data %}
           {{data}},
           '<div class="grid-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-            <a href="{{ site.url }}/images/portfolio/{{image_filter.group}}/{{image.title}}.jpg" itemprop="contentUrl" data-size="{{image.size}}" data-index="{{image.title}}" data-title="{{prettyTitle}}" data-description="{{site.data.portfolio-info[image_filter.group][image.title].description}}">
+            <a href="{{ site.url }}/images/portfolio/{{image_filter.group}}/{{image.title}}.jpg" itemprop="contentUrl" data-size="{{image.size}}" data-index="{{image.title}}" data-title="{{prettyTitle}}" data-description="{{site.data.portfolio-image-info[image_filter.group][image.title].description}}">
               <img src="{{ site.url }}/images/portfolio/{{image_filter.group}}/{{image.title}}-teaser.jpg" alt="{{prettyTitle}}" itemprop="thumbnail"  />
             </a>
          </div>'
