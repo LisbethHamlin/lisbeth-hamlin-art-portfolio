@@ -1,0 +1,8 @@
+<ul>
+  {% for group in page.portfolio_list_groups %}
+    <li>
+      <a href="{{ site.url }}/portfolio/{{ group }}/">{{ group | capitalize }}</a>:
+      {{ site.data.portfolio-descriptions[group] }}
+    </li>
+  {% endfor %}
+</ul>

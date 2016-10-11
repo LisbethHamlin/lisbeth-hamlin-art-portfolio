@@ -1,13 +1,12 @@
 # Site navigation links
+- title: Art Shows
+  url: /art-shows/
+  excerpt: Upcoming art shows
+  image:
 
 - title: Portfolio
   url: /portfolio/
   excerpt: My portfolio
-  image:
-
-- title: Art Shows
-  url: /art-shows/
-  excerpt: Upcoming art shows
   image:
 
 - title: About
