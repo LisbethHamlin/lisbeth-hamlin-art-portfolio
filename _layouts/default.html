@@ -46,13 +46,8 @@ layout: compress
     </div>
 
     <!-- Core JS file -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/{{site.jquery-version}}/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/{{site.photoswipe-version}}/photoswipe.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/{{site.photoswipe-version}}/photoswipe-ui-default.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/{{site.imagesloaded-version}}/imagesloaded.pkgd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/{{site.masonry-version}}/masonry.pkgd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/{{site.seedrandom-version}}/seedrandom.min.js"></script>
-    <script src="{{ site.url }}/js/main.js"></script>
+    <script src="{{site.url}}/js/vendor.js"></script>
+    <script src="{{ site.url }}/js/{{page.layout}}.js"></script>
     {% include tracking.html %}
   </body>
 </html>

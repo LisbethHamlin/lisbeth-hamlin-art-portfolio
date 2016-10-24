@@ -1,5 +1,5 @@
 ---
-layout: photoswipe
+layout: photo-gallery
 title: "Watercolors"
 group: watercolor
 image_filter:

@@ -9,7 +9,11 @@ var generateDaySeed = function() {
   Math.seedrandom(Math.floor(Date.now() / 8.64e+7));
 };
 
-var buildPlugins = function($) {
+var buildPlugins = function($, masonry, imagesLoaded) {
+
+  $.bridget('masonry', masonry, $);
+  imagesLoaded.makeJQueryPlugin( $ );
+
   // reveals items iteratively
   // after each item has loaded its images
   $.fn.masonryImagesReveal = function( $items, beforeImagesLoadedCallback ) {
@@ -33,23 +37,6 @@ var buildPlugins = function($) {
 
     return this;
   };
-};
-
-// Off Canvas Sliding
-var buildMenu = function($) {
-  // Menu button click
-  $('#js-menu-trigger,#js-menu-screen').on('click touchstart', function(e){
-    // $('#js-body').toggleClass('no-scroll');
-    $('#js-menu, #js-menu-screen').toggleClass('is-visible');
-    $('#js-menu-trigger').toggleClass('slide close');
-    // $('#masthead, #page-wrapper').toggleClass('slide');
-    e.preventDefault();
-  });
-};
-
-var buildToc = function($) {
-  // Table of Contents title. Change text to localize
-  $("#markdown-toc").prepend("<li><h6>Overview</h6></li>");
 };
 
 var initPhotoSwipeFromDOM = function($, gallerySelector) {
@@ -204,33 +191,6 @@ var initPhotoSwipeFromDOM = function($, gallerySelector) {
     }
 };
 
-var updateUpcomingShows = function($) {
-  var $showRoot = $('#show-root');
-
-  if(!$showRoot.length) {
-    return;
-  }
-
-  var currentTime = Math.floor(Date.now() / 1000);
-  var $shows = $('#current-shows > div');
-  var $target = $('#previous-shows');
-
-  for(var i = 0; i < $shows.length; ++i) {
-    var $currentShow = $($shows[i]);
-    var showTime = +$currentShow.data('time');
-    if(currentTime > showTime) {
-      $currentShow.detach();
-      $target.prepend($currentShow);
-    }
-  }
-
-  if($('#current-shows > div').length === 0) {
-    $('#current-shows').remove();
-    $('#no-current-shows-message').removeClass('hidden');
-  }
-  $showRoot.removeClass('load');
-};
-
 var configureMasonry = function($) {
   var gridSelector = '.grid';
   var $grid = $(gridSelector).masonry({
@@ -254,10 +214,7 @@ var configureMasonry = function($) {
   }
 };
 
-(function($) {
-  buildPlugins($);
-  buildMenu($);
-  buildToc($);
-  updateUpcomingShows($);
+require(['masonryLayout', 'imagesLoaded', 'photoswipe', 'photoswipeUI', 'seedrandom', './_common.js'], function(masonry, imagesLoaded) {
+  buildPlugins($, masonry, imagesLoaded);
   configureMasonry($);
-})(jQuery);
+});

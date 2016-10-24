@@ -1,5 +1,5 @@
 ---
-layout: photoswipe
+layout: photo-gallery
 permalink: /
 categories: [art-shows]
 title: Artistic Statement
@@ -18,4 +18,4 @@ randomize_gallery:
 
 Ethnic humanity is my subject matter and a source of my inspiration. My figurative images depict life of indigenous cultures that record primitive life with an ethnological perspective. Experiencing different cultures has helped me to realize there is not one way of living, but thousands.
 
-{% include latest-posts-list.html %}
+{% include latest-art-shows-list.html %}

@@ -89,10 +89,10 @@
 .top-menu {
 	display: none;
 	position: relative;
-	@include media($medium) {
+	@include media($small) {
 		@include span-columns(12);
 	}
-	@include media($large) {
+	@include media($medium) {
 		@include span-columns(7);
 		ul {
 			position: absolute;
@@ -388,8 +388,13 @@ TODO: move this into another file
 	}
 }
 
-#previous-shows {
-	a, p {
-		color: lighten($black, 40);
+#previous-shows, ul#latest-art-shows li:not(.current-show) {
+	color: lighten($black, 40);
+	a, p, li {
+		color: inherit;
 	}
 }
+
+/*ul#latest-art-shows li.current-show {
+	font-size: 20px;
+}*/

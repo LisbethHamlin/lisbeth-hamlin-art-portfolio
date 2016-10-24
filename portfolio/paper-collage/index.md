@@ -1,5 +1,5 @@
 ---
-layout: photoswipe
+layout: photo-gallery
 title: "Paper Collage"
 group: paper-collage
 image_filter:

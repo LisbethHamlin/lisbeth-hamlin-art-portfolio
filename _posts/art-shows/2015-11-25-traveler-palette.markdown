@@ -1,5 +1,5 @@
 ---
-layout: photoswipe
+layout: photo-gallery
 title: Traveler's Palette
 modified:
 categories: [art-shows]

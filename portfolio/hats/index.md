@@ -1,5 +1,5 @@
 ---
-layout: photoswipe
+layout: photo-gallery
 title: "Hats"
 group: hats
 image_filter:

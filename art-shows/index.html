@@ -7,7 +7,7 @@ hide_title: true
 <div id="show-root" class="load">
   <h1>Current {{page.title}}</h1>
   <div id="current-shows" class="bullets">
-    {% for post in site.posts reversed %}
+    {% for post in site.posts reversed limit:10 %}
       <div class="bullet three-col-bullet" data-time="{{post.end_date | date: '%s'}}">
         <a href="{{ site.url }}{{ post.url }}">
           <div class="center">
