@@ -39,7 +39,7 @@ var buildPlugins = function($, masonry, imagesLoaded) {
   };
 };
 
-var initPhotoSwipeFromDOM = function($, gallerySelector) {
+var initPhotoSwipeFromDOM = function($, photoswipe, photoswipeUI, gallerySelector) {
 
     // loop through all gallery elements and bind events
     var $galleryElements = $( gallerySelector );
@@ -174,7 +174,7 @@ var initPhotoSwipeFromDOM = function($, gallerySelector) {
         }
 
         // Pass data to PhotoSwipe and initialize it
-        gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+        gallery = new photoswipe( pswpElement, photoswipeUI, items, options);
         gallery.init();
     };
 
@@ -191,7 +191,7 @@ var initPhotoSwipeFromDOM = function($, gallerySelector) {
     }
 };
 
-var configureMasonry = function($) {
+var configureMasonry = function($, photoswipe, photoswipeUI) {
   var gridSelector = '.grid';
   var $grid = $(gridSelector).masonry({
     itemSelector: '.grid-item',
@@ -208,13 +208,18 @@ var configureMasonry = function($) {
     }
 
     $grid.masonryImagesReveal($(window.IMAGE_DATA.join('')), function() {
-      initPhotoSwipeFromDOM($, gridSelector);
+      initPhotoSwipeFromDOM($, photoswipe, photoswipeUI, gridSelector);
     });
     $('#jsonScript').remove();
   }
 };
 
-require(['masonryLayout', 'imagesLoaded', 'photoswipe', 'photoswipeUI', 'seedrandom', './_common.js'], function(masonry, imagesLoaded) {
+require([
+  'masonryLayout', 'photoswipe',
+   'photoswipeUI', 'imagesLoaded',
+   'seedrandom', './_common.js'
+ ],
+function(masonry, photoswipe, photoswipeUI, imagesLoaded) {
   buildPlugins($, masonry, imagesLoaded);
-  configureMasonry($);
+  configureMasonry($, photoswipe, photoswipeUI);
 });
