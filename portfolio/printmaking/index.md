@@ -1,5 +1,5 @@
 ---
-layout: photoswipe
+layout: photo-gallery
 title: "Printmaking"
 group: printmaking
 image_filter:
