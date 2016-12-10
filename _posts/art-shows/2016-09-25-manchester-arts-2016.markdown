@@ -1,9 +1,9 @@
 ---
 layout: article
 title: Manchester Arts 2016
-modified:
+modified: 2016-12-10
 categories: [art-shows]
-excerpt: 10/08/2016 11 am - 5 pm
+excerpt: October 8th, 2016
 end_date: 9 October 2016
 portfolio_list_groups:
   - mosaics
@@ -19,5 +19,5 @@ The following pieces will be available:
 
 Don't miss the hand made coasters, switch plate covers, and Christmas ornaments!
 
-* **Location**: [Schroeder Park](https://goo.gl/maps/7uuajmY1pUT2) - booth #13
-* **Date**: {{page.excerpt}}
+* **Location**: [Schroeder Park](https://goo.gl/maps/7uuajmY1pUT2) — booth #13
+* **Date**: October 8th 2016 — 11am - 5pm

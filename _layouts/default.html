@@ -47,7 +47,7 @@ layout: compress
 
     <!-- Core JS file -->
     <script src="{{site.url}}/js/vendor.js"></script>
-    <script src="{{ site.url }}/js/{{page.layout}}.js"></script>
+    {% if layout.js-module %}<script src="{{ site.url }}/js/{{layout.js-module}}.js"></script>{% endif %}
     {% include tracking.html %}
   </body>
 </html>

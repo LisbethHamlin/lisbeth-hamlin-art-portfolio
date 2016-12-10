@@ -5,8 +5,7 @@ module.exports = {
   context: path.resolve(__dirname, "js"),
   entry: {
     vendor: ["jquery", "./_common.js"],
-    homepage: ["./_homepage.js"],
-    "photo-gallery": ["./_photo-gallery.js"],
+    photoGallery: ["./_photo-gallery.js"],
     artShows: ["./_art-shows.js"],
   },
   output: {
@@ -30,7 +29,7 @@ module.exports = {
     ]
   },
   plugins: [
-    //new webpack.optimize.UglifyJsPlugin({output: {comments: false}}),
+    new webpack.optimize.UglifyJsPlugin({output: {comments: false}}),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"

@@ -388,13 +388,8 @@ TODO: move this into another file
 	}
 }
 
-#previous-shows, ul#latest-art-shows li:not(.current-show) {
-	color: lighten($black, 40);
-	a, p, li {
-		color: inherit;
+#previous-shows {
+	a, p {
+		color: lighten($black, 40);
 	}
 }
-
-/*ul#latest-art-shows li.current-show {
-	font-size: 20px;
-}*/
