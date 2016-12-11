@@ -1,5 +1,6 @@
 var webpack = require("webpack");
 var path = require("path");
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, "js"),
@@ -15,18 +16,22 @@ module.exports = {
   },
   resolve: {
     alias: {
-      jquery: "jquery/dist/jquery.min.js",
-      seedrandom: "seedrandom/seedrandom.js",
-      masonryLayout: "masonry-layout/dist/masonry.pkgd.js",
+      jquery: __dirname + "/node_modules/jquery/dist/jquery.min.js",
+      seedrandom: __dirname + "/node_modules/seedrandom/seedrandom.js",
+      masonryLayout:  __dirname + "/node_modules/masonry-layout/dist/masonry.pkgd.js",
       photoswipe: __dirname + "/node_modules/photoswipe/dist/photoswipe.js",
       photoswipeUI: __dirname + "/node_modules/photoswipe/dist/photoswipe-ui-default.js",
+      photoswipeCss: __dirname + "/node_modules/photoswipe/dist/photoswipe.css",
+      photoswipeUiCss: __dirname + "/node_modules/photoswipe/dist/default-skin/default-skin.css",
       imagesLoaded: __dirname + "/node_modules/imagesloaded/imagesloaded.pkgd.js"
     }
   },
   module: {
-    noParse: [
-      /[\/\\]node_modules[\/\\]seedrandom[\/\\].*\.js$/
-    ]
+     loaders: [
+       { test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader", "css-loader") },
+       { test: /\.(png|svg|gif)$/, loader: 'url-loader?limit=8192' }
+     ],
+     noParse: [/[\/\\]node_modules[\/\\]seedrandom[\/\\].*\.js$/]
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({output: {comments: false}}),
@@ -38,5 +43,6 @@ module.exports = {
       name: "vendor",
       filename: "vendor.js",
     }),
+    new ExtractTextPlugin("../css/[name].css")
   ]
 };
