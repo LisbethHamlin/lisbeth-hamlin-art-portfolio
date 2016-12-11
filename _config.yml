@@ -8,13 +8,6 @@ locale: en_US
 timezone: America/Chicago
 url: https://www.lisbethhamlin.com
 
-#Lib versions
-photoswipe-version: 4.1.1
-jquery-version: 2.2.4
-imagesloaded-version: 4.1.0
-masonry-version: 4.1.0
-seedrandom-version: 2.4.2
-
 # Jekyll configuration
 
 sass:
