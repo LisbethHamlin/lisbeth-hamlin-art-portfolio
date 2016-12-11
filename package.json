@@ -3,10 +3,9 @@
   "version": "0.0.1",
   "description": "Lisbeth Hamin's art portfolio.",
   "private": true,
-  "devDependencies": {
+  "dependencies": {
     "css-loader": "^0.26.1",
     "extract-text-webpack-plugin": "^1.0.1",
-    "file-loader": "^0.9.0",
     "imagesloaded": "^4.1.1",
     "jquery": "^2.2.4",
     "masonry-layout": "^4.1.1",
