@@ -1,4 +1,6 @@
-<h2>Latest {{ page.categories | first | replace: '-',' ' | capitalize }}</h2>
+<a href="{{ site.url }}{{ include.headerUrl }}">
+  <h2>Latest {{ page.categories | first | replace: '-',' ' | capitalize }}</h2>
+</a>
 <ul>
 {% capture category_name %}{{ page.categories | first }}{% endcapture %}
 {% for post in site.categories.[category_name] limit:3 %}
