@@ -1,0 +1,4 @@
+{% for group in page.portfolio_list_groups %}
+  {% if forloop.last == true %}and {% endif %}
+  <a href="{{ site.url }}/portfolio/{{ group }}/">{{ group | replace: '-',' ' }}</a>{% if forloop.last != true %},{% endif %}
+{% endfor %}
