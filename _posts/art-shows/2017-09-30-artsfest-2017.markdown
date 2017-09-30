@@ -1,0 +1,14 @@
+---
+layout: article
+title: Artsfest 2017
+modified:
+categories: [art-shows]
+excerpt: September 30th 2017
+tags: []
+date: 2017-09-30T03:09:55+01:00
+end_date: 1 October 2017
+---
+
+**Location**: [Schroeder Park](https://goo.gl/maps/847Uf551SFp)
+
+**Date**: September 30th 2017 — 11am - 5pm
