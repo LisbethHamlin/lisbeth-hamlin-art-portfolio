@@ -11,4 +11,4 @@ end_date: 20 November 2017
 
 **Location**: [Parkway South High School](https://goo.gl/maps/iFqJk2KaG8t)
 
-**Date**: November 18-19th 2017 — Sat 9am ‑ 4pm, Sun 10am ‑ 4pm
+**Date**: November 18-19th 2017 — Sat 9am - 4pm, Sun 10am - 4pm
