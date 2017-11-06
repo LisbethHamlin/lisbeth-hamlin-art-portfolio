@@ -16,7 +16,7 @@ hide_title: true
   {% include feed-subscribe.html %}
   <h2>Previous {{page.title}}</h2>
   <div id="previous-shows" class="bullets">
-    {% for post in site.posts limit:10 %}
+    {% for post in site.posts limit:7 %}
       <div class="bullet three-col-bullet" data-time="{{post.end_date | date: '%s'}}">
         <a href="{{ site.url }}{{ post.url }}">
           <div class="center">
