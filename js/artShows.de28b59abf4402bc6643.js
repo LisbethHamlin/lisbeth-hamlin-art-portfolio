@@ -1,1 +1,0 @@
-webpackJsonp([2],{6:function(e,s,o){e.exports=o(7)},7:function(e,s,o){"use strict";(function(e){var s=o(1),r=e("#current-shows");s.verifyItemTime(e,e("#previous-shows > div"),function(e,s){s||(e.detach(),r.prepend(e))}),r.is(":parent")||(e("#current-shows").remove(),e("#no-current-shows-message").removeClass("hidden")),e("#show-root").removeClass("load")}).call(s,o(0))}},[6]);

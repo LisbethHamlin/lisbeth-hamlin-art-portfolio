@@ -1,5 +1,7 @@
 'use strict';
 
+var $ = require('jquery');
+
 // Off Canvas Sliding
 var buildMenu = function($) {
   // Menu button click
@@ -17,21 +19,5 @@ var buildToc = function($) {
   $("#markdown-toc").prepend("<li><h6>Overview</h6></li>");
 };
 
-var verifyItemTime = function($, $elements, callback) {
-  var currentTime = Math.floor(Date.now() / 1000);
-
-  for(var i = 0; i < $elements.length; ++i) {
-    var $element = $($elements[i]);
-    var endTime = parseInt($element.data('time'), 10);
-    callback($element, currentTime > endTime);
-  }
-};
-
-(function($) {
-  buildMenu($);
-  buildToc($);
-})(jQuery);
-
-module.exports = {
-  verifyItemTime: verifyItemTime
-};
+buildMenu($);
+buildToc($);
