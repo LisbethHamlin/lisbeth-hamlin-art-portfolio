@@ -217,7 +217,7 @@ var configureMasonry = function($, photoswipe, photoswipeUI) {
 require([
    'masonryLayout', 'photoswipe',
    'photoswipeUI', 'imagesLoaded',
-   'seedrandom'
+   'seedrandom', 'photoswipeCss', 'photoswipeUiCss'
  ],
 function(masonry, photoswipe, photoswipeUI, imagesLoaded) {
   buildPlugins($, masonry, imagesLoaded);
