@@ -4,7 +4,7 @@ const path = require("path");
 module.exports = {
   context: path.resolve(__dirname, "js"),
   entry: {
-    vendor: ["jquery", "./_common.js"],
+    common: ["jquery", "./_common.js"],
     photoGallery: ["./_photo-gallery.js"],
     artShows: ["./_art-shows.js"],
   },
@@ -29,11 +29,13 @@ module.exports = {
      rules: [
        {
          test: /\.css$/,
-         loader: ['style-loader', {
-           loader: 'css-loader',
-           options: {
-            minimize: { discardComments: { removeAll: true } }
-           }
+         use: [{
+            loader: 'style-loader'
+          }, {
+            loader: 'css-loader',
+            options: {
+              minimize: { discardComments: { removeAll: true } }
+            }
          }]
        },
        {
@@ -47,13 +49,9 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin({output: {comments: false}}),
-    new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery"
-    }),
     new webpack.optimize.CommonsChunkPlugin({
-      name: "vendor",
-      filename: "vendor.[chunkhash].js",
+      name: "common",
+      filename: "[name].[chunkhash].js",
     })
   ]
 };
