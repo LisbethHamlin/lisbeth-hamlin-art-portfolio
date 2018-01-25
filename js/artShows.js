@@ -1,1 +1,0 @@
-webpackJsonp([0],[function(e,s,o){e.exports=o(1)},function(e,s,o){(function(e){"use strict";var s=o(4),r=e("#current-shows");s.verifyItemTime(e,e("#previous-shows > div"),function(e,s){s||(e.detach(),r.prepend(e))}),r.is(":parent")||(e("#current-shows").remove(),e("#no-current-shows-message").removeClass("hidden")),e("#show-root").removeClass("load")}).call(s,o(2))}]);
