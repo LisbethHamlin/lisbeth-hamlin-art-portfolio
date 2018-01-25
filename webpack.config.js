@@ -29,7 +29,12 @@ module.exports = {
      rules: [
        {
          test: /\.css$/,
-         loader: ['style-loader', 'css-loader']
+         loader: ['style-loader', {
+           loader: 'css-loader',
+           options: {
+            minimize: { discardComments: { removeAll: true } }
+           }
+         }]
        },
        {
         test: /\.(png|svg|gif)$/,
