@@ -1,19 +1,19 @@
-'use strict';
+import $ from 'jquery'
+import './_common'
 
-var $ = require('jquery');
-var $target = $('#current-shows');
+const $target = $('#current-shows');
 
-var verifyItemTime = function($, $elements, callback) {
-  var currentTime = Math.floor(Date.now() / 1000);
+const verifyItemTime = ($elements, callback) => {
+  const currentTime = Math.floor(Date.now() / 1000);
 
-  for(var i = 0; i < $elements.length; ++i) {
-    var $element = $($elements[i]);
-    var endTime = parseInt($element.data('time'), 10);
+  for(let i = 0; i < $elements.length; ++i) {
+    const $element = $($elements[i]);
+    const endTime = parseInt($element.data('time'), 10);
     callback($element, currentTime > endTime);
   }
 };
 
-verifyItemTime($, $('#previous-shows > div'), function($element, showEnded) {
+verifyItemTime($('#previous-shows > div'), ($element, showEnded) => {
   if(!showEnded) {
     $element.detach();
     $target.prepend($element);

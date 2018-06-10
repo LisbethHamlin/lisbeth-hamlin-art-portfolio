@@ -43,8 +43,14 @@ layout: compress
       {% include footer.html %}
     </div>
 
-    <script src="{{site.url}}/js/common.4f2d9da71dc6d8ae9d8b.js"></script>
-    {% if layout.js-module %}<script src="{{ site.url }}/js/{{layout.js-module}}.js"></script>{% endif %}
+    {% if layout.jsModules %}
+      {% for module in layout.jsModules %}
+        <script src="{{module | prepend: '/js/' | absolute_url }}"></script>
+      {% endfor %}
+    {% else %}
+      <script src="{{'/js/common.a232d8ea1291030a327c.js' | absolute_url}}"></script>
+    {% endif %}
+    <script src="{{'/js/vendors~artShows~common~photoGallery.bcb70e6964a28fbbe739.js' | absolute_url}}"></script>
     {% include tracking.html %}
   </body>
 </html>
