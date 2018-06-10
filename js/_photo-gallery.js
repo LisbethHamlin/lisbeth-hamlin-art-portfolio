@@ -48,7 +48,7 @@ const buildPlugins = () => {
   };
 };
 
-const initPhotoSwipeFromDOM = (photoswipe, photoswipeUI, gallerySelector) => {
+const initPhotoSwipeFromDOM = (gallerySelector) => {
 
   // loop through all gallery elements and bind events
   const $galleryElements = $(gallerySelector);
@@ -216,7 +216,7 @@ const configureMasonry = () => {
     }
 
     $grid.masonryImagesReveal($(window.IMAGE_DATA.join('')), () => {
-      initPhotoSwipeFromDOM($, photoswipe, photoswipeUI, gridSelector);
+      initPhotoSwipeFromDOM(gridSelector);
     });
     $('#jsonScript').remove();
   }

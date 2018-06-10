@@ -2,6 +2,7 @@ const webpack = require("webpack");
 const path = require("path");
 
 module.exports = {
+  devtool: "source-map",
   context: path.resolve(__dirname, "js"),
   entry: {
     common: ["jquery", "./_common.js"],
