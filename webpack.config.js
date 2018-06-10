@@ -5,7 +5,7 @@ module.exports = {
   devtool: "source-map",
   context: path.resolve(__dirname, "js"),
   entry: {
-    common: ["jquery", "./_common.js"],
+    common: ["./_common.js"],
     photoGallery: ["./_photo-gallery.js"],
     artShows: ["./_art-shows.js"],
   },
