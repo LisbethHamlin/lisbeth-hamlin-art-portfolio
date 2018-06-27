@@ -358,10 +358,6 @@
 	}
 }
 
-/* Masonry Grid
-TODO: move this into another file
-*/
-
 .grid {
 	min-height: 50vh;
 }
@@ -392,4 +388,10 @@ TODO: move this into another file
 	a, p {
 		color: lighten($black, 40);
 	}
+}
+
+noscript {
+	display: block;
+	text-align: center;
+	color: $danger-color;
 }
