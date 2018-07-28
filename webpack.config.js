@@ -1,10 +1,10 @@
-const webpack = require("webpack");
 const path = require("path");
 
 module.exports = {
+  devtool: "source-map",
   context: path.resolve(__dirname, "js"),
   entry: {
-    common: ["jquery", "./_common.js"],
+    common: ["./_common.js"],
     photoGallery: ["./_photo-gallery.js"],
     artShows: ["./_art-shows.js"],
   },
@@ -27,6 +27,24 @@ module.exports = {
   },
   module: {
      rules: [
+        {
+          test: /\.js$/,
+          exclude: /(node_modules|bower_components)/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                ["@babel/preset-env", {
+                  "targets": {
+                    "browsers": [
+                      "cover 99.5%"
+                    ]
+                  }
+                }]
+              ]
+            }
+          }
+       },
        {
          test: /\.css$/,
          use: [{
@@ -47,11 +65,9 @@ module.exports = {
       }
      ]
   },
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin({output: {comments: false}}),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: "common",
-      filename: "[name].[chunkhash].js",
-    })
-  ]
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
+  }
 };
