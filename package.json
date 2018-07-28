@@ -4,19 +4,24 @@
   "description": "Lisbeth Hamin's art portfolio.",
   "private": true,
   "scripts": {
-    "build": "webpack",
-    "watch": "webpack --watch"
+    "build": "webpack --mode production",
+    "build:dev": "webpack --mode development",
+    "watch": "webpack --watch --mode development"
   },
-  "dependencies": {
-    "css-loader": "^0.28.9",
-    "file-loader": "^1.1.6",
-    "imagesloaded": "^4.1.2",
+  "devDependencies": {
+    "@babel/core": "^7.0.0-beta.52",
+    "@babel/preset-env": "^7.0.0-beta.52",
+    "babel-loader": "^8.0.0-beta.4",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "imagesloaded": "^4.1.4",
     "jquery": "^3.3.1",
-    "masonry-layout": "^4.2.0",
+    "masonry-layout": "^4.2.2",
     "photoswipe": "^4.1.2",
     "seedrandom": "^2.4.3",
-    "style-loader": "^0.19.1",
-    "url-loader": "^0.6.2",
-    "webpack": "^3.10.0"
+    "style-loader": "^0.21.0",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.15.1",
+    "webpack-cli": "^3.0.8"
   }
 }
