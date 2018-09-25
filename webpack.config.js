@@ -35,9 +35,12 @@ module.exports = {
             options: {
               presets: [
                 ["@babel/preset-env", {
-                  "targets": {
-                    "browsers": [
-                      "cover 99.5%"
+                  targets: {
+                    browsers: [
+                      "last 1 version",
+                      "> 1%",
+                      "IE 11",
+                      "not dead"
                     ]
                   }
                 }]
