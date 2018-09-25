@@ -1,0 +1,14 @@
+---
+layout: article
+title: Manchester Artsfest 2018
+modified:
+categories: [art-shows]
+excerpt: September 29th
+tags: []
+date: 2018-09-24T19:24:34-05:00
+end_date: 30 September 2018
+---
+
+**Location**: [Schroeder Park](https://goo.gl/maps/7uuajmY1pUT2)
+
+**Date**: September 29th 11am - 5pm
