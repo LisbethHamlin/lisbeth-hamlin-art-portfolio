@@ -9,14 +9,14 @@ import 'photoswipeCss'
 import 'photoswipeUiCss'
 import './_common'
 
-const shuffle = (o) => {
-  for (let j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x) { }
-  return o;
-};
-
-const generateDaySeed = () => {
-  Math.seedrandom(Math.floor(Date.now() / 8.64e+7));
-};
+const shuffle = (a) => {
+  const rng = new Math.seedrandom(Math.floor(Date.now() / 8.64e+7));
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
 
 const buildPlugins = () => {
 
@@ -136,7 +136,11 @@ const initPhotoSwipeFromDOM = (gallerySelector) => {
           pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
           rect = thumbnail.getBoundingClientRect();
 
-        return { x: rect.left, y: rect.top + pageYScroll, w: rect.width };
+        return {
+          x: rect.left,
+          y: rect.top + pageYScroll,
+          w: rect.width
+        };
       },
       addCaptionHTMLFn: (item, captionEl) => {
         if (!item.title) {
@@ -189,7 +193,9 @@ const initPhotoSwipeFromDOM = (gallerySelector) => {
   $galleryElements.each((galleryIndex, gallery) => {
     const $gallery = $(gallery);
     $gallery.data('pswp-uid', galleryIndex + 1);
-    $gallery.on('click', '.grid-item a', { $links: $gallery.find('.grid-item a') }, onThumbnailsClick);
+    $gallery.on('click', '.grid-item a', {
+      $links: $gallery.find('.grid-item a')
+    }, onThumbnailsClick);
   });
 
   // Parse URL and open gallery if it contains #&pid=3&gid=1
@@ -210,7 +216,6 @@ const configureMasonry = () => {
 
   if ($grid.length && window.IMAGE_DATA) {
     if (window.RANDOMIZE_SETTINGS) {
-      generateDaySeed();
       shuffle(window.IMAGE_DATA);
       window.IMAGE_DATA = window.IMAGE_DATA.slice(-window.RANDOMIZE_SETTINGS.limit);
     }
