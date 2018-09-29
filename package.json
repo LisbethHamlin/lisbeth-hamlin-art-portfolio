@@ -21,7 +21,6 @@
     "mini-css-extract-plugin": "^0.4.3",
     "photoswipe": "^4.1.2",
     "seedrandom": "^2.4.4",
-    "style-loader": "^0.23.0",
     "url-loader": "^1.1.1",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.1"

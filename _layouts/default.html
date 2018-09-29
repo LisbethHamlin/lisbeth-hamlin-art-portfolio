@@ -45,6 +45,7 @@ layout: compress
       {% include footer.html %}
     </div>
 
+    <script src="{{'/js/runtime.js' | absolute_url}}"></script>
     {% if layout.jsModules %}
       {% for module in layout.jsModules %}
         <script src="{{module | prepend: '/js/' | absolute_url }}"></script>
