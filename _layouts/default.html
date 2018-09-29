@@ -31,6 +31,7 @@ layout: compress
     <link href="{{ site.url }}/favicon.png" rel="shortcut icon" type="image/png">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link href="{{ site.url }}/css/main.css" rel="stylesheet">
+    <link href="{{ site.url }}/js/bundle.css" rel="stylesheet">
   </head>
 
   <body id="js-body">
@@ -49,9 +50,9 @@ layout: compress
         <script src="{{module | prepend: '/js/' | absolute_url }}"></script>
       {% endfor %}
     {% else %}
-      <script src="{{'/js/common.5665ce054dddbb6ce5ac.js' | absolute_url}}"></script>
+      <script src="{{'/js/common.js' | absolute_url}}"></script>
     {% endif %}
-    <script src="{{'/js/vendors~artShows~common~photoGallery.65ce66ed6d94feffd1ef.js' | absolute_url}}"></script>
+    <script src="{{'/js/vendors~artShows~common~photoGallery.js' | absolute_url}}"></script>
     {% include tracking.html %}
   </body>
 </html>
