@@ -1,6 +1,8 @@
 const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
+  devtool: false,
   context: path.resolve(__dirname, "js"),
   entry: {
     common: ["./_common.js"],
@@ -10,7 +12,7 @@ module.exports = {
   output: {
     path: path.resolve('./js/'),
     publicPath: '/js/',
-    filename: "[name].[chunkhash].js"
+    filename: "[name].js"
   },
   resolve: {
     alias: {
@@ -25,51 +27,63 @@ module.exports = {
     }
   },
   module: {
-     rules: [
-        {
-          test: /\.js$/,
-          exclude: /(node_modules|bower_components)/,
-          use: {
-            loader: 'babel-loader',
-            options: {
-              presets: [
-                ["@babel/preset-env", {
-                  targets: {
-                    browsers: [
-                      "last 1 version",
-                      "> 1%",
-                      "IE 11",
-                      "not dead"
-                    ]
-                  }
-                }]
-              ]
+    rules: [{
+        test: /\.js$/,
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              ["@babel/preset-env", {
+                targets: {
+                  browsers: [
+                    "last 1 version",
+                    "> 1%",
+                    "IE 11",
+                    "not dead"
+                  ]
+                }
+              }]
+            ]
+          }
+        }
+      },
+      {
+        test: /\.css$/,
+        use: [{
+          loader: MiniCssExtractPlugin.loader,
+          options: {}
+        }, {
+          loader: 'css-loader',
+          options: {
+            minimize: {
+              discardComments: {
+                removeAll: true
+              }
             }
           }
-       },
-       {
-         test: /\.css$/,
-         use: [{
-            loader: 'style-loader'
-          }, {
-            loader: 'css-loader',
-            options: {
-              minimize: { discardComments: { removeAll: true } }
-            }
-         }]
-       },
-       {
+        }]
+      },
+      {
         test: /\.(png|svg|gif)$/,
         loader: 'url-loader',
         options: {
           limit: 8192
         }
       }
-     ]
+    ]
   },
   optimization: {
     splitChunks: {
       chunks: 'all'
     }
-  }
+  },
+  plugins: [
+    new MiniCssExtractPlugin({
+      // Options similar to the same options in webpackOptions.output
+      // both options are optional
+      filename: "bundle.css",
+      chunkFilename: "bundle.css"
+    })
+  ],
 };
