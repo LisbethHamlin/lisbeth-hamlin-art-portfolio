@@ -1,7 +1,6 @@
 const path = require("path");
 
 module.exports = {
-  devtool: "source-map",
   context: path.resolve(__dirname, "js"),
   entry: {
     common: ["./_common.js"],
