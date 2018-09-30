@@ -1,5 +1,7 @@
 const path = require("path");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
   devtool: false,
@@ -51,17 +53,9 @@ module.exports = {
       {
         test: /\.css$/,
         use: [{
-          loader: MiniCssExtractPlugin.loader,
-          options: {}
+          loader: MiniCssExtractPlugin.loader
         }, {
-          loader: 'css-loader',
-          options: {
-            minimize: {
-              discardComments: {
-                removeAll: true
-              }
-            }
-          }
+          loader: 'css-loader'
         }]
       },
       {
@@ -77,7 +71,28 @@ module.exports = {
     runtimeChunk: 'single',
     splitChunks: {
       chunks: 'all'
-    }
+    },
+    minimizer: [
+      new UglifyJsPlugin({
+        cache: true,
+        parallel: true,
+        sourceMap: false,
+        uglifyOptions: {
+          output: {
+            comments: false
+          },
+        }
+      }),
+      new OptimizeCSSAssetsPlugin({
+        cssProcessorPluginOptions: {
+          preset: ['default', {
+            discardComments: {
+              removeAll: true
+            }
+          }],
+        },
+      })
+    ]
   },
   plugins: [
     new MiniCssExtractPlugin({
