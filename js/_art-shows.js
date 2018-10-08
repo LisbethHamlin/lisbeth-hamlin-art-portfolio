@@ -1,5 +1,4 @@
 import $ from 'jquery'
-import './_common'
 
 const $target = $('#current-shows');
 
