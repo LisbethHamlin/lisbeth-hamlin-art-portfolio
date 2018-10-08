@@ -50,9 +50,8 @@ layout: compress
       {% for module in layout.jsModules %}
         <script src="{{module | prepend: '/js/' | absolute_url }}"></script>
       {% endfor %}
-    {% else %}
-      <script src="{{'/js/common.js' | absolute_url}}"></script>
     {% endif %}
+    <script src="{{'/js/common.js' | absolute_url}}"></script>
     <script src="{{'/js/vendors~artShows~common~photoGallery.js' | absolute_url}}"></script>
     {% include tracking.html %}
   </body>

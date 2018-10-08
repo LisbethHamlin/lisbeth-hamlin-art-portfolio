@@ -7,7 +7,6 @@ import imagesLoaded from 'imagesLoaded'
 import 'seedrandom'
 import 'photoswipeCss'
 import 'photoswipeUiCss'
-import './_common'
 
 const shuffle = (a) => {
   const rng = new Math.seedrandom(Math.floor(Date.now() / 8.64e+7));
