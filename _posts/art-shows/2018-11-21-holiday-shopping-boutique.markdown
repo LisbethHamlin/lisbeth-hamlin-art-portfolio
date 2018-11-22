@@ -11,4 +11,4 @@ end_date: 3 December 2018
 
 **Location**: [Dressel Elementary School](https://goo.gl/maps/EBLaZfYQEWx)
 
-**Date**: December 2nd 9:30am - 3pm
+**Date**: December 2nd 2018 9:30am - 3pm
