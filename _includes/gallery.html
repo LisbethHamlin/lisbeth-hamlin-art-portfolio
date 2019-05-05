@@ -22,8 +22,7 @@
   <div class="gutter-sizer"></div>
 </div>
 
-<script id="jsonScript">
-  'use strict';
+<script>
   window.IMAGE_DATA = [{{ data }}];
   {% if page.randomize_gallery %}
     window.RANDOMIZE_SETTINGS = {{page.randomize_gallery | jsonify}};
