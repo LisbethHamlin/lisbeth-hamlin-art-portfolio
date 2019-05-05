@@ -3,8 +3,8 @@ import masonry from 'masonryLayout'
 import photoswipe from 'photoswipe'
 import photoswipeUI from 'photoswipeUI'
 import imagesLoaded from 'imagesLoaded'
-
 import seedrandom from 'seedrandom'
+
 import 'photoswipeCss'
 import 'photoswipeUiCss'
 
@@ -178,9 +178,7 @@ if (window.RANDOMIZE_SETTINGS) {
   window.IMAGE_DATA = shuffle(window.IMAGE_DATA).slice(-window.RANDOMIZE_SETTINGS.limit);
 }
 
-const images = $(window.IMAGE_DATA.join(''))
-  .attr('data-index', (i) => i)
-  .hide();
+const images = $(window.IMAGE_DATA.join('')).hide();
 
 const gridSelector = '.grid';
 const $grid = $(gridSelector);
@@ -196,20 +194,25 @@ $grid
 
 initPhotoSwipeFromDOM($grid, gridSelector);
 
-let currentIndex = 0;
-$grid.imagesLoaded()
-  .progress((instance, image) => {
-    const $item = $(image.img).parents('.grid-item');
-    const index = parseInt($item.data('index'), 10);
+const loadImage = ($element) => {
+  return new Promise((resolve, reject) => {
+    $element
+      .imagesLoaded()
+      .done(resolve)
+      .fail(reject);
+  })
+}
 
-    const inerval = setInterval(() => {
-      if(currentIndex === index) {
-        clearInterval(inerval);
-        $item.show();
-        $grid.masonry('appended', $item);
+(async () => {
+  for(const child of $grid.children('.grid-item')) {
+    const $child = $(child);
+    try {
+      await loadImage($child);
 
-        currentIndex++;
-      }
-    }, 100);
-    
-  });
+      $child.show();
+      $grid.masonry('appended', $child);
+    } catch(e) {
+      console.error(e);
+    }
+  }
+})();
