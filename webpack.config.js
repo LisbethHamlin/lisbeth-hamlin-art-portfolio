@@ -37,6 +37,8 @@ module.exports = {
           options: {
             presets: [
               ["@babel/preset-env", {
+                corejs: '^3.0.1',
+                useBuiltIns: "usage",
                 targets: {
                   browsers: [
                     "last 1 version",
