@@ -4,12 +4,16 @@ import photoswipe from 'photoswipe'
 import photoswipeUI from 'photoswipeUI'
 import imagesLoaded from 'imagesLoaded'
 
-import 'seedrandom'
+import seedrandom from 'seedrandom'
 import 'photoswipeCss'
 import 'photoswipeUiCss'
 
+$.bridget('masonry', masonry, $);
+imagesLoaded.makeJQueryPlugin($);
+
 const shuffle = (a) => {
-  const rng = new Math.seedrandom(Math.floor(Date.now() / 8.64e+7));
+  const rng = new seedrandom(Math.floor(Date.now() / 8.64e+7));
+  
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(rng() * (i + 1));
     [a[i], a[j]] = [a[j], a[i]];
@@ -17,41 +21,7 @@ const shuffle = (a) => {
   return a;
 }
 
-const buildPlugins = () => {
-
-  $.bridget('masonry', masonry, $);
-  imagesLoaded.makeJQueryPlugin($);
-
-  // reveals items iteratively
-  // after each item has loaded its images
-  $.fn.masonryImagesReveal = function ($items, beforeImagesLoadedCallback) {
-    const msnry = this.data('masonry');
-    const itemSelector = msnry.options.itemSelector;
-    // hide by default
-    $items.hide();
-    // append to container
-    this.append($items);
-    beforeImagesLoadedCallback();
-    $items.imagesLoaded()
-      .progress((imgLoad, image) => {
-        // get item
-        // image is imagesLoaded class, not <img>, <img> is image.img
-        const $item = $(image.img).parents(itemSelector);
-        // un-hide item
-        $item.show();
-        // masonry does its thing
-        msnry.appended($item);
-      });
-
-    return this;
-  };
-};
-
-const initPhotoSwipeFromDOM = (gallerySelector) => {
-
-  // loop through all gallery elements and bind events
-  const $galleryElements = $(gallerySelector);
-
+const initPhotoSwipeFromDOM = ($galleryElements, gallerySelector) => {
   // parse slide data (url, title, size ...) from DOM elements
   // (children of gallerySelector)
   const parseThumbnailElements = ($el) => {
@@ -204,27 +174,42 @@ const initPhotoSwipeFromDOM = (gallerySelector) => {
   }
 };
 
-const configureMasonry = () => {
-  const gridSelector = '.grid';
-  const $grid = $(gridSelector).masonry({
+if (window.RANDOMIZE_SETTINGS) {
+  window.IMAGE_DATA = shuffle(window.IMAGE_DATA).slice(-window.RANDOMIZE_SETTINGS.limit);
+}
+
+const images = $(window.IMAGE_DATA.join(''))
+  .attr('data-index', (i) => i)
+  .hide();
+
+const gridSelector = '.grid';
+const $grid = $(gridSelector);
+
+$grid
+  .masonry({
     itemSelector: '.grid-item',
     columnWidth: '.grid-sizer',
     gutter: '.gutter-sizer',
     percentPosition: true
+  })
+  .append(images);
+
+initPhotoSwipeFromDOM($grid, gridSelector);
+
+let currentIndex = 0;
+$grid.imagesLoaded()
+  .progress((instance, image) => {
+    const $item = $(image.img).parents('.grid-item');
+    const index = parseInt($item.data('index'), 10);
+
+    const inerval = setInterval(() => {
+      if(currentIndex === index) {
+        clearInterval(inerval);
+        $item.show();
+        $grid.masonry('appended', $item);
+
+        currentIndex++;
+      }
+    }, 100);
+    
   });
-
-  if ($grid.length && window.IMAGE_DATA) {
-    if (window.RANDOMIZE_SETTINGS) {
-      shuffle(window.IMAGE_DATA);
-      window.IMAGE_DATA = window.IMAGE_DATA.slice(-window.RANDOMIZE_SETTINGS.limit);
-    }
-
-    $grid.masonryImagesReveal($(window.IMAGE_DATA.join('')), () => {
-      initPhotoSwipeFromDOM(gridSelector);
-    });
-    $('#jsonScript').remove();
-  }
-};
-
-buildPlugins();
-configureMasonry();
