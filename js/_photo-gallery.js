@@ -195,12 +195,7 @@ $grid
 initPhotoSwipeFromDOM($grid, gridSelector);
 
 const loadImage = ($element) => {
-  return new Promise((resolve, reject) => {
-    $element
-      .imagesLoaded()
-      .done(resolve)
-      .fail(reject);
-  })
+  return Promise.resolve($element.imagesLoaded());
 }
 
 (async () => {
