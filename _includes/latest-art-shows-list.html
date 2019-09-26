@@ -1,13 +1,22 @@
+{% include has-current-show.liquid %}
+
+{% if hasCurrentShow %}
 <div class="latest-art-shows">
   <a href="{{ site.url }}{{ include.headerUrl }}">
     <h2>Latest {{ page.categories | first | replace: '-',' ' | capitalize }}</h2>
   </a>
   <ul>
+  {% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
   {% capture category_name %}{{ page.categories | first }}{% endcapture %}
-  {% for post in site.categories.[category_name] limit:3 %}
-    <li>
-      <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a> — {{post.excerpt}}
-    </li>
+  {% assign reversed = site.categories.[category_name] | reverse %}
+  {% for post in reversed %}
+    {% capture postEndDate %}{{post.end_date | date: '%s'}}{% endcapture %}
+    {% if postEndDate > nowunix %}
+      <li>
+        <a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a> — {{post.excerpt}}
+      </li>
+    {% endif %}
   {% endfor %}
   </ul>
 </div>
+{% endif %}

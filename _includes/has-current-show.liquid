@@ -1,0 +1,11 @@
+{% capture nowunix %}{{'now' | date: '%s'}}{% endcapture %}
+{% capture category_name %}{{ page.categories | first }}{% endcapture %}
+{% assign hasCurrentShow = false %}
+{% for post in site.categories.[category_name] %}
+    {% capture postEndDate %}{{post.end_date | date: '%s'}}{% endcapture %}
+    {% if postEndDate > nowunix %}
+        {% assign hasCurrentShow = true %}
+        {% break %}
+    {% endif %}
+{% endfor %}
+  
