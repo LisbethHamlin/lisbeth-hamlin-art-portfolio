@@ -1,19 +1,20 @@
-import $ from 'jquery'
-import masonry from 'masonryLayout'
-import photoswipe from 'photoswipe'
-import photoswipeUI from 'photoswipeUI'
-import imagesLoaded from 'imagesLoaded'
-import seedrandom from 'seedrandom'
+import jQueryBridget from 'jquery-bridget';
+import $ from 'jquery';
+import masonry from 'masonry-layout';
+import photoswipe from 'photoswipe';
+import photoswipeUI from 'photoswipe/dist/photoswipe-ui-default';
+import imagesLoaded from 'imagesLoaded';
+import seedrandom from 'seedrandom';
 
-import 'photoswipeCss'
-import 'photoswipeUiCss'
+import 'photoswipe/dist/photoswipe.css';
+import 'photoswipe/dist/default-skin/default-skin.css';
 
-$.bridget('masonry', masonry, $);
+jQueryBridget('masonry', masonry, $);
 imagesLoaded.makeJQueryPlugin($);
 
 const shuffle = (a) => {
   const rng = new seedrandom(Math.floor(Date.now() / 8.64e+7));
-  
+
   for (let i = a.length - 1; i > 0; i--) {
     const j = Math.floor(rng() * (i + 1));
     [a[i], a[j]] = [a[j], a[i]];
