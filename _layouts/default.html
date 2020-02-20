@@ -31,7 +31,6 @@ layout: compress
     <link href="{{ site.url }}/favicon.png" rel="shortcut icon" type="image/png">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link href="{{ site.url }}/css/main.css" rel="stylesheet">
-    <link href="{{ site.url }}/js/bundle.css" rel="stylesheet">
   </head>
 
   <body id="js-body">
@@ -45,14 +44,22 @@ layout: compress
       {% include footer.html %}
     </div>
 
-    <script src="{{'/js/runtime.js' | absolute_url}}"></script>
+    <script nomodule src="{{'/js/system/runtime.js' | absolute_url}}"></script>
     {% if layout.jsModules %}
       {% for module in layout.jsModules %}
-        <script src="{{module | prepend: '/js/' | absolute_url }}"></script>
+        <script type="module" src="{{module | prepend: '/js/es/' | append: '.js' | absolute_url }}"></script>
+        <script nomodule src="{{module | prepend: '/js/system/' | append: '.js' | absolute_url }}"></script>
+        <script nomodule>
+          System.import("{{module | prepend: '/js/system/' | append: '.js' | absolute_url }}");
+        </script>
       {% endfor %}
     {% endif %}
-    <script src="{{'/js/common.js' | absolute_url}}"></script>
-    <script src="{{'/js/vendors~artShows~common~photoGallery.js' | absolute_url}}"></script>
+
+    <script type="module" src="{{'/js/es/common.js' | absolute_url}}"></script>
+    <script nomodule src="{{'/js/system/common.js' | absolute_url}}"></script>
+    <script nomodule>
+      System.import("{{'/js/system/common.js' | absolute_url}}");
+    </script>
     {% include tracking.html %}
   </body>
 </html>

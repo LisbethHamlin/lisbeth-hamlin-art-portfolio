@@ -1,1 +1,13 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{84:function(e,n,s){e.exports=s(85)},85:function(e,n,s){"use strict";s.r(n);var i=s(1),t=s.n(i);t()("#js-menu-trigger,#js-menu-screen").on("click touchstart",function(e){t()("#js-menu, #js-menu-screen").toggleClass("is-visible"),t()("#js-menu-trigger").toggleClass("slide close"),e.preventDefault()}),t()("#markdown-toc").prepend("<li><h6>Overview</h6></li>")}},[[84,0,1]]]);
+import $ from 'jquery'
+
+// Off Canvas Sliding
+// Menu button click
+$('#js-menu-trigger,#js-menu-screen').on('click touchstart', (e) => {
+  // $('#js-body').toggleClass('no-scroll');
+  $('#js-menu, #js-menu-screen').toggleClass('is-visible');
+  $('#js-menu-trigger').toggleClass('slide close');
+  // $('#masthead, #page-wrapper').toggleClass('slide');
+  e.preventDefault();
+});
+
+$("#markdown-toc").prepend("<li><h6>Overview</h6></li>");
