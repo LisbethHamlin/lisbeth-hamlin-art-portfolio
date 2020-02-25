@@ -2,455 +2,565 @@
   "ceramics": [
     {
       "title": "ceramic-vessel",
-      "size": "471x777"
+      "width": "471",
+      "height": "777"
     },
     {
       "title": "mug-1",
-      "size": "972x1296"
+      "width": "972",
+      "height": "1296"
     },
     {
       "title": "mug-2",
-      "size": "972x1296"
+      "width": "972",
+      "height": "1296"
     },
     {
       "title": "mug-3",
-      "size": "1296x972"
+      "width": "1296",
+      "height": "972"
     },
     {
       "title": "mug-4",
-      "size": "972x1296"
+      "width": "972",
+      "height": "1296"
     },
     {
       "title": "mugs",
-      "size": "959x901"
+      "width": "959",
+      "height": "901"
     }
   ],
   "hats": [
     {
       "title": "hat-01-inside",
-      "size": "1080x810"
+      "width": "1080",
+      "height": "810"
     },
     {
       "title": "hat-01-outside",
-      "size": "1080x810"
+      "width": "1080",
+      "height": "810"
     },
     {
       "title": "hat-02-inside",
-      "size": "1080x810"
+      "width": "1080",
+      "height": "810"
     },
     {
       "title": "hat-02-outside",
-      "size": "810x1080"
+      "width": "810",
+      "height": "1080"
     },
     {
       "title": "hat-05",
-      "size": "810x1080"
+      "width": "810",
+      "height": "1080"
     },
     {
       "title": "hat-06",
-      "size": "810x1080"
+      "width": "810",
+      "height": "1080"
     },
     {
       "title": "hat-07",
-      "size": "810x1080"
+      "width": "810",
+      "height": "1080"
     },
     {
       "title": "hat-08",
-      "size": "810x1080"
+      "width": "810",
+      "height": "1080"
     },
     {
       "title": "hat-09",
-      "size": "810x1080"
+      "width": "810",
+      "height": "1080"
     },
     {
       "title": "hat-10",
-      "size": "810x1080"
+      "width": "810",
+      "height": "1080"
     },
     {
       "title": "hat-11",
-      "size": "810x1080"
+      "width": "810",
+      "height": "1080"
     },
     {
       "title": "hat-12",
-      "size": "810x1080"
+      "width": "810",
+      "height": "1080"
     },
     {
       "title": "hat-13",
-      "size": "810x1080"
+      "width": "810",
+      "height": "1080"
     },
     {
       "title": "hat-14",
-      "size": "1080x810"
+      "width": "1080",
+      "height": "810"
     },
     {
       "title": "hat-15",
-      "size": "810x1080"
+      "width": "810",
+      "height": "1080"
     }
   ],
   "jewelry": [
     {
       "title": "jewelry-1",
-      "size": "933x865"
+      "width": "933",
+      "height": "865"
     },
     {
       "title": "jewelry-10",
-      "size": "1728x1152"
+      "width": "1728",
+      "height": "1152"
     },
     {
       "title": "jewelry-11",
-      "size": "1728x1152"
+      "width": "1728",
+      "height": "1152"
     },
     {
       "title": "jewelry-12",
-      "size": "1728x1152"
+      "width": "1728",
+      "height": "1152"
     },
     {
       "title": "jewelry-13",
-      "size": "1728x1152"
+      "width": "1728",
+      "height": "1152"
     },
     {
       "title": "jewelry-14",
-      "size": "1728x1152"
+      "width": "1728",
+      "height": "1152"
     },
     {
       "title": "jewelry-2",
-      "size": "1296x972"
+      "width": "1296",
+      "height": "972"
     },
     {
       "title": "jewelry-3",
-      "size": "972x1296"
+      "width": "972",
+      "height": "1296"
     },
     {
       "title": "jewelry-4",
-      "size": "1296x972"
+      "width": "1296",
+      "height": "972"
     },
     {
       "title": "jewelry-5",
-      "size": "972x1296"
+      "width": "972",
+      "height": "1296"
     },
     {
       "title": "jewelry-6",
-      "size": "859x1228"
+      "width": "859",
+      "height": "1228"
     },
     {
       "title": "jewelry-7",
-      "size": "972x1296"
+      "width": "972",
+      "height": "1296"
     },
     {
       "title": "jewelry-8",
-      "size": "1183x874"
+      "width": "1183",
+      "height": "874"
     },
     {
       "title": "jewelry-9",
-      "size": "1728x1152"
+      "width": "1728",
+      "height": "1152"
     }
   ],
   "mosaics": [
     {
       "title": "african-bushwoman",
-      "size": "532x800"
+      "width": "532",
+      "height": "800"
     },
     {
       "title": "belt",
-      "size": "1728x1152"
+      "width": "1728",
+      "height": "1152"
     },
     {
       "title": "candle-2",
-      "size": "917x1126"
+      "width": "917",
+      "height": "1126"
     },
     {
       "title": "candle",
-      "size": "1149x1221"
+      "width": "1149",
+      "height": "1221"
     },
     {
       "title": "dragon",
-      "size": "1127x999"
+      "width": "1127",
+      "height": "999"
     },
     {
       "title": "flower-frame",
-      "size": "1100x1040"
+      "width": "1100",
+      "height": "1040"
     },
     {
       "title": "frame-1",
-      "size": "685x800"
+      "width": "685",
+      "height": "800"
     },
     {
       "title": "frame-2",
-      "size": "1100x801"
+      "width": "1100",
+      "height": "801"
     },
     {
       "title": "frame-3",
-      "size": "1100x765"
+      "width": "1100",
+      "height": "765"
     },
     {
       "title": "french-blues",
-      "size": "586x568"
+      "width": "586",
+      "height": "568"
     },
     {
       "title": "gecko-table-side",
-      "size": "773x800"
+      "width": "773",
+      "height": "800"
     },
     {
       "title": "gecko-table",
-      "size": "1100x977"
+      "width": "1100",
+      "height": "977"
     },
     {
       "title": "house-number-1276",
-      "size": "1100x703"
+      "width": "1100",
+      "height": "703"
     },
     {
       "title": "indian-women",
-      "size": "1149x858"
+      "width": "1149",
+      "height": "858"
     },
     {
       "title": "jersey-girl",
-      "size": "1100x588"
+      "width": "1100",
+      "height": "588"
     },
     {
       "title": "mask-1",
-      "size": "667x800"
+      "width": "667",
+      "height": "800"
     },
     {
       "title": "mask-2",
-      "size": "511x800"
+      "width": "511",
+      "height": "800"
     },
     {
       "title": "mirror-1",
-      "size": "1106x1100"
+      "width": "1106",
+      "height": "1100"
     },
     {
       "title": "mirror-2",
-      "size": "1100x1056"
+      "width": "1100",
+      "height": "1056"
     },
     {
       "title": "mirror-3",
-      "size": "1100x1059"
+      "width": "1100",
+      "height": "1059"
     },
     {
       "title": "mirror",
-      "size": "799x1049"
+      "width": "799",
+      "height": "1049"
     },
     {
       "title": "plate",
-      "size": "1440x1365"
+      "width": "1440",
+      "height": "1365"
     },
     {
       "title": "ribbons-tray",
-      "size": "1100x825"
+      "width": "1100",
+      "height": "825"
     },
     {
       "title": "sea-foam-frame",
-      "size": "606x594"
+      "width": "606",
+      "height": "594"
     },
     {
       "title": "syncopated-sax",
-      "size": "918x1310"
+      "width": "918",
+      "height": "1310"
     },
     {
       "title": "table",
-      "size": "1073x909"
+      "width": "1073",
+      "height": "909"
     },
     {
       "title": "tray-1",
-      "size": "1100x825"
+      "width": "1100",
+      "height": "825"
     },
     {
       "title": "tray-2",
-      "size": "1100x758"
+      "width": "1100",
+      "height": "758"
     },
     {
       "title": "tray-3",
-      "size": "1100x783"
+      "width": "1100",
+      "height": "783"
     },
     {
       "title": "triple-frame",
-      "size": "261x766"
+      "width": "261",
+      "height": "766"
     },
     {
       "title": "trivet-1",
-      "size": "1100x1089"
+      "width": "1100",
+      "height": "1089"
     },
     {
       "title": "trivet-2",
-      "size": "1100x1072"
+      "width": "1100",
+      "height": "1072"
     },
     {
       "title": "trivet-3",
-      "size": "1100x1081"
+      "width": "1100",
+      "height": "1081"
     },
     {
       "title": "trivet-4",
-      "size": "1100x1094"
+      "width": "1100",
+      "height": "1094"
     }
   ],
   "paper-collage": [
     {
       "title": "celebration",
-      "size": "764x1222"
+      "width": "764",
+      "height": "1222"
     },
     {
       "title": "in-the-shade",
-      "size": "587x800"
+      "width": "587",
+      "height": "800"
     },
     {
       "title": "jillo-harro",
-      "size": "648x800"
+      "width": "648",
+      "height": "800"
     },
     {
       "title": "market-price",
-      "size": "609x800"
+      "width": "609",
+      "height": "800"
     },
     {
       "title": "mzee-2",
-      "size": "548x800"
+      "width": "548",
+      "height": "800"
     },
     {
       "title": "mzee-3",
-      "size": "744x1069"
+      "width": "744",
+      "height": "1069"
     },
     {
       "title": "samburu-women",
-      "size": "1100x777"
+      "width": "1100",
+      "height": "777"
     }
   ],
   "printmaking": [
     {
       "title": "african-bullfight",
-      "size": "763x354"
+      "width": "763",
+      "height": "354"
     },
     {
       "title": "bati-ganya",
-      "size": "549x719"
+      "width": "549",
+      "height": "719"
     },
     {
       "title": "camel-caravan",
-      "size": "725x208"
+      "width": "725",
+      "height": "208"
     },
     {
       "title": "child-of-hope",
-      "size": "525x800"
+      "width": "525",
+      "height": "800"
     },
     {
       "title": "ciet-and-wa",
-      "size": "480x736"
+      "width": "480",
+      "height": "736"
     },
     {
       "title": "dancing-samburu-women",
-      "size": "753x519"
+      "width": "753",
+      "height": "519"
     },
     {
       "title": "desert-wayside-a",
-      "size": "333x727"
+      "width": "333",
+      "height": "727"
     },
     {
       "title": "desert-wayside-b",
-      "size": "341x738"
+      "width": "341",
+      "height": "738"
     },
     {
       "title": "desert-wayside-triptych",
-      "size": "730x423"
+      "width": "730",
+      "height": "423"
     },
     {
       "title": "equipoise",
-      "size": "355x800"
+      "width": "355",
+      "height": "800"
     },
     {
       "title": "in-prayer",
-      "size": "531x775"
+      "width": "531",
+      "height": "775"
     },
     {
       "title": "lake-dal",
-      "size": "765x512"
+      "width": "765",
+      "height": "512"
     },
     {
       "title": "living-patterns",
-      "size": "600x650"
+      "width": "600",
+      "height": "650"
     },
     {
       "title": "nkishu-cattleness",
-      "size": "770x430"
+      "width": "770",
+      "height": "430"
     },
     {
       "title": "nomads-moving-on",
-      "size": "525x721"
+      "width": "525",
+      "height": "721"
     },
     {
       "title": "oasis",
-      "size": "729x217"
+      "width": "729",
+      "height": "217"
     },
     {
       "title": "pounding-fou-fou",
-      "size": "504x764"
+      "width": "504",
+      "height": "764"
     },
     {
       "title": "ships-of-the-desert",
-      "size": "770x231"
+      "width": "770",
+      "height": "231"
     },
     {
       "title": "turkana-girl",
-      "size": "521x717"
+      "width": "521",
+      "height": "717"
     }
   ],
   "watercolor": [
     {
       "title": "bushman-at-llaru",
-      "size": "544x800"
+      "width": "544",
+      "height": "800"
     },
     {
       "title": "bushman-storyteller",
-      "size": "597x800"
+      "width": "597",
+      "height": "800"
     },
     {
       "title": "bushwomen-at-llaru",
-      "size": "1100x810"
+      "width": "1100",
+      "height": "810"
     },
     {
       "title": "camel-herder",
-      "size": "556x757"
+      "width": "556",
+      "height": "757"
     },
     {
       "title": "desert-girl",
-      "size": "537x800"
+      "width": "537",
+      "height": "800"
     },
     {
       "title": "dogon-dame",
-      "size": "585x800"
+      "width": "585",
+      "height": "800"
     },
     {
       "title": "homeward-bound",
-      "size": "564x800"
+      "width": "564",
+      "height": "800"
     },
     {
       "title": "jaipur-market-3",
-      "size": "1015x748"
+      "width": "1015",
+      "height": "748"
     },
     {
       "title": "kavango-clan",
-      "size": "1100x798"
+      "width": "1100",
+      "height": "798"
     },
     {
       "title": "mali-tribesman",
-      "size": "829x1145"
+      "width": "829",
+      "height": "1145"
     },
     {
       "title": "mother-and-child-bushman",
-      "size": "535x800"
+      "width": "535",
+      "height": "800"
     },
     {
       "title": "reflection",
-      "size": "510x800"
+      "width": "510",
+      "height": "800"
     },
     {
       "title": "sopa-samburu",
-      "size": "840x1253"
+      "width": "840",
+      "height": "1253"
     },
     {
       "title": "wayside-market",
-      "size": "1009x670"
+      "width": "1009",
+      "height": "670"
     },
     {
       "title": "zemba-girl",
-      "size": "531x800"
+      "width": "531",
+      "height": "800"
     }
   ]
 }

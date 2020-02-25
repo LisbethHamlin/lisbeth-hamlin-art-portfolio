@@ -1,0 +1,56 @@
+h1, h2, h3 {
+  font-family: "Indie Flower",cursive;
+  font-weight: bold;
+}
+
+hr {
+  margin: 3rem 0;
+}
+
+.card-columns {
+  column-count: auto;
+  column-width: 12rem;
+
+  @media (max-width: 575.98px) {
+    column-width: 25vw;
+  }
+}
+
+.card {
+  border: none;
+  -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+          page-break-inside: avoid; /* Firefox */
+               break-inside: avoid; /* IE 10+ */
+}
+
+.wrapper {
+  position: relative;
+}
+
+.wrapper__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+.portfolio-grid-item {
+  a {
+    color: black;
+    color: var(--dark);
+  }
+}
+
+#site-footer {
+  margin-top: 4.5rem;
+  font-size: 0.75rem;
+  padding-bottom: 2rem;
+  p, a {
+    color: var(--gray);
+  }
+}
+
+.table thead th {
+  border-top: 0;
+}

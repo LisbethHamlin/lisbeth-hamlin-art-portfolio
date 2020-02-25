@@ -11,9 +11,7 @@ image:
 ads: false
 ---
 
-{% include toc.html %}
-
-![Lisbeth Hamlin]({{ site.url }}/images/lisbeth-hamlin.jpg)
+![Lisbeth Hamlin]({{ site.url }}/images/lisbeth-hamlin.jpg){:.img-fluid}
 
 ## Purpose
 
@@ -46,6 +44,7 @@ I have found many Shangri-Las. I have tried to capture the unique beauty, the vi
 | 1983 | People of Africa - Gallerie La Taj <br/> Alexandria, VA |
 | 1980 | Black and White & Color - Gallery Watatu <br/> Nairobi, Kenya |
 | 1978 | Europe, Africa and Beyond - Harmon Gallery <br/> St. Louis, MO |
+{: .table.table-hover }
 
 ## Awards and Competitions
 
@@ -57,6 +56,7 @@ I have found many Shangri-Las. I have tried to capture the unique beauty, the vi
 | 1984 | Watercolor West XVI <br/> Riverside, CA |
 | 1978 | Carpenter Annual Watercolor Prize <br/> St. Louis Artists Guild, St. Louis, MO |
 | 1978 | Adelaide Carol Johnson Art Award <br/> Principia College, St. Louis, MO |
+{: .table.table-hover }
 
 ## Education
 
@@ -64,6 +64,7 @@ I have found many Shangri-Las. I have tried to capture the unique beauty, the vi
 |------|--------|--------|
 | 1987 | MA Gallatin (Printmaking and Anthropology) | New York University |
 | 1977 | BA in Art | Principia College |
+{: .table.table-hover }
 
 ## Contact Info
 
