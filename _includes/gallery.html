@@ -1,30 +1,23 @@
-{% assign data = '' %}
-
-{% for image_filter in page.image_filter %}
-  {% for image in site.data.portfolio[image_filter.group] %}
+<div class="card-columns grid" itemscope itemtype="http://schema.org/ImageGallery">
+  {% for image_filter in page.image_filter %}
+    {% assign list = site.data.portfolio[image_filter.group] %}
+    {% for image in list %}
       {% if image_filter.title == null or image_filter.title == image.title %}
         {% assign prettyTitle = image.title | replace: '-',' ' | capitalize %}
-        {% capture data %}
-          {{data}},
-          '<div class="grid-item" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-            <a href="{{ site.url }}/images/portfolio/{{image_filter.group}}/{{image.title}}.jpg" itemprop="contentUrl" data-size="{{image.size}}" data-index="{{image.title}}" data-title="{{prettyTitle}}" data-description="{{site.data.portfolio-image-info[image_filter.group][image.title].description}}">
-              <img src="{{ site.url }}/images/portfolio/{{image_filter.group}}/{{image.title}}-teaser.jpg" alt="{{prettyTitle}}" itemprop="thumbnail"  />
-            </a>
-         </div>'
-        {% endcapture %}
+        {% assign width = image.width | plus: 0.0 %}
+        {% assign height = image.height | plus: 0.0 %}
+        {% assign ratio = height | divided_by: width %}
+        <div class="card gallery-card wrapper" style="padding-top: calc({{ ratio }} * 100%)" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+          <a href="{{ site.url }}/images/portfolio/{{image_filter.group}}/{{image.title}}.jpg"
+             data-width="{{image.width}}"
+             data-height="{{image.height}}"
+             data-index="{{image.title}}"
+             data-title="{{prettyTitle}}"
+             data-description="{{site.data.portfolio-image-info[image_filter.group][image.title].description}}">
+            <img loading="lazy" class="wrapper__img" src="{{ site.url }}/images/portfolio/{{image_filter.group}}/{{image.title}}-teaser.jpg" alt="{{prettyTitle}}" itemprop="thumbnail"  />
+          </a>
+        </div>
       {% endif %}
+    {% endfor %}
   {% endfor %}
-{% endfor %}
-{% assign data = data | remove_first: ',' %}
-
-<div class="grid" itemscope itemtype="http://schema.org/ImageGallery">
-  <div class="grid-sizer"></div>
-  <div class="gutter-sizer"></div>
 </div>
-
-<script>
-  window.IMAGE_DATA = [{{ data }}];
-  {% if page.randomize_gallery %}
-    window.RANDOMIZE_SETTINGS = {{page.randomize_gallery | jsonify}};
-  {% endif %}
-</script>

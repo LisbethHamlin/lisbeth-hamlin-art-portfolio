@@ -1,26 +1,9 @@
-import jQueryBridget from 'jquery-bridget';
 import $ from 'jquery';
-import masonry from 'masonry-layout';
 import photoswipe from 'photoswipe';
 import photoswipeUI from 'photoswipe/dist/photoswipe-ui-default';
-import imagesLoaded from 'imagesLoaded';
-import seedrandom from 'seedrandom';
 
 import 'photoswipe/dist/photoswipe.css';
 import 'photoswipe/dist/default-skin/default-skin.css';
-
-jQueryBridget('masonry', masonry, $);
-imagesLoaded.makeJQueryPlugin($);
-
-const shuffle = (a) => {
-  const rng = new seedrandom(Math.floor(Date.now() / 8.64e+7));
-
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(rng() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
 
 const initPhotoSwipeFromDOM = ($galleryElements, gallerySelector) => {
   // parse slide data (url, title, size ...) from DOM elements
@@ -31,7 +14,6 @@ const initPhotoSwipeFromDOM = ($galleryElements, gallerySelector) => {
       const $linkEl = $(e).find('a');
       if ($linkEl.length) {
         const $thumbnailImgEl = $linkEl.find('img');
-        const size = $linkEl.data('size').split('x');
 
         // create slide object
         items.push({
@@ -40,8 +22,8 @@ const initPhotoSwipeFromDOM = ($galleryElements, gallerySelector) => {
           pid: $linkEl.data('index'),
           title: $linkEl.data('title') || ' ',
           desc: $linkEl.data('description'),
-          w: parseInt(size[0], 10),
-          h: parseInt(size[1], 10),
+          w: parseInt($linkEl.data('width')),
+          h: parseInt($linkEl.data('height')),
           el: e
         });
       }
@@ -51,7 +33,7 @@ const initPhotoSwipeFromDOM = ($galleryElements, gallerySelector) => {
   };
 
   // triggers when user clicks on thumbnail
-  const onThumbnailsClick = function (e) {
+  const onThumbnailsClick = function(e) {
     e.preventDefault();
     openPhotoSwipe(e.data.$links.index(this), $(e.target).closest(gallerySelector));
   };
@@ -163,8 +145,8 @@ const initPhotoSwipeFromDOM = ($galleryElements, gallerySelector) => {
   $galleryElements.each((galleryIndex, gallery) => {
     const $gallery = $(gallery);
     $gallery.data('pswp-uid', galleryIndex + 1);
-    $gallery.on('click', '.grid-item a', {
-      $links: $gallery.find('.grid-item a')
+    $gallery.on('click', '.gallery-card a', {
+      $links: $gallery.find('.gallery-card a')
     }, onThumbnailsClick);
   });
 
@@ -175,40 +157,8 @@ const initPhotoSwipeFromDOM = ($galleryElements, gallerySelector) => {
   }
 };
 
-if (window.RANDOMIZE_SETTINGS) {
-  window.IMAGE_DATA = shuffle(window.IMAGE_DATA).slice(-window.RANDOMIZE_SETTINGS.limit);
-}
-
-const images = $(window.IMAGE_DATA.join('')).hide();
-
 const gridSelector = '.grid';
-const $grid = $(gridSelector);
 
-$grid
-  .masonry({
-    itemSelector: '.grid-item',
-    columnWidth: '.grid-sizer',
-    gutter: '.gutter-sizer',
-    percentPosition: true
-  })
-  .append(images);
+const galleryElements = $(gridSelector);
 
-initPhotoSwipeFromDOM($grid, gridSelector);
-
-const loadImage = ($element) => {
-  return Promise.resolve($element.imagesLoaded());
-}
-
-(async () => {
-  for(const child of $grid.children('.grid-item')) {
-    const $child = $(child);
-    try {
-      await loadImage($child);
-
-      $child.show();
-      $grid.masonry('appended', $child);
-    } catch(e) {
-      console.error(e);
-    }
-  }
-})();
+initPhotoSwipeFromDOM(galleryElements, gridSelector);

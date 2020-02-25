@@ -21,25 +21,21 @@ layout: compress
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
 
     {% feed_meta %}
-    <link href="{{ site.url }}/sitemap.xml" type="application/xml" rel="sitemap" title="Sitemap">
+    <link href="{{ '/sitemap.xml' | absolute_url }}" type="application/xml" rel="sitemap" title="Sitemap">
 
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="cleartype" content="on">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link href="{{ site.url }}/favicon.png" rel="shortcut icon" type="image/png">
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-    <link href="{{ site.url }}/css/main.css" rel="stylesheet">
+    <link href="{{ '/favicon.png' | absolute_url }}" rel="shortcut icon" type="image/png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie+Flower">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.12.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ '/css/main.css' | absolute_url }}">
   </head>
 
-  <body id="js-body">
-    {% include browser-upgrade.html %}
-    {% include header.html %}
-    {% include navigation-sliding.html %}
-    {% include noscript.html %}
-
-    <div id="page-wrapper">
+  <body>
+    <div class="container">
+      {% include noscript.html %}
+      {% include header.html %}
       {{ content }}
       {% include footer.html %}
     </div>
@@ -54,12 +50,6 @@ layout: compress
         </script>
       {% endfor %}
     {% endif %}
-
-    <script type="module" src="{{'/js/es/common.js' | absolute_url}}"></script>
-    <script nomodule src="{{'/js/system/common.js' | absolute_url}}"></script>
-    <script nomodule>
-      System.import("{{'/js/system/common.js' | absolute_url}}");
-    </script>
     {% include tracking.html %}
   </body>
 </html>

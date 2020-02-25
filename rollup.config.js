@@ -12,15 +12,16 @@ const formats = [
 
 const config = formats.map((format) => ({
   input: [
-    'js/common.js',
     'js/art-shows.js',
-    'js/photo-gallery',
+    'js/photo-gallery.js',
+    'js/common.js',
   ],
   output: {
     dir: `js/${format}`,
     format,
     entryFileNames: `[name].js`,
     chunkFileNames: `[name].js`,
+    sourcemap: true,
   },
   plugins: [
     resolve({ browser: true }),
@@ -36,7 +37,7 @@ const config = formats.map((format) => ({
         }),
       ],
     }),
-    terser(),
+    //terser(),
   ],
 }));
 
