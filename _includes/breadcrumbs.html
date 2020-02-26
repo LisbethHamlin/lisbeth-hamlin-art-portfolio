@@ -1,12 +1,21 @@
-<span class="breadcrumbs">
-  {% assign categories = page.url | split: '/' %}
-  {% for category in categories offset: 1 %}
-    {% assign current-path = current-path | append: category | append: '/' %}
-    <span itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb bg-white">
+    {% assign categories = page.url | split: '/' %}
+    {% for category in categories offset: 1 %}
+      {% assign current-path = current-path | append: category | append: '/' %}
       {% assign current-title = category | replace: '-',' ' | capitalize %}
-      {% if forloop.last != true %} <a href="{{ site.url }}/{{ current-path }}" itemprop="url"> {% endif %}
-      <span itemprop="title">{{ current-title }}</span>
-      {% if forloop.last != true %} </a> › {% endif %}
-    </span>
-  {% endfor %}
-</span><!-- /.breadcrumbs -->
+      {% if forloop.last %}
+        {% assign lastBreadcrumbClass = 'active' %}
+      {% endif %}
+      <li class="breadcrumb-item {{lastBreadcrumbClass}}">
+        {% if forloop.last %}
+          {{ current-title }}
+        {% else %}
+          <a href="{{ current-path | absolute_url}}" itemprop="url">
+            {{ current-title }}
+          </a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ol>
+</nav><!-- /.breadcrumbs -->
