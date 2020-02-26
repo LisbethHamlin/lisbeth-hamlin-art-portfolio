@@ -1,3 +1,4 @@
-import 'core-js/stable/promise';
-import 'core-js/stable/symbol';
+import Promise from 'bluebird';
+self.Promise = Promise;
+
 import 'systemjs/dist/s';
