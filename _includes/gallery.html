@@ -1,12 +1,15 @@
-<div class="card-columns grid" itemscope itemtype="http://schema.org/ImageGallery">
-  {% for image_filter in page.image_filter %}
-    {% assign list = site.data.portfolio[image_filter.group] %}
-    {% for image in list %}
-      {% if image_filter.title == null or image_filter.title == image.title %}
-        {% assign prettyTitle = image.title | replace: '-',' ' | capitalize %}
-        {% assign width = image.width | plus: 0.0 %}
-        {% assign height = image.height | plus: 0.0 %}
-        {% assign ratio = height | divided_by: width %}
+{% assign data = '' %}
+
+{% for image_filter in page.image_filter %}
+  {% assign list = site.data.portfolio[image_filter.group] %}
+  {% for image in list %}
+    {% if image_filter.title == null or image_filter.title == image.title %}
+      {% assign prettyTitle = image.title | replace: '-',' ' | capitalize %}
+      {% assign width = image.width | plus: 0.0 %}
+      {% assign height = image.height | plus: 0.0 %}
+      {% assign ratio = height | divided_by: width %}
+      {% capture data %}
+        {{data}};
         <div class="card gallery-card wrapper" style="padding-top: calc({{ ratio }} * 100%)" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="{{ site.url }}/images/portfolio/{{image_filter.group}}/{{image.title}}.jpg"
              data-width="{{image.width}}"
@@ -17,7 +20,15 @@
             <img loading="lazy" class="wrapper__img" src="{{ site.url }}/images/portfolio/{{image_filter.group}}/{{image.title}}-teaser.jpg" alt="{{prettyTitle}}" itemprop="thumbnail"  />
           </a>
         </div>
-      {% endif %}
-    {% endfor %}
+      {% endcapture %}
+    {% endif %}
   {% endfor %}
+{% endfor %}
+
+{% assign images = data | split: ';' %}
+{% if page.randomize_gallery %}
+  {% assign images = images | sample: page.randomize_gallery.limit %}
+{% endif %}
+<div class="card-columns grid" itemscope itemtype="http://schema.org/ImageGallery">
+  {{images}}
 </div>
