@@ -1,12 +1,10 @@
 ---
 layout: art-shows
-title: Art Shows
-hide_title: true
+title: Current Art Shows
 ---
 
 <div id="show-root" class="load">
-  <h1>Current {{page.title}}</h1>
-  <div id="current-shows" class="bullets"></div><!-- /.bullets -->
+  <div id="current-shows"></div><!-- /.bullets -->
   <p>
     <span id="no-current-shows-message" class="hidden">
       I currently do not have any art shows.
@@ -15,19 +13,21 @@ hide_title: true
   </p>
   {% include feed-subscribe.html %}
   <h2>Previous {{page.title}}</h2>
-  <div id="previous-shows" class="bullets">
-    {% for post in site.posts limit:4 %}
-      <div class="bullet three-col-bullet" data-time="{{post.end_date | date: '%s'}}">
-        <a href="{{ site.url }}{{ post.url }}">
-          <div class="center">
-            <i class="fas fa-folder-open fa-4x"></i>
+  <div id="previous-shows">
+    <div class="row row-cols-3">
+      {% for post in site.posts limit: 4 %}
+        <div class="col mb-4">
+          <div class="card text-center" data-time="{{post.end_date | date: '%s'}}">
+            <a href="{{ site.url }}{{ post.url }}">
+              <i class="far fa-calendar-alt fa-4x"></i>
+            </a>
+            <div class="bullet-content">
+              <h3 class="h4"><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h3>
+              <p>{{ post.excerpt | remove: '<p>' | remove: '</p>'}}</p>
+            </div>
           </div>
-        </a>
-        <div class="bullet-content">
-          <h2><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h2>
-          <p>{{ post.excerpt | remove: '<p>' | remove: '</p>'}}</p>
         </div>
-      </div>
-    {% endfor %}
+      {% endfor %}
+    </div>
   </div>
 </div>

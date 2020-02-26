@@ -10,14 +10,14 @@
       {% assign ratio = height | divided_by: width %}
       {% capture data %}
         {{data}};
-        <div class="card gallery-card wrapper" style="padding-top: calc({{ ratio }} * 100%)" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+        <div class="card gallery-card" style="padding-top: calc({{ ratio }} * 100%)" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="{{ site.url }}/images/portfolio/{{image_filter.group}}/{{image.title}}.jpg"
              data-width="{{image.width}}"
              data-height="{{image.height}}"
              data-index="{{image.title}}"
              data-title="{{prettyTitle}}"
              data-description="{{site.data.portfolio-image-info[image_filter.group][image.title].description}}">
-            <img loading="lazy" class="wrapper__img" src="{{ site.url }}/images/portfolio/{{image_filter.group}}/{{image.title}}-teaser.jpg" alt="{{prettyTitle}}" itemprop="thumbnail"  />
+            <img loading="lazy" src="{{ site.url }}/images/portfolio/{{image_filter.group}}/{{image.title}}-teaser.jpg" alt="{{prettyTitle}}" itemprop="thumbnail"  />
           </a>
         </div>
       {% endcapture %}

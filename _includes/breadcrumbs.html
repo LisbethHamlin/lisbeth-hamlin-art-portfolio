@@ -7,7 +7,7 @@
       {% if forloop.last %}
         {% assign lastBreadcrumbClass = 'active' %}
       {% endif %}
-      <li class="breadcrumb-item {{lastBreadcrumbClass}}">
+      <li class="breadcrumb-item">
         {% if forloop.last %}
           {{ current-title }}
         {% else %}
