@@ -12,7 +12,7 @@ const verifyItemTime = ($elements, callback) => {
   }
 };
 
-verifyItemTime($('#previous-shows > div'), ($element, showEnded) => {
+verifyItemTime($('#previous-shows .card'), ($element, showEnded) => {
   if(!showEnded) {
     $element.detach();
     $target.prepend($element);
