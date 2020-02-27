@@ -7,7 +7,7 @@
       {% assign prettyTitle = image.title | replace: '-',' ' | capitalize %}
       {% assign width = image.width | plus: 0.0 %}
       {% assign height = image.height | plus: 0.0 %}
-      {% assign ratio = height | divided_by: width %}
+      {% assign ratio = height | divided_by: width | at_most: 2 %}
       {% capture data %}
         {{data}};
         <div class="card gallery-card" style="padding-top: calc({{ ratio }} * 100%)" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
