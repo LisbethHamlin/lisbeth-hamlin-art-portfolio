@@ -1,4 +1,4 @@
-import $ from 'jquery';
+import $ from 'jquery/dist/jquery.slim';
 import photoswipe from 'photoswipe';
 import photoswipeUI from 'photoswipe/dist/photoswipe-ui-default';
 

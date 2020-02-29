@@ -1,4 +1,4 @@
-import{c as e,a as n,$ as t}from"./jquery.js";var o=e((function(e,n){
+import{c as e,a as n,$ as t}from"./jquery.slim.js";var o=e((function(e,n){
 /*! PhotoSwipe - v4.1.3 - 2019-01-08
 * http://photoswipe.com
 * Copyright (c) 2019 Dmitry Semenov; */
