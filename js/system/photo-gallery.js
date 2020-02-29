@@ -1,4 +1,4 @@
-System.register(["./jquery.js"],(function(){"use strict";var n,e;return{setters:[function(t){n=t.c,t.a,e=t.$}],execute:function(){var t=n((function(n,e){
+System.register(["./jquery.slim.js"],(function(){"use strict";var n,e;return{setters:[function(t){n=t.c,t.a,e=t.$}],execute:function(){var t=n((function(n,e){
 /*! PhotoSwipe - v4.1.3 - 2019-01-08
 			* http://photoswipe.com
 			* Copyright (c) 2019 Dmitry Semenov; */
