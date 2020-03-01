@@ -19,7 +19,7 @@ const config = formats.map((format) => ({
     dir: `js/${format}`,
     format,
     entryFileNames: `[name].js`,
-    chunkFileNames: `[name].js`,
+    chunkFileNames: `chunk_[name].js`,
     sourcemap: false,
   },
   plugins: [

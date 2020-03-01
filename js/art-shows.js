@@ -1,26 +1,19 @@
-import $ from 'jquery/dist/jquery.slim';
+const $target = document.querySelector('#current-shows');
+const currentTime = Math.floor(Date.now() / 1000);
 
-const $target = $('#current-shows');
+let newShowCounter = 0;
 
-const verifyItemTime = ($elements, callback) => {
-  const currentTime = Math.floor(Date.now() / 1000);
-
-  for(let i = 0; i < $elements.length; ++i) {
-    const $element = $($elements[i]);
-    const endTime = parseInt($element.data('time'), 10);
-    callback($element, currentTime > endTime);
+for (const element of document.querySelectorAll('#previous-shows .card')) {
+  const endTime = parseInt(element.dataset.time, 10);
+  if (currentTime <= endTime) {
+    element.parentNode.removeChild(element);
+    $target.appendChild(element);
+    newShowCounter++;
   }
-};
-
-verifyItemTime($('#previous-shows .card'), ($element, showEnded) => {
-  if(!showEnded) {
-    $element.detach();
-    $target.prepend($element);
-  }
-});
-
-if(!$target.is(':parent')) {
-  $('#current-shows').remove();
-  $('#no-current-shows-message').removeClass('hidden');
 }
-$('#show-root').removeClass('load');
+
+if (newShowCounter === 0) {
+  document.querySelector('#no-current-shows-message').classList.remove('hidden');
+}
+
+document.querySelector('#show-root').classList.remove('load');
