@@ -2,565 +2,1225 @@
   "ceramics": [
     {
       "title": "ceramic-vessel",
-      "width": "471",
-      "height": "777"
+      "image": {
+        "width": 471,
+        "height": 777
+      },
+      "teaserImage": {
+        "width": 242,
+        "height": 400
+      }
     },
     {
       "title": "mug-1",
-      "width": "972",
-      "height": "1296"
+      "image": {
+        "width": 972,
+        "height": 1296
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 333
+      }
     },
     {
       "title": "mug-2",
-      "width": "972",
-      "height": "1296"
+      "image": {
+        "width": 972,
+        "height": 1296
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 333
+      }
     },
     {
       "title": "mug-3",
-      "width": "1296",
-      "height": "972"
+      "image": {
+        "width": 1296,
+        "height": 972
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 188
+      }
     },
     {
       "title": "mug-4",
-      "width": "972",
-      "height": "1296"
+      "image": {
+        "width": 972,
+        "height": 1296
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 333
+      }
     },
     {
       "title": "mugs",
-      "width": "959",
-      "height": "901"
+      "image": {
+        "width": 959,
+        "height": 901
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 235
+      }
     }
   ],
   "hats": [
     {
       "title": "hat-01-inside",
-      "width": "1080",
-      "height": "810"
+      "image": {
+        "width": 1080,
+        "height": 810
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 188
+      }
     },
     {
       "title": "hat-01-outside",
-      "width": "1080",
-      "height": "810"
+      "image": {
+        "width": 1080,
+        "height": 810
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 188
+      }
     },
     {
       "title": "hat-02-inside",
-      "width": "1080",
-      "height": "810"
+      "image": {
+        "width": 1080,
+        "height": 810
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 188
+      }
     },
     {
       "title": "hat-02-outside",
-      "width": "810",
-      "height": "1080"
+      "image": {
+        "width": 810,
+        "height": 1080
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 333
+      }
     },
     {
       "title": "hat-05",
-      "width": "810",
-      "height": "1080"
+      "image": {
+        "width": 810,
+        "height": 1080
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 333
+      }
     },
     {
       "title": "hat-06",
-      "width": "810",
-      "height": "1080"
+      "image": {
+        "width": 810,
+        "height": 1080
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 333
+      }
     },
     {
       "title": "hat-07",
-      "width": "810",
-      "height": "1080"
+      "image": {
+        "width": 810,
+        "height": 1080
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 333
+      }
     },
     {
       "title": "hat-08",
-      "width": "810",
-      "height": "1080"
+      "image": {
+        "width": 810,
+        "height": 1080
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 333
+      }
     },
     {
       "title": "hat-09",
-      "width": "810",
-      "height": "1080"
+      "image": {
+        "width": 810,
+        "height": 1080
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 333
+      }
     },
     {
       "title": "hat-10",
-      "width": "810",
-      "height": "1080"
+      "image": {
+        "width": 810,
+        "height": 1080
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 333
+      }
     },
     {
       "title": "hat-11",
-      "width": "810",
-      "height": "1080"
+      "image": {
+        "width": 810,
+        "height": 1080
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 333
+      }
     },
     {
       "title": "hat-12",
-      "width": "810",
-      "height": "1080"
+      "image": {
+        "width": 810,
+        "height": 1080
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 333
+      }
     },
     {
       "title": "hat-13",
-      "width": "810",
-      "height": "1080"
+      "image": {
+        "width": 810,
+        "height": 1080
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 333
+      }
     },
     {
       "title": "hat-14",
-      "width": "1080",
-      "height": "810"
+      "image": {
+        "width": 1080,
+        "height": 810
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 188
+      }
     },
     {
       "title": "hat-15",
-      "width": "810",
-      "height": "1080"
+      "image": {
+        "width": 810,
+        "height": 1080
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 333
+      }
     }
   ],
   "jewelry": [
     {
       "title": "jewelry-1",
-      "width": "933",
-      "height": "865"
+      "image": {
+        "width": 933,
+        "height": 865
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 232
+      }
     },
     {
       "title": "jewelry-10",
-      "width": "1728",
-      "height": "1152"
+      "image": {
+        "width": 1728,
+        "height": 1152
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 167
+      }
     },
     {
       "title": "jewelry-11",
-      "width": "1728",
-      "height": "1152"
+      "image": {
+        "width": 1728,
+        "height": 1152
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 167
+      }
     },
     {
       "title": "jewelry-12",
-      "width": "1728",
-      "height": "1152"
+      "image": {
+        "width": 1728,
+        "height": 1152
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 167
+      }
     },
     {
       "title": "jewelry-13",
-      "width": "1728",
-      "height": "1152"
+      "image": {
+        "width": 1728,
+        "height": 1152
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 167
+      }
     },
     {
       "title": "jewelry-14",
-      "width": "1728",
-      "height": "1152"
+      "image": {
+        "width": 1728,
+        "height": 1152
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 167
+      }
     },
     {
       "title": "jewelry-2",
-      "width": "1296",
-      "height": "972"
+      "image": {
+        "width": 1296,
+        "height": 972
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 188
+      }
     },
     {
       "title": "jewelry-3",
-      "width": "972",
-      "height": "1296"
+      "image": {
+        "width": 972,
+        "height": 1296
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 333
+      }
     },
     {
       "title": "jewelry-4",
-      "width": "1296",
-      "height": "972"
+      "image": {
+        "width": 1296,
+        "height": 972
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 188
+      }
     },
     {
       "title": "jewelry-5",
-      "width": "972",
-      "height": "1296"
+      "image": {
+        "width": 972,
+        "height": 1296
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 333
+      }
     },
     {
       "title": "jewelry-6",
-      "width": "859",
-      "height": "1228"
+      "image": {
+        "width": 859,
+        "height": 1228
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 357
+      }
     },
     {
       "title": "jewelry-7",
-      "width": "972",
-      "height": "1296"
+      "image": {
+        "width": 972,
+        "height": 1296
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 333
+      }
     },
     {
       "title": "jewelry-8",
-      "width": "1183",
-      "height": "874"
+      "image": {
+        "width": 1183,
+        "height": 874
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 185
+      }
     },
     {
       "title": "jewelry-9",
-      "width": "1728",
-      "height": "1152"
+      "image": {
+        "width": 1728,
+        "height": 1152
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 167
+      }
     }
   ],
   "mosaics": [
     {
       "title": "african-bushwoman",
-      "width": "532",
-      "height": "800"
+      "image": {
+        "width": 532,
+        "height": 800
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 376
+      }
     },
     {
       "title": "belt",
-      "width": "1728",
-      "height": "1152"
+      "image": {
+        "width": 1728,
+        "height": 1152
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 167
+      }
     },
     {
       "title": "candle-2",
-      "width": "917",
-      "height": "1126"
+      "image": {
+        "width": 917,
+        "height": 1126
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 307
+      }
     },
     {
       "title": "candle",
-      "width": "1149",
-      "height": "1221"
+      "image": {
+        "width": 1149,
+        "height": 1221
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 266
+      }
     },
     {
       "title": "dragon",
-      "width": "1127",
-      "height": "999"
+      "image": {
+        "width": 1127,
+        "height": 999
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 222
+      }
     },
     {
       "title": "flower-frame",
-      "width": "1100",
-      "height": "1040"
+      "image": {
+        "width": 1100,
+        "height": 1040
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 236
+      }
     },
     {
       "title": "frame-1",
-      "width": "685",
-      "height": "800"
+      "image": {
+        "width": 685,
+        "height": 800
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 292
+      }
     },
     {
       "title": "frame-2",
-      "width": "1100",
-      "height": "801"
+      "image": {
+        "width": 1100,
+        "height": 801
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 182
+      }
     },
     {
       "title": "frame-3",
-      "width": "1100",
-      "height": "765"
+      "image": {
+        "width": 1100,
+        "height": 765
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 174
+      }
     },
     {
       "title": "french-blues",
-      "width": "586",
-      "height": "568"
+      "image": {
+        "width": 586,
+        "height": 568
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 242
+      }
     },
     {
       "title": "gecko-table-side",
-      "width": "773",
-      "height": "800"
+      "image": {
+        "width": 773,
+        "height": 800
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 259
+      }
     },
     {
       "title": "gecko-table",
-      "width": "1100",
-      "height": "977"
+      "image": {
+        "width": 1100,
+        "height": 977
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 222
+      }
     },
     {
       "title": "house-number-1276",
-      "width": "1100",
-      "height": "703"
+      "image": {
+        "width": 1100,
+        "height": 703
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 160
+      }
     },
     {
       "title": "indian-women",
-      "width": "1149",
-      "height": "858"
+      "image": {
+        "width": 1149,
+        "height": 858
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 187
+      }
     },
     {
       "title": "jersey-girl",
-      "width": "1100",
-      "height": "588"
+      "image": {
+        "width": 1100,
+        "height": 588
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 134
+      }
     },
     {
       "title": "mask-1",
-      "width": "667",
-      "height": "800"
+      "image": {
+        "width": 667,
+        "height": 800
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 300
+      }
     },
     {
       "title": "mask-2",
-      "width": "511",
-      "height": "800"
+      "image": {
+        "width": 511,
+        "height": 800
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 391
+      }
     },
     {
       "title": "mirror-1",
-      "width": "1106",
-      "height": "1100"
+      "image": {
+        "width": 1106,
+        "height": 1100
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 249
+      }
     },
     {
       "title": "mirror-2",
-      "width": "1100",
-      "height": "1056"
+      "image": {
+        "width": 1100,
+        "height": 1056
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 240
+      }
     },
     {
       "title": "mirror-3",
-      "width": "1100",
-      "height": "1059"
+      "image": {
+        "width": 1100,
+        "height": 1059
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 241
+      }
     },
     {
       "title": "mirror",
-      "width": "799",
-      "height": "1049"
+      "image": {
+        "width": 799,
+        "height": 1049
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 328
+      }
     },
     {
       "title": "plate",
-      "width": "1440",
-      "height": "1365"
+      "image": {
+        "width": 1440,
+        "height": 1365
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 237
+      }
     },
     {
       "title": "ribbons-tray",
-      "width": "1100",
-      "height": "825"
+      "image": {
+        "width": 1100,
+        "height": 825
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 188
+      }
     },
     {
       "title": "sea-foam-frame",
-      "width": "606",
-      "height": "594"
+      "image": {
+        "width": 606,
+        "height": 594
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 245
+      }
     },
     {
       "title": "syncopated-sax",
-      "width": "918",
-      "height": "1310"
+      "image": {
+        "width": 918,
+        "height": 1310
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 357
+      }
     },
     {
       "title": "table",
-      "width": "1073",
-      "height": "909"
+      "image": {
+        "width": 1073,
+        "height": 909
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 212
+      }
     },
     {
       "title": "tray-1",
-      "width": "1100",
-      "height": "825"
+      "image": {
+        "width": 1100,
+        "height": 825
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 188
+      }
     },
     {
       "title": "tray-2",
-      "width": "1100",
-      "height": "758"
+      "image": {
+        "width": 1100,
+        "height": 758
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 172
+      }
     },
     {
       "title": "tray-3",
-      "width": "1100",
-      "height": "783"
+      "image": {
+        "width": 1100,
+        "height": 783
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 178
+      }
     },
     {
       "title": "triple-frame",
-      "width": "261",
-      "height": "766"
+      "image": {
+        "width": 261,
+        "height": 766
+      },
+      "teaserImage": {
+        "width": 136,
+        "height": 400
+      }
     },
     {
       "title": "trivet-1",
-      "width": "1100",
-      "height": "1089"
+      "image": {
+        "width": 1100,
+        "height": 1089
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 248
+      }
     },
     {
       "title": "trivet-2",
-      "width": "1100",
-      "height": "1072"
+      "image": {
+        "width": 1100,
+        "height": 1072
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 244
+      }
     },
     {
       "title": "trivet-3",
-      "width": "1100",
-      "height": "1081"
+      "image": {
+        "width": 1100,
+        "height": 1081
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 246
+      }
     },
     {
       "title": "trivet-4",
-      "width": "1100",
-      "height": "1094"
+      "image": {
+        "width": 1100,
+        "height": 1094
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 249
+      }
     }
   ],
   "paper-collage": [
     {
       "title": "celebration",
-      "width": "764",
-      "height": "1222"
+      "image": {
+        "width": 764,
+        "height": 1222
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 400
+      }
     },
     {
       "title": "in-the-shade",
-      "width": "587",
-      "height": "800"
+      "image": {
+        "width": 587,
+        "height": 800
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 341
+      }
     },
     {
       "title": "jillo-harro",
-      "width": "648",
-      "height": "800"
+      "image": {
+        "width": 648,
+        "height": 800
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 309
+      }
     },
     {
       "title": "market-price",
-      "width": "609",
-      "height": "800"
+      "image": {
+        "width": 609,
+        "height": 800
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 328
+      }
     },
     {
       "title": "mzee-2",
-      "width": "548",
-      "height": "800"
+      "image": {
+        "width": 548,
+        "height": 800
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 365
+      }
     },
     {
       "title": "mzee-3",
-      "width": "744",
-      "height": "1069"
+      "image": {
+        "width": 744,
+        "height": 1069
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 359
+      }
     },
     {
       "title": "samburu-women",
-      "width": "1100",
-      "height": "777"
+      "image": {
+        "width": 1100,
+        "height": 777
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 177
+      }
     }
   ],
   "printmaking": [
     {
       "title": "african-bullfight",
-      "width": "763",
-      "height": "354"
+      "image": {
+        "width": 763,
+        "height": 354
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 116
+      }
     },
     {
       "title": "bati-ganya",
-      "width": "549",
-      "height": "719"
+      "image": {
+        "width": 549,
+        "height": 719
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 327
+      }
     },
     {
       "title": "camel-caravan",
-      "width": "725",
-      "height": "208"
+      "image": {
+        "width": 725,
+        "height": 208
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 72
+      }
     },
     {
       "title": "child-of-hope",
-      "width": "525",
-      "height": "800"
+      "image": {
+        "width": 525,
+        "height": 800
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 381
+      }
     },
     {
       "title": "ciet-and-wa",
-      "width": "480",
-      "height": "736"
+      "image": {
+        "width": 480,
+        "height": 736
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 383
+      }
     },
     {
       "title": "dancing-samburu-women",
-      "width": "753",
-      "height": "519"
+      "image": {
+        "width": 753,
+        "height": 519
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 172
+      }
     },
     {
       "title": "desert-wayside-a",
-      "width": "333",
-      "height": "727"
+      "image": {
+        "width": 333,
+        "height": 727
+      },
+      "teaserImage": {
+        "width": 183,
+        "height": 400
+      }
     },
     {
       "title": "desert-wayside-b",
-      "width": "341",
-      "height": "738"
-    },
-    {
-      "title": "desert-wayside-triptych",
-      "width": "730",
-      "height": "423"
+      "image": {
+        "width": 341,
+        "height": 738
+      },
+      "teaserImage": {
+        "width": 185,
+        "height": 400
+      }
     },
     {
       "title": "equipoise",
-      "width": "355",
-      "height": "800"
+      "image": {
+        "width": 355,
+        "height": 800
+      },
+      "teaserImage": {
+        "width": 178,
+        "height": 400
+      }
+    },
+    {
+      "title": "desert-wayside-triptych",
+      "image": {
+        "width": 730,
+        "height": 423
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 145
+      }
     },
     {
       "title": "in-prayer",
-      "width": "531",
-      "height": "775"
+      "image": {
+        "width": 531,
+        "height": 775
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 365
+      }
     },
     {
       "title": "lake-dal",
-      "width": "765",
-      "height": "512"
+      "image": {
+        "width": 765,
+        "height": 512
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 167
+      }
     },
     {
       "title": "living-patterns",
-      "width": "600",
-      "height": "650"
+      "image": {
+        "width": 600,
+        "height": 650
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 271
+      }
     },
     {
       "title": "nkishu-cattleness",
-      "width": "770",
-      "height": "430"
+      "image": {
+        "width": 770,
+        "height": 430
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 140
+      }
     },
     {
       "title": "nomads-moving-on",
-      "width": "525",
-      "height": "721"
+      "image": {
+        "width": 525,
+        "height": 721
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 343
+      }
     },
     {
       "title": "oasis",
-      "width": "729",
-      "height": "217"
+      "image": {
+        "width": 729,
+        "height": 217
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 74
+      }
     },
     {
       "title": "pounding-fou-fou",
-      "width": "504",
-      "height": "764"
+      "image": {
+        "width": 504,
+        "height": 764
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 379
+      }
     },
     {
       "title": "ships-of-the-desert",
-      "width": "770",
-      "height": "231"
+      "image": {
+        "width": 770,
+        "height": 231
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 75
+      }
     },
     {
       "title": "turkana-girl",
-      "width": "521",
-      "height": "717"
+      "image": {
+        "width": 521,
+        "height": 717
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 344
+      }
     }
   ],
   "watercolor": [
     {
       "title": "bushman-at-llaru",
-      "width": "544",
-      "height": "800"
+      "image": {
+        "width": 544,
+        "height": 800
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 368
+      }
     },
     {
       "title": "bushman-storyteller",
-      "width": "597",
-      "height": "800"
+      "image": {
+        "width": 597,
+        "height": 800
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 335
+      }
     },
     {
       "title": "bushwomen-at-llaru",
-      "width": "1100",
-      "height": "810"
+      "image": {
+        "width": 1100,
+        "height": 810
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 184
+      }
     },
     {
       "title": "camel-herder",
-      "width": "556",
-      "height": "757"
+      "image": {
+        "width": 556,
+        "height": 757
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 340
+      }
     },
     {
       "title": "desert-girl",
-      "width": "537",
-      "height": "800"
+      "image": {
+        "width": 537,
+        "height": 800
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 372
+      }
     },
     {
       "title": "dogon-dame",
-      "width": "585",
-      "height": "800"
+      "image": {
+        "width": 585,
+        "height": 800
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 342
+      }
     },
     {
       "title": "homeward-bound",
-      "width": "564",
-      "height": "800"
+      "image": {
+        "width": 564,
+        "height": 800
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 355
+      }
     },
     {
       "title": "jaipur-market-3",
-      "width": "1015",
-      "height": "748"
+      "image": {
+        "width": 1015,
+        "height": 748
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 184
+      }
     },
     {
       "title": "kavango-clan",
-      "width": "1100",
-      "height": "798"
+      "image": {
+        "width": 1100,
+        "height": 798
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 181
+      }
     },
     {
       "title": "mali-tribesman",
-      "width": "829",
-      "height": "1145"
+      "image": {
+        "width": 829,
+        "height": 1145
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 345
+      }
     },
     {
       "title": "mother-and-child-bushman",
-      "width": "535",
-      "height": "800"
+      "image": {
+        "width": 535,
+        "height": 800
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 374
+      }
     },
     {
       "title": "reflection",
-      "width": "510",
-      "height": "800"
+      "image": {
+        "width": 510,
+        "height": 800
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 392
+      }
     },
     {
       "title": "sopa-samburu",
-      "width": "840",
-      "height": "1253"
+      "image": {
+        "width": 840,
+        "height": 1253
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 373
+      }
     },
     {
       "title": "wayside-market",
-      "width": "1009",
-      "height": "670"
+      "image": {
+        "width": 1009,
+        "height": 670
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 166
+      }
     },
     {
       "title": "zemba-girl",
-      "width": "531",
-      "height": "800"
+      "image": {
+        "width": 531,
+        "height": 800
+      },
+      "teaserImage": {
+        "width": 250,
+        "height": 377
+      }
     }
   ]
 }

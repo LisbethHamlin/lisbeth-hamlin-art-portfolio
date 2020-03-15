@@ -5,19 +5,16 @@
   {% for image in list %}
     {% if image_filter.title == null or image_filter.title == image.title %}
       {% assign prettyTitle = image.title | replace: '-',' ' | capitalize %}
-      {% assign width = image.width | plus: 0.0 %}
-      {% assign height = image.height | plus: 0.0 %}
-      {% assign ratio = height | divided_by: width %}
       {% capture data %}
-        {{data}};
-        <div class="card gallery-card" style="padding-top: calc({{ ratio }} * 100%)" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+        {{data}};;
+        <div class="grid-item d-none" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
           <a href="{{ site.url }}/images/portfolio/{{image_filter.group}}/{{image.title}}.jpg"
-             data-width="{{image.width}}"
-             data-height="{{image.height}}"
+             data-width="{{image.image.width}}"
+             data-height="{{image.image.height}}"
              data-index="{{image.title}}"
              data-title="{{prettyTitle}}"
              data-description="{{site.data.portfolio-image-info[image_filter.group][image.title].description}}">
-            <img src="{{ site.url }}/images/portfolio/{{image_filter.group}}/{{image.title}}-teaser.jpg" alt="{{prettyTitle}}" itemprop="thumbnail"  />
+            <img src="{{ site.url }}/images/portfolio/{{image_filter.group}}/{{image.title}}-teaser.jpg" alt="{{prettyTitle}}" itemprop="thumbnail" class="img-fluid" />
           </a>
         </div>
       {% endcapture %}
@@ -25,10 +22,10 @@
   {% endfor %}
 {% endfor %}
 
-{% assign images = data | split: ';' %}
+{% assign images = data | split: ';;' %}
 {% if page.randomize_gallery %}
   {% assign images = images | sample: page.randomize_gallery.limit %}
 {% endif %}
-<div class="card-columns grid" itemscope itemtype="http://schema.org/ImageGallery">
+<div class="grid" itemscope itemtype="http://schema.org/ImageGallery">
   {{images}}
 </div>
