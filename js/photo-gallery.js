@@ -1,8 +1,10 @@
 import photoswipe from 'photoswipe';
 import photoswipeUI from 'photoswipe/dist/photoswipe-ui-default';
+import imagesLoaded from 'imagesloaded';
 
 import 'photoswipe/dist/photoswipe.css';
 import 'photoswipe/dist/default-skin/default-skin.css';
+import Masonry from 'masonry-layout';
 
 const initPhotoSwipeFromDOM = ($gallery, gallerySelector) => {
   // parse slide data (url, title, size ...) from DOM elements
@@ -131,6 +133,30 @@ const initPhotoSwipeFromDOM = ($gallery, gallerySelector) => {
 
 const gridSelector = '.grid';
 
-const galleryElements = document.querySelector(gridSelector);
+const gallery = document.querySelector(gridSelector);
 
-initPhotoSwipeFromDOM(galleryElements, gridSelector);
+initPhotoSwipeFromDOM(gallery, gridSelector);
+
+const loadImage = ($element) => {
+  return new Promise((resolve) => {
+    imagesLoaded($element, resolve);
+  });
+};
+
+const masonryGrid = new Masonry(gallery, {
+  fitWidth: true,
+  itemSelector: '.grid-item',
+  gutter: 16,
+});
+
+(async () => {
+  for (const gridItem of gallery.querySelectorAll('.grid-item')) {
+    await loadImage(gridItem);
+
+    gridItem.classList.remove('d-none');
+
+    masonryGrid.layout();
+  }
+})();
+
+

@@ -1,60 +1,27 @@
+@import "variables";
+@import "bootstrap";
+
 h1, h2, h3 {
   font-family: "Indie Flower",cursive;
   font-weight: bold;
-  color: inherit;
 }
 
 h2 {
   margin: 1.5rem 0;
 }
 
-a {
-  color: inherit;
-  &:hover {
-    color: inherit;
-  }
-}
-
 hr {
   margin: 3rem 0;
 }
 
-#show-root {
-  color: var(--dark);
-}
-
-.card-columns {
-  column-count: auto;
-  column-width: 12rem;
-
-  @media (max-width: 575.98px) {
-    column-width: 25vw;
-  }
-}
-
 .card {
   border: none;
-  -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
-          page-break-inside: avoid; /* Firefox */
-               break-inside: avoid; /* IE 10+ */
-}
-
-.gallery-card img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  max-width: 100%;
-  width: 100%;
-  height: auto;
 }
 
 #site-footer {
   margin-top: 4.5rem;
   font-size: 0.75rem;
   padding-bottom: 2rem;
-  p, a {
-    color: var(--gray);
-  }
 }
 
 .table thead th {
@@ -63,7 +30,6 @@ hr {
 
 .page-meta {
   margin-top: 2rem;
-  color: var(--gray);
 }
 
 .hidden {
@@ -73,3 +39,23 @@ hr {
 .load {
   visibility: hidden;
 }
+
+.grid {
+  margin: 0 auto;
+  .grid-item {
+    margin-bottom: 16px;
+  }
+
+  .grid-item {
+    width: 100px;
+  }
+
+  @include media-breakpoint-up(md) {
+    .grid-item {
+      width: 200px;
+    }
+  }
+}
+
+
+

@@ -20,6 +20,7 @@ highlighter: rouge
 plugins:
   - jekyll-sitemap
   - jekyll-feed
+  - bootstrap
 
 # Site owner
 author:

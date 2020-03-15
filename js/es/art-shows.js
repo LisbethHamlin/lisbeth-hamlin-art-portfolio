@@ -1,1 +1,0 @@
-var e=document.querySelector("#current-shows"),o=Math.floor(Date.now()/1e3),r=0;for(var t of document.querySelectorAll("#previous-shows .card")){o<=parseInt(t.dataset.time,10)&&(t.parentNode.removeChild(t),e.appendChild(t),r++)}0===r&&document.querySelector("#no-current-shows-message").classList.remove("hidden"),document.querySelector("#show-root").classList.remove("load");
