@@ -14,6 +14,7 @@ const config = formats.map((format) => ({
   input: [
     'js/art-shows.js',
     'js/photo-gallery.js',
+    'js/common.js',
   ],
   output: {
     dir: `js/${format}`,

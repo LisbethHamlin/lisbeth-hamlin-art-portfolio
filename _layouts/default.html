@@ -27,7 +27,6 @@ layout: compress
 
     <link href="{{ '/favicon.png' | absolute_url }}" rel="shortcut icon" type="image/png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie+Flower">
-    <link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.12.0/css/all.min.css">
     <link rel="stylesheet" href="{{ '/css/main.css' | absolute_url }}">
   </head>
 
@@ -49,6 +48,10 @@ layout: compress
         </script>
       {% endfor %}
     {% endif %}
+    <script type="module" src="{{'common' | prepend: '/js/es/' | append: '.js' | absolute_url }}"></script>
+    <script nomodule>
+      System.import("{{'common' | prepend: '/js/system/' | append: '.js' | absolute_url }}");
+    </script>
     {% include tracking.html %}
   </body>
 </html>
