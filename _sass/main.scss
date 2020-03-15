@@ -47,7 +47,13 @@ hr {
   }
 
   .grid-item {
-    width: 100px;
+    width: 40vw;
+  }
+
+  @include media-breakpoint-up(sm) {
+    .grid-item {
+      width: 20vw;
+    }
   }
 
   @include media-breakpoint-up(md) {
