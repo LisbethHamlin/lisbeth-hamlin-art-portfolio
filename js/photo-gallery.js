@@ -1,12 +1,4 @@
-import photoswipe from 'photoswipe';
-import photoswipeUI from 'photoswipe/dist/photoswipe-ui-default';
-import imagesLoaded from 'imagesloaded';
-
-import 'photoswipe/dist/photoswipe.css';
-import 'photoswipe/dist/default-skin/default-skin.css';
-import Masonry from 'masonry-layout';
-
-const initPhotoSwipeFromDOM = ($gallery, gallerySelector) => {
+const initPhotoSwipeFromDOM = ($gallery) => {
   // parse slide data (url, title, size ...) from DOM elements
   // (children of gallerySelector)
   const parseThumbnailElements = ($el) => {
@@ -62,7 +54,7 @@ const initPhotoSwipeFromDOM = ($gallery, gallerySelector) => {
     return params;
   };
 
-  const openPhotoSwipe = (index, disableAnimation) => {
+  const openPhotoSwipe = async (index, disableAnimation) => {
     const pswpElement = document.querySelector('.pswp');
     let gallery,
       options;
@@ -111,8 +103,14 @@ const initPhotoSwipeFromDOM = ($gallery, gallerySelector) => {
       options.showAnimationDuration = 0;
     }
 
+    const [photoswipe, photoswipeUI] = await Promise.all([
+      import('photoswipe'),
+      import('photoswipe/dist/photoswipe-ui-default'),
+      import('photoswipe/dist/default-skin/default-skin.css'),
+    ]);
+
     // Pass data to PhotoSwipe and initialize it
-    gallery = new photoswipe(pswpElement, photoswipeUI, items, options);
+    gallery = new photoswipe.default(pswpElement, photoswipeUI.default, items, options);
     gallery.init();
   };
 
@@ -131,32 +129,43 @@ const initPhotoSwipeFromDOM = ($gallery, gallerySelector) => {
   }
 };
 
-const gridSelector = '.grid';
+export const main = async () => {
+  const gridSelector = '.grid';
 
-const gallery = document.querySelector(gridSelector);
+  const gallery = document.querySelector(gridSelector);
 
-initPhotoSwipeFromDOM(gallery, gridSelector);
+  if (gallery) {
+    const [
+      imagesLoaded,
+      Masonry
+    ] = await Promise.all([
+      import('imagesloaded'),
+      import('masonry-layout'),
+      import('photoswipe/dist/photoswipe.css'),
+    ]);
 
-const loadImage = ($element) => {
-  return new Promise((resolve) => {
-    imagesLoaded($element, resolve);
-  });
-};
+    initPhotoSwipeFromDOM(gallery);
 
-const masonryGrid = new Masonry(gallery, {
-  fitWidth: true,
-  itemSelector: '.grid-item',
-  gutter: 16,
-});
+    const loadImage = ($element) => {
+      return new Promise((resolve) => {
+        imagesLoaded.default($element, resolve);
+      });
+    };
 
-(async () => {
-  for (const gridItem of gallery.querySelectorAll('.grid-item')) {
-    await loadImage(gridItem);
+    const masonryGrid = new Masonry.default(gallery, {
+      fitWidth: true,
+      itemSelector: '.grid-item',
+      gutter: 16,
+    });
 
-    gridItem.classList.remove('d-none');
+    for (const gridItem of gallery.querySelectorAll('.grid-item')) {
+      await loadImage(gridItem);
 
-    masonryGrid.layout();
+      gridItem.classList.remove('d-none');
+
+      masonryGrid.layout();
+    }
   }
-})();
+}
 
 

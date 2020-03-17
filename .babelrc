@@ -1,6 +1,6 @@
 {
   "env": {
-    "system": {
+    "iife": {
       "presets": [
         [
           "@babel/preset-env",
