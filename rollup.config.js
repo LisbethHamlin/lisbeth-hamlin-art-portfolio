@@ -6,28 +6,35 @@ import url from 'postcss-url';
 import { terser } from 'rollup-plugin-terser';
 
 const formats = [
-  'es',
-  'system',
+  {
+    format: 'es',
+    input: 'js/main-module.js',
+    dynamicImportFunction: '__import__',
+  }, {
+    format: 'iife',
+    input: 'js/main-nomodule.js',
+    inlineDynamicImports: true,
+  }
 ];
 
-const config = formats.map((format) => ({
+export default formats.map((format) => ({
   input: [
-    'js/art-shows.js',
-    'js/photo-gallery.js',
-    'js/common.js',
+    format.input,
   ],
   output: {
-    dir: `js/${format}`,
-    format,
+    dir: `js/${format.format}`,
+    format: format.format,
     entryFileNames: `[name].js`,
     chunkFileNames: `chunk_[name].js`,
+    dynamicImportFunction: format.dynamicImportFunction,
     sourcemap: false,
   },
+  inlineDynamicImports: format.inlineDynamicImports,
   plugins: [
     resolve({ browser: true }),
     commonjs(),
     babel({
-      envName: format,
+      envName: format.format,
       exclude: 'node_modules/**',
     }),
     postcss({
@@ -40,19 +47,3 @@ const config = formats.map((format) => ({
     terser(),
   ],
 }));
-
-export default [
-  ...config,
-  {
-    input: 'js/system-runtime',
-    output: {
-      file: 'js/system/runtime.js',
-      format: 'iife',
-    },
-    plugins: [
-      resolve({ browser: true }),
-      commonjs(),
-      terser(),
-    ]
-  }
-]
