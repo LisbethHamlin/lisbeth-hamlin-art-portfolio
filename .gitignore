@@ -9,5 +9,5 @@ _asset_bundler_cache
 .settings
 
 js/es
-js/system
+js/systemjs
 js/iife

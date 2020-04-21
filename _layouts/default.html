@@ -38,8 +38,8 @@ layout: compress
       {% include footer.html %}
     </div>
 
-    <script type="module" src="{{'main-module' | prepend: '/js/es/' | append: '.js' | absolute_url }}"></script>
-    <script nomodule src="{{'main-nomodule' | prepend: '/js/iife/' | append: '.js' | absolute_url }}"></script>
+    <script src="{{'runtime' | prepend: '/js/iife/' | append: '.js' | absolute_url }}"></script>
+    <script>System.import("{{'app' | prepend: '/js/systemjs/' | append: '.js' | absolute_url }}")</script>
     {% include tracking.html %}
   </body>
 </html>
