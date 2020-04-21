@@ -1,33 +1,7 @@
 {
-  "env": {
-    "iife": {
-      "presets": [
-        [
-          "@babel/preset-env",
-          {
-            "targets": {
-              "browsers": [
-                "last 2 version",
-                ">= 1%",
-                "IE 11",
-                "not dead"
-              ]
-            }
-          }
-        ]
-      ]
-    },
-    "es": {
-      "presets": [
-        [
-          "@babel/preset-env",
-          {
-            "targets": {
-              "esmodules": true
-            }
-          }
-        ]
-      ]
-    }
-  }
+  "presets": [
+    [
+      "@babel/preset-env"
+    ]
+  ]
 }

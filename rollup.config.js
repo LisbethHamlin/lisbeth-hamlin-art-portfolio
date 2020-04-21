@@ -7,13 +7,12 @@ import { terser } from 'rollup-plugin-terser';
 
 const formats = [
   {
-    format: 'es',
-    input: 'js/main-module.js',
-    dynamicImportFunction: '__import__',
-  }, {
+    format: 'systemjs',
+    input: 'js/app.js',
+  },
+  {
     format: 'iife',
-    input: 'js/main-nomodule.js',
-    inlineDynamicImports: true,
+    input: 'js/runtime.js',
   }
 ];
 
@@ -25,16 +24,13 @@ export default formats.map((format) => ({
     dir: `js/${format.format}`,
     format: format.format,
     entryFileNames: `[name].js`,
-    chunkFileNames: `chunk_[name].js`,
-    dynamicImportFunction: format.dynamicImportFunction,
+    chunkFileNames: `chunk-[name]-[hash].js`,
     sourcemap: false,
   },
-  inlineDynamicImports: format.inlineDynamicImports,
   plugins: [
     resolve({ browser: true }),
     commonjs(),
     babel({
-      envName: format.format,
       exclude: 'node_modules/**',
     }),
     postcss({

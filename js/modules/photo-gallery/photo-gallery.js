@@ -1,4 +1,4 @@
-export const main = async () => {
+const init = async () => {
   const gridSelector = '.grid';
 
   const gallery = document.querySelector(gridSelector);
@@ -8,4 +8,6 @@ export const main = async () => {
 
     main(gallery);
   }
-}
+};
+
+init();
