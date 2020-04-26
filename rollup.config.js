@@ -27,6 +27,7 @@ export default formats.map((format) => ({
     chunkFileNames: `chunk-[name]-[hash].js`,
     sourcemap: false,
   },
+  preserveEntrySignatures: false,
   plugins: [
     resolve({ browser: true }),
     commonjs(),
