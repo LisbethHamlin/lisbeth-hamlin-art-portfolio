@@ -1,28 +1,15 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import postcss from 'rollup-plugin-postcss';
-import babel from 'rollup-plugin-babel';
 import url from 'postcss-url';
 import { terser } from 'rollup-plugin-terser';
+import typescript from 'rollup-plugin-typescript2';
 
-const formats = [
-  {
-    format: 'systemjs',
-    input: 'js/app.js',
-  },
-  {
-    format: 'iife',
-    input: 'js/runtime.js',
-  }
-];
-
-export default formats.map((format) => ({
-  input: [
-    format.input,
-  ],
+export default {
+  input: 'js/app.ts',
   output: {
-    dir: `js/${format.format}`,
-    format: format.format,
+    dir: `js/bundle`,
+    format: 'systemjs',
     entryFileNames: `[name].js`,
     chunkFileNames: `chunk-[name]-[hash].js`,
     sourcemap: false,
@@ -31,8 +18,8 @@ export default formats.map((format) => ({
   plugins: [
     resolve({ browser: true }),
     commonjs(),
-    babel({
-      exclude: 'node_modules/**',
+    typescript({
+      clean: true,
     }),
     postcss({
       plugins: [
@@ -43,4 +30,4 @@ export default formats.map((format) => ({
     }),
     terser(),
   ],
-}));
+};

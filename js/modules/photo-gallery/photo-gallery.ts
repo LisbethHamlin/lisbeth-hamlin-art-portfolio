@@ -2,11 +2,11 @@ import 'photoswipe/dist/photoswipe.css';
 import imagesLoaded from 'imagesloaded';
 import Masonry from 'masonry-layout';
 
-const initPhotoSwipeFromDOM = async ($gallery) => {
+const initPhotoSwipeFromDOM = async ($gallery: HTMLElement) => {
   // parse picture index and gallery index from URL (#&pid=1&gid=2)
   const photoswipeParseHash = () => {
-    const hash = window.location.hash.substring(1),
-      params = {};
+    const hash = window.location.hash.substring(1);
+    const params: Record<string, any> = {};
 
     if (hash.length < 5) {
       return params;
@@ -34,36 +34,39 @@ const initPhotoSwipeFromDOM = async ($gallery) => {
   $gallery.addEventListener('click', async (event) => {
     event.preventDefault();
 
-    if (event.target.tagName === 'IMG' && event.target.parentElement) {
-      const {openPhotoSwipe} = await import('./openPhotoSwipe');
-      openPhotoSwipe($gallery, event.target.parentElement.dataset.index);
+    const target = event.target as HTMLElement;
+
+    if (target.tagName === 'IMG' && target.parentElement) {
+      const { openPhotoSwipe } = await import('./openPhotoSwipe');
+      openPhotoSwipe($gallery, target.parentElement.dataset.index!);
     }
+
   });
 
   // Parse URL and open gallery if it contains #&pid=3&gid=1
   const hashData = photoswipeParseHash();
   if (hashData.pid && hashData.gid) {
-    const {openPhotoSwipe} = await import('./openPhotoSwipe');
+    const { openPhotoSwipe } = await import('./openPhotoSwipe');
     openPhotoSwipe($gallery, hashData.pid, true);
   }
 };
 
-const init = async (gallery) => {
+const init = async (gallery: HTMLElement) => {
   initPhotoSwipeFromDOM(gallery);
 
-  const loadImage = ($element) => {
+  const loadImage = ($element: HTMLElement) => {
     return new Promise((resolve) => {
       imagesLoaded($element, resolve);
     });
   };
 
-  const masonryGrid = new Masonry(gallery, {
+  const masonryGrid: any = new Masonry(gallery, {
     fitWidth: true,
     itemSelector: '.grid-item',
     gutter: 16,
   });
 
-  for (const gridItem of gallery.querySelectorAll('.grid-item')) {
+  for (const gridItem of gallery.querySelectorAll<HTMLElement>('.grid-item')) {
     await loadImage(gridItem);
 
     gridItem.classList.remove('d-none');
@@ -72,7 +75,7 @@ const init = async (gallery) => {
   }
 }
 
-const gallery = document.querySelector('.grid');
+const gallery = document.querySelector<HTMLElement>('.grid');
 
 if (gallery) {
   init(gallery);

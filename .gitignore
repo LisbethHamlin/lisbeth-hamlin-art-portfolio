@@ -11,3 +11,4 @@ _asset_bundler_cache
 js/es
 js/systemjs
 js/iife
+js/bundle

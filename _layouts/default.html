@@ -38,8 +38,12 @@ layout: compress
       {% include footer.html %}
     </div>
 
-    <script src="{{'runtime' | prepend: '/js/iife/' | append: '.js' | absolute_url }}"></script>
-    <script>System.import("{{'app' | prepend: '/js/systemjs/' | append: '.js' | absolute_url }}")</script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=Promise%2CArray.prototype.findIndex"></script>
+    <script src="https://unpkg.com/systemjs@6.3.2/dist/system.min.js"></script>
+    <script>System
+      .import("{{'app' | prepend: '/js/bundle/' | append: '.js' | absolute_url }}")
+      .catch(function(e) { console.error(e); })
+    </script>
     {% include tracking.html %}
   </body>
 </html>
