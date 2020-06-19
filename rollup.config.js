@@ -12,7 +12,7 @@ export default {
     format: 'systemjs',
     entryFileNames: `[name].js`,
     chunkFileNames: `chunk-[name]-[hash].js`,
-    sourcemap: false,
+    sourcemap: true,
   },
   preserveEntrySignatures: false,
   plugins: [
