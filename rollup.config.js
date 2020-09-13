@@ -14,6 +14,7 @@ export default {
     chunkFileNames: `chunk-[name]-[hash].js`,
     sourcemap: true,
   },
+  context: 'window',
   preserveEntrySignatures: false,
   plugins: [
     resolve({ browser: true }),
