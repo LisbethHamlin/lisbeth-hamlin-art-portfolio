@@ -2,6 +2,9 @@
 layout: compress
 ---
 
+{% assign appJsURL = '/js/bundle/app.js' | absolute_url %}
+{% assign bootstrapJsURL = '/js/bundle/bootstrap.js' | absolute_url %}
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,6 +31,8 @@ layout: compress
     <link href="{{ '/favicon.png' | absolute_url }}" rel="shortcut icon" type="image/png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie+Flower">
     <link rel="stylesheet" href="{{ '/css/main.css' | absolute_url }}">
+    <link rel="preload" href="{{ appJsURL }}" as="script">
+    <link rel="preload" href="{{ bootstrapJsURL }}" as="script">
   </head>
 
   <body>
@@ -38,12 +43,7 @@ layout: compress
       {% include footer.html %}
     </div>
 
-    <script src="https://polyfill.io/v3/polyfill.min.js?version=3.53.1&features=Promise%2CArray.prototype.findIndex"></script>
-    <script src="https://unpkg.com/systemjs@6.7.1/dist/s.min.js"></script>
-    <script>System
-      .import("{{'app' | prepend: '/js/bundle/' | append: '.js' | absolute_url }}")
-      .catch(function(e) { console.error(e); })
-    </script>
+    <script src="{{ bootstrapJsURL }}"></script>
     {% include tracking.html %}
   </body>
 </html>

@@ -5,11 +5,11 @@ import url from 'postcss-url';
 import { terser } from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript2';
 
-export default {
-  input: 'js/app.ts',
+const config = ({input, format}) => ({
+  input,
   output: {
     dir: `js/bundle`,
-    format: 'systemjs',
+    format,
     entryFileNames: `[name].js`,
     chunkFileNames: `chunk-[name]-[hash].js`,
     sourcemap: true,
@@ -31,4 +31,15 @@ export default {
     }),
     terser(),
   ],
-};
+});
+
+export default [
+  config({
+    input: 'js/bootstrap.ts',
+    format: 'iife',
+  }),
+  config({
+    input: 'js/app.ts',
+    format: 'systemjs',
+  }),
+];
