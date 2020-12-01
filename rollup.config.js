@@ -23,6 +23,7 @@ const config = ({input, format}) => ({
       clean: true,
     }),
     postcss({
+      minimize: true,
       plugins: [
         url({
           url: 'inline',
