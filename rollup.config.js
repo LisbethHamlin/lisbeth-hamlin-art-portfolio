@@ -1,9 +1,19 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import typescript from '@rollup/plugin-typescript';
 import postcss from 'rollup-plugin-postcss';
 import url from 'postcss-url';
 import { terser } from 'rollup-plugin-terser';
-import typescript from 'rollup-plugin-typescript2';
+
+const dynamicImportPlugin = {
+  name: 'dynamic-import-polyfill',
+  renderDynamicImport() {
+    return {
+      left: '__import__(',
+      right: ')'
+    }
+  }
+};
 
 const config = ({input, format}) => ({
   input,
@@ -13,15 +23,15 @@ const config = ({input, format}) => ({
     entryFileNames: `[name].js`,
     chunkFileNames: `chunk-[name]-[hash].js`,
     sourcemap: true,
+    banner: `/*! build-date: ${new Date().toISOString()} */`,
   },
   context: 'window',
   preserveEntrySignatures: false,
   plugins: [
     resolve({ browser: true }),
     commonjs(),
-    typescript({
-      clean: true,
-    }),
+    typescript(),
+    dynamicImportPlugin,
     postcss({
       minimize: true,
       plugins: [
@@ -36,11 +46,7 @@ const config = ({input, format}) => ({
 
 export default [
   config({
-    input: 'js/bootstrap.ts',
-    format: 'iife',
-  }),
-  config({
     input: 'js/app.ts',
-    format: 'systemjs',
+    format: 'esm',
   }),
 ];
