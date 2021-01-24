@@ -3,7 +3,7 @@ layout: compress
 ---
 
 {% assign appJsURL = '/js/bundle/app.js' | absolute_url %}
-{% assign bootstrapJsURL = '/js/bundle/bootstrap.js' | absolute_url %}
+{% assign fallbackJsURL = '/js/bundle/app.js' | absolute_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -31,19 +31,21 @@ layout: compress
     <link href="{{ '/favicon.png' | absolute_url }}" rel="shortcut icon" type="image/png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie+Flower">
     <link rel="stylesheet" href="{{ '/css/main.css' | absolute_url }}">
-    <link rel="preload" href="{{ appJsURL }}" as="script">
-    <link rel="preload" href="{{ bootstrapJsURL }}" as="script">
   </head>
 
   <body>
     <div class="container">
+      {% include browser-not-supported.html %}
       {% include noscript.html %}
       {% include header.html %}
       {{ content }}
       {% include footer.html %}
     </div>
 
-    <script src="{{ bootstrapJsURL }}"></script>
+    <script src="{{ appJsURL }}" type="module"></script>
+    <script nomodule>
+      document.querySelector('.browser-not-supported').classList.remove('hidden');
+    </script>
     {% include tracking.html %}
   </body>
 </html>
