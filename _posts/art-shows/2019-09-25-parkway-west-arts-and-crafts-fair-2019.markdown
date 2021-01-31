@@ -11,4 +11,4 @@ end_date: 28 October 2019
 
 **Location**: [Parkway West High School](https://goo.gl/maps/84JTmiDgc4N2) — Booth N1
 
-**Date**: October 26th and 27th 2018 — Sat 9am - 4pm, Sun 10am - 3pm
+**Date**: October 26th and 27th 2019 — Sat 9am - 4pm, Sun 10am - 3pm

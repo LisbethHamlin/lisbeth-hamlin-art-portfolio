@@ -1,5 +1,5 @@
 ---
-layout: art-shows
+layout: archive
 title: Current Art Shows
 ---
 
@@ -14,8 +14,7 @@ title: Current Art Shows
   <div id="previous-shows">
     <div class="row row-cols-md-3 row-cols-1">
       {% for post in site.posts limit: 4 %}
-        <div class="col mb-4">
-          <div class="card text-center" data-time="{{post.end_date | date: '%s'}}">
+        <div data-time="{{post.end_date | date: '%s'}}" class="col mb-4 card text-center">
             <a href="{{ site.url }}{{ post.url }}">
               <i class="far fa-calendar-alt fa-4x"></i>
             </a>
@@ -23,7 +22,6 @@ title: Current Art Shows
               <h3 class="h4"><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a></h3>
               <p>{{ post.excerpt | remove: '<p>' | remove: '</p>'}}</p>
             </div>
-          </div>
         </div>
       {% endfor %}
     </div>
