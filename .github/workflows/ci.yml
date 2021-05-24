@@ -24,7 +24,7 @@ jobs:
         run: |
           npm ci && npm run build
           gem install bundler
-          bundle install
+          bundle install --deployment
           JEKYLL_ENV=production bundle exec jekyll build
           htmlproofer ./_site --check-html --allow-hash-href --disable-external
 
