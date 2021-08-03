@@ -1,9 +1,0 @@
-<div class="col-6 col-md-4 col-lg-3 mb-3">
-  <a href="{{ site.url }}/portfolio/{{ include.groupKey }}/" title="{{ post.title }}" class="d-block">
-    <i class="fa fa-folder-open fa-5x"></i>
-  </a>
-  {% if page.hide-teaser-descriptions == nil or page.hide-teaser-descriptions == false %}
-  <a href="{{ site.url }}/portfolio/{{ include.groupKey }}/" class="d-block">{{ include.groupKey | replace: '-',' ' | capitalize }}</a>
-  {% endif %}
-  {% if excerpt %}<p class="post-excerpt">{{ excerpt | strip_html | truncate: 160 }}</p>{% endif %}
-</div>
