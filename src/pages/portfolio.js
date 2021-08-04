@@ -1,8 +1,7 @@
 import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFolderOpen } from '@fortawesome/free-solid-svg-icons'
 import { Page } from '../components/page';
+import { FontAwesomeIcon, faFolderOpen }from '../components/icons';
 
 const Portfolio = () => {
   const { allCategoriesJson } = useStaticQuery(graphql`

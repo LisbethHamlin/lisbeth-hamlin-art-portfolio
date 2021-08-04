@@ -6,13 +6,18 @@ export const useMasonry = (selector, options) => {
     selector,
     options
   }));
+  const [msnry, setMsnry] = useState();
 
   useEffect(() => {
-    const msnry = new Masonry(state.selector, state.options);
+    const instance = new Masonry(state.selector, state.options);
+
+    setMsnry(instance);
 
     return () => {
-      msnry.destroy();
+      instance.destroy();
     }
 
   }, [state]);
+
+  return msnry;
 }

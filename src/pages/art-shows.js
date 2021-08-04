@@ -1,9 +1,8 @@
 import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { Page } from '../components/page';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCalendarAlt } from '@fortawesome/free-regular-svg-icons'
 import styledd from 'styled-components';
+import { FontAwesomeIcon, faCalendarAlt }from '../components/icons';
 
 const CardStyle = styledd.div`
 border: none
@@ -29,6 +28,15 @@ const ArtShow = ({ frontmatter }) => {
           </div>
         </Link>
       </CardStyle>
+    </div>
+  )
+}
+
+const ArtShowRow = ({ shows }) => {
+  const ArtShowElements = shows.map(({ frontmatter }) => <ArtShow frontmatter={frontmatter} key={frontmatter.title} />)
+  return (
+    <div className="row row-cols-md-3 row-cols-1">
+      { ArtShowElements }
     </div>
   )
 }
@@ -63,13 +71,18 @@ const ArtShows = () => {
     }
   `);
 
-  const pastArtShowElements = <div className="row row-cols-md-3 row-cols-1">
-    {pastArtShows.nodes.map(({ frontmatter }) => <ArtShow frontmatter={frontmatter} key={frontmatter.title} />)}
-  </div>
+  const pastArtShowElements = <ArtShowRow shows={pastArtShows.nodes} />
+  let futureArtShowElements = null;
+
+  if (futureArtShows.length) {
+    futureArtShowElements = <ArtShowRow shows={pastArtShows.nodes} />
+  } else {
+    futureArtShowElements = <p>I currently do not have any upcoming art shows.</p>
+  }
 
   return (
     <Page pageTitle="Current Art Shows">
-      {!futureArtShows.length && <p>I currently do not have any upcoming art shows.</p>}
+      { futureArtShowElements }
       <h2>Previous Art Shows</h2>
       {pastArtShowElements}
     </Page>

@@ -1,3 +1,6 @@
+const PortfolioJson = require('./src/data/portfolio.json');
+const shuffle = require('lodash/shuffle');
+
 exports.createSchemaCustomization = ({ actions, schema }) => {
   const { createTypes } = actions
   const typeDefs = `
@@ -25,7 +28,28 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
     }),
   ]);
 
-  createTypes(typeDefs)
+  createTypes(typeDefs);
+}
+
+exports.createResolvers = ({ createResolvers }) => {
+  const resolvers = {
+    Query: {
+      randomPortfolioItems: {
+        type: ["PortfolioJson"],
+        args: {
+          limit: {
+            type: "Int!",
+          },
+        },
+        resolve(source, args, context, info) {
+          return shuffle(
+              context.nodeModel.getAllNodes({ type: 'PortfolioJson'})
+            ).slice(0, args.limit);
+        },
+      },
+    },
+  }
+  createResolvers(resolvers)
 }
 
 exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {

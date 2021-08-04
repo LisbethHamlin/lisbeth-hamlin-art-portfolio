@@ -1,5 +1,6 @@
 import React from "react";
 import { cleanGroup } from "../utils";
+import { SEO } from "./seo";
 
 export const Page = (props) => {
   const children = props.children;
@@ -7,6 +8,7 @@ export const Page = (props) => {
 
   return (
     <>
+      <SEO pageTitle={pageTitle} />
       <h1>{ pageTitle }</h1>
       { children }
     </>
