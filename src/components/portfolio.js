@@ -1,16 +1,21 @@
-import React, { useCallback, useContext, useEffect, useState } from 'react';
-import { useMasonry } from './useMasonry';
+import React, { useCallback } from 'react';
 import { usePhotoSwipe } from './usePhotoSwipe';
+import { useMasonry } from './useMasonry';
 import styled from "styled-components"
-import { GatsbyImage } from 'gatsby-plugin-image';
-
-import 'photoswipe/dist/photoswipe.css'
+import { PortfolioImage } from './portfolioImage';
+import { cleanGroup } from '../utils';
 
 const StyledGrid = styled.div`
-  margin: 0 auto;
-  .grid-item {
-    margin-bottom: 16px;
-    // display: inline-block;
+  @supports (grid-template-rows: masonry) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+    grid-template-rows: masonry;
+    grid-gap: 1rem;
+  }
+  @supports not (grid-template-rows: masonry) {
+    .portfolio-image {
+        margin-bottom: 1rem;
+    }
   }
 `
 
@@ -19,12 +24,17 @@ export const Portfolio = ({ nodes }) => {
   const images = nodes
     .map(({ description, title, file }) => {
       const { src, width, height } = file.childImageSharp.original;
+      const captionDescription = description ? `<p>${description}</p>` : '';
       return {
         childImageSharp: file.childImageSharp,
         src,
         w: width,
         h: height,
-        alt: `${title}: ${description}`
+        alt: `${title}: ${description}`,
+        captionHTML: `
+          <p>${cleanGroup(title)}</p>
+          ${captionDescription}
+        `
       }
     })
 
@@ -32,35 +42,33 @@ export const Portfolio = ({ nodes }) => {
     dataSource: images
   });
 
-  const [style, setStyle] = useState({ display: 'none'});
+  const [msnry, msnrySupported] = useMasonry();
 
-  /*useEffect(() => {
-    setStyle(null);
-  }, [])*/
-
-  const msnry = useMasonry('.grid', {
-    fitWidth: true,
-    itemSelector: '.grid-item',
-    gutter: 16,
-  });
-
-  const onClick = useCallback((event, index) => {
-    event.preventDefault();
-    lightbox.loadAndOpen(index);
-  }, [lightbox]);
-
-  const onLoad = useCallback(() => {
+  const onLoad = useCallback((element) => {
+    msnry.addItems(element);
     msnry.layout();
-  }, [msnry])
+  }, [msnry]);
+  
+  if (!msnry && !msnrySupported) {
+    return <StyledGrid className="grid" />
+  }
 
-  const imageComponents = images.map(({ src, alt, childImageSharp, w, h }, index) => {
-    return <a key={src} href={src} onClick={(event) => onClick(event, index)} target="_blank" rel="noreferrer" >
-      <GatsbyImage image={childImageSharp.gatsbyImageData} alt={alt} className="grid-item" loading="lazy" onLoad={onLoad} />
+  const rootClasses = msnrySupported ? null : 'grid';
+  const gridItemClasses = msnrySupported ? '' : 'g-col-2';
+
+  const imageComponents = images.map(({ src, alt, childImageSharp }, index) => {
+    const onClick = (event, index) => {
+      event.preventDefault();
+      lightbox.loadAndOpen(index);
+    };
+
+    return <a key={src} href={src} onClick={(event) => onClick(event, index)} target="_blank" rel="noreferrer" className={gridItemClasses}>
+      <PortfolioImage image={childImageSharp.gatsbyImageData} src={src} alt={alt} onLoad={!msnrySupported && onLoad} />
     </a>
   });
 
   return (
-    <StyledGrid className="grid">
+    <StyledGrid className={rootClasses}>
       {imageComponents}
     </StyledGrid>
   );

@@ -1,15 +1,24 @@
 import { useEffect, useState } from "react";
-import Masonry from 'masonry-layout';
+import { supportsCSSMasonryLayout } from "../utils";
+import Masonry from "masonry-layout";
 
-export const useMasonry = (selector, options) => {
-  const [state] = useState(() => ({
-    selector,
-    options
-  }));
-  const [msnry, setMsnry] = useState();
+export const useMasonry = () => {
+  const [msnry, setMsnry] = useState(null);
 
   useEffect(() => {
-    const instance = new Masonry(state.selector, state.options);
+    if (supportsCSSMasonryLayout) {
+      return;
+    }
+
+    console.log('Native masonry grid not supported. Falling back to masonry-layout');
+
+    const instance = new Masonry('.grid', {
+      initLayout: false,
+      percentPosition: true,
+      gutter: 16,
+      itemSelector: '.grid .portfolio-image',
+      transitionDuration: 0
+    });
 
     setMsnry(instance);
 
@@ -17,7 +26,7 @@ export const useMasonry = (selector, options) => {
       instance.destroy();
     }
 
-  }, [state]);
+  }, []);
 
-  return msnry;
+  return [msnry, supportsCSSMasonryLayout];
 }

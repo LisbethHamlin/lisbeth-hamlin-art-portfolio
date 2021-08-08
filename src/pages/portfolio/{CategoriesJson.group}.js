@@ -17,21 +17,24 @@ const PortfolioGroup = ({ data, pageContext }) => {
 export default PortfolioGroup;
 
 export const pageQuery = graphql`
+  fragment PortfolioQuery on PortfolioJson {
+    title
+    description
+    file {
+      childImageSharp {
+        gatsbyImageData(width: 200)
+        original {
+          src,
+          width
+          height
+        }
+      }
+    }
+  }
   query($group: String!) {
     allPortfolioJson(filter: {group: {eq: $group}}) {
       nodes {
-        title
-        description
-        file {
-          childImageSharp {
-            gatsbyImageData(width: 200, layout: FIXED)
-            original {
-              src,
-              width
-              height
-            }
-          }
-        }
+        ...PortfolioQuery
       }
     }
   }`

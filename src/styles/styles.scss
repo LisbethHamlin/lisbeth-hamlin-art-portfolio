@@ -1,0 +1,59 @@
+@import "./variables.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+.lisbeth-hamlin {
+  h1, h2, h3 {
+    font-family: "Indie Flower",cursive;
+  }
+
+  h1 {
+    font-weight: bold;
+  }
+  
+  h2 {
+    margin: 1.5rem 0;
+  }
+  
+  hr {
+    margin: 3rem 0;
+  }
+  
+  a {
+    color: #000;
+    text-decoration: none;
+    background-color: transparent
+  }
+  a:not(.nav-link, .navbar-brand):hover {
+    color: #000;
+    text-decoration: underline;
+  }
+}
+
+.pswp__custom-caption {
+  background: black;
+  font-size: 1rem;
+  color: #fff;
+  width: calc(100% - 32px);
+  max-width: 400px;
+  padding: 0.5rem 0.5rem;
+  border-radius: 4px;
+
+  position: absolute;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+
+  a {
+    color: #fff;
+    text-decoration: underline;
+  }
+
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.hidden-caption-content {
+  display: none;
+}
+  

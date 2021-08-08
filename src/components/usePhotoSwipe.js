@@ -1,26 +1,38 @@
 import { useEffect, useState } from "react";
 import PhotoSwipeLightbox from 'photoswipe/dist/photoswipe-lightbox.esm.js';
 import PhotoSwipe from 'photoswipe/dist/photoswipe.esm.js';
+import escape from 'lodash/escape';
+
+import 'photoswipe/dist/photoswipe.css'
 
 export const usePhotoSwipe = ({ dataSource }) => {
-
-  const [defaultState] = useState(() => ({ dataSource }));
-  const [lightbox, setLightbox] = useState();
+  const [lightbox] = useState(() => new PhotoSwipeLightbox({
+    pswpModule: PhotoSwipe,
+    dataSource,
+    bgOpacity: 1.0,
+  }));
 
   useEffect(() => {
-    const instance = new PhotoSwipeLightbox({
-      pswpModule: PhotoSwipe,
-      dataSource: defaultState.dataSource,
-      bgOpacity: 1.0,
+    lightbox.on('uiRegister', function() {
+      lightbox.pswp.ui.registerElement({
+        name: 'custom-caption',
+        order: 9,
+        isButton: false,
+        appendTo: 'root',
+        html: 'Caption text',
+        onInit: (el, pswp) => {
+          lightbox.pswp.on('change', () => {
+            el.innerHTML = lightbox.pswp.currSlide.data.captionHTML || '';
+          });
+        }
+      });
     });
-    instance.init();
-
-    setLightbox(instance);
+    lightbox.init();
 
     return () => {
-      instance.destroy();
+      lightbox.destroy();
     }
-  }, [defaultState.dataSource]);
+  }, [lightbox]);
 
   return lightbox;
 }

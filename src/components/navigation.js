@@ -3,15 +3,15 @@ import { useStaticQuery, graphql, Link } from 'gatsby';
 
 export const Navigation = () => {
   const { allNavigationYaml } = useStaticQuery(graphql`
-  query {
-    allNavigationYaml {
-      nodes {
-        url
-        title
-        excerpt
+    query {
+      allNavigationYaml {
+        nodes {
+          url
+          title
+          excerpt
+        }
       }
     }
-  }
   `)
 
   const navLinks = allNavigationYaml.nodes.map((item) => (
