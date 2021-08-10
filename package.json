@@ -44,6 +44,7 @@
     "lodash": "^4.17.21",
     "masonry-layout": "^4.2.2",
     "photoswipe": "git://github.com/dimsemenov/photoswipe.git#v5-beta",
+    "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",

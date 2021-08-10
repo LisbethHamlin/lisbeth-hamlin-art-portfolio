@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { Helmet } from "react-helmet";
 import { useSiteMetadata } from "./useSiteMetadata";
 
@@ -13,4 +14,9 @@ export const SEO = ({ pageTitle = '', description }) => {
       { description && <meta name="description" content={description} /> }
     </Helmet>
   )
+}
+
+SEO.propTypes = {
+  pageTitle: PropTypes.string,
+  description: PropTypes.string
 }

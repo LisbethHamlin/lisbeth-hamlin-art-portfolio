@@ -1,7 +1,7 @@
 module.exports = {
-  flags: {
+  /*flags: {
     DEV_SSR: true
-  },
+  },*/
   siteMetadata: {
     siteUrl: "https://www.lisbethhamlin.com",
     title: "Lisbeth Hamlin",

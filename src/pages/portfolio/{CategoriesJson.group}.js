@@ -8,7 +8,7 @@ const PortfolioGroup = ({ data, pageContext }) => {
   const { nodes } = data.allPortfolioJson;
 
   return (
-    <Page pageTitle={group}>
+    <Page title={group}>
       <Portfolio nodes={nodes} />
     </Page>
   )

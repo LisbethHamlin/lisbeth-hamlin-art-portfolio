@@ -1,4 +1,3 @@
-const PortfolioJson = require('./src/data/portfolio.json');
 const shuffle = require('lodash/shuffle');
 
 exports.createSchemaCustomization = ({ actions, schema }) => {

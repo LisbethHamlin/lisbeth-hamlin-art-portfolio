@@ -1,16 +1,25 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import { cleanGroup } from "../utils";
 import { SEO } from "./seo";
+import { Breacrumb } from "./breadcrumb";
 
 export const Page = (props) => {
   const children = props.children;
-  const pageTitle = cleanGroup(props.pageTitle);
+  const title = cleanGroup(props.title);
 
   return (
     <>
-      <SEO pageTitle={pageTitle} />
-      <h1>{ pageTitle }</h1>
+      <SEO pageTitle={title} />
+      <Breacrumb />
+      <h1>{ title }</h1>
       { children }
     </>
   )
 }
+
+Page.propTypes = {
+  children: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired
+};
+

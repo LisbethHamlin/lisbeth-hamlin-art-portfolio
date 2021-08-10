@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import imagesLoaded from 'imagesloaded';
 
@@ -23,3 +24,9 @@ export const PortfolioImage = React.memo(({ image, alt, onLoad }) => {
     <GatsbyImage image={image} alt={alt}  loading="eager" decoding="sync" />
   </div>
 });
+
+PortfolioImage.propTypes = {
+  image: PropTypes.object.isRequired,
+  alt: PropTypes.string.isRequired,
+  onLoad: PropTypes.func
+}

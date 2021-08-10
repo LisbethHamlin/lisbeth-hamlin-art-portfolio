@@ -81,7 +81,7 @@ const ArtShows = () => {
   }
 
   return (
-    <Page pageTitle="Current Art Shows">
+    <Page title="Current Art Shows">
       { futureArtShowElements }
       <h2>Previous Art Shows</h2>
       {pastArtShowElements}

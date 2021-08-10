@@ -28,7 +28,7 @@ const Portfolio = () => {
   });
   
   return (
-    <Page pageTitle="Portfolio">
+    <Page title="Portfolio">
       <div className="row">
         { groupElements }
       </div>

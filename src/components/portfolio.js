@@ -1,4 +1,5 @@
 import React, { useCallback } from 'react';
+import PropTypes from 'prop-types';
 import { usePhotoSwipe } from './usePhotoSwipe';
 import { useMasonry } from './useMasonry';
 import styled from "styled-components"
@@ -72,4 +73,8 @@ export const Portfolio = ({ nodes }) => {
       {imageComponents}
     </StyledGrid>
   );
+}
+
+Portfolio.propTypes = {
+  nodes: PropTypes.arrayOf(PropTypes.object).isRequired
 }

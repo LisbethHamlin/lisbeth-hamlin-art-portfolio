@@ -1,6 +1,7 @@
 import React from "react"
 import { MDXProvider } from "@mdx-js/react"
 import { useSiteMetadata } from '../components/useSiteMetadata';
+import { Page } from "./page";
 
 const Table = (props) => <table className="table table-hover" {...props}>{props.children}</table>
 const ContactEmailAddress = (props) => {
@@ -14,8 +15,13 @@ const components = {
   ContactEmailAddress
 }
 
-const MDXLayout = ({ children }) => (
-  <MDXProvider components={components}>{children}</MDXProvider>
-)
+const MDXLayout = ({ children, pageContext }) => {
+  const { frontmatter } = pageContext;
+  return (
+    <Page title={frontmatter.title}>
+      <MDXProvider components={components}>{children}</MDXProvider>
+    </Page>
+  )
+}
 
 export default MDXLayout;
