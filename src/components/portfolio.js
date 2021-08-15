@@ -1,80 +1,57 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { usePhotoSwipe } from './usePhotoSwipe';
-import { useMasonry } from './useMasonry';
-import styled from "styled-components"
 import { PortfolioImage } from './portfolioImage';
 import { cleanGroup } from '../utils';
+import { prevent } from './prevent';
+import '@appnest/masonry-layout';
 
-const StyledGrid = styled.div`
-  @supports (grid-template-rows: masonry) {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, 200px);
-    grid-template-rows: masonry;
-    grid-gap: 1rem;
-  }
-  @supports not (grid-template-rows: masonry) {
-    .portfolio-image {
-        margin-bottom: 1rem;
-    }
-  }
-`
+export const gridClass = 'grid';
+export const gridItemClass = 'grid-item';
 
 export const Portfolio = ({ nodes }) => {
+  const images = nodes.map(({ description, title, file }) => {
+    const { src, width, height } = file.childImageSharp.original;
+    let captionDescription = '';
+    let alt = title;
 
-  const images = nodes
-    .map(({ description, title, file }) => {
-      const { src, width, height } = file.childImageSharp.original;
-      const captionDescription = description ? `<p>${description}</p>` : '';
-      return {
-        childImageSharp: file.childImageSharp,
-        src,
-        w: width,
-        h: height,
-        alt: `${title}: ${description}`,
-        captionHTML: `
+    if (description) {
+      captionDescription = `<p>${description}</p>`;
+      alt += ': ' + description;
+    }
+
+    return {
+      childImageSharp: file.childImageSharp,
+      src,
+      w: width,
+      h: height,
+      alt,
+      captionHTML: `
           <p>${cleanGroup(title)}</p>
           ${captionDescription}
-        `
-      }
-    })
+        `,
+    };
+  });
 
   const lightbox = usePhotoSwipe({
-    dataSource: images
+    dataSource: images,
   });
-
-  const [msnry, msnrySupported] = useMasonry();
-
-  const onLoad = useCallback((element) => {
-    msnry.addItems(element);
-    msnry.layout();
-  }, [msnry]);
-  
-  if (!msnry && !msnrySupported) {
-    return <StyledGrid className="grid" />
-  }
-
-  const rootClasses = msnrySupported ? null : 'grid';
-  const gridItemClasses = msnrySupported ? '' : 'g-col-2';
 
   const imageComponents = images.map(({ src, alt, childImageSharp }, index) => {
-    const onClick = (event, index) => {
-      event.preventDefault();
+    const onClick = prevent(() => {
       lightbox.loadAndOpen(index);
-    };
+    });
 
-    return <a key={src} href={src} onClick={(event) => onClick(event, index)} target="_blank" rel="noreferrer" className={gridItemClasses}>
-      <PortfolioImage image={childImageSharp.gatsbyImageData} src={src} alt={alt} onLoad={!msnrySupported && onLoad} />
-    </a>
+    return <PortfolioImage key={src} image={childImageSharp.gatsbyImageData} originalImageSrc={src} alt={alt} onClick={onClick} className="col" />;
   });
 
-  return (
-    <StyledGrid className={rootClasses}>
-      {imageComponents}
-    </StyledGrid>
-  );
-}
+  if (typeof window === 'undefined') {
+    return <div className="row portfolio-grid">{imageComponents}</div>;
+  }
+
+  return <masonry-layout maxcolwidth="250">{imageComponents}</masonry-layout>;
+};
 
 Portfolio.propTypes = {
-  nodes: PropTypes.arrayOf(PropTypes.object).isRequired
-}
+  nodes: PropTypes.arrayOf(PropTypes.object).isRequired,
+};

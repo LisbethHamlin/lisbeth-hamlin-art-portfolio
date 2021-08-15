@@ -1,32 +1,18 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import imagesLoaded from 'imagesloaded';
 
-const loadImage = async (element) => {
-  return new Promise((resolve) => {
-    imagesLoaded(element, resolve);
-  });
-};
-
-export const PortfolioImage = React.memo(({ image, alt, onLoad }) => {
-  const ref = useRef();
-
-  useEffect(() => {
-    if (onLoad) {
-      loadImage(ref.current).then(() => {
-        onLoad(ref.current);
-      });
-    }
-  }, [onLoad]);
-
-  return <div ref={ref} className="portfolio-image">
-    <GatsbyImage image={image} alt={alt}  loading="eager" decoding="sync" />
-  </div>
+export const PortfolioImage = React.memo(({ onClick, originalImageSrc, image, alt, ...otherProps }) => {
+  return (
+    <a href={originalImageSrc} onClick={onClick} target="_blank" rel="noreferrer" {...otherProps}>
+      <GatsbyImage image={image} alt={alt} />
+    </a>
+  );
 });
 
 PortfolioImage.propTypes = {
+  originalImageSrc: PropTypes.string.isRequired,
   image: PropTypes.object.isRequired,
   alt: PropTypes.string.isRequired,
-  onLoad: PropTypes.func
-}
+  onClick: PropTypes.func.isRequired,
+};

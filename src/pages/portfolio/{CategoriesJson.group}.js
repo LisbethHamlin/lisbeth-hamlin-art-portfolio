@@ -8,11 +8,11 @@ const PortfolioGroup = ({ data, pageContext }) => {
   const { nodes } = data.allPortfolioJson;
 
   return (
-    <Page title={group}>
+    <Page title={group} clean>
       <Portfolio nodes={nodes} />
     </Page>
-  )
-}
+  );
+};
 
 export default PortfolioGroup;
 
@@ -22,19 +22,20 @@ export const pageQuery = graphql`
     description
     file {
       childImageSharp {
-        gatsbyImageData(width: 200)
+        gatsbyImageData(width: 200, layout: FIXED)
         original {
-          src,
+          src
           width
           height
         }
       }
     }
   }
-  query($group: String!) {
-    allPortfolioJson(filter: {group: {eq: $group}}) {
+  query ($group: String!) {
+    allPortfolioJson(filter: { group: { eq: $group } }) {
       nodes {
         ...PortfolioQuery
       }
     }
-  }`
+  }
+`;

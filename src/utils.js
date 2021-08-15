@@ -1,5 +1,4 @@
 import capitalize from 'lodash/capitalize';
+export * from './url-builder';
 
-export const cleanGroup = (group) => capitalize(group).replace('-', ' ');
-
-export const supportsCSSMasonryLayout = typeof window !== `undefined` && CSS.supports("grid-template-rows: masonry");
+export const cleanGroup = (group) => capitalize(group).replace(/-/g, ' ');

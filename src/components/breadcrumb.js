@@ -1,12 +1,11 @@
-import React from "react"
-import { useLocation } from "@reach/router"
-import { Link } from "gatsby";
+import React from 'react';
+import { useLocation } from '@reach/router';
+import { Link } from 'gatsby';
+import { cleanGroup } from '../utils';
 
 export const Breacrumb = () => {
   const { pathname } = useLocation();
-  const splitPath = pathname
-    .split('/')
-    .filter((item) => item);
+  const splitPath = pathname.split('/').filter((item) => item);
 
   if (splitPath.length <= 1) {
     return null;
@@ -18,25 +17,22 @@ export const Breacrumb = () => {
 
   for (const item of splitPath) {
     const isLastIndex = index === splitPath.length - 1;
-    currentPath += '/' + splitPath[index]
+    currentPath += '/' + splitPath[index];
+    const prettyItem = cleanGroup(item);
 
     pathElements.push(
-      <li class="breadcrumb-item" key={item}>
-        {isLastIndex && item}
-        {!isLastIndex && <Link to={currentPath}>{item}</Link>}
+      <li className="breadcrumb-item" key={item}>
+        {isLastIndex && prettyItem}
+        {!isLastIndex && <Link to={currentPath}>{prettyItem}</Link>}
       </li>
-    )
-    
+    );
+
     index++;
   }
 
   return (
     <nav aria-label="breadcrumb">
-      <ol class="breadcrumb">
-        {pathElements}
-      </ol>
+      <ol className="breadcrumb">{pathElements}</ol>
     </nav>
-  )
-}
-
-// 
+  );
+};

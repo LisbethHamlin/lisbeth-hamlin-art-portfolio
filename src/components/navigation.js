@@ -12,17 +12,15 @@ export const Navigation = () => {
         }
       }
     }
-  `)
+  `);
 
   const navLinks = allNavigationYaml.nodes.map((item) => (
     <li className="nav-item" key={item.url}>
-        <Link className="nav-link" to={item.url}>{ item.title }</Link>
+      <Link className="nav-link" to={item.url}>
+        {item.title}
+      </Link>
     </li>
-  ))
-  
-  return (
-    <ul className="navbar-nav">
-      { navLinks }
-    </ul>
-  )
-}
+  ));
+
+  return <ul className="navbar-nav">{navLinks}</ul>;
+};

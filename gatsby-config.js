@@ -1,32 +1,31 @@
+const { urlFromTitle } = require('./src/url-builder');
+
 module.exports = {
-  /*flags: {
-    DEV_SSR: true
-  },*/
   siteMetadata: {
-    siteUrl: "https://www.lisbethhamlin.com",
-    title: "Lisbeth Hamlin",
-    email: "betsydhamlin@yahoo.com"
+    siteUrl: 'https://www.lisbethhamlin.com',
+    title: 'Lisbeth Hamlin',
+    email: 'betsydhamlin@yahoo.com',
   },
   plugins: [
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: "UA-58096804-1",
+        trackingId: 'UA-58096804-1',
       },
     },
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sitemap',
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    "gatsby-transformer-remark",
-    "gatsby-transformer-yaml",
-    "gatsby-transformer-json",
-    "gatsby-plugin-image",
+    'gatsby-transformer-remark',
+    'gatsby-transformer-yaml',
+    'gatsby-transformer-json',
+    'gatsby-plugin-image',
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        name: 'pages',
+        path: './src/pages/',
       },
     },
     {
@@ -46,7 +45,7 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          default: require.resolve("./src/components/mdx-layout.js"),
+          default: require.resolve('./src/components/mdx-layout.js'),
         },
         gatsbyRemarkPlugins: [
           {
@@ -60,7 +59,58 @@ module.exports = {
         ],
       },
     },
-    "gatsby-plugin-sass",
-    'gatsby-plugin-styled-components',
-  ]
+    'gatsby-plugin-sass',
+    {
+      resolve: `gatsby-plugin-feed`,
+      options: {
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+          }
+        `,
+        feeds: [
+          {
+            serialize: ({ query: { site, allMarkdownRemark } }) => {
+              return allMarkdownRemark.nodes.map((node) => {
+                const url = urlFromTitle(site.siteMetadata.siteUrl + `/${node.parent.relativeDirectory}/` + node.frontmatter.title);
+                return {
+                  ...node.frontmatter,
+                  description: node.excerpt,
+                  date: node.frontmatter.date,
+                  url: url,
+                  guid: url,
+                  custom_elements: [{ 'content:encoded': node.html }],
+                };
+              });
+            },
+            query: `
+            {
+              allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
+                nodes {
+                  excerpt
+                  html
+                  frontmatter {
+                    date
+                    title
+                  }
+                  parent {
+                    ... on File {
+                      relativeDirectory
+                    }
+                  }
+                }
+              }
+            }
+            `,
+            output: '/rss.xml',
+            title: "Your Site's RSS Feed",
+          },
+        ],
+      },
+    },
+  ],
 };

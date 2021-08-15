@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from 'gatsby';
 
 export const useSiteMetadata = () => {
   const { site, siteBuildMetadata } = useStaticQuery(graphql`
@@ -13,10 +13,10 @@ export const useSiteMetadata = () => {
         buildTime(formatString: "YYYY")
       }
     }
-  `)
+  `);
 
   return {
     ...site.siteMetadata,
-    ...siteBuildMetadata
-  }
-}
+    ...siteBuildMetadata,
+  };
+};
