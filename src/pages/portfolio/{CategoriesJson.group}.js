@@ -7,8 +7,10 @@ const PortfolioGroup = ({ data, pageContext }) => {
   const { group } = pageContext;
   const { nodes } = data.allPortfolioJson;
 
+  const description = `${group} art portfolio`;
+
   return (
-    <Page title={group} clean>
+    <Page title={group} description={description} clean>
       <Portfolio nodes={nodes} />
     </Page>
   );

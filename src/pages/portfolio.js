@@ -28,7 +28,7 @@ const Portfolio = () => {
   });
 
   return (
-    <Page title="Portfolio">
+    <Page title="Portfolio" description="My art portfolio">
       <div className="row">{groupElements}</div>
     </Page>
   );

@@ -6,6 +6,7 @@ import { Breacrumb } from './breadcrumb';
 
 export const Page = ({ children, title, description, clean }) => {
   title = clean ? cleanGroup(title) : title;
+  description = clean ? cleanGroup(description): description;
 
   return (
     <>
