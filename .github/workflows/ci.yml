@@ -23,5 +23,5 @@ jobs:
           # ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
           branch: master # The branch the action should deploy to.
           folder: public # The folder the action should deploy.
-          clean: false
+          clean: true
           single-commit: false
