@@ -15,12 +15,19 @@ module.exports = {
     },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: ['auto', 'avif', 'webp'],
+        },
+      },
+    },
     `gatsby-transformer-sharp`,
     'gatsby-transformer-remark',
+    'gatsby-plugin-image',
     'gatsby-transformer-yaml',
     'gatsby-transformer-json',
-    'gatsby-plugin-image',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -51,6 +58,9 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
+              quality: 80,
+              withWebp: true,
+              withAvif: true,
               linkImagesToOriginal: false,
               maxWidth: 590,
               wrapperStyle: `margin: 0`,
