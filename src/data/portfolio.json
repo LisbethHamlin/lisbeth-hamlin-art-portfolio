@@ -1,0 +1,499 @@
+[
+  {
+    "group": "ceramics",
+    "title": "ceramic-vessel"
+  },
+  {
+    "group": "ceramics",
+    "title": "mug-1"
+  },
+  {
+    "group": "ceramics",
+    "title": "mug-2"
+  },
+  {
+    "group": "ceramics",
+    "title": "mug-3"
+  },
+  {
+    "group": "ceramics",
+    "title": "mug-4"
+  },
+  {
+    "group": "ceramics",
+    "title": "mugs",
+    "description": "Hand stamped, rolled, and glazed."
+  },
+  {
+    "group": "hats",
+    "title": "hat-01-inside",
+    "description": "The inside of the hat"
+  },
+  {
+    "group": "hats",
+    "title": "hat-01-outside",
+    "description": "The outside of the hat"
+  },
+  {
+    "group": "hats",
+    "title": "hat-02-inside",
+    "description": "The inside of the hat"
+  },
+  {
+    "group": "hats",
+    "title": "hat-02-outside",
+    "description": "The outside of the hat"
+  },
+  {
+    "group": "hats",
+    "title": "hat-05"
+  },
+  {
+    "group": "hats",
+    "title": "hat-06"
+  },
+  {
+    "group": "hats",
+    "title": "hat-07"
+  },
+  {
+    "group": "hats",
+    "title": "hat-08"
+  },
+  {
+    "group": "hats",
+    "title": "hat-09"
+  },
+  {
+    "group": "hats",
+    "title": "hat-10"
+  },
+  {
+    "group": "hats",
+    "title": "hat-11"
+  },
+  {
+    "group": "hats",
+    "title": "hat-12"
+  },
+  {
+    "group": "hats",
+    "title": "hat-13"
+  },
+  {
+    "group": "hats",
+    "title": "hat-14"
+  },
+  {
+    "group": "hats",
+    "title": "hat-15"
+  },
+  {
+    "group": "jewelry",
+    "title": "jewelry-1",
+    "description": "These earings are painted on leather and are light as a feather."
+  },
+  {
+    "group": "jewelry",
+    "title": "jewelry-10"
+  },
+  {
+    "group": "jewelry",
+    "title": "jewelry-11"
+  },
+  {
+    "group": "jewelry",
+    "title": "jewelry-12"
+  },
+  {
+    "group": "jewelry",
+    "title": "jewelry-13",
+    "description": "These earrings are constructed with painted egg shells on bold metal bases covered with resin."
+  },
+  {
+    "group": "jewelry",
+    "title": "jewelry-14",
+    "description": "These earrings are constructed with natural colored eggshells on metal bases coverted with resin."
+  },
+  {
+    "group": "jewelry",
+    "title": "jewelry-2"
+  },
+  {
+    "group": "jewelry",
+    "title": "jewelry-3"
+  },
+  {
+    "group": "jewelry",
+    "title": "jewelry-4"
+  },
+  {
+    "group": "jewelry",
+    "title": "jewelry-5"
+  },
+  {
+    "group": "jewelry",
+    "title": "jewelry-6"
+  },
+  {
+    "group": "jewelry",
+    "title": "jewelry-7"
+  },
+  {
+    "group": "jewelry",
+    "title": "jewelry-8"
+  },
+  {
+    "group": "jewelry",
+    "title": "jewelry-9"
+  },
+  {
+    "group": "mosaics",
+    "title": "african-bushwoman",
+    "description": "16 x 20"
+  },
+  {
+    "group": "mosaics",
+    "title": "belt"
+  },
+  {
+    "group": "mosaics",
+    "title": "candle-2"
+  },
+  {
+    "group": "mosaics",
+    "title": "candle"
+  },
+  {
+    "group": "mosaics",
+    "title": "dragon"
+  },
+  {
+    "group": "mosaics",
+    "title": "flower-frame",
+    "description": "8 x 8"
+  },
+  {
+    "group": "mosaics",
+    "title": "frame-1",
+    "description": "6.5 x 8.5"
+  },
+  {
+    "group": "mosaics",
+    "title": "frame-2",
+    "description": "8.5 x 6.5"
+  },
+  {
+    "group": "mosaics",
+    "title": "frame-3",
+    "description": "8.5 x 6.5"
+  },
+  {
+    "group": "mosaics",
+    "title": "french-blues"
+  },
+  {
+    "group": "mosaics",
+    "title": "gecko-table-side"
+  },
+  {
+    "group": "mosaics",
+    "title": "gecko-table"
+  },
+  {
+    "group": "mosaics",
+    "title": "house-number-1276"
+  },
+  {
+    "group": "mosaics",
+    "title": "indian-women"
+  },
+  {
+    "group": "mosaics",
+    "title": "jersey-girl"
+  },
+  {
+    "group": "mosaics",
+    "title": "mask-1"
+  },
+  {
+    "group": "mosaics",
+    "title": "mask-2"
+  },
+  {
+    "group": "mosaics",
+    "title": "mirror-1",
+    "description": "10 x 10"
+  },
+  {
+    "group": "mosaics",
+    "title": "mirror-2",
+    "description": "10 x 10"
+  },
+  {
+    "group": "mosaics",
+    "title": "mirror-3",
+    "description": "10 x 10"
+  },
+  {
+    "group": "mosaics",
+    "title": "mirror"
+  },
+  {
+    "group": "mosaics",
+    "title": "plate"
+  },
+  {
+    "group": "mosaics",
+    "title": "ribbons-tray",
+    "description": "14.5 x 11.25"
+  },
+  {
+    "group": "mosaics",
+    "title": "sea-foam-frame"
+  },
+  {
+    "group": "mosaics",
+    "title": "syncopated-sax"
+  },
+  {
+    "group": "mosaics",
+    "title": "table"
+  },
+  {
+    "group": "mosaics",
+    "title": "tray-1",
+    "description": "13.25 x 10.25"
+  },
+  {
+    "group": "mosaics",
+    "title": "tray-2",
+    "description": "13.25 x 10.25"
+  },
+  {
+    "group": "mosaics",
+    "title": "tray-3"
+  },
+  {
+    "group": "mosaics",
+    "title": "triple-frame"
+  },
+  {
+    "group": "mosaics",
+    "title": "trivet-1",
+    "description": "9 x 9"
+  },
+  {
+    "group": "mosaics",
+    "title": "trivet-2",
+    "description": "9 x 9"
+  },
+  {
+    "group": "mosaics",
+    "title": "trivet-3",
+    "description": "9 x 9"
+  },
+  {
+    "group": "mosaics",
+    "title": "trivet-4",
+    "description": "9 x 9"
+  },
+  {
+    "group": "paper-collage",
+    "title": "celebration"
+  },
+  {
+    "group": "paper-collage",
+    "title": "in-the-shade",
+    "description": "22 x 30"
+  },
+  {
+    "group": "paper-collage",
+    "title": "jillo-harro",
+    "description": "11 x 15"
+  },
+  {
+    "group": "paper-collage",
+    "title": "market-price",
+    "description": "9 x 11"
+  },
+  {
+    "group": "paper-collage",
+    "title": "mzee-2",
+    "description": "22 x 30"
+  },
+  {
+    "group": "paper-collage",
+    "title": "mzee-3",
+    "description": "22 x 30"
+  },
+  {
+    "group": "paper-collage",
+    "title": "samburu-women",
+    "description": "22 x 15"
+  },
+  {
+    "group": "printmaking",
+    "title": "african-bullfight",
+    "description": "12 x 5"
+  },
+  {
+    "group": "printmaking",
+    "title": "bati-ganya",
+    "description": "9 x 12"
+  },
+  {
+    "group": "printmaking",
+    "title": "camel-caravan",
+    "description": "24 x 6"
+  },
+  {
+    "group": "printmaking",
+    "title": "child-of-hope",
+    "description": "12 x 17"
+  },
+  {
+    "group": "printmaking",
+    "title": "ciet-and-wa",
+    "description": "6 x 8"
+  },
+  {
+    "group": "printmaking",
+    "title": "dancing-samburu-women"
+  },
+  {
+    "group": "printmaking",
+    "title": "desert-wayside-a",
+    "description": "6 x 13"
+  },
+  {
+    "group": "printmaking",
+    "title": "desert-wayside-b",
+    "description": "6 x 13"
+  },
+  {
+    "group": "printmaking",
+    "title": "equipoise",
+    "description": "4 x 8"
+  },
+  {
+    "group": "printmaking",
+    "title": "desert-wayside-triptych",
+    "description": "24 x 14"
+  },
+  {
+    "group": "printmaking",
+    "title": "in-prayer",
+    "description": "10 x 14"
+  },
+  {
+    "group": "printmaking",
+    "title": "lake-dal",
+    "description": "12 x 8"
+  },
+  {
+    "group": "printmaking",
+    "title": "living-patterns",
+    "description": "11 x 12"
+  },
+  {
+    "group": "printmaking",
+    "title": "nkishu-cattleness",
+    "description": "18 x 9"
+  },
+  {
+    "group": "printmaking",
+    "title": "nomads-moving-on",
+    "description": "9 x 12"
+  },
+  {
+    "group": "printmaking",
+    "title": "oasis",
+    "description": "24 x 6"
+  },
+  {
+    "group": "printmaking",
+    "title": "pounding-fou-fou",
+    "description": "9 x 12"
+  },
+  {
+    "group": "printmaking",
+    "title": "ships-of-the-desert",
+    "description": "22 x 6"
+  },
+  {
+    "group": "printmaking",
+    "title": "turkana-girl",
+    "description": "6 x 8"
+  },
+  {
+    "group": "watercolor",
+    "title": "bushman-at-llaru",
+    "description": "15 x 22"
+  },
+  {
+    "group": "watercolor",
+    "title": "bushman-storyteller",
+    "description": "22 x 30"
+  },
+  {
+    "group": "watercolor",
+    "title": "bushwomen-at-llaru",
+    "description": "22 x 15"
+  },
+  {
+    "group": "watercolor",
+    "title": "camel-herder"
+  },
+  {
+    "group": "watercolor",
+    "title": "desert-girl",
+    "description": "15 x 22"
+  },
+  {
+    "group": "watercolor",
+    "title": "dogon-dame",
+    "description": "22 x 30"
+  },
+  {
+    "group": "watercolor",
+    "title": "homeward-bound",
+    "description": "15 x 22"
+  },
+  {
+    "group": "watercolor",
+    "title": "jaipur-market-3"
+  },
+  {
+    "group": "watercolor",
+    "title": "kavango-clan",
+    "description": "30 x 22"
+  },
+  {
+    "group": "watercolor",
+    "title": "mali-tribesman"
+  },
+  {
+    "group": "watercolor",
+    "title": "mother-and-child-bushman",
+    "description": "15 x 22"
+  },
+  {
+    "group": "watercolor",
+    "title": "reflection",
+    "description": "15 x 22"
+  },
+  {
+    "group": "watercolor",
+    "title": "sopa-samburu"
+  },
+  {
+    "group": "watercolor",
+    "title": "wayside-market"
+  },
+  {
+    "group": "watercolor",
+    "title": "zemba-girl",
+    "description": "15 x 22"
+  }
+]
