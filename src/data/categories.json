@@ -1,0 +1,30 @@
+[
+  {
+    "title": "Ceramics",
+    "group": "ceramics"
+  },
+  {
+    "title": "Hats",
+    "group": "hats"
+  },
+  {
+    "title": "Jewelry",
+    "group": "jewelry"
+  },
+  {
+    "title": "Mosaics",
+    "group": "mosaics"
+  },
+  {
+    "title": "Paper Collage",
+    "group": "paper-collage"
+  },
+  {
+    "title": "Printmaking",
+    "group": "printmaking"
+  },
+  {
+    "title": "Watercolor",
+    "group": "watercolor"
+  }
+]
