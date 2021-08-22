@@ -25,6 +25,18 @@
     "description": "Hand stamped, rolled, and glazed."
   },
   {
+    "group": "ceramics",
+    "title": "ceramic-plate"
+  },
+  {
+    "group": "ceramics",
+    "title": "chimes"
+  },
+  {
+    "group": "ceramics",
+    "title": "cermaic-plate-2"
+  },
+  {
     "group": "hats",
     "title": "hat-01-inside",
     "description": "The inside of the hat"
@@ -90,6 +102,30 @@
   },
   {
     "group": "jewelry",
+    "title": "felt-earrings"
+  },
+  {
+    "group": "jewelry",
+    "title": "bronze-copper-jewelry"
+  },
+  {
+    "group": "jewelry",
+    "title": "copper-jewlery"
+  },
+  {
+    "group": "jewelry",
+    "title": "polymer-clay-jewlery"
+  },
+  {
+    "group": "jewelry",
+    "title": "millefiori-glass-earings"
+  },
+  {
+    "group": "jewelry",
+    "title": "ceramic-earrings"
+  },
+  {
+    "group": "jewelry",
     "title": "jewelry-1",
     "description": "These earings are painted on leather and are light as a feather."
   },
@@ -114,34 +150,6 @@
     "group": "jewelry",
     "title": "jewelry-14",
     "description": "These earrings are constructed with natural colored eggshells on metal bases coverted with resin."
-  },
-  {
-    "group": "jewelry",
-    "title": "jewelry-2"
-  },
-  {
-    "group": "jewelry",
-    "title": "jewelry-3"
-  },
-  {
-    "group": "jewelry",
-    "title": "jewelry-4"
-  },
-  {
-    "group": "jewelry",
-    "title": "jewelry-5"
-  },
-  {
-    "group": "jewelry",
-    "title": "jewelry-6"
-  },
-  {
-    "group": "jewelry",
-    "title": "jewelry-7"
-  },
-  {
-    "group": "jewelry",
-    "title": "jewelry-8"
   },
   {
     "group": "jewelry",
@@ -194,10 +202,6 @@
   },
   {
     "group": "mosaics",
-    "title": "gecko-table-side"
-  },
-  {
-    "group": "mosaics",
     "title": "gecko-table"
   },
   {
@@ -234,10 +238,6 @@
     "group": "mosaics",
     "title": "mirror-3",
     "description": "10 x 10"
-  },
-  {
-    "group": "mosaics",
-    "title": "mirror"
   },
   {
     "group": "mosaics",
@@ -299,6 +299,14 @@
     "description": "9 x 9"
   },
   {
+    "group": "mosaics",
+    "title": "bushwoman"
+  },
+  {
+    "group": "mosaics",
+    "title": "cowboy-boots"
+  },
+  {
     "group": "paper-collage",
     "title": "celebration"
   },
@@ -331,6 +339,14 @@
     "group": "paper-collage",
     "title": "samburu-women",
     "description": "22 x 15"
+  },
+  {
+    "group": "paper-collage",
+    "title": "bamileke-fete"
+  },
+  {
+    "group": "paper-collage",
+    "title": "djenne-mosque"
   },
   {
     "group": "printmaking",
@@ -495,5 +511,9 @@
     "group": "watercolor",
     "title": "zemba-girl",
     "description": "15 x 22"
+  },
+  {
+    "group": "watercolor",
+    "title": "gurinisi-girl"
   }
 ]
