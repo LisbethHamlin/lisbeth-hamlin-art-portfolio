@@ -4,12 +4,12 @@ import { Helmet } from 'react-helmet';
 import { useSiteMetadata } from './useSiteMetadata';
 import { useLocation } from '@reach/router';
 
-export const SEO = ({ pageTitle, description = 'My art is dedicated to fostering an appreciation of cultural diversity.', root }) => {
+export const SEO = ({ pageTitle, description = 'My art is dedicated to fostering an appreciation of cultural diversity.' }) => {
   const { title: siteTitle } = useSiteMetadata();
   const { href } = useLocation();
 
-  const first = !root ? `${pageTitle} | ` : '';
-  const combinedTitle = `${first}${siteTitle}`;
+  const combinedTitle = `${pageTitle} | ${siteTitle}`;
+
   return (
     <Helmet>
       <title>{combinedTitle}</title>
@@ -24,5 +24,4 @@ export const SEO = ({ pageTitle, description = 'My art is dedicated to fostering
 SEO.propTypes = {
   pageTitle: PropTypes.string,
   description: PropTypes.string,
-  root: PropTypes.bool,
 };
