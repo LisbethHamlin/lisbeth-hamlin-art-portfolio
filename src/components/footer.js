@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSiteMetadata } from './useSiteMetadata';
+import { FontAwesomeIcon, faRssSquare } from './icons';
 
 export const Footer = () => {
   const { buildTime, title } = useSiteMetadata();
@@ -10,6 +11,9 @@ export const Footer = () => {
         &#169; {buildTime} {title}. This work is licensed under a{' '}
         <a rel="license noreferrer" href="http://creativecommons.org/licenses/by-nc/4.0/">
           Creative Commons Attribution-NonCommercial 4.0 International License.{' '}
+        </a>
+        <a href="/rss.xml" target="_blank" className="rss">
+          <FontAwesomeIcon icon={faRssSquare} size="3x" />
         </a>
       </p>
     </footer>

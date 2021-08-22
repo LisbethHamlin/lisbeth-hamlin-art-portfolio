@@ -4,12 +4,12 @@ import { cleanGroup } from '../utils';
 import { SEO } from './seo';
 import { Breacrumb } from './breadcrumb';
 
-export const Page = ({ children, title, seoTitle = title, description, clean }) => {
+export const Page = ({ children, title, description, clean }) => {
   title = clean ? cleanGroup(title) : title;
 
   return (
     <>
-      <SEO pageTitle={seoTitle} description={description} />
+      <SEO pageTitle={title} description={description} />
       <Breacrumb />
       <h1>{title}</h1>
       {children}
@@ -19,8 +19,7 @@ export const Page = ({ children, title, seoTitle = title, description, clean }) 
 
 Page.propTypes = {
   children: PropTypes.node.isRequired,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   description: PropTypes.string,
-  seoTitle: PropTypes.string,
   clean: PropTypes.bool,
 };

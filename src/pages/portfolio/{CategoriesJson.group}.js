@@ -22,7 +22,7 @@ export const pageQuery = graphql`
     description
     file {
       childImageSharp {
-        gatsbyImageData(width: 200, layout: FIXED)
+        thumbnail: gatsbyImageData(layout: FULL_WIDTH, breakpoints: [200, 300], formats: [AUTO, AVIF, WEBP], quality: 50)
         original {
           src
           width

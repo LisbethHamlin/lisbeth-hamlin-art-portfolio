@@ -28,12 +28,34 @@
     text-decoration: underline;
   }
 
-  .portfolio-grid {
-    visibility: hidden;
+  .photo-gallery {
+    margin-bottom: 1rem;
+    @supports (grid-template-rows: masonry) {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 200px);
+      grid-template-rows: masonry;
+      grid-gap: 1rem;
+      justify-content: center;
+    }
+
+    @supports not (grid-template-rows: masonry) {
+      column-count: auto;
+      column-width: 200px;
+      column-gap: 1rem;
+      .grid-item {
+        margin: 0;
+        display: grid;
+        grid-template-rows: 1fr auto;
+        margin-bottom: 1rem;
+        break-inside: avoid;
+      }
+    }
   }
 
-  masonry-layout:not(:defined) {
-    visibility: hidden;
+  .rss {
+    color: rgb(234,120, 25);
+    vertical-align: middle;
+    margin-left: 0.5rem;
   }
 }
 
@@ -64,4 +86,3 @@
 .hidden-caption-content {
   display: none;
 }
-  

@@ -12,15 +12,6 @@ export const Layout = ({ children }) => {
       <div className="container lisbeth-hamlin">
         <Helmet>
           <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie+Flower" />
-          <noscript>
-            {`
-              <style>
-                .lisbeth-hamlin .portfolio-grid { 
-                  visibility: visible;
-                }
-              </style>
-          `}
-          </noscript>
         </Helmet>
         <Header />
         {children}

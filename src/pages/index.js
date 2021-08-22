@@ -13,7 +13,7 @@ const PortfolioGroup = () => {
   `);
 
   return (
-    <Page title="Lisbeth Hamlin Art Portfolio" seoTitle="" description="My art is dedicated to fostering an appreciation of cultural diversity.">
+    <Page title="Lisbeth Hamlin">
       <p className="lead">
         Ethnic humanity is my subject matter and a source of my inspiration. My figurative images depict life of indigenous cultures that record primitive life
         with an ethnological perspective. Experiencing different cultures has helped me to realize there is not one way of living, but thousands.

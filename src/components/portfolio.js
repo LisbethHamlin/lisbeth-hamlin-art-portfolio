@@ -4,14 +4,11 @@ import { usePhotoSwipe } from './usePhotoSwipe';
 import { PortfolioImage } from './portfolioImage';
 import { cleanGroup } from '../utils';
 import { prevent } from './prevent';
-import '@appnest/masonry-layout';
-
-export const gridClass = 'grid';
-export const gridItemClass = 'grid-item';
 
 export const Portfolio = ({ nodes }) => {
   const images = nodes.map(({ description, title, file }) => {
-    const { src, width, height } = file.childImageSharp.original;
+    const { childImageSharp } = file;
+    const { src, width, height } = childImageSharp.original;
     let captionDescription = '';
     let alt = title;
 
@@ -37,19 +34,14 @@ export const Portfolio = ({ nodes }) => {
     dataSource: images,
   });
 
-  const imageComponents = images.map(({ src, alt, childImageSharp }, index) => {
+  const imageComponents = images.map(({ childImageSharp: { thumbnail }, src, alt }, index) => {
     const onClick = prevent(() => {
       lightbox.loadAndOpen(index);
     });
-
-    return <PortfolioImage key={src} image={childImageSharp.gatsbyImageData} originalImageSrc={src} alt={alt} onClick={onClick} className="col" />;
+    return <PortfolioImage image={thumbnail} originalImageSrc={src} alt={alt} key={src} onClick={onClick} className="grid-item" />;
   });
 
-  if (typeof window === 'undefined') {
-    return <div className="row portfolio-grid">{imageComponents}</div>;
-  }
-
-  return <masonry-layout maxcolwidth="250">{imageComponents}</masonry-layout>;
+  return <div className="photo-gallery">{imageComponents}</div>;
 };
 
 Portfolio.propTypes = {
