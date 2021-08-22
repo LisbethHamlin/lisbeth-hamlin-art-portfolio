@@ -18,6 +18,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
+        stripMetadata: false,
         defaults: {
           formats: ['auto', 'avif', 'webp'],
         },
