@@ -2,17 +2,11 @@ const { urlFromTitle } = require('./src/url-builder');
 
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://www.lisbethhamlin.com',
+    siteUrl: 'https://lisbethhamlin.com',
     title: 'Lisbeth Hamlin',
     email: 'betsydhamlin@yahoo.com',
   },
   plugins: [
-    {
-      resolve: 'gatsby-plugin-google-analytics',
-      options: {
-        trackingId: 'UA-58096804-1',
-      },
-    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',
     {
