@@ -38,9 +38,8 @@ const ArtShowRow = ({ shows, type }) => {
 
   if (type) {
     return <p>I currently do not have any {type}.</p>;
-  } else {
-    return null;
   }
+  return null;
 };
 
 ArtShowRow.propTypes = {
