@@ -5,12 +5,13 @@ import { PortfolioImage } from './portfolioImage';
 import { cleanGroup } from '../utils';
 import { prevent } from './prevent';
 
-export const Portfolio = ({ nodes }) => {
-  const images = nodes.map(({ description, title, file }) => {
+export const Gallery = (props) => {
+  const images = props.images.map(({ image, title, description, file }) => {
     const { childImageSharp } = file;
     const { src, width, height } = childImageSharp.original;
+    const displayTitle = title || cleanGroup(image);
     let captionDescription = '';
-    let alt = title;
+    let alt = displayTitle;
 
     if (description) {
       captionDescription = `<p>${description}</p>`;
@@ -24,7 +25,7 @@ export const Portfolio = ({ nodes }) => {
       h: height,
       alt,
       captionHTML: `
-          <p>${cleanGroup(title)}</p>
+          <p>${displayTitle}</p>
           ${captionDescription}
         `,
     };
@@ -44,6 +45,6 @@ export const Portfolio = ({ nodes }) => {
   return <div className="photo-gallery">{imageComponents}</div>;
 };
 
-Portfolio.propTypes = {
-  nodes: PropTypes.arrayOf(PropTypes.object).isRequired,
+Gallery.propTypes = {
+  images: PropTypes.arrayOf(PropTypes.object).isRequired,
 };

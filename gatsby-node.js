@@ -3,8 +3,12 @@ const shuffle = require('lodash/shuffle');
 exports.createSchemaCustomization = ({ actions, schema }) => {
   const { createTypes } = actions;
   const typeDefs = `
+    type PortfolioImage {
+      file: File! @link(by: "name", from: "image")
+      title: String
+    }
     type PortfolioJson implements Node {
-      file: File @link(by: "name", from: "title")
+      images: [PortfolioImage]!
     }
     type MarkdownRemark implements Node {
       frontmatter: Frontmatter
@@ -34,32 +38,18 @@ exports.createResolvers = ({ createResolvers }) => {
   const resolvers = {
     Query: {
       randomPortfolioItems: {
-        type: ['PortfolioJson'],
+        type: ['PortfolioImage'],
         args: {
           limit: {
             type: 'Int!',
           },
         },
         resolve(source, args, context, info) {
-          return shuffle(context.nodeModel.getAllNodes({ type: 'PortfolioJson' })).slice(0, args.limit);
+          const nodes = context.nodeModel.getAllNodes({ type: 'PortfolioJson' });
+          return shuffle(nodes.flatMap((node) => node.images)).slice(0, args.limit);
         },
       },
     },
   };
   createResolvers(resolvers);
-};
-
-exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
-  if (stage === 'build-html' || stage === 'develop-html') {
-    actions.setWebpackConfig({
-      module: {
-        rules: [
-          {
-            test: /masonry-layout/,
-            use: loaders.null(),
-          },
-        ],
-      },
-    });
-  }
 };

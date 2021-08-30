@@ -2,11 +2,8 @@
   "name": "lisbeth-hamlin",
   "version": "1.0.0",
   "private": true,
-  "description": "Lisbeth Hamlin",
+  "description": "Lisbeth Hamlin Art Portfolio",
   "author": "Bryce Mehring",
-  "keywords": [
-    "gatsby"
-  ],
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
@@ -23,7 +20,7 @@
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "bootstrap": "^5.0.2",
-    "gatsby": "^3.12.0",
+    "gatsby": "^3.12.1",
     "gatsby-plugin-feed": "^3.12.0",
     "gatsby-plugin-google-analytics": "^3.12.0",
     "gatsby-plugin-image": "^1.12.0",
@@ -45,7 +42,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "sass": "^1.38.1"
+    "sass": "^1.38.2"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
@@ -54,7 +51,7 @@
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-prettier": "^3.4.1",
-    "eslint-plugin-react": "^7.24.0",
+    "eslint-plugin-react": "^7.25.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^2.3.2"
   }

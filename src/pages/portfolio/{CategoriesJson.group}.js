@@ -1,17 +1,17 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { Page } from '../../components/page';
-import { Portfolio } from '../../components/portfolio';
+import { Gallery } from '../../components/gallery';
 
 const PortfolioGroup = ({ data, pageContext }) => {
   const { group } = pageContext;
-  const { nodes } = data.allPortfolioJson;
+  const { images } = data.portfolioJson;
 
   const description = `${group} art portfolio`;
 
   return (
     <Page title={group} description={description} clean>
-      <Portfolio nodes={nodes} />
+      <Gallery images={images} />
     </Page>
   );
 };
@@ -19,7 +19,8 @@ const PortfolioGroup = ({ data, pageContext }) => {
 export default PortfolioGroup;
 
 export const pageQuery = graphql`
-  fragment PortfolioQuery on PortfolioJson {
+  fragment PortfolioQuery on PortfolioImage {
+    image
     title
     description
     file {
@@ -34,8 +35,9 @@ export const pageQuery = graphql`
     }
   }
   query ($group: String!) {
-    allPortfolioJson(filter: { group: { eq: $group } }) {
-      nodes {
+    portfolioJson(group: { eq: $group }) {
+      description
+      images {
         ...PortfolioQuery
       }
     }
