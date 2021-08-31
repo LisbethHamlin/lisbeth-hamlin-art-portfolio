@@ -4,21 +4,22 @@ import { Page } from '../components/page';
 import { FontAwesomeIcon, faFolderOpen } from '../components/icons';
 
 const Portfolio = () => {
-  const { allCategoriesJson } = useStaticQuery(graphql`
+  const { allPortfolioJson } = useStaticQuery(graphql`
     query {
-      allCategoriesJson {
+      allPortfolioJson {
         nodes {
           title
           group
+          id
         }
       }
     }
   `);
 
-  const nodes = allCategoriesJson.nodes;
-  const groupElements = nodes.map(({ title, group }) => {
+  const nodes = allPortfolioJson.nodes;
+  const groupElements = nodes.map(({ title, group, id }) => {
     return (
-      <div className="col-6 col-md-4 col-lg-3 mb-3" key={group}>
+      <div className="col-6 col-md-4 col-lg-3 mb-3" key={id}>
         <Link to={group} className="d-block">
           <FontAwesomeIcon icon={faFolderOpen} size="5x" />
           <div> {title} </div>
