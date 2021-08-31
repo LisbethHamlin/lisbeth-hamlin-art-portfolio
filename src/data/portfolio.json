@@ -1,6 +1,7 @@
 [
   {
     "group": "ceramics",
+    "title": "Ceramics",
     "description": "Mugs, bowls and plates",
     "images": [
       {
@@ -35,6 +36,7 @@
   },
   {
     "group": "hats",
+    "title": "Hats",
     "images": [
       {
         "image": "hat-01-inside",
@@ -89,6 +91,7 @@
   },
   {
     "group": "jewelry",
+    "title": "Jewelry",
     "description": "Jewelry made from painted leather, sculpey clay, copper clay, mosaic glass, millefiori, and clay",
     "images": [
       {
@@ -136,7 +139,8 @@
     ]
   },
   {
-    "group": "mosaics",
+    "group": "Mosaics",
+    "title": "Jewelry",
     "description": "Trivets, frames, trays, lamps, rocks, mirrors, candle holders, and wall hangings",
     "images": [
       {
@@ -266,6 +270,7 @@
   },
   {
     "group": "paper-collage",
+    "title": "Paper Collage",
     "images": [
       {
         "image": "celebration"
@@ -304,6 +309,7 @@
   },
   {
     "group": "printmaking",
+    "title": "Printmaking",
     "images": [
       {
         "image": "african-bullfight",
@@ -384,6 +390,7 @@
   },
   {
     "group": "watercolor",
+    "title": "Watercolor",
     "images": [
       {
         "image": "bushman-at-llaru",
