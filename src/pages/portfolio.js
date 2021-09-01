@@ -4,9 +4,9 @@ import { Page } from '../components/page';
 import { FontAwesomeIcon, faFolderOpen } from '../components/icons';
 
 const Portfolio = () => {
-  const { allPortfolioJson } = useStaticQuery(graphql`
+  const { allPortfolioYaml } = useStaticQuery(graphql`
     query {
-      allPortfolioJson {
+      allPortfolioYaml {
         nodes {
           title
           group
@@ -16,7 +16,7 @@ const Portfolio = () => {
     }
   `);
 
-  const nodes = allPortfolioJson.nodes;
+  const nodes = allPortfolioYaml.nodes;
   const groupElements = nodes.map(({ title, group, id }) => {
     return (
       <div className="col-6 col-md-4 col-lg-3 mb-3" key={id}>

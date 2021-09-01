@@ -7,7 +7,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       file: File! @link(by: "name", from: "image")
       title: String
     }
-    type PortfolioJson implements Node {
+    type PortfolioYaml implements Node {
       images: [PortfolioImage]!
     }
     type MarkdownRemark implements Node {
@@ -45,7 +45,7 @@ exports.createResolvers = ({ createResolvers }) => {
           },
         },
         resolve(source, args, context, info) {
-          const nodes = context.nodeModel.getAllNodes({ type: 'PortfolioJson' });
+          const nodes = context.nodeModel.getAllNodes({ type: 'PortfolioYaml' });
           return shuffle(nodes.flatMap((node) => node.images)).slice(0, args.limit);
         },
       },

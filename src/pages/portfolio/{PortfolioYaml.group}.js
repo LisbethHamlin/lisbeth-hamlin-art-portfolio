@@ -5,7 +5,7 @@ import { Gallery } from '../../components/gallery';
 
 const PortfolioGroup = ({ data, pageContext }) => {
   const { group } = pageContext;
-  const { images } = data.portfolioJson;
+  const { images } = data.portfolioYaml;
 
   const description = `${group} art portfolio`;
 
@@ -35,7 +35,7 @@ export const pageQuery = graphql`
     }
   }
   query ($group: String!) {
-    portfolioJson(group: { eq: $group }) {
+    portfolioYaml(group: { eq: $group }) {
       description
       images {
         ...PortfolioQuery
