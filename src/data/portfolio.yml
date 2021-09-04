@@ -4,6 +4,7 @@
   images:
     - image: ceramic-vessel
     - image: mug-1
+      description: This is an exciting test!
     - image: mug-2
     - image: mug-3
     - image: mug-4
