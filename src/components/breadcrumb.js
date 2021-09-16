@@ -32,7 +32,7 @@ export const Breacrumb = () => {
 
   return (
     <nav aria-label="breadcrumb">
-      <ol className="breadcrumb">{pathElements}</ol>
+      <ol className="breadcrumb text-capitalize">{pathElements}</ol>
     </nav>
   );
 };

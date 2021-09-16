@@ -3,14 +3,13 @@ import { graphql } from 'gatsby';
 import { Page } from '../../components/page';
 import { Gallery } from '../../components/gallery';
 
-const PortfolioGroup = ({ data, pageContext }) => {
-  const { group } = pageContext;
-  const { images } = data.portfolioYaml;
+const PortfolioGroup = ({ data }) => {
+  const { images, title } = data.portfolioYaml;
 
-  const description = `${group} art portfolio`;
+  const description = `${title} art portfolio`;
 
   return (
-    <Page title={group} description={description} clean>
+    <Page title={title} description={description}>
       <Gallery images={images} />
     </Page>
   );
@@ -37,6 +36,7 @@ export const pageQuery = graphql`
   query ($group: String!) {
     portfolioYaml(group: { eq: $group }) {
       description
+      title
       images {
         ...PortfolioQuery
       }
