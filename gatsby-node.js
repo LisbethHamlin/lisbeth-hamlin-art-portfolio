@@ -1,4 +1,7 @@
-const shuffle = require('lodash/shuffle');
+const { shuffler } = require('d3-array');
+const { randomLcg } = require('d3-random');
+
+const shuffle = shuffler(randomLcg(Math.floor(Date.now() / (1000 * 60 * 60 * 24 * 7 * 4.345))));
 
 exports.createSchemaCustomization = ({ actions, schema }) => {
   const { createTypes } = actions;
