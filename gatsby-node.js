@@ -1,7 +1,24 @@
-const { shuffler } = require('d3-array');
-const { randomLcg } = require('d3-random');
+const { default: got } = require('got');
+require('dotenv').config();
 
-const shuffle = shuffler(randomLcg(Math.floor(Date.now() / (1000 * 60 * 60 * 24 * 7 * 4.345))));
+const getRandomPortfolioItems = async ({ array, limit }) => {
+  const { items } = await got(process.env.WORKER_URL, {
+    http2: true,
+    searchParams: {
+      limit: array.length,
+    },
+    headers: {
+      'X-Custom-PSK': process.env.PSK,
+    },
+  }).json();
+
+  const newArray = new Array(limit);
+  for (let i = 0; i < limit; i++) {
+    newArray[i] = array[items[i]];
+  }
+
+  return newArray;
+};
 
 exports.createSchemaCustomization = ({ actions, schema }) => {
   const { createTypes } = actions;
@@ -37,7 +54,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
   createTypes(typeDefs);
 };
 
-exports.createResolvers = ({ createResolvers }) => {
+exports.createResolvers = async ({ createResolvers }) => {
   const resolvers = {
     Query: {
       randomPortfolioItems: {
@@ -49,7 +66,10 @@ exports.createResolvers = ({ createResolvers }) => {
         },
         resolve(source, args, context, info) {
           const nodes = context.nodeModel.getAllNodes({ type: 'PortfolioYaml' });
-          return shuffle(nodes.flatMap((node) => node.images)).slice(0, args.limit);
+          return getRandomPortfolioItems({
+            array: nodes.flatMap((node) => node.images),
+            limit: args.limit,
+          });
         },
       },
     },
