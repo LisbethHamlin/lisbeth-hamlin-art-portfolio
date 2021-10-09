@@ -25,7 +25,7 @@ export const Gallery = (props) => {
       h: height,
       alt,
       captionHTML: `
-          <p>${displayTitle}</p>
+          <p class="text-capitalize">${displayTitle}</p>
           ${captionDescription}
         `,
     };
