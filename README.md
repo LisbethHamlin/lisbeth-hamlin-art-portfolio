@@ -1,3 +1,3 @@
-# Betsy Hamlin's Art
+# Lisbeth Hamlin's Art
 
-Art portfolio website.
+Art portfolio website

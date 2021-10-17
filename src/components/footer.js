@@ -11,8 +11,10 @@ export const Footer = () => {
         <a rel="license noreferrer" href="http://creativecommons.org/licenses/by-nc/4.0/">
           Creative Commons Attribution-NonCommercial 4.0 International License.{' '}
         </a>
+      </p>
+      <p className="links">
         <a href="/rss.xml" target="_blank" className="rss">
-          <FontAwesomeIcon icon={faRssSquare} size="3x" />
+          <FontAwesomeIcon icon={faRssSquare} size="3x" title="RSS Feed" />
         </a>
       </p>
     </footer>
