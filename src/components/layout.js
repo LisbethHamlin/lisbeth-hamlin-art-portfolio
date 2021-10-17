@@ -12,7 +12,6 @@ export const Layout = ({ children }) => {
       <Helmet htmlAttributes={{ lang: 'en' }}>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-        <link rel="stylesheet" href={'https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap'} />
         <link rel="stylesheet" href={'https://fonts.googleapis.com/css2?family=Andada+Pro&display=swap'} />
         <link rel="icon" type="image/png" href={favicon} />
       </Helmet>
