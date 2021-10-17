@@ -21,7 +21,7 @@ const Portfolio = () => {
       <div className="col-6 col-md-4 col-lg-3 mb-3" key={id}>
         <Link to={group} className="d-block">
           <FontAwesomeIcon icon={faFolderOpen} size="5x" />
-          <div> {title} </div>
+          <p> {title} </p>
         </Link>
       </div>
     );

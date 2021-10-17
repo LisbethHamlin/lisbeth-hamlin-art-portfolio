@@ -62,10 +62,19 @@
     }
   }
 
-  .rss {
-    color: rgb(234,120, 25);
+  footer {
     vertical-align: middle;
-    margin-left: 0.5rem;
+
+    .links {
+      a {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+      }
+  
+      .rss {
+        color: rgb(234,120, 25);
+      }
+    }
   }
 }
 
