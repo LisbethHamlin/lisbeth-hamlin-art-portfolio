@@ -2,7 +2,7 @@
 layout: art-show
 title: Parkway West Arts & Crafts Fair 2021
 excerpt: October 30th - 31st
-end_date: 11-01-2021
+end_date: 1635710400000
 ---
 
 ## Location
