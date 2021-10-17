@@ -1,4 +1,6 @@
 const { default: got } = require('got');
+const parse = require('date-fns/parse');
+const isAfter = require('date-fns/isAfter');
 require('dotenv').config();
 
 const getRandomPortfolioItems = async ({ array, limit }) => {
@@ -35,6 +37,8 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
     }
     type Frontmatter implements Node {
       end_date: Date
+      booth: String
+      location: String
     }
   `;
 
@@ -45,7 +49,13 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
       fields: {
         isEndDateFuture: {
           type: 'Boolean!',
-          resolve: (source) => new Date(source.frontmatter.end_date) > new Date(),
+          resolve: (source) => {
+            let endDate = source.frontmatter.end_date;
+            if (typeof endDate === 'string') {
+              endDate = parse(endDate, 'MM-dd-yyyy', new Date());
+            }
+            return isAfter(endDate, Date.now());
+          },
         },
       },
     }),
@@ -75,4 +85,13 @@ exports.createResolvers = async ({ createResolvers }) => {
     },
   };
   createResolvers(resolvers);
+};
+
+exports.onCreateBabelConfig = ({ actions }) => {
+  actions.setBabelPreset({
+    name: 'babel-preset-gatsby',
+    options: {
+      reactRuntime: 'automatic',
+    },
+  });
 };

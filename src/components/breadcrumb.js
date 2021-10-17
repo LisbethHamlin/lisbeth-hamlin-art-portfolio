@@ -1,4 +1,3 @@
-import React from 'react';
 import { useLocation } from '@reach/router';
 import { Link } from 'gatsby';
 import { cleanGroup } from '../utils';

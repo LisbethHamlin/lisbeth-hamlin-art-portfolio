@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { Page } from '../components/page';
