@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSiteMetadata } from './useSiteMetadata';
 import { FontAwesomeIcon, faRssSquare } from './icons';
 

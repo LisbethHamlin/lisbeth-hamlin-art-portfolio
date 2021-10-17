@@ -1,4 +1,3 @@
-import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { Page } from '../components/page';
 import { FontAwesomeIcon, faFolderOpen } from '../components/icons';

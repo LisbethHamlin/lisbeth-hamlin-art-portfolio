@@ -1,4 +1,3 @@
-import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 
 export const Navigation = () => {

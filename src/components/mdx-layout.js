@@ -1,4 +1,3 @@
-import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import { useSiteMetadata } from '../components/useSiteMetadata';
 import { Page } from './page';

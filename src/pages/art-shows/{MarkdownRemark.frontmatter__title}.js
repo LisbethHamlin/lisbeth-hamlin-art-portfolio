@@ -1,4 +1,3 @@
-import React from 'react';
 import { graphql } from 'gatsby';
 import { Page } from '../../components/page';
 
@@ -19,7 +18,6 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
         title
       }
     }
