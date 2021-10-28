@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export const ArtShowRow = ({ shows, type }) => {
   if (shows.length) {
-    const ArtShowElements = shows.map(({ frontmatter }) => <ArtShow frontmatter={frontmatter} key={frontmatter.title} />);
+    const ArtShowElements = shows.map((show) => <ArtShow show={show} key={show.id} />);
     return <div className="row row-cols-md-3 row-cols-1">{ArtShowElements}</div>;
   }
 

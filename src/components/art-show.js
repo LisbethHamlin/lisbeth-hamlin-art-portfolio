@@ -3,8 +3,8 @@ import { FontAwesomeIcon, faCalendarAlt } from '../components/icons';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
-export const ArtShow = ({ frontmatter }) => {
-  const { title, excerpt } = frontmatter;
+export const ArtShow = ({ show }) => {
+  const { displayField: title, excerpt } = show;
   const to = urlFromTitle(title);
 
   return (
@@ -25,5 +25,5 @@ export const ArtShow = ({ frontmatter }) => {
 };
 
 ArtShow.propTypes = {
-  frontmatter: PropTypes.object.isRequired,
+  show: PropTypes.object.isRequired,
 };

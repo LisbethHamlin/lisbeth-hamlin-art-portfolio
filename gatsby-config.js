@@ -1,4 +1,6 @@
 const { urlFromTitle } = require('./src/url-builder');
+const { documentToHtmlString } = require('@contentful/rich-text-html-renderer');
+require('dotenv').config();
 
 module.exports = {
   siteMetadata: {
@@ -41,6 +43,13 @@ module.exports = {
         path: `./src/images/`,
       },
     },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      },
+    },
     `gatsby-remark-images`,
     {
       resolve: `gatsby-plugin-mdx`,
@@ -78,33 +87,29 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.nodes.map((node) => {
-                const url = urlFromTitle(site.siteMetadata.siteUrl + `/${node.parent.relativeDirectory}/` + node.frontmatter.title);
+            serialize: ({ query: { site, artShows } }) => {
+              return artShows.nodes.map((node) => {
+                const url = urlFromTitle(site.siteMetadata.siteUrl + `/art-shows/` + node.title);
+                const html = documentToHtmlString(JSON.parse(node.post.raw));
                 return {
-                  ...node.frontmatter,
+                  title: node.title,
                   description: node.excerpt,
-                  date: node.frontmatter.date,
+                  date: node.createdAt,
                   url: url,
                   guid: url,
-                  custom_elements: [{ 'content:encoded': node.html }],
+                  custom_elements: [{ 'content:encoded': html }],
                 };
               });
             },
             query: `
             {
-              allMarkdownRemark(sort: {fields: frontmatter___date, order: DESC}) {
+              artShows: allContentfulArtShows(sort: {order: DESC, fields: endDate}) {
                 nodes {
+                  title: displayField
                   excerpt
-                  html
-                  frontmatter {
-                    date
-                    title
-                  }
-                  parent {
-                    ... on File {
-                      relativeDirectory
-                    }
+                  createdAt
+                  post {
+                    raw
                   }
                 }
               }
