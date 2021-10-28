@@ -1,5 +1,4 @@
 const { default: got } = require('got');
-require('dotenv').config();
 
 const getRandomPortfolioItems = async ({ array, limit }) => {
   const { items } = await got(process.env.WORKER_URL, {
@@ -30,30 +29,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
     type PortfolioYaml implements Node {
       images: [PortfolioImage]!
     }
-    type MarkdownRemark implements Node {
-      frontmatter: Frontmatter
-    }
-    type Frontmatter implements Node {
-      end_date: Int
-      booth: String
-      location: String
-    }
   `;
-
-  createTypes([
-    schema.buildObjectType({
-      name: 'MarkdownRemark',
-      interfaces: ['Node'],
-      fields: {
-        isEndDateFuture: {
-          type: 'Boolean!',
-          resolve: (source) => {
-            return source.frontmatter.end_date > Date.now();
-          },
-        },
-      },
-    }),
-  ]);
 
   createTypes(typeDefs);
 };
