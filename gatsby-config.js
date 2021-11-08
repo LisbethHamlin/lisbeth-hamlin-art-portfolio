@@ -8,6 +8,7 @@ module.exports = {
     title: 'Lisbeth Hamlin',
     email: 'betsydhamlin@yahoo.com',
   },
+  jsxRuntime: 'automatic',
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sitemap',

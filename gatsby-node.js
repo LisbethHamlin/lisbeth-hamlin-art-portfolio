@@ -82,12 +82,3 @@ exports.createPages = async ({ actions, graphql }) => {
     });
   }
 };
-
-exports.onCreateBabelConfig = ({ actions }) => {
-  actions.setBabelPreset({
-    name: 'babel-preset-gatsby',
-    options: {
-      reactRuntime: 'automatic',
-    },
-  });
-};
