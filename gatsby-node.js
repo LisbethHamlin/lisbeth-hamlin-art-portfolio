@@ -1,4 +1,5 @@
 const { default: got } = require('got');
+const { urlFromTitle } = require('./src/url-builder');
 
 const getRandomPortfolioItems = async ({ array, limit }) => {
   const { items } = await got(process.env.WORKER_URL, {
@@ -55,6 +56,31 @@ exports.createResolvers = async ({ createResolvers }) => {
     },
   };
   createResolvers(resolvers);
+};
+
+exports.createPages = async ({ actions, graphql }) => {
+  const { data } = await graphql(`
+    query {
+      allContentfulArtShows(filter: { ignore: { eq: false } }) {
+        nodes {
+          title: displayField
+          post {
+            raw
+          }
+        }
+      }
+    }
+  `);
+
+  for (const artShow of data.allContentfulArtShows.nodes) {
+    const path = `/art-shows/${urlFromTitle(artShow.title)}`;
+    const component = require.resolve('./src/templates/art-show.js');
+    actions.createPage({
+      path,
+      component,
+      context: artShow,
+    });
+  }
 };
 
 exports.onCreateBabelConfig = ({ actions }) => {
