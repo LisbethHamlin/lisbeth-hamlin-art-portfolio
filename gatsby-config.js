@@ -104,7 +104,7 @@ module.exports = {
             },
             query: `
             {
-              artShows: allContentfulArtShows(sort: {order: DESC, fields: endDate}) {
+              artShows: allContentfulArtShows(filter: { ignore: { eq: false } }, sort: {order: DESC, fields: endDate}) {
                 nodes {
                   title: displayField
                   excerpt
