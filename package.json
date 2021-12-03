@@ -8,6 +8,7 @@
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
+    "build:ci": "npm run build -- --no-color",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "eslint src"
