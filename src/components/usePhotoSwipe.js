@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
-import PhotoSwipeLightbox from 'photoswipe/dist/photoswipe-lightbox.esm.js';
-import PhotoSwipe from 'photoswipe/dist/photoswipe.esm.js';
+import PhotoSwipeLightbox from 'photoswipe/lightbox';
 import 'photoswipe/dist/photoswipe.css';
 
 export const usePhotoSwipe = ({ dataSource }) => {
   const [lightbox] = useState(
     () =>
       new PhotoSwipeLightbox({
-        pswpModule: PhotoSwipe,
+        pswpModule: () => import('photoswipe'),
         dataSource,
         bgOpacity: 1.0,
       })
