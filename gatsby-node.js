@@ -2,7 +2,7 @@ const { urlFromTitle } = require('./src/url-builder');
 
 const getRandomPortfolioItems = async ({ array, limit }) => {
   const { got } = await import('got');
-  const { items } = await got(process.env.WORKER_URL, {
+  const items = await got(process.env.WORKER_URL, {
     http2: true,
     searchParams: {
       limit: array.length,
