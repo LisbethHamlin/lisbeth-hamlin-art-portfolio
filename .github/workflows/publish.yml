@@ -27,6 +27,11 @@ jobs:
 
       - run: npm ci
       - run: npm run build
+        env: 
+          WORKER_URL: ${{ secrets.WORKER_URL }}
+          PSK: ${{ secrets.PSK }}
+          CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
 
       - name: Publish to Cloudflare Pages
         uses: cloudflare/pages-action@v1
