@@ -1,8 +1,15 @@
-const { urlFromTitle } = require('./src/url-builder');
-const { documentToHtmlString } = require('@contentful/rich-text-html-renderer');
-require('dotenv').config();
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import dotenv from 'dotenv';
+import module from 'node:module';
+import remarkGFM from 'remark-gfm';
 
-module.exports = {
+const require = module.createRequire(import.meta.url);
+
+const { urlFromTitle } = require('./src/url-builder');
+
+dotenv.config();
+
+const config = {
   siteMetadata: {
     siteUrl: 'https://lisbethhamlin.com',
     title: 'Lisbeth Hamlin',
@@ -55,8 +62,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
-        defaultLayouts: {
-          default: require.resolve('./src/components/mdx-layout.js'),
+        mdxOptions: {
+          remarkPlugins: [remarkGFM],
         },
         gatsbyRemarkPlugins: [
           {
@@ -104,7 +111,7 @@ module.exports = {
             },
             query: `
             {
-              artShows: allContentfulArtShows(filter: { ignore: { eq: false } }, sort: {order: DESC, fields: endDate}) {
+              artShows: allContentfulArtShows(filter: { ignore: { eq: false } }, sort: { endDate: DESC }) {
                 nodes {
                   title: displayField
                   excerpt
@@ -124,3 +131,5 @@ module.exports = {
     },
   ],
 };
+
+export default config;

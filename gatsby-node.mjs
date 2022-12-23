@@ -1,16 +1,24 @@
+import module from 'node:module';
+
+const require = module.createRequire(import.meta.url);
 const { urlFromTitle } = require('./src/url-builder');
 
 const getRandomPortfolioItems = async ({ array, limit }) => {
-  const { got } = await import('got');
-  const items = await got(process.env.WORKER_URL, {
-    http2: true,
-    searchParams: {
-      limit: array.length,
-    },
+  const url = new URL(process.env.WORKER_URL);
+  url.searchParams.set('limit', array.length);
+
+  const response = await fetch(url, {
+    method: 'GET',
     headers: {
       'X-Custom-PSK': process.env.PSK,
     },
-  }).json();
+  });
+
+  if (!response.ok) {
+    throw new Error(`HTTP error status from worker: ${response.status}`);
+  }
+
+  const items = await response.json();
 
   const newArray = new Array(limit);
   for (let i = 0; i < limit; i++) {
@@ -20,7 +28,7 @@ const getRandomPortfolioItems = async ({ array, limit }) => {
   return newArray;
 };
 
-exports.createSchemaCustomization = ({ actions, schema }) => {
+export const createSchemaCustomization = ({ actions, schema }) => {
   const { createTypes } = actions;
   const typeDefs = `
     type PortfolioImage {
@@ -35,7 +43,7 @@ exports.createSchemaCustomization = ({ actions, schema }) => {
   createTypes(typeDefs);
 };
 
-exports.createResolvers = async ({ createResolvers }) => {
+export const createResolvers = async ({ createResolvers: createResolversParam }) => {
   const resolvers = {
     Query: {
       randomPortfolioItems: {
@@ -45,20 +53,20 @@ exports.createResolvers = async ({ createResolvers }) => {
             type: 'Int!',
           },
         },
-        resolve(source, args, context, info) {
-          const nodes = context.nodeModel.getAllNodes({ type: 'PortfolioYaml' });
+        async resolve(source, args, { nodeModel }, info) {
+          const { entries } = await nodeModel.findAll({ type: 'PortfolioYaml' });
           return getRandomPortfolioItems({
-            array: nodes.flatMap((node) => node.images),
+            array: Array.from(entries).flatMap((node) => node.images),
             limit: args.limit,
           });
         },
       },
     },
   };
-  createResolvers(resolvers);
+  createResolversParam(resolvers);
 };
 
-exports.createPages = async ({ actions, graphql }) => {
+export const createPages = async ({ actions, graphql }) => {
   const { data } = await graphql(`
     query {
       allContentfulArtShows(filter: { ignore: { eq: false } }) {

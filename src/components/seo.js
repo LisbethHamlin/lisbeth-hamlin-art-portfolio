@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useSiteMetadata } from './useSiteMetadata';
-import { useLocation } from '@reach/router';
+import { useLocation } from '@gatsbyjs/reach-router';
 
 export const SEO = ({ pageTitle, description = 'My art is dedicated to fostering an appreciation of cultural diversity.' }) => {
   const { title: siteTitle } = useSiteMetadata();
