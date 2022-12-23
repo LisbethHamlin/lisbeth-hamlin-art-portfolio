@@ -1,3 +1,3 @@
 export * from './url-builder';
 
-export const cleanGroup = (group) => group.replace(/-/g, ' ');
+export const cleanGroup = (group) => group.replaceAll('-', ' ');

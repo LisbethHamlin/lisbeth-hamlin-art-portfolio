@@ -8,7 +8,7 @@ const PortfolioGroup = ({ data }) => {
   const description = `${title} art portfolio`;
 
   return (
-    <Page title={title} description={description}>
+    <Page title={title} description={description} showBreadcrumb>
       <Gallery images={images} />
     </Page>
   );

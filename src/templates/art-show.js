@@ -4,7 +4,11 @@ import { renderRichText } from 'gatsby-source-contentful/rich-text';
 const Post = ({ pageContext }) => {
   const richText = renderRichText(pageContext.post);
 
-  return <Page title={pageContext.title}>{richText}</Page>;
+  return (
+    <Page title={pageContext.title} showBreadcrumb>
+      {richText}
+    </Page>
+  );
 };
 
 export default Post;

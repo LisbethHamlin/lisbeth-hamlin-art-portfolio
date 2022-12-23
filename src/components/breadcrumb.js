@@ -1,14 +1,10 @@
-import { useLocation } from '@reach/router';
+import { useLocation } from '@gatsbyjs/reach-router';
 import { Link } from 'gatsby';
 import { cleanGroup } from '../utils';
 
 export const Breacrumb = () => {
   const { pathname } = useLocation();
   const splitPath = pathname.split('/').filter((item) => item);
-
-  if (splitPath.length <= 1) {
-    return null;
-  }
 
   let index = 0;
   const pathElements = [];
