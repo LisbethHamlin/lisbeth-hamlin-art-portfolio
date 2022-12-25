@@ -22,24 +22,26 @@ jobs:
 
       - uses: actions/cache@v3
         with:
-          path: .cache
-          key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          path: |
+            .cache
+            public
+          key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}-${{ github.run_id }}
+          restore-keys: |
+            ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
 
-      - run: ls -l .cache
+      - run: npm ci
+      - run: npm run build
+        env: 
+          WORKER_URL: ${{ secrets.WORKER_URL }}
+          PSK: ${{ secrets.PSK }}
+          CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
+          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
 
-      # - run: npm ci
-      # - run: npm run build
-      #   env: 
-      #     WORKER_URL: ${{ secrets.WORKER_URL }}
-      #     PSK: ${{ secrets.PSK }}
-      #     CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
-      #     CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
-
-      # - name: Publish to Cloudflare Pages
-      #   uses: cloudflare/pages-action@v1
-      #   with:
-      #     apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      #     accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-      #     projectName: lisbeth-hamlin-art-portfolio
-      #     directory: ./public
-      #     gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: lisbeth-hamlin-art-portfolio
+          directory: ./public
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
