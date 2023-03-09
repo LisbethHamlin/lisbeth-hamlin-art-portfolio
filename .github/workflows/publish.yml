@@ -1,3 +1,5 @@
+concurrency: publish
+
 on:
   workflow_dispatch:
   push:
