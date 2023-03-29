@@ -10,7 +10,8 @@ const getRandomPortfolioItems = async ({ array, limit }) => {
   const response = await fetch(url, {
     method: 'GET',
     headers: {
-      'X-Custom-PSK': process.env.PSK,
+      'CF-Access-Client-Id': process.env.CLIENT_ID,
+      'CF-Access-Client-Secret': process.env.CLIENT_SECRET,
     },
   });
 
