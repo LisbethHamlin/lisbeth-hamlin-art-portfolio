@@ -11,7 +11,8 @@
     "build:ci": "npm run build -- --no-color",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "publish:pages": "wrangler pages publish ./public --project-name lisbeth-hamlin-art-portfolio --branch $BRANCH"
   },
   "dependencies": {
     "@contentful/rich-text-html-renderer": "^15.8.0",
