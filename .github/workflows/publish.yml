@@ -32,13 +32,13 @@ jobs:
           CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
           
       - name: List files in workspace
-        run: ls -l
+        run: ls -l && pwd
 
       - uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4
         if: ${{ steps.download-random-image-list.outcome != 'success' }}
         with:
           name: random-portfolio-items
-          path: .random-portfolio-items.json
+          path: random-portfolio-items.json
           if-no-files-found: error
           retention-days: 90
 

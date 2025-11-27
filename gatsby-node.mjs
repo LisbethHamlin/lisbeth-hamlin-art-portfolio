@@ -7,7 +7,7 @@ const require = module.createRequire(import.meta.url);
 const { urlFromTitle } = require('./src/url-builder');
 
 const loadRandomNumbers = (limit) => {
-  const randomFilePath = '.random-portfolio-items.json';
+  const randomFilePath = 'random-portfolio-items.json';
   const fileExists = fs.existsSync(randomFilePath);
   if (fileExists) {
     const randomFileContents = fs.readFileSync(randomFilePath);
