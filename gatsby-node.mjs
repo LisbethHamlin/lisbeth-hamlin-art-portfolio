@@ -1,29 +1,32 @@
 import module from 'node:module';
+import fs from 'node:fs';
+import { shuffle } from 'radash';
 
 const require = module.createRequire(import.meta.url);
 const { urlFromTitle } = require('./src/url-builder');
 
-const getRandomPortfolioItems = async ({ array, limit }) => {
-  const url = new URL(process.env.WORKER_URL);
-  url.searchParams.set('limit', array.length);
-
-  const response = await fetch(url, {
-    method: 'GET',
-    headers: {
-      'CF-Access-Client-Id': process.env.CLIENT_ID,
-      'CF-Access-Client-Secret': process.env.CLIENT_SECRET,
-    },
-  });
-
-  if (!response.ok) {
-    throw new Error(`HTTP error status from worker: ${response.status}`);
+const loadRandomNumbers = (limit) => {
+  const randomFilePath = './.random-portfolio-items.json';
+  const fileExists = fs.existsSync(randomFilePath);
+  if (fileExists) {
+    const randomFileContents = fs.readFileSync(randomFilePath);
+    const randomFileData = JSON.parse(randomFileContents);
+    if (Array.isArray(randomFileData) && randomFileData.length === limit) {
+      return randomFileData;
+    }
   }
+  const newArray = shuffle(Array.from({ length: limit }, (_, i) => i));
 
-  const items = await response.json();
+  fs.writeFileSync(randomFilePath, JSON.stringify(newArray));
 
+  return newArray;
+};
+
+const getRandomPortfolioItems = async ({ array, limit }) => {
+  const randomItems = await loadRandomNumbers(array.length);
   const newArray = new Array(limit);
   for (let i = 0; i < limit; i++) {
-    newArray[i] = array[items[i]];
+    newArray[i] = array[randomItems[i]];
   }
 
   return newArray;
