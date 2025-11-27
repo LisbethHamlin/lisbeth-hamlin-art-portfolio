@@ -1,65 +1,74 @@
-- group: ceramics
-  title: Ceramics
-  description: Mugs, bowls and plates
+- group: printmaking
+  title: Printmaking
   images:
-    - image: ceramic-vessel
-    - image: mug-1
-    - image: mug-2
-    - image: mug-3
-    - image: mug-4
-    - image: mugs
-      description: Hand stamped, rolled, and glazed.
-    - image: ceramic-plate
-    - image: chimes
-    - image: cermaic-plate-2
-- group: hats
-  title: Hats
+    - image: african-bullfight
+      description: 12 x 5
+    - image: bati-ganya
+      description: 9 x 12
+    - image: camel-caravan
+      description: 24 x 6
+    - image: child-of-hope
+      description: 12 x 17
+    - image: ciet-and-wa
+      description: 6 x 8
+    - image: dancing-samburu-women
+    - image: desert-wayside-a
+      description: 6 x 13
+    - image: desert-wayside-b
+      description: 6 x 13
+    - image: equipoise
+      description: 4 x 8
+    - image: desert-wayside-triptych
+      description: 24 x 14
+    - image: in-prayer
+      description: 10 x 14
+    - image: lake-dal
+      description: 12 x 8
+    - image: living-patterns
+      description: 11 x 12
+    - image: nkishu-cattleness
+      description: 18 x 9
+    - image: nomads-moving-on
+      description: 9 x 12
+    - image: oasis
+      description: 24 x 6
+    - image: pounding-fou-fou
+      description: 9 x 12
+    - image: ships-of-the-desert
+      description: 22 x 6
+    - image: turkana-girl
+      description: 6 x 8
+
+- group: watercolor
+  title: Watercolor
   images:
-    - image: hat-01-inside
-      description: The inside of the hat
-    - image: hat-01-outside
-      description: The outside of the hat
-    - image: hat-02-inside
-      description: The inside of the hat
-    - image: hat-02-outside
-      description: The outside of the hat
-    - image: hat-05
-    - image: hat-06
-    - image: hat-07
-    - image: hat-08
-    - image: hat-09
-    - image: hat-10
-    - image: hat-11
-    - image: hat-12
-    - image: hat-13
-    - image: hat-14
-    - image: hat-15
-- group: jewelry
-  title: Jewelry
-  description:
-    Jewelry made from painted leather, sculpey clay, copper clay, mosaic
-    glass, millefiori, and clay
-  images:
-    - image: felt-earrings
-    - image: bronze-copper-jewelry
-    - image: copper-jewlery
-    - image: polymer-clay-jewlery
-    - image: millefiori-glass-earings
-    - image: ceramic-earrings
-    - image: jewelry-1
-      description: These earings are painted on leather and are light as a feather.
-    - image: jewelry-10
-    - image: jewelry-11
-    - image: jewelry-12
-    - image: jewelry-13
-      description:
-        These earrings are constructed with painted egg shells on metal bases
-        covered with resin.
-    - image: jewelry-14
-      description:
-        These earrings are constructed with natural colored eggshells on
-        metal bases covered with resin.
-    - image: jewelry-9
+    - image: bushman-at-llaru
+      description: 15 x 22
+    - image: bushman-storyteller
+      description: 22 x 30
+    - image: bushwomen-at-llaru
+      description: 22 x 15
+    - image: camel-herder
+    - image: desert-girl
+      description: 15 x 22
+    - image: dogon-dame
+      description: 22 x 30
+    - image: homeward-bound
+      description: 15 x 22
+    - image: jaipur-market-3
+    - image: kavango-clan
+      description: 30 x 22
+    - image: mali-tribesman
+    - image: mother-and-child-bushman
+      description: 15 x 22
+    - image: reflection
+      description: 15 x 22
+    - image: sopa-samburu
+    - image: wayside-market
+    - image: zemba-girl
+      description: 15 x 22
+    - image: gurinisi-girl
+
 - group: mosaics
   title: Mosaics
   description:
@@ -117,6 +126,7 @@
       description: 9 x 9
     - image: bushwoman
     - image: cowboy-boots
+
 - group: paper-collage
   title: Paper Collage
   images:
@@ -135,72 +145,67 @@
       description: 22 x 15
     - image: bamileke-fete
     - image: djenne-mosque
-- group: printmaking
-  title: Printmaking
+
+- group: jewelry
+  title: Jewelry
+  description:
+    Jewelry made from painted leather, sculpey clay, copper clay, mosaic
+    glass, millefiori, and clay
   images:
-    - image: african-bullfight
-      description: 12 x 5
-    - image: bati-ganya
-      description: 9 x 12
-    - image: camel-caravan
-      description: 24 x 6
-    - image: child-of-hope
-      description: 12 x 17
-    - image: ciet-and-wa
-      description: 6 x 8
-    - image: dancing-samburu-women
-    - image: desert-wayside-a
-      description: 6 x 13
-    - image: desert-wayside-b
-      description: 6 x 13
-    - image: equipoise
-      description: 4 x 8
-    - image: desert-wayside-triptych
-      description: 24 x 14
-    - image: in-prayer
-      description: 10 x 14
-    - image: lake-dal
-      description: 12 x 8
-    - image: living-patterns
-      description: 11 x 12
-    - image: nkishu-cattleness
-      description: 18 x 9
-    - image: nomads-moving-on
-      description: 9 x 12
-    - image: oasis
-      description: 24 x 6
-    - image: pounding-fou-fou
-      description: 9 x 12
-    - image: ships-of-the-desert
-      description: 22 x 6
-    - image: turkana-girl
-      description: 6 x 8
-- group: watercolor
-  title: Watercolor
+    - image: felt-earrings
+    - image: bronze-copper-jewelry
+    - image: copper-jewlery
+    - image: polymer-clay-jewlery
+    - image: millefiori-glass-earings
+    - image: ceramic-earrings
+    - image: jewelry-1
+      description: These earings are painted on leather and are light as a feather.
+    - image: jewelry-10
+    - image: jewelry-11
+    - image: jewelry-12
+    - image: jewelry-13
+      description:
+        These earrings are constructed with painted egg shells on metal bases
+        covered with resin.
+    - image: jewelry-14
+      description:
+        These earrings are constructed with natural colored eggshells on
+        metal bases covered with resin.
+    - image: jewelry-9
+
+- group: ceramics
+  title: Ceramics
+  description: Mugs, bowls and plates
   images:
-    - image: bushman-at-llaru
-      description: 15 x 22
-    - image: bushman-storyteller
-      description: 22 x 30
-    - image: bushwomen-at-llaru
-      description: 22 x 15
-    - image: camel-herder
-    - image: desert-girl
-      description: 15 x 22
-    - image: dogon-dame
-      description: 22 x 30
-    - image: homeward-bound
-      description: 15 x 22
-    - image: jaipur-market-3
-    - image: kavango-clan
-      description: 30 x 22
-    - image: mali-tribesman
-    - image: mother-and-child-bushman
-      description: 15 x 22
-    - image: reflection
-      description: 15 x 22
-    - image: sopa-samburu
-    - image: wayside-market
-    - image: zemba-girl
-      description: 15 x 22
-    - image: gurinisi-girl
+    - image: ceramic-vessel
+    - image: mug-1
+    - image: mug-2
+    - image: mug-3
+    - image: mug-4
+    - image: mugs
+      description: Hand stamped, rolled, and glazed.
+    - image: ceramic-plate
+    - image: chimes
+    - image: cermaic-plate-2
+- group: hats
+  title: Hats
+  images:
+    - image: hat-01-inside
+      description: The inside of the hat
+    - image: hat-01-outside
+      description: The outside of the hat
+    - image: hat-02-inside
+      description: The inside of the hat
+    - image: hat-02-outside
+      description: The outside of the hat
+    - image: hat-05
+    - image: hat-06
+    - image: hat-07
+    - image: hat-08
+    - image: hat-09
+    - image: hat-10
+    - image: hat-11
+    - image: hat-12
+    - image: hat-13
+    - image: hat-14
+    - image: hat-15
