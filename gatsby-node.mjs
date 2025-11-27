@@ -38,6 +38,7 @@ export const createSchemaCustomization = ({ actions, schema }) => {
     }
     type PortfolioYaml implements Node {
       images: [PortfolioImage]!
+      firstImage: PortfolioImage
     }
   `;
 
@@ -45,7 +46,34 @@ export const createSchemaCustomization = ({ actions, schema }) => {
 };
 
 export const createResolvers = async ({ createResolvers: createResolversParam }) => {
+  // mapping of group to thumbnail image name
+  const thumbnailMapping = {
+    ceramics: 'mugs',
+    hats: 'hat-01-outside',
+    jewelry: 'polymer-clay-jewlery',
+    mosaics: 'bushwoman',
+    'paper-collage': 'celebration',
+    printmaking: 'desert-wayside-triptych',
+    watercolor: 'kavango-clan',
+  };
+
   const resolvers = {
+    PortfolioYaml: {
+      firstImage: {
+        type: 'PortfolioImage',
+        resolve(source) {
+          const thumbnailImageName = thumbnailMapping[source.group];
+          if (!thumbnailImageName) {
+            throw new Error('No thumbnail mapping found for group: ' + source.group);
+          }
+          const thumbnailImage = source.images?.find((img) => img.image === thumbnailImageName);
+          if (!thumbnailImage) {
+            throw new Error('No image found with name: ' + thumbnailImageName);
+          }
+          return thumbnailImage;
+        },
+      },
+    },
     Query: {
       randomPortfolioItems: {
         type: ['PortfolioImage'],
