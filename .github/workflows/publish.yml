@@ -43,5 +43,5 @@ jobs:
         if: ${{ steps.download-random-image-list.outcome != 'success' }}
         with:
           name: random-portfolio-items
-          path: ./
+          path: ./.random-portfolio-items.json
           retention-days: 90
