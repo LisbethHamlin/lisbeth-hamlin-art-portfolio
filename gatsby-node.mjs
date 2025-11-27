@@ -1,6 +1,5 @@
 import module from 'node:module';
 import fs from 'node:fs';
-import path from 'node:path';
 import { shuffle } from 'radash';
 
 const require = module.createRequire(import.meta.url);
@@ -19,7 +18,6 @@ const loadRandomNumbers = (limit) => {
   const newArray = shuffle(Array.from({ length: limit }, (_, i) => i));
 
   fs.writeFileSync(randomFilePath, JSON.stringify(newArray));
-  console.log(`[random-portfolio-items] File written to: ${path.resolve(randomFilePath)}`);
 
   return newArray;
 };
