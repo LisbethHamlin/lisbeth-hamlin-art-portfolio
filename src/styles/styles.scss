@@ -39,7 +39,7 @@
       grid-template-columns: 1fr 1fr;
 
       @include media-breakpoint-up(md) {
-        grid-template-columns: repeat(auto-fit, 300px);
+        grid-template-columns: repeat(auto-fit, $column-width);
       }
     }
 
@@ -49,7 +49,7 @@
 
       @include media-breakpoint-up(md) {
         column-count: auto;
-        column-width: 300px;
+        column-width: $column-width;
       }
       .grid-item {
         margin: 0;
