@@ -29,7 +29,7 @@
     "gatsby-plugin-image": "^3.3.2",
     "gatsby-plugin-mdx": "^5.3.1",
     "gatsby-plugin-react-helmet": "^6.3.0",
-    "gatsby-plugin-sass": "^6.3.1",
+    "gatsby-plugin-sass": "^6.15.0",
     "gatsby-plugin-sharp": "^5.8.1",
     "gatsby-plugin-sitemap": "^6.3.1",
     "gatsby-remark-images": "^7.3.1",
