@@ -3,31 +3,18 @@ import module from 'node:module';
 const require = module.createRequire(import.meta.url);
 const { urlFromTitle } = require('./src/url-builder');
 
-const getRandomPortfolioItems = async ({ array, limit }) => {
-  const url = new URL(process.env.WORKER_URL);
-  url.searchParams.set('limit', array.length);
-
-  const response = await fetch(url, {
-    method: 'GET',
-    headers: {
-      'CF-Access-Client-Id': process.env.CLIENT_ID,
-      'CF-Access-Client-Secret': process.env.CLIENT_SECRET,
-    },
-  });
-
-  if (!response.ok) {
-    throw new Error(`HTTP error status from worker: ${response.status}`);
-  }
-
-  const items = await response.json();
-
-  const newArray = new Array(limit);
-  for (let i = 0; i < limit; i++) {
-    newArray[i] = array[items[i]];
-  }
-
-  return newArray;
-};
+const indexPortfolioImageNames = [
+  'floating-vegetable-market',
+  'desert-wayside-triptych',
+  'bushwoman',
+  'celebration',
+  'reflection',
+  'camel-caravan',
+  'zemba-girl',
+  'djenne-mosque',
+  'nomads-moving-on',
+  'bushman-at-llaru',
+];
 
 export const createSchemaCustomization = ({ actions, schema }) => {
   const { createTypes } = actions;
@@ -54,7 +41,7 @@ export const createResolvers = async ({ createResolvers: createResolversParam })
     mosaics: 'bushwoman',
     'paper-collage': 'celebration',
     printmaking: 'desert-wayside-triptych',
-    watercolor: 'kavango-clan',
+    watercolor: 'floating-vegetable-market',
   };
 
   const resolvers = {
@@ -75,7 +62,7 @@ export const createResolvers = async ({ createResolvers: createResolversParam })
       },
     },
     Query: {
-      randomPortfolioItems: {
+      indexPortfolioItems: {
         type: ['PortfolioImage'],
         args: {
           limit: {
@@ -84,10 +71,18 @@ export const createResolvers = async ({ createResolvers: createResolversParam })
         },
         async resolve(source, args, { nodeModel }, info) {
           const { entries } = await nodeModel.findAll({ type: 'PortfolioYaml' });
-          return getRandomPortfolioItems({
-            array: Array.from(entries).flatMap((node) => node.images),
-            limit: args.limit,
+          const allImages = Array.from(entries).flatMap((node) => node.images);
+          const imageByName = new Map(allImages.map((image) => [image.image, image]));
+
+          const selectedImages = indexPortfolioImageNames.map((imageName) => {
+            const selectedImage = imageByName.get(imageName);
+            if (!selectedImage) {
+              throw new Error('No image found with name: ' + imageName);
+            }
+            return selectedImage;
           });
+
+          return selectedImages.slice(0, args.limit);
         },
       },
     },

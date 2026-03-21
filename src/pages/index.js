@@ -3,9 +3,9 @@ import { Page } from '../components/page';
 import { Gallery } from '../components/gallery';
 
 const HomePage = () => {
-  const { randomPortfolioItems } = useStaticQuery(graphql`
+  const { indexPortfolioItems } = useStaticQuery(graphql`
     query {
-      randomPortfolioItems(limit: 16) {
+      indexPortfolioItems(limit: 16) {
         ...PortfolioQuery
       }
     }
@@ -16,7 +16,7 @@ const HomePage = () => {
         Ethnic humanity is my subject matter and a source of my inspiration. My figurative images depict life of indigenous cultures that record primitive life
         with an ethnological perspective. Experiencing different cultures has helped me to realize there is not one way of living, but thousands.
       </p>
-      <Gallery images={randomPortfolioItems} />
+      <Gallery images={indexPortfolioItems} />
     </Page>
   );
 };
