@@ -37,14 +37,23 @@ export const Gallery = (props) => {
     dataSource: images,
   });
 
-  const imageComponents = images.map(({ childImageSharp: { thumbnail }, src, alt }, index) => {
-    const onClick = prevent(() => {
-      lightbox.loadAndOpen(index);
-    });
-    return <PortfolioImage image={thumbnail} originalImageSrc={src} alt={alt} key={src} onClick={onClick} className="grid-item" />;
+  const onClick = prevent((item) => {
+    const index = item.target?.closest('a')?.dataset.index;
+    if (index) {
+      lightbox.loadAndOpen(Number(index));
+    }
   });
 
-  return <div className="photo-gallery">{imageComponents}</div>;
+  const imageComponents = images.map(({ childImageSharp: { thumbnail }, src, alt }, index) => {
+    return <PortfolioImage image={thumbnail} originalImageSrc={src} alt={alt} key={src} data-index={index} className="grid-item" />;
+  });
+
+  return (
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events
+    <div className="photo-gallery" onClick={onClick} role="link" tabIndex={0}>
+      {imageComponents}
+    </div>
+  );
 };
 
 Gallery.propTypes = {
