@@ -1,0 +1,22 @@
+---
+import { Picture } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import headerImage from '../images/header.jpg';
+
+const pages = await getCollection('pages');
+const title = 'Lisbeth Hamlin';
+---
+
+<nav class="navbar navbar-expand-lg justify-content-between navbar-light">
+  <a href="/" class="navbar-brand">
+    <Picture src={headerImage} alt="Header Icon" class="align-middle" />
+    <span class="ms-1">{title}</span>
+  </a>
+  {pages.map(({ data: page }) => (
+    <li class="nav-item">
+      <a class="nav-link" href={page.slug}>
+        {page.title}
+      </a>
+    </li>
+  ))}
+</nav>

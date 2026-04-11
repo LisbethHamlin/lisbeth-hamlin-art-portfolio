@@ -1,0 +1,38 @@
+---
+import Header from '@components/header.astro';
+import Footer from '@components/footer.astro';
+import '@/styles/styles.scss';
+
+interface Props {
+  title?: string;
+}
+
+const siteTitle =
+  `Bryce Mehring` + (Astro.props.title ? ` | ${Astro.props.title}` : '');
+const siteDescription = `Bryce Mehring's personal website.`;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>{siteTitle}</title>
+    <meta name="description" content={siteDescription} />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={siteDescription} />
+    <meta property="og:type" content="website" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+  </head>
+  <body class="lisbeth-hamlin">
+    <div class="container-fluid pt-3 pb-5">
+      <Header pageTitle={Astro.props.title} />
+      <main>
+        <slot />
+      </main>
+    </div>
+    <Footer />
+  </body>
+</html>

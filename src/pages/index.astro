@@ -1,0 +1,15 @@
+---
+import Gallery from "@/components/gallery.astro";
+import Layout from "@/components/layout.astro";
+import { getCollection } from "astro:content";
+
+const indexPortfolioItems = await getCollection('indexPortfolio');
+const mappedIndexPortfolio = indexPortfolioItems.map((item) => item.data.image);
+---
+<Layout title="Artistic Statement">
+  <p class="lead">
+    Ethnic humanity is my subject matter and a source of my inspiration. My figurative images depict life of indigenous cultures that record primitive life
+    with an ethnological perspective. Experiencing different cultures has helped me to realize there is not one way of living, but thousands.
+  </p>
+  <Gallery images={mappedIndexPortfolio} />
+</Page>

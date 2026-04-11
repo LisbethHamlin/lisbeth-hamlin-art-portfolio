@@ -1,4 +1,4 @@
-- group: printmaking
+- id: printmaking
   title: Printmaking
   images:
     - image: african-bullfight
@@ -39,7 +39,7 @@
     - image: turkana-girl
       description: 6 x 8
 
-- group: watercolor
+- id: watercolor
   title: Watercolor
   images:
     - image: floating-vegetable-market
@@ -70,7 +70,7 @@
       description: 15 x 22
     - image: gurinisi-girl
 
-- group: mosaics
+- id: mosaics
   title: Mosaics
   description:
     Trivets, frames, trays, lamps, rocks, mirrors, candle holders, and
@@ -128,7 +128,7 @@
     - image: bushwoman
     - image: cowboy-boots
 
-- group: paper-collage
+- id: paper-collage
   title: Paper Collage
   images:
     - image: celebration
@@ -147,7 +147,7 @@
     - image: bamileke-fete
     - image: djenne-mosque
 
-- group: jewelry
+- id: jewelry
   title: Jewelry
   description:
     Jewelry made from painted leather, sculpey clay, copper clay, mosaic
@@ -174,7 +174,7 @@
         metal bases covered with resin.
     - image: jewelry-9
 
-- group: ceramics
+- id: ceramics
   title: Ceramics
   description: Mugs, bowls and plates
   images:
@@ -188,7 +188,7 @@
     - image: ceramic-plate
     - image: chimes
     - image: cermaic-plate-2
-- group: hats
+- id: hats
   title: Hats
   images:
     - image: hat-01-inside

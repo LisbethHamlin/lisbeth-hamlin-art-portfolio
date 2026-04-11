@@ -1,0 +1,21 @@
+---
+import RssImage from '@images/rss.svg';
+
+const buildYear = new Date().getUTCFullYear();
+const title = 'asdf';
+---
+
+<footer class="border-top pt-5 pb-2 fs-6">
+  <p>
+    &#169; {buildYear} {title}. This work is licensed under a
+    <a rel="license noreferrer" href="http://creativecommons.org/licenses/by-nc/4.0/">
+      Creative Commons Attribution-NonCommercial 4.0 International License.
+    </a>
+  </p>
+  <p class="links">
+    <a href="/rss.xml" target="_blank" class="rss">
+      <RssImage />
+    </a>
+  </p>
+</footer>
+

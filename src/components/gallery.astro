@@ -1,0 +1,21 @@
+---
+import { Picture } from 'astro:assets';
+
+interface Props {
+  images: any[];
+}
+
+const { images } = Astro.props;
+---
+
+<div class="photo-gallery">
+  {
+    images.map((image) => {
+      return (
+        <a href="/" class="grid-item">
+          <Picture src={image} alt="" quality={50} width={200} />
+        </a>
+      );
+    })
+  }
+</div>
