@@ -1,0 +1,24 @@
+---
+import Gallery from '@/components/gallery.astro';
+import Layout from '@/components/layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const portfolio = await getCollection('portfolio');
+  return portfolio.map((item) => ({
+    params: { id: item.id },
+    props: { portfolio: item },
+  }));
+}
+
+const portfolio = Astro.props.portfolio.data;
+const description = `${portfolio.title} art portfolio`;
+---
+
+<Layout
+  title={portfolio.title}
+  description={description}
+  breadcrumbs={['portfolio', portfolio.id]}
+>
+  <Gallery images={portfolio.images} />
+</Layout>
