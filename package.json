@@ -13,7 +13,7 @@
     "build:ci": "npm run format:check && npm run check && npm run build",
     "preview": "astro preview",
     "astro": "astro",
-    "publish:pages": "wrangler pages publish ./dist --project-name personal-website --branch $BRANCH"
+    "publish:pages": "wrangler pages publish ./dist --project-name lisbeth-hamlin-art-portfolio --branch $BRANCH"
   },
   "dependencies": {
     "@fontsource-variable/andada-pro": "^5.2.8",
@@ -21,6 +21,7 @@
     "photoswipe": "^5.2.2"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.8",
     "@astrojs/rss": "^4.0.18",
     "@astrojs/sitemap": "^3.7.2",
     "@contentful/rich-text-html-renderer": "^17.2.2",
@@ -32,6 +33,7 @@
     "prettier-plugin-astro": "^0.14.1",
     "rehype-class-names": "^2.0.0",
     "sass-embedded": "^1.99.0",
+    "typescript": "^5.9.3",
     "wrangler": "^4.81.1"
   }
 }
