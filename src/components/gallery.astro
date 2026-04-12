@@ -27,7 +27,7 @@ const resolvedImages = images.map(({ image, description, id }, index) => {
   {
     resolvedImages.map(({ image, description, index, fullSrc, imgTitle, alt }) => {
       return (
-        <a href={fullSrc} class="grid-item" data-index={String(index)} data-width={image.width} data-height={image.height} data-astro-reload>
+        <a href={fullSrc} class="grid-item" data-index={String(index)} data-width={image.width} data-height={image.height}>
           <Picture src={image} alt={alt} quality={50} width={312} class="img-fluid" />
           <div class="caption">
             <p class="text-capitalize">{imgTitle}</p>

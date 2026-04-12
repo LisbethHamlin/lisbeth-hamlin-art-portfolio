@@ -2,7 +2,6 @@
 import Header from '@components/header.astro';
 import Footer from '@components/footer.astro';
 import '@/styles/styles.scss';
-import { ClientRouter, fade } from 'astro:transitions';
 import Breadcrumb from './breadcrumb.astro';
 import { metadata } from '@/metadata';
 
@@ -14,11 +13,10 @@ export interface Props {
 
 const siteTitle = `${Astro.props.title} | ${metadata.title}`
 const siteDescription = `Bryce Mehring's personal website.`;
-const pageFade = fade({ duration: '150ms' });
 const { breadcrumbs, title } = Astro.props;
 ---
 
-<html lang="en" transition:animate={pageFade}>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -27,8 +25,8 @@ const { breadcrumbs, title } = Astro.props;
     <meta property="og:title" content={siteTitle} />
     <meta property="og:description" content={siteDescription} />
     <meta property="og:type" content="website" />
+    <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <ClientRouter />
   </head>
   <body>
     <main class="container lisbeth-hamlin">

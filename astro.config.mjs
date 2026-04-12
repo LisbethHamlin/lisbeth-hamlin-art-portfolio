@@ -8,12 +8,12 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
   site: 'https://lisbethhamlin.com',
   markdown: {
-   rehypePlugins: [
-     [rehypeClassNames, {
-       table: 'table'
-     }],
-   ],
- },
+    rehypePlugins: [
+      [rehypeClassNames, {
+        table: 'table'
+      }],
+    ],
+  },
   vite: {
     css: {
       preprocessorOptions: {

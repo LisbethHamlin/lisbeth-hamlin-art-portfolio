@@ -1,5 +1,5 @@
 ---
-import { Picture } from 'astro:assets';
+import { Image } from 'astro:assets';
 import headerImage from '../images/header.jpg';
 import { metadata } from '@/metadata';
 
@@ -24,7 +24,7 @@ const pages = [
 
 <nav class="navbar navbar-expand-lg justify-content-between navbar-light">
   <a href="/" class="navbar-brand">
-    <Picture src={headerImage} alt="Header Icon" class="align-middle" />
+    <Image src={headerImage} alt="Header Icon" class="align-middle" loading="eager" />
     <span class="ms-1">{metadata.title}</span>
   </a>
   <ul class="navbar-nav">
