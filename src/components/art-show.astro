@@ -1,6 +1,5 @@
 ---
 import { urlFromTitle } from '@/utils';
-import Calendar from '@images/calendar.svg';
 
 interface Props {
   title: string;
@@ -11,16 +10,31 @@ const { title, excerpt } = Astro.props;
 const href = `/art-shows/${urlFromTitle(title)}`;
 ---
 
-<div class="col">
-  <div class="card text-center">
-    <a href={href}>
-      <div class="card-img-top">
-        <Calendar />
-      </div>
-      <div class="card-body">
-        <h3>{title}</h3>
-        <p>{excerpt}</p>
-      </div>
-    </a>
-  </div>
-</div>
+<article class="show-entry">
+  <a href={href} class="nav-link">
+    <h3>{title}</h3>
+    <p>{excerpt}</p>
+  </a>
+</article>
+
+<style>
+  .show-entry {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .show-entry a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .show-entry h3 {
+    margin: 0 0 0.25rem;
+  }
+
+  .show-entry p {
+    margin: 0;
+    color: var(--color-muted);
+  }
+</style>

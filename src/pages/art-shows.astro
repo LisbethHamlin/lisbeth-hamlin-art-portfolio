@@ -9,21 +9,25 @@ const description = `${metadata.title} Art Shows`;
 ---
 
 <Layout title={title} description={description}>
-  {
-    artShows.items.length > 0 && (
-      <p>You can view my art at any of these art shows:</p>
-    )
-  }
-  {
-    artShows.items.length &&
-      artShows.items.map((item) => (
-        <section class="row row-cols-md-3 row-cols-1">
+  {artShows.items.length > 0 && (
+    <>
+      <p>Come see my work in person at one of these upcoming shows.</p>
+      <div class="art-shows-list">
+        {artShows.items.map((item) => (
           <ArtShow
             title={item.fields.displayField}
             excerpt={item.fields.excerpt}
           />
-        </section>
-      ))
-  }
+        ))}
+      </div>
+    </>
+  )}
   {!artShows.items.length && <p>I currently do not have any art shows.</p>}
 </Layout>
+
+<style>
+  .art-shows-list {
+    border-top: 1px solid #e0e0e0;
+    margin-top: 0.5rem;
+  }
+</style>

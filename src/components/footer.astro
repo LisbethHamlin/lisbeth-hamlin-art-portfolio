@@ -3,6 +3,7 @@ import RssImage from '@images/rss.svg';
 import { metadata } from '@/metadata';
 
 const buildYear = new Date().getUTCFullYear();
+const rssTitle = "RSS Feed";
 ---
 
 <footer class="border-top pt-5 pb-2 fs-6">
@@ -17,7 +18,7 @@ const buildYear = new Date().getUTCFullYear();
     </a>
   </p>
   <p class="links">
-    <a href="/rss.xml" target="_blank" class="rss">
+    <a href="/rss.xml" target="_blank" class="rss" title={rssTitle} aria-label={rssTitle}>
       <RssImage />
     </a>
   </p>
