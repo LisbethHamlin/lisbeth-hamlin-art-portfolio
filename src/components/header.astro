@@ -1,10 +1,30 @@
 ---
 import { Picture } from 'astro:assets';
-import { getCollection } from 'astro:content';
 import headerImage from '../images/header.jpg';
 
-const pages = await getCollection('pages');
+interface Props {
+  pageTitle: string;
+}
+
 const title = 'Lisbeth Hamlin';
+const { pageTitle } = Astro.props;
+const pages = [
+  {
+    title: 'Art Shows',
+    slug: '/art-shows/',
+    excerpt: 'Upcoming art shows',
+  },
+  {
+    title: 'Portfolio',
+    slug: '/portfolio/',
+    excerpt: 'My portfolio',
+  },
+  {
+    title: 'About',
+    slug: '/about/',
+    excerpt: 'More information about myself',
+  },
+];
 ---
 
 <nav class="navbar navbar-expand-lg justify-content-between navbar-light">
@@ -12,11 +32,17 @@ const title = 'Lisbeth Hamlin';
     <Picture src={headerImage} alt="Header Icon" class="align-middle" />
     <span class="ms-1">{title}</span>
   </a>
-  {pages.map(({ data: page }) => (
-    <li class="nav-item">
-      <a class="nav-link" href={page.slug}>
-        {page.title}
-      </a>
-    </li>
-  ))}
+  <ul class="navbar-nav">
+    {
+      pages.map((page) => (
+        <li class="nav-item">
+          <a class="nav-link" href={page.slug}>
+            {page.title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
 </nav>
+
+<h1>{pageTitle}</h1>

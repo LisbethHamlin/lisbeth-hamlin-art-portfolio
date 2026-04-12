@@ -1,10 +1,18 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import rehypeClassNames from 'rehype-class-names';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://brycemehring.com',
+   markdown: {
+    rehypePlugins: [
+      [rehypeClassNames, {
+        table: 'table'
+      }],
+    ],
+  },
   redirects: {
     '/projects': '/',
   },

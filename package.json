@@ -25,6 +25,7 @@
     "@types/js-yaml": "^4.0.9",
     "astro": "^6.1.5",
     "js-yaml": "^4.1.1",
+    "rehype-class-names": "^2.0.0",
     "sass-embedded": "^1.99.0",
     "wrangler": "^4.59.1"
   }

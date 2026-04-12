@@ -6,16 +6,81 @@ interface Props {
 }
 
 const { images } = Astro.props;
+
+const cleanGroup = (src: string) => src.replaceAll('-', ' ');
+
+const resolvedImages = images.map(({ image, description, id }, index) => {
+  return { image, description, index, fullSrc: image.src, imgTitle: cleanGroup(id) };
+});
 ---
 
 <div class="photo-gallery">
   {
-    images.map((image) => {
+    resolvedImages.map(({ image, description, index, fullSrc, imgTitle }) => {
       return (
-        <a href="/" class="grid-item">
-          <Picture src={image} alt="" quality={50} width={200} />
+        <a href={fullSrc} class="grid-item" data-index={String(index)} data-width={image.width} data-height={image.height} >
+          <Picture src={image} alt="" quality={50} width={312} class="img-fluid" />
+          <div class="caption">
+            <p class="text-capitalize">{imgTitle}</p>
+            {description && <p>{description}</p>}
+          </div>
         </a>
       );
     })
   }
 </div>
+
+<style>
+a.grid-item .caption {
+  display: none;
+}
+</style>
+
+<script>
+import PhotoSwipeLightbox from 'photoswipe/lightbox';
+import 'photoswipe/dist/photoswipe.css';
+
+const photoGallery = document.querySelectorAll<HTMLAnchorElement>('.photo-gallery a');
+
+if (!photoGallery.length) {
+  throw new Error('cannot find photo gallery');
+}
+
+const lightbox = new PhotoSwipeLightbox({
+  pswpModule: () => import('photoswipe'),
+  dataSource: Array.from(photoGallery).map((item) => {
+    return {
+      src: item.getAttribute('href')!,
+      width: Number(item.dataset.width!),
+      height: Number(item.dataset.height!),
+      captionHTML: item.querySelector('.caption')!.innerHTML,
+    };
+  }),
+  bgOpacity: 1.0,
+});
+
+ lightbox.on('uiRegister', function () {
+  lightbox.pswp!.ui!.registerElement({
+    name: 'custom-caption',
+    order: 9,
+    isButton: false,
+    appendTo: 'root',
+    html: 'Caption text',
+    onInit: (el, pswp) => {
+      lightbox.pswp!.on('change', () => {
+        el.innerHTML = lightbox.pswp!.currSlide!.data.captionHTML || '';
+      });
+    },
+  });
+});
+
+document.querySelector('.photo-gallery')?.addEventListener('click', (event) => {
+  event.preventDefault();
+  const index = (event.target as Element)?.closest('a')?.dataset.index;
+  if (index) {
+    lightbox.loadAndOpen(Number(index));
+  }
+});
+
+lightbox.init();
+</script>

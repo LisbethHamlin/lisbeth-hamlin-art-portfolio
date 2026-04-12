@@ -1,0 +1,30 @@
+---
+import Layout from '@/components/layout.astro';
+import { Picture } from 'astro:assets';
+import { getCollection } from 'astro:content';
+
+const portfolio = await getCollection('portfolio');
+const mappedPortfolio = portfolio
+  .map((item) => ({
+    ...item.data,
+    path: `/portfolio/${item.id}`,
+  }))
+  .sort((a, b) => a.order - b.order);
+---
+
+<Layout title="Portfolio">
+  <div class="row">
+    {
+      mappedPortfolio.map((item) => (
+        <div class="col-6 col-md-4 col-lg-3 mb-3">
+          <a href={item.path} class="d-block">
+            <figure class="mb-0">
+              <Picture src={item.thumbnail} alt="" width={300} height={300} quality={50} />
+              <figcaption class="text-center fs-5 mt-2">{item.title}</figcaption>
+            </figure>
+          </a>
+        </div>
+      ))
+    }
+  </div>
+</Layout>

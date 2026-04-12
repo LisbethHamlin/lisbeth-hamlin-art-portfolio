@@ -1,9 +1,10 @@
 @import "./variables.scss";
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "bootstrap/scss/bootstrap.scss";
+@import '@fontsource-variable/andada-pro/wght.css';
 
 .lisbeth-hamlin {
   h1, h2, h3 {
-    font-family: "Andada Pro", serif;
+    font-family: 'Andada Pro Variable', serif;
   }
 
   h1 {
@@ -72,6 +73,11 @@
   
       .rss {
         color: rgb(234,120, 25);
+        svg {
+          font-size: 3rem;
+          height: 3rem;
+          fill: currentColor;
+        }
       }
     }
   }
