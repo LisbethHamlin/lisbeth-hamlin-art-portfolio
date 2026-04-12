@@ -84,7 +84,7 @@ const resolvedImages = images.map(({ image, description, id }, index) => {
       isButton: false,
       appendTo: 'root',
       html: 'Caption text',
-      onInit: (el, pswp) => {
+      onInit: (el) => {
         lightbox.pswp!.on('change', () => {
           el.innerHTML = lightbox.pswp!.currSlide!.data.captionHTML || '';
         });
