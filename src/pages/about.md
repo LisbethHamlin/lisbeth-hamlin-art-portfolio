@@ -44,7 +44,7 @@ I have found many Shangri-Las. I have tried to capture the unique beauty, the vi
 | Year | Event                                                                                     |
 | ---- | ----------------------------------------------------------------------------------------- |
 | 2015 | Traveler's Palette - First place, second place and honorable mention <br/> St. Peters, MO |
-| 1986 | Lilian Glazer Purchase Prize <br/> Louisiana Watercolor Society, New Orleans, LA         |
+| 1986 | Lilian Glazer Purchase Prize <br/> Louisiana Watercolor Society, New Orleans, LA          |
 | 1986 | American Watercolor Society 119th Annual Competition <br/> New York, NY                   |
 | 1984 | Watercolor West XVI <br/> Riverside, CA                                                   |
 | 1978 | Carpenter Annual Watercolor Prize <br/> St. Louis Artists Guild, St. Louis, MO            |
