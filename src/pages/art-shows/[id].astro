@@ -1,0 +1,26 @@
+---
+import Layout from '@/components/layout.astro';
+import { artShows } from '@/contentful';
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+import { urlFromTitle } from '@/utils';
+
+export async function getStaticPaths() {
+  return artShows.items.map((item) => {
+    return {
+      params: { id: urlFromTitle(item.fields.displayField) },
+      props: { artShow: item },
+    };
+  });
+}
+
+const { artShow } = Astro.props;
+const description = `${artShow.fields.displayField} art show`;
+---
+
+<Layout
+  title={artShow.fields.displayField}
+  description={description}
+  breadcrumbs={['art-shows', artShow.fields.displayField]}
+>
+  <article set:html={documentToHtmlString(artShow.fields.post)} />
+</Layout>

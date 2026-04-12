@@ -1,5 +1,7 @@
-- group: printmaking
+- id: printmaking
   title: Printmaking
+  order: 1
+  thumbnail: desert-wayside-triptych
   images:
     - image: african-bullfight
       description: 12 x 5
@@ -39,8 +41,10 @@
     - image: turkana-girl
       description: 6 x 8
 
-- group: watercolor
+- id: watercolor
+  order: 2
   title: Watercolor
+  thumbnail: floating-vegetable-market
   images:
     - image: floating-vegetable-market
     - image: bushman-at-llaru
@@ -70,8 +74,10 @@
       description: 15 x 22
     - image: gurinisi-girl
 
-- group: mosaics
+- id: mosaics
+  order: 3
   title: Mosaics
+  thumbnail: bushwoman
   description:
     Trivets, frames, trays, lamps, rocks, mirrors, candle holders, and
     wall hangings
@@ -128,7 +134,9 @@
     - image: bushwoman
     - image: cowboy-boots
 
-- group: paper-collage
+- id: paper-collage
+  order: 4
+  thumbnail: celebration
   title: Paper Collage
   images:
     - image: celebration
@@ -147,7 +155,9 @@
     - image: bamileke-fete
     - image: djenne-mosque
 
-- group: jewelry
+- id: jewelry
+  order: 5
+  thumbnail: polymer-clay-jewlery
   title: Jewelry
   description:
     Jewelry made from painted leather, sculpey clay, copper clay, mosaic
@@ -174,7 +184,9 @@
         metal bases covered with resin.
     - image: jewelry-9
 
-- group: ceramics
+- id: ceramics
+  order: 6
+  thumbnail: mugs
   title: Ceramics
   description: Mugs, bowls and plates
   images:
@@ -188,7 +200,9 @@
     - image: ceramic-plate
     - image: chimes
     - image: cermaic-plate-2
-- group: hats
+- id: hats
+  order: 7
+  thumbnail: hat-01-outside
   title: Hats
   images:
     - image: hat-01-inside

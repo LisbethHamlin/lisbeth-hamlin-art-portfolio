@@ -1,0 +1,31 @@
+---
+import { cleanGroup } from '@/utils';
+
+interface Props {
+  ids?: string[];
+}
+
+const { ids } = Astro.props;
+---
+
+{
+  ids && (
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb text-capitalize">
+        {ids.map((id, index) => {
+          const isNotLastIndex = index !== ids.length - 1;
+          const href = isNotLastIndex
+            ? `/${ids.slice(0, index + 1).join('/')}`
+            : null;
+          const cleanedId = cleanGroup(id);
+          return (
+            <li class="breadcrumb-item">
+              {!href && cleanedId}
+              {href && <a href={href}>{cleanedId}</a>}
+            </li>
+          );
+        })}
+      </ol>
+    </nav>
+  )
+}

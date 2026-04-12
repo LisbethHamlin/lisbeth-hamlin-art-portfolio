@@ -1,0 +1,46 @@
+---
+import { Image } from 'astro:assets';
+import headerImage from '../images/header.jpg';
+import { metadata } from '@/metadata';
+
+const pages = [
+  {
+    title: 'Art Shows',
+    slug: '/art-shows/',
+    excerpt: 'Upcoming art shows',
+  },
+  {
+    title: 'Portfolio',
+    slug: '/portfolio/',
+    excerpt: 'My portfolio',
+  },
+  {
+    title: 'About',
+    slug: '/about/',
+    excerpt: 'More information about myself',
+  },
+];
+---
+
+<nav class="navbar navbar-expand-lg justify-content-between navbar-light">
+  <a href="/" class="navbar-brand">
+    <Image
+      src={headerImage}
+      alt="Header Icon"
+      class="align-middle"
+      loading="eager"
+    />
+    <span class="ms-1">{metadata.title}</span>
+  </a>
+  <ul class="navbar-nav">
+    {
+      pages.map((page) => (
+        <li class="nav-item">
+          <a class="nav-link" href={page.slug}>
+            {page.title}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

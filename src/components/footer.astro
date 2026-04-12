@@ -1,0 +1,31 @@
+---
+import RssImage from '@images/rss.svg';
+import { metadata } from '@/metadata';
+
+const buildYear = new Date().getUTCFullYear();
+const rssTitle = 'RSS Feed';
+---
+
+<footer class="border-top pt-5 pb-2 fs-6">
+  <p>
+    &#169; {buildYear}
+    {' '}{metadata.title}. This work is licensed under a
+    <a
+      rel="license noreferrer"
+      href="http://creativecommons.org/licenses/by-nc/4.0/"
+    >
+      Creative Commons Attribution-NonCommercial 4.0 International License.
+    </a>
+  </p>
+  <p class="links">
+    <a
+      href="/rss.xml"
+      target="_blank"
+      class="rss"
+      title={rssTitle}
+      aria-label={rssTitle}
+    >
+      <RssImage />
+    </a>
+  </p>
+</footer>
