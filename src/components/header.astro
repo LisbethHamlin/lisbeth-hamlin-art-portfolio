@@ -1,13 +1,8 @@
 ---
 import { Picture } from 'astro:assets';
 import headerImage from '../images/header.jpg';
+import { metadata } from '@/metadata';
 
-interface Props {
-  pageTitle: string;
-}
-
-const title = 'Lisbeth Hamlin';
-const { pageTitle } = Astro.props;
 const pages = [
   {
     title: 'Art Shows',
@@ -30,7 +25,7 @@ const pages = [
 <nav class="navbar navbar-expand-lg justify-content-between navbar-light">
   <a href="/" class="navbar-brand">
     <Picture src={headerImage} alt="Header Icon" class="align-middle" />
-    <span class="ms-1">{title}</span>
+    <span class="ms-1">{metadata.title}</span>
   </a>
   <ul class="navbar-nav">
     {
@@ -44,5 +39,3 @@ const pages = [
     }
   </ul>
 </nav>
-
-<h1>{pageTitle}</h1>

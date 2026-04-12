@@ -59,4 +59,4 @@ I have found many Shangri-Las. I have tried to capture the unique beauty, the vi
 
 ## Contact Info
 
-Please contact me at 
+Please contact me at betsydhamlin@yahoo.com

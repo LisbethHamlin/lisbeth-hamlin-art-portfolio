@@ -3,15 +3,19 @@ import Header from '@components/header.astro';
 import Footer from '@components/footer.astro';
 import '@/styles/styles.scss';
 import { ClientRouter, fade } from 'astro:transitions';
+import Breadcrumb from './breadcrumb.astro';
+import { metadata } from '@/metadata';
 
 
 export interface Props {
   title: string;
+  breadcrumbs?: string[];
 }
 
-const siteTitle = `Bryce Mehring` + (Astro.props.title ? ` | ${Astro.props.title}` : '');
+const siteTitle = `${Astro.props.title} | ${metadata.title}`
 const siteDescription = `Bryce Mehring's personal website.`;
 const pageFade = fade({ duration: '150ms' });
+const { breadcrumbs, title } = Astro.props;
 ---
 
 <html lang="en" transition:animate={pageFade}>
@@ -24,11 +28,13 @@ const pageFade = fade({ duration: '150ms' });
     <meta property="og:description" content={siteDescription} />
     <meta property="og:type" content="website" />
     <link rel="sitemap" href="/sitemap-index.xml" />
-    <ClientRouter transition:animate={fade({ duration: '5s' })} />
+    <ClientRouter />
   </head>
   <body>
     <main class="container lisbeth-hamlin">
-      <Header pageTitle={Astro.props.title} />
+      <Header />
+      <Breadcrumb ids={breadcrumbs} />
+      <h1>{title}</h1>
       <slot />
       <Footer />
     </main>

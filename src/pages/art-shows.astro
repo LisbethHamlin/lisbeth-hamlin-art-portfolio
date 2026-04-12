@@ -1,0 +1,14 @@
+---
+import ArtShow from "@/components/art-show.astro";
+import Layout from "@/components/layout.astro";
+import { artShows } from "@/contentful";
+---
+
+<Layout title="Art Shows">
+  {artShows.items.length && artShows.items.filter((item) => !item.fields.ignore).map((item) => (
+    <section class="row row-cols-md-3 row-cols-1">
+      <ArtShow title={item.fields.displayField} excerpt={item.fields.excerpt} />
+    </section>
+  ))}
+  {!artShows.items.length && <p>I currently do not have any art shows.</p>}
+</Layout>

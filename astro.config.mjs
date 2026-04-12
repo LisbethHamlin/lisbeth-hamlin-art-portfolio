@@ -2,20 +2,18 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import rehypeClassNames from 'rehype-class-names';
+import cloudflare from '@astrojs/cloudflare';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://brycemehring.com',
-   markdown: {
-    rehypePlugins: [
-      [rehypeClassNames, {
-        table: 'table'
-      }],
-    ],
-  },
-  redirects: {
-    '/projects': '/',
-  },
+  site: 'https://lisbethhamlin.com',
+  markdown: {
+   rehypePlugins: [
+     [rehypeClassNames, {
+       table: 'table'
+     }],
+   ],
+ },
   vite: {
     css: {
       preprocessorOptions: {

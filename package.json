@@ -16,17 +16,23 @@
     "publish:pages": "wrangler pages publish ./dist --project-name personal-website --branch $BRANCH"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^13.1.8",
     "@fontsource-variable/andada-pro": "^5.2.8",
     "bootstrap": "^5.1.3",
     "photoswipe": "^5.2.2"
   },
   "devDependencies": {
     "@astrojs/sitemap": "^3.7.2",
+    "@contentful/rich-text-html-renderer": "^17.2.2",
     "@types/js-yaml": "^4.0.9",
     "astro": "^6.1.5",
+    "contentful": "^11.12.0",
     "js-yaml": "^4.1.1",
     "rehype-class-names": "^2.0.0",
     "sass-embedded": "^1.99.0",
-    "wrangler": "^4.59.1"
+    "wrangler": "^4.81.1"
+  },
+  "overrides": {
+    "vite": "^7"
   }
 }

@@ -1,0 +1,25 @@
+---
+import { urlFromTitle} from '@/utils';
+
+interface Props {
+  title: string;
+  excerpt: string;
+}
+
+const { title, excerpt } = Astro.props;
+const href = `/art-shows/${urlFromTitle(title)}`;
+---
+
+<div class="col">
+  <div class="card text-center">
+    <a href={href}>
+      <div class="card-img-top">
+        
+      </div>
+      <div class="card-body">
+        <h3>{title}</h3>
+        <p>{excerpt}</p>
+      </div>
+    </a>
+  </div>
+</div>

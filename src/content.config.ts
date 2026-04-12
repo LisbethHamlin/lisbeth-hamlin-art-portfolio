@@ -84,6 +84,7 @@ const indexPortfolioCollection = defineCollection({
   }),
   schema: ({ image }) => z.object({
     image: image(),
+    id: z.string(),
     description: z.string().optional(),
   })
 });
