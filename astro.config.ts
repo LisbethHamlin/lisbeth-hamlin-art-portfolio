@@ -15,6 +15,14 @@ export default defineConfig({
       ],
     ],
   },
+  security: {
+    csp: {
+      directives: ["default-src 'none'", "img-src 'self'", "font-src 'self'", "connect-src https://cloudflareinsights.com"],
+      scriptDirective: {
+        resources: ["'self'", 'https://static.cloudflareinsights.com'],
+      },
+    },
+  },
   vite: {
     css: {
       preprocessorOptions: {
