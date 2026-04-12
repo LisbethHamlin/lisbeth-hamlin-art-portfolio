@@ -12,8 +12,13 @@ export async function getStaticPaths() {
 }
 
 const portfolio = Astro.props.portfolio.data;
+const description = `${portfolio.title} art portfolio`;
 ---
 
-<Layout title={portfolio.title} breadcrumbs={['portfolio', portfolio.id]}>
+<Layout
+  title={portfolio.title}
+  description={description}
+  breadcrumbs={['portfolio', portfolio.id]}
+>
   <Gallery images={portfolio.images} />
-</Page>
+</Layout>

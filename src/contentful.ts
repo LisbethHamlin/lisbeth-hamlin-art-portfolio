@@ -1,13 +1,12 @@
-import { createClient, type EntryFieldTypes } from "contentful";
+import { createClient, type EntryFieldTypes } from 'contentful';
 
 export interface ContentfulArtShowProps {
-  contentTypeId: "artShows",
+  contentTypeId: 'artShows';
   fields: {
-    ignore: EntryFieldTypes.Boolean;
     excerpt: EntryFieldTypes.Text;
     displayField: EntryFieldTypes.Text;
     post: EntryFieldTypes.RichText;
-  }
+  };
 }
 
 const contentfulClient = createClient({
@@ -15,6 +14,7 @@ const contentfulClient = createClient({
   accessToken: import.meta.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
-export const artShows = await contentfulClient.getEntries<ContentfulArtShowProps>({
-  content_type: "artShows",
-});
+export const artShows =
+  await contentfulClient.getEntries<ContentfulArtShowProps>({
+    content_type: 'artShows',
+  });

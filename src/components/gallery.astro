@@ -25,17 +25,31 @@ const resolvedImages = images.map(({ image, description, id }, index) => {
 
 <div class="photo-gallery">
   {
-    resolvedImages.map(({ image, description, index, fullSrc, imgTitle, alt }) => {
-      return (
-        <a href={fullSrc} class="grid-item" data-index={String(index)} data-width={image.width} data-height={image.height}>
-          <Picture src={image} alt={alt} quality={50} width={312} class="img-fluid" />
-          <div class="caption">
-            <p class="text-capitalize">{imgTitle}</p>
-            {description && <p>{description}</p>}
-          </div>
-        </a>
-      );
-    })
+    resolvedImages.map(
+      ({ image, description, index, fullSrc, imgTitle, alt }) => {
+        return (
+          <a
+            href={fullSrc}
+            class="grid-item"
+            data-index={String(index)}
+            data-width={image.width}
+            data-height={image.height}
+          >
+            <Picture
+              src={image}
+              alt={alt}
+              quality={50}
+              width={312}
+              class="img-fluid"
+            />
+            <div class="caption">
+              <p class="text-capitalize">{imgTitle}</p>
+              {description && <p>{description}</p>}
+            </div>
+          </a>
+        );
+      }
+    )
   }
 </div>
 
@@ -43,7 +57,8 @@ const resolvedImages = images.map(({ image, description, id }, index) => {
   import PhotoSwipeLightbox from 'photoswipe/lightbox';
   import 'photoswipe/dist/photoswipe.css';
 
-  const photoGallery = document.querySelectorAll<HTMLAnchorElement>('.photo-gallery a');
+  const photoGallery =
+    document.querySelectorAll<HTMLAnchorElement>('.photo-gallery a');
 
   if (!photoGallery.length) {
     throw new Error('cannot find photo gallery');
@@ -77,13 +92,15 @@ const resolvedImages = images.map(({ image, description, id }, index) => {
     });
   });
 
-  document.querySelector('.photo-gallery')?.addEventListener('click', (event) => {
-    event.preventDefault();
-    const index = (event.target as Element)?.closest('a')?.dataset.index;
-    if (index) {
-      lightbox.loadAndOpen(Number(index));
-    }
-  });
+  document
+    .querySelector('.photo-gallery')
+    ?.addEventListener('click', (event) => {
+      event.preventDefault();
+      const index = (event.target as Element)?.closest('a')?.dataset.index;
+      if (index) {
+        lightbox.loadAndOpen(Number(index));
+      }
+    });
 
   lightbox.init();
 </script>

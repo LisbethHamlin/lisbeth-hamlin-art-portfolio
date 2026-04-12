@@ -1,8 +1,16 @@
 {
-  "tabWidth": 2,
-  "useTabs": false,
+  "plugins": ["prettier-plugin-astro"],
+  "endOfLine": "auto",
   "semi": true,
   "singleQuote": true,
-  "endOfLine": "auto",
-  "printWidth": 160
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "overrides": [
+    {
+      "files": "*.astro",
+      "options": {
+        "parser": "astro"
+      }
+    }
+  ]
 }

@@ -1,28 +1,31 @@
-@import "./variables.scss";
-@import "bootstrap/scss/bootstrap.scss";
+@import './variables.scss';
+@import 'bootstrap/scss/bootstrap.scss';
 @import '@fontsource-variable/andada-pro/wght.css';
 
 .lisbeth-hamlin {
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     font-family: 'Andada Pro Variable', serif;
   }
 
   h1 {
     font-weight: bold;
   }
-  
+
   h2 {
     margin: 1.5rem 0;
   }
-  
+
   hr {
     margin: 3rem 0;
   }
-  
+
   a {
     color: #000;
     background-color: transparent;
   }
+
   a:not(.nav-link, .navbar-brand):hover {
     color: #000;
     text-decoration: underline;
@@ -30,11 +33,11 @@
 
   .photo-gallery {
     margin-bottom: 1rem;
-    
+
     @supports (grid-template-rows: masonry) {
       display: grid;
       justify-content: center;
-      
+
       grid-template-rows: masonry;
       grid-gap: 1rem;
       grid-template-columns: 1fr 1fr;
@@ -52,6 +55,7 @@
         column-count: auto;
         column-width: $column-width;
       }
+
       .grid-item {
         margin: 0;
         display: grid;
@@ -70,16 +74,17 @@
         margin-left: 0.5rem;
         margin-right: 0.5rem;
       }
-  
+
       .rss {
-        color: rgb(234,120, 25);
-        svg {
-          font-size: 3rem;
-          height: 3rem;
-          fill: currentColor;
-        }
+        color: rgb(234, 120, 25);
       }
     }
+  }
+
+  svg {
+    font-size: 3rem;
+    height: 3rem;
+    fill: currentColor;
   }
 }
 

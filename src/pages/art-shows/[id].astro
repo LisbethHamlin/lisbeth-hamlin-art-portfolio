@@ -1,13 +1,11 @@
 ---
 import Layout from '@/components/layout.astro';
 import { artShows } from '@/contentful';
-import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
+import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 import { urlFromTitle } from '@/utils';
 
 export async function getStaticPaths() {
-  return artShows.items.filter((item) => !item.fields.ignore).map((item) => {
-    const id = urlFromTitle(item.fields.displayField);
-    console.log('id', id);
+  return artShows.items.map((item) => {
     return {
       params: { id: urlFromTitle(item.fields.displayField) },
       props: { artShow: item },
@@ -16,8 +14,13 @@ export async function getStaticPaths() {
 }
 
 const { artShow } = Astro.props;
+const description = `${artShow.fields.displayField} art show`;
 ---
 
-<Layout title={artShow.fields.displayField} breadcrumbs={['art-shows', artShow.fields.displayField]}>
-  <article set:html={documentToHtmlString(artShow.fields.post)}></article>
+<Layout
+  title={artShow.fields.displayField}
+  description={description}
+  breadcrumbs={['art-shows', artShow.fields.displayField]}
+>
+  <article set:html={documentToHtmlString(artShow.fields.post)} />
 </Layout>

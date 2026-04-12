@@ -1,32 +1,40 @@
 ---
 import Header from '@components/header.astro';
 import Footer from '@components/footer.astro';
-import '@/styles/styles.scss';
 import Breadcrumb from './breadcrumb.astro';
 import { metadata } from '@/metadata';
-
+import '@/styles/styles.scss';
 
 export interface Props {
   title: string;
+  description?: string;
   breadcrumbs?: string[];
 }
 
-const siteTitle = `${Astro.props.title} | ${metadata.title}`
-const siteDescription = `Bryce Mehring's personal website.`;
-const { breadcrumbs, title } = Astro.props;
+const siteTitle = `${Astro.props.title} | ${metadata.title}`;
+const { breadcrumbs, title, description = metadata.description } = Astro.props;
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <title>{siteTitle}</title>
-    <meta name="description" content={siteDescription} />
+    <meta name="description" content={description} />
     <meta property="og:title" content={siteTitle} />
-    <meta property="og:description" content={siteDescription} />
+    <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Lisbeth Hamlin Art Shows"
+      href={new URL('rss.xml', Astro.site)}
+    />
   </head>
   <body>
     <main class="container lisbeth-hamlin">

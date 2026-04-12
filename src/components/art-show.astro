@@ -1,5 +1,6 @@
 ---
-import { urlFromTitle} from '@/utils';
+import { urlFromTitle } from '@/utils';
+import Calendar from '@images/calendar.svg';
 
 interface Props {
   title: string;
@@ -14,7 +15,7 @@ const href = `/art-shows/${urlFromTitle(title)}`;
   <div class="card text-center">
     <a href={href}>
       <div class="card-img-top">
-        
+        <Calendar />
       </div>
       <div class="card-body">
         <h3>{title}</h3>

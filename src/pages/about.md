@@ -27,35 +27,35 @@ I have found many Shangri-Las. I have tried to capture the unique beauty, the vi
 
 ## Solo Exhibitions
 
-| Year| Event |
-|------|------|
-| 2002 | Africa Kaleidoscopes - Gallerie of South Orange <br/> South Orange, NJ |
-| 1997 | Africa Adorned - Robins Hutchins Gallery <br/> Maplewood, NJ |
-| 1996 <br/> 1990 | Africa in Color - Gallerie La Taj <br/> Alexandria, VA |
-| 1987 | Art & Artifact - Savacou Gallery <br/> New York, NY |
-| 1984 | Expand Your Horizon - Phinney Ridge Gallery <br/> Seattle, WA |
-| 1984 | Impressions of India - Principia Museum <br/> St. Louis, MO |
-| 1983 | People of Africa - Gallerie La Taj <br/> Alexandria, VA |
-| 1980 | Black and White & Color - Gallery Watatu <br/> Nairobi, Kenya |
-| 1978 | Europe, Africa and Beyond - Harmon Gallery <br/> St. Louis, MO |
+| Year            | Event                                                                  |
+| --------------- | ---------------------------------------------------------------------- |
+| 2002            | Africa Kaleidoscopes - Gallerie of South Orange <br/> South Orange, NJ |
+| 1997            | Africa Adorned - Robins Hutchins Gallery <br/> Maplewood, NJ           |
+| 1996 <br/> 1990 | Africa in Color - Gallerie La Taj <br/> Alexandria, VA                 |
+| 1987            | Art & Artifact - Savacou Gallery <br/> New York, NY                    |
+| 1984            | Expand Your Horizon - Phinney Ridge Gallery <br/> Seattle, WA          |
+| 1984            | Impressions of India - Principia Museum <br/> St. Louis, MO            |
+| 1983            | People of Africa - Gallerie La Taj <br/> Alexandria, VA                |
+| 1980            | Black and White & Color - Gallery Watatu <br/> Nairobi, Kenya          |
+| 1978            | Europe, Africa and Beyond - Harmon Gallery <br/> St. Louis, MO         |
 
 ## Awards and Competitions
 
-| Year | Event |
-|------|-------|
+| Year | Event                                                                                     |
+| ---- | ----------------------------------------------------------------------------------------- |
 | 2015 | Traveler's Palette - First place, second place and honorable mention <br/> St. Peters, MO |
-| 1986 | Lilian Glazer Purchase Prize <br/> Louisiana Watercolor Socieity, New Orleans, LA |
-| 1986 | American Watercolor Society 119th Annual Competition <br/> New York, NY |
-| 1984 | Watercolor West XVI <br/> Riverside, CA |
-| 1978 | Carpenter Annual Watercolor Prize <br/> St. Louis Artists Guild, St. Louis, MO |
-| 1978 | Adelaide Carol Johnson Art Award <br/> Principia College, St. Louis, MO |
+| 1986 | Lilian Glazer Purchase Prize <br/> Louisiana Watercolor Socieity, New Orleans, LA         |
+| 1986 | American Watercolor Society 119th Annual Competition <br/> New York, NY                   |
+| 1984 | Watercolor West XVI <br/> Riverside, CA                                                   |
+| 1978 | Carpenter Annual Watercolor Prize <br/> St. Louis Artists Guild, St. Louis, MO            |
+| 1978 | Adelaide Carol Johnson Art Award <br/> Principia College, St. Louis, MO                   |
 
 ## Education
 
-| Year | Degree | School |
-|------|--------|--------|
+| Year | Degree                                     | School              |
+| ---- | ------------------------------------------ | ------------------- |
 | 1987 | MA Gallatin (Printmaking and Anthropology) | New York University |
-| 1977 | BA in Art | Principia College |
+| 1977 | BA in Art                                  | Principia College   |
 
 ## Contact Info
 
