@@ -7,7 +7,7 @@ type Props = ComponentProps<typeof AstroImage>;
 const pictureProps: Props = {
   ...Astro.props,
   format: 'avif',
-  class: ['img-fluid', Astro.props.class].filter(Boolean).join(' ')
+  class: ['img-fluid', Astro.props.class].filter(Boolean).join(' '),
 };
 ---
 
