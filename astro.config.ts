@@ -11,6 +11,7 @@ export default defineConfig({
         rehypeClassNames,
         {
           table: 'table',
+          img: 'img-fluid',
         },
       ],
     ],
