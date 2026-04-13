@@ -1,6 +1,6 @@
 ---
+import Image from '@/components/image.astro';
 import Layout from '@/components/layout.astro';
-import { Picture } from 'astro:assets';
 import { getCollection } from 'astro:content';
 
 const portfolio = await getCollection('portfolio');
@@ -20,12 +20,12 @@ const mappedPortfolio = portfolio
         <div class="col-6 col-md-4 col-lg-3 mb-3">
           <a href={item.path} class="d-block portfolio-card">
             <figure class="mb-0">
-              <Picture
+              <Image
                 src={item.thumbnail}
                 alt={item.alt}
                 width={306}
                 height={306}
-                quality={50}
+                quality={70}
               />
               <figcaption class="text-center fs-5 mt-2">
                 {item.title}

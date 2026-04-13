@@ -1,6 +1,6 @@
 ---
 import { cleanGroup } from '@/utils';
-import { Picture } from 'astro:assets';
+import Image from './image.astro';
 
 interface Props {
   images: {
@@ -35,12 +35,11 @@ const resolvedImages = images.map(({ image, description, id }, index) => {
             data-width={image.width}
             data-height={image.height}
           >
-            <Picture
+            <Image
               src={image}
               alt={alt}
-              quality={50}
+              quality={70}
               width={312}
-              class="img-fluid"
             />
             <div class="caption">
               <p class="text-capitalize">{imgTitle}</p>
