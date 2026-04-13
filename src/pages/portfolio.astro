@@ -20,15 +20,13 @@ const mappedPortfolio = portfolio
         <div class="col-6 col-md-4 col-lg-3 mb-3">
           <a href={item.path} class="d-block portfolio-card">
             <figure class="mb-0">
-              <div class="portfolio-card__img-wrap">
-                <Picture
-                  src={item.thumbnail}
-                  alt={item.alt}
-                  width={306}
-                  height={306}
-                  quality={50}
-                />
-              </div>
+              <Picture
+                src={item.thumbnail}
+                alt={item.alt}
+                width={306}
+                height={306}
+                quality={50}
+              />
               <figcaption class="text-center fs-5 mt-2">
                 {item.title}
               </figcaption>
@@ -39,33 +37,3 @@ const mappedPortfolio = portfolio
     }
   </div>
 </Layout>
-
-<style>
-  .portfolio-card {
-    color: inherit;
-    border-radius: 6px;
-    overflow: hidden;
-    transition: box-shadow 0.2s ease;
-  }
-
-  .portfolio-card:hover {
-    color: inherit;
-  }
-
-  .portfolio-card__img-wrap {
-    overflow: hidden;
-    border-radius: 6px;
-  }
-
-  .portfolio-card__img-wrap img,
-  .portfolio-card__img-wrap picture {
-    display: block;
-    width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
-  }
-
-  .portfolio-card:hover .portfolio-card__img-wrap img {
-    transform: scale(1.04);
-  }
-</style>
