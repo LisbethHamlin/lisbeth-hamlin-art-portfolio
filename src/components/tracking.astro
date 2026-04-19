@@ -1,0 +1,13 @@
+---
+const isProd = import.meta.env.MODE !== 'development';
+---
+
+{
+  isProd && (
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "5f88190493d240fa91980a590ac4dc88"}'
+    />
+  )
+}
