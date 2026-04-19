@@ -3,6 +3,7 @@ import Header from '@components/header.astro';
 import Footer from '@components/footer.astro';
 import Breadcrumb from './breadcrumb.astro';
 import { metadata } from '@/metadata';
+import Tracking from '@components/tracking.astro';
 import '@/styles/styles.scss';
 
 export interface Props {
@@ -44,5 +45,6 @@ const { breadcrumbs, title, description = metadata.description } = Astro.props;
       <slot />
       <Footer />
     </main>
+    <Tracking />
   </body>
 </html>
