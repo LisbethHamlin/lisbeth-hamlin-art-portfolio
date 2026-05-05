@@ -13,7 +13,7 @@
     "build:ci": "npm run format:check && npm run check && npm run build",
     "preview": "astro preview",
     "astro": "astro",
-    "publish:pages": "wrangler pages publish ./dist --project-name lisbeth-hamlin-art-portfolio --branch $BRANCH"
+    "publish:pages": "wrangler pages publish ./dist --project-name lisbeth-hamlin-art-portfolio-v2 --branch $BRANCH"
   },
   "dependencies": {
     "@fontsource-variable/andada-pro": "^5.2.8",
