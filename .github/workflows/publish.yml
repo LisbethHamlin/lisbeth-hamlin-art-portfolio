@@ -15,12 +15,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v6
 
+      - uses: pnpm/action-setup@v6
+        with:
+          version: 11
+
       - uses: actions/setup-node@v6
         with:
           node-version-file: '.nvmrc'
+          cache: 'pnpm'
 
-      - run: npm ci
-      - run: npm run build:ci
+      - run: pn ci
+      - run: pn run build:ci
         env:
           CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
           CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
